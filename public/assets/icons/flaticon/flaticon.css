@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("flaticon7683.ttf?841270aabf2fae85c6466a0d794b3bbc") format("truetype"),
+url("flaticon7683.woff?841270aabf2fae85c6466a0d794b3bbc") format("woff"),
+url("flaticon7683.woff2?841270aabf2fae85c6466a0d794b3bbc") format("woff2"),
+url("flaticon7683.eot?841270aabf2fae85c6466a0d794b3bbc#iefix") format("embedded-opentype"),
+url("flaticon7683.svg?841270aabf2fae85c6466a0d794b3bbc#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-right:before {
+    content: "\f101";
+}
+.flaticon-dollar-currency-symbol:before {
+    content: "\f102";
+}
+.flaticon-down-arrow:before {
+    content: "\f103";
+}
+.flaticon-user:before {
+    content: "\f104";
+}
+.flaticon-email:before {
+    content: "\f105";
+}
+.flaticon-next:before {
+    content: "\f106";
+}
+.flaticon-left-arrow:before {
+    content: "\f107";
+}
