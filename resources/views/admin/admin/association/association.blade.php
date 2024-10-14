@@ -103,7 +103,7 @@
                                     <span class="badge bg-opacity-10 bg-info text-info"></span>
                                 </div>
                                 <div class="mt-3">
-                                    <span class="btn btn-success">Voir</span>
+                                    <a href="{{ route('association.details') }}" class="btn btn-success">Voir</a>
                                 </div>
                                 </div>
                             </div>

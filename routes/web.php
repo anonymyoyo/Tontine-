@@ -29,6 +29,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('SuperAdmin/Agences', [AdminController::class, 'dashboard_agence'])->name('agences');
     Route::get('SuperAdmin/Associations/Liste', [AdminController::class, 'dashboard_association'])->name('association.associations');
     Route::get('Association/Creer', [AdminController::class, 'association_creer_association'])->name('association.creer.association');
+    Route::get('Association/Details', [AdminController::class, 'association_details'])->name('association.details');
     Route::post('SuperAdmin/Associations', [AdminController::class, 'add_association'])->name('add.associations');
     Route::get('Association/Creer/Gerant', [AdminController::class, 'association_creer_president_association'])->name('association.creer.president_association');
     Route::post('Association/Gerant', [AdminController::class, 'admin_ajouter_gerant'])->name('admin.ajouter_gerant');
