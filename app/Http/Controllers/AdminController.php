@@ -140,6 +140,8 @@ class AdminController extends Controller
             'name'=>$request->name,
             'description'=>$request->description,
             'reglement'=>$request->reglement,
+            'ville'=>$request->ville,
+            'pays'=>$request->pays,
             'gerant_id'=>$request->gerant_id,
             'image'=>$image,
         ]);

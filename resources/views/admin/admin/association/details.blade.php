@@ -151,67 +151,6 @@
                         </div>
                     </div>
                     </div>
-                    <div class="card mb-3">
-                    <div class="card-header">
-                        <h5 class="card-title">Activites</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="scroll350">
-                        <div class="my-2">
-                            <div class="activity-block d-flex position-relative">
-                            <img src="assets/images/user2.png" class="img-5x me-3 rounded-circle activity-user"
-                                alt="Admin Dashboard" />
-                            <div class="mb-3">
-                                <h5>Sophie Michiels</h5>
-                                <p class="m-0">3 day ago</p>
-                                <p>Paid invoice ref. #26788</p>
-                                <span class="badge bg-info">Sent</span>
-                            </div>
-                            </div>
-                            <div class="activity-block d-flex position-relative">
-                            <img src="assets/images/user4.png" class="img-5x me-3 rounded-circle activity-user"
-                                alt="Admin Dashboard" />
-                            <div class="mb-3">
-                                <h5>Sunny Desmet</h5>
-                                <p class="m-0">3 hours ago</p>
-                                <p>Sent invoice ref. #23457</p>
-                                <span class="badge bg-primary">Sent</span>
-                            </div>
-                            </div>
-                            <div class="activity-block d-flex position-relative">
-                            <img src="assets/images/user1.png" class="img-5x me-3 rounded-circle activity-user"
-                                alt="Admin Dashboard" />
-                            <div class="mb-3">
-                                <h5>Ilyana Maes</h5>
-                                <p class="m-0">One week ago</p>
-                                <p>Paid invoice ref. #34546</p>
-                                <span class="badge bg-primary">Invoice</span>
-                            </div>
-                            </div>
-                            <div class="activity-block d-flex position-relative">
-                            <img src="assets/images/user5.png" class="img-5x me-3 rounded-circle activity-user"
-                                alt="Admin Dashboard" />
-                            <div class="mb-3">
-                                <h5>Remssy Wilson</h5>
-                                <p class="m-0">7 hours ago</p>
-                                <p>Paid invoice ref. #23459</p>
-                                <span class="badge bg-primary">Payments</span>
-                            </div>
-                            </div>
-                            <div class="activity-block d-flex position-relative">
-                            <img src="assets/images/user3.png" class="img-5x me-3 rounded-circle activity-user"
-                                alt="Admin Dashboard" />
-                            <div class="mb-3">
-                                <h5>Elliott Hermans</h5>
-                                <p class="m-0">1 day ago</p>
-                                <p>Paid invoice ref. #23473</p>
-                                <span class="badge bg-primary">Paid</span>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
                 </div>
                 <div class="col-xxl-6 col-sm-12 col-12 order-xxl-2 order-xl-1 order-lg-1 order-md-1 order-sm-1">
                     <div class="card mb-3">
@@ -255,32 +194,10 @@
                                 class="img-fluid rounded" />
                             </div>
                             </div>
-                            <button class="btn btn-primary mt-2">
-                            <i class="bi bi-heart-fill"></i> Like
-                            </button>
                         </div>
                         </div>
                     </div>
                     </div>
-                    {{-- <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex">
-                        <img src="assets/images/user2.png" class="rounded-circle me-3 img-4x"
-                            alt="Bootstrap Dashboards" />
-                        <div class="flex-grow-1">
-                            <p class="float-end text-info">5 mins ago</p>
-                            <h6 class="fw-bold">
-                            Willa Henrys started following Oriel Row
-                            </h6>
-                            <p class="text-muted">Today 7:50pm</p>
-                            <div class="mb-2">
-                            <textarea name="" rows="5" class="form-control"></textarea>
-                            </div>
-                            <button class="btn btn-danger">Message</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div> --}}
                 </div>
                 <div class="col-xxl-3 col-sm-6 col-12 order-xxl-3 order-xl-3 order-lg-3 order-md-3 order-sm-3">
                     <div class="card mb-3">
@@ -296,122 +213,39 @@
                     </div>
                     </div>
                     <div class="card mb-3">
-                    <div class="card-header">
-                        <h5 class="card-title">Commerciaux</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-2 row-cols-3">
-                        <div class="col">
-                            <img src="{{ asset('dashboard/assets/images/user.png')}}" class="img-fluid rounded-2" alt="Bootstrap Themes" />
+                        <div class="card-header">
+                            <h5 class="card-title">Commerciaux</h5>
                         </div>
+                        <div class="card-body">
+                            <div class="row g-2 row-cols-3">
+                            <div class="col">
+                                <img src="{{ asset('dashboard/assets/images/user.png')}}" class="img-fluid rounded-2" alt="Bootstrap Themes" />
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
+
+
                     <div class="card mb-3">
-                    <div class="card-header">
-                        <h5 class="card-title">Projects</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="m-0 p-0">
-                        <li class="activity-list d-flex">
-                            <div class="activity-time pt-2 pe-3 me-3">
-                            <p class="date m-0">10:30 am</p>
-                            <span class="badge bg-danger">75%</span>
+                        <div class="card-header">
+                            <h5 class="card-title">Activites</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="scroll350">
+                            <div class="my-2">
+                                <div class="activity-block d-flex position-relative">
+                                <img src="assets/images/user2.png" class="img-5x me-3 rounded-circle activity-user"
+                                    alt="Admin Dashboard" />
+                                <div class="mb-3">
+                                    <h5>Sophie Michiels</h5>
+                                    <p class="m-0">3 day ago</p>
+                                    <p>Paid invoice ref. #26788</p>
+                                    <span class="badge bg-info">Sent</span>
+                                </div>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column py-2">
-                            <h5>Bootstrap Admin</h5>
-                            <p class="m-0">by Elnathan Lois</p>
                             </div>
-                        </li>
-                        <li class="activity-list d-flex">
-                            <div class="activity-time pt-2 pe-3 me-3">
-                            <p class="date m-0">11:30 am</p>
-                            <span class="badge bg-info">50%</span>
-                            </div>
-                            <div class="d-flex flex-column py-2">
-                            <h5>Admin Theme</h5>
-                            <p class="m-0">by Patrobus Nicole</p>
-                            </div>
-                        </li>
-                        <li class="activity-list d-flex">
-                            <div class="activity-time pt-2 pe-3 me-3">
-                            <p class="date m-0">12:50 pm</p>
-                            <span class="badge bg-warning">90%</span>
-                            </div>
-                            <div class="d-flex flex-column py-2">
-                            <h5>UI Kit</h5>
-                            <p class="m-0">by Abilene Omega</p>
-                            </div>
-                        </li>
-                        <li class="activity-list d-flex">
-                            <div class="activity-time pt-2 pe-3 me-3">
-                            <p class="date m-0">02:30 pm</p>
-                            <span class="badge bg-success">50%</span>
-                            </div>
-                            <div class="d-flex flex-column py-2">
-                            <h5>Invoice Design</h5>
-                            <p class="m-0">by Shelomi Sarah</p>
-                            </div>
-                        </li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="card mb-3">
-                    <div class="card-header">
-                        <h5 class="card-title">Bookmarks</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Bootstrap 5
-                            Admin Dashboard
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Best Bootstrap
-                            Themes
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Quality
-                            Bootstrap Themes
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Best Bootstrap
-                            5 Admin Templates
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Premium
-                            Bootstrap 5 Admin Dashboards
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Quality
-                            Bootstrap Admin Dashboards
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Free Bootstrap
-                            Admin Dashboards
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:void(0)" class="text-info">
-                            <i class="bi bi-lightning-charge"></i> Best Bootstrap
-                            Dashboards
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
+                        </div>
                     </div>
                 </div>
                 </div>

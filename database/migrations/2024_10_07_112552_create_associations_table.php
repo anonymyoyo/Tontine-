@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->string('ville');
+            $table->string('pays');
             $table->string('reglement');
             $table->foreignIdFor(Gerant::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');

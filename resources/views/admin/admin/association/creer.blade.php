@@ -98,6 +98,18 @@
                             <input type="file" name="image" class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Ville</label>
+                            <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Pays</label>
+                            <input type="text" name="pays" class="form-control" placeholder="Enter company name" />
+                        </div>
+                    </div>
                     <div class="col-sm-6 col-12">
                         <div class="mb-3">
                             <label class="form-label">Description</label>
