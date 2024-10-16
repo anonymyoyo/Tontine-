@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
             'pays'=>'Cameroun',
             'identification'=>'123456789',
             'role_id'=>'1',
-            'image'=>'1',
             'password'=>'superadmin'
         ]);
     }

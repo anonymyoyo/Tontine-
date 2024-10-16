@@ -26,7 +26,6 @@ class User extends Authenticatable
         'pays',
         'identification',
         'role_id',
-        'image',
         'password',
     ];
 

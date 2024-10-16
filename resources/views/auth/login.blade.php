@@ -24,7 +24,7 @@
 		************* -->
     <link rel="stylesheet" href="{{ asset('dashboard/assets/fonts/bootstrap/bootstrap-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main.min.css') }}" />
-  </head>
+</head>
 
   <body class="login-bg">
     <!-- Container start -->
