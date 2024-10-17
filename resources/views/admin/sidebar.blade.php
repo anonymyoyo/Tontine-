@@ -30,11 +30,19 @@
             <span class="menu-text">Dashboard</span>
           </a>
         </li>
-        <li>
-            <a href="{{ route('association.associations') }}">
-                <i class="fs-3 bi bi-people"></i>
-                <span class="menu-text">Associations</span>
+        <li class="treeview">
+            <a href="#!">
+              <i class="bi bi-stickies"></i>
+              <span class="menu-text">Associations</span>
             </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ route('association.associations') }}">Asssociations</a>
+                </li>
+                <li>
+                    <a href="{{ route('association.gerant') }}">Gerants</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="{{ route('agences') }}">
@@ -64,7 +72,7 @@
                 </li> --}}
 
             </ul>
-          </li>
+        </li>
 
         <li>
           <a href="{{ route('chef_agence') }}">

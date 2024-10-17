@@ -49,7 +49,8 @@ class RegisteredUserController extends Controller
             'ville' => $request->ville,
             'pays' => $request->pays,
             'role_id' =>'4',
-            'identification'=>$request->file('image'),
+            'identification' => $request->identification,
+            // 'identification'=>$request->image,
             'password' => Hash::make($request->password),
         ]);
 

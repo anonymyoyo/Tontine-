@@ -124,6 +124,12 @@ class AdminController extends Controller
         return view('admin.admin.association.association', compact('tontine', 'association', 'gerant'));
     }
 
+    public function dashboard_association_gerant(){
+        $tontine=Tontine::all();
+        $gerant=Gerant::all();
+        return view('admin.admin.association.gerant', compact('tontine', 'gerant'));
+    }
+
     public function association_creer_association(){
         $tontine=Tontine::all();
         $gerant=Gerant::all();

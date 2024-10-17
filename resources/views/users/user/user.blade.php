@@ -161,22 +161,6 @@
     </section>
     <!-- crikto invest work section end -->
 
-    <!-- crikto invest video modal section start -->
-    <div class="invest-video-modal-container pt-120 pb-120">
-        <div class="container">
-            <div class="invest-video-modal-wrapper">
-                <div class="invest-video-modal">
-                    <img src="assets/images/custom/invest/video-poster.png" alt="Video Poster">
-                    <a class="video_popup" href="https://www.youtube.com/watch?v=uCik8-i2Hcc"
-                        title="YouTube video player">
-                        <i class="fas fa-play"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- crikto invest video modal section end -->
-
     <!-- boost earning slider start -->
     <section class="boost-earning-container pt-120 pb-120">
         <div class="container">
@@ -236,69 +220,6 @@
     </section>
     <!-- boost earning slider end -->
 
-    <!-- crikto invest grow together section start -->
-    {{-- <section class="grow-together-container pt-90 pb-120">
-        <div class="container">
-            <div class="grow-together-wrapper">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-6">
-                        <div class="grow-together-thumb">
-                        <img src="{{ asset('assets/images/custom/invest/grow-together.png') }}" alt="Grow Together">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="grow-together-content">
-                            <h2>Nous sommes la pour vous. Grandissons ensemble.</h2>
-                            <p>At Crypto we believe that everyone deserves the opportunity to make their money work for
-                                them.
-                                That is why we offer safe, fair and low-cost managed investing in the crypto market. Let
-                                us do the hard work for you, so we can take together advantage of the opportunities that
-                                Bitcoin, Ethereum and other cryptocurrencies offer.
-                            </p>
-                            <a href="#registration-popup" class="primary-btn primary-effect registration-popup-link">Invest Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- crikto invest grow together section end -->
-
-    <!-- crikto invest currency platform section start -->
-    {{-- <section class="currency-platform-container pt-90 pb-120">
-        <div class="container">
-            <div class="currency-platform-wrapper">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-6">
-                        <div class="currency-platform-thumb">
-                            <img src="{{ asset('assets/images/custom/invest/platform-two.png') }}" alt="Currency Platform">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="currency-platform-content">
-                            <h2>The most trusted crikto currency platform</h2>
-                            <p>Here are a few reasons why you should choose crikto</p>
-                            <div class="d-flex flex-column flex-sm-row align-items-start justify-content-between">
-                                <div class="currency-platform-single-item">
-                                    <img src="assets/images/custom/platform/storage.png" alt="Storage">
-                                    <h4 class="text-start text-sm-center">Secure storage</h4>
-                                </div>
-                                <div class="currency-platform-single-item">
-                                    <img src="assets/images/custom/platform/insurance.png" alt="Insurance">
-                                    <h4 class="text-start text-sm-center">Protected by insurance</h4>
-                                </div>
-                                <div class="currency-platform-single-item">
-                                    <img src="assets/images/custom/platform/privacy.png" alt="Privacy">
-                                    <h4 class="text-start text-sm-center">Privacy</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- crikto invest currency platform section end -->
 
     <!-- faq section start -->
     <section class="home-faq-container invest-faq pb-120">
