@@ -76,7 +76,7 @@ class AdminController extends Controller
             'pays'=>$request->pays,
             'association_id'=>$request->association_id,
             'budget'=>$request->budget,
-            'identification'=>$path,
+            'identification'=>$path2,
             'image'=>$path,
         ]);
 
@@ -109,7 +109,7 @@ class AdminController extends Controller
             'association_id'=>$request->association_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
-            'identification'=>$path,
+            'identification'=>$path2,
             'image'=>$path,
             ]);
 
@@ -187,7 +187,7 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path,
+            'identification'=>$path2,
             'role_id'=>'5',
             'association_id'=>$request->association_id,
             'image'=>$path,
@@ -308,7 +308,7 @@ class AdminController extends Controller
             'ville'=>$request->ville,
             'pays'=>$request->pays,
             'association_id'=>$request->association_id,
-            'identification'=>$path,
+            'identification'=>$path2,
             'role_id'=>'2',
             'image'=>$path,
             'password'=>Hash::make($request->password),
@@ -320,7 +320,7 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path,
+            'identification'=>$path2,
             'role_id'=>'2',
             'image'=>$path,
             'password'=>Hash::make($request->password),
@@ -365,7 +365,7 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path,
+            'identification'=>$path2,
             'association_id'=>$request->association_id,
             'role_id'=>'3',
             'image'=>$path,

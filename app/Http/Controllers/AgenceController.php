@@ -106,7 +106,7 @@ class AgenceController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path,
+            'identification'=>$path2,
             'role_id'=>'3',
             'image'=>$path,
             'agence_id'=>$request->agence_id,

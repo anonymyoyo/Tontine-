@@ -39,10 +39,10 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $image=$request->file('image');
-        $path1=$image->store('images','public');
-        $identification=$request->file('image');
-        $path2=$identification->store('images','public');
+        // $image=$request->file('image');
+        // $path1=$image->store('images','public');
+        $identification=$request->file('identification');
+        $path2=$identification->store('identification','public');
 
         $user = User::create([
             'name' => $request->name,
@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
             'ville' => $request->ville,
             'pays' => $request->pays,
             'role_id' =>'4',
-            'identification' => $path1,
+            // 'image' => $path1,
             'identification'=>$path2,
             'password' => Hash::make($request->password),
         ]);

@@ -92,7 +92,7 @@ class AssociationController extends Controller
             'chef_d_agence_id'=>$request->chef_d_agence_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
-            'identification'=>$path,
+            'identification'=>$path2,
             'image'=>$path,
             ]);
 
@@ -261,7 +261,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path,
+            'identification'=>$path2,
             'role_id'=>'3',
             'image'=>$path,
             'agence_id'=>$request->agence_id,
