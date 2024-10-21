@@ -95,7 +95,7 @@ class AgenceController extends Controller
         $tontine=Tontine::all();$image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $zones=Zone::all();
 

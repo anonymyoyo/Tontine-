@@ -65,7 +65,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $association=Association::all();
         $agence->update([
             'name'=>$request->name,
@@ -95,7 +95,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $agences=Agence::all();
         $association=Association::all();
@@ -177,7 +177,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $gerant=Gerant::all();
         $association=Association::all();
@@ -298,7 +298,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $association=Association::all();
         Chef_d_agence::create([
@@ -353,7 +353,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $association=Association::all();
         $zones=Zone::all();

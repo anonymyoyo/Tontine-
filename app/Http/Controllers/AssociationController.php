@@ -80,7 +80,7 @@ class AssociationController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $agences=Agence::all();
 
@@ -250,7 +250,7 @@ class AssociationController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $path=$identification->store('images','public');
+        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $zones=Zone::all();
 
