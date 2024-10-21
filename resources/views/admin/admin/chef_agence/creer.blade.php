@@ -85,6 +85,18 @@
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                    <label class="form-label">Association</label>
+                    <select name="association_id"  class="form-select">
+                        <option value="0">Selectionner</option>
+                        @foreach ($association as $associations)
+                            <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                        @endforeach
+                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                    </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" placeholder="Enter email address" />

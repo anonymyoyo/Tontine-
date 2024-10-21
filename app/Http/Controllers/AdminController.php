@@ -33,8 +33,9 @@ class AdminController extends Controller
         $transaction=Transaction::count();
         // $versement=Versement::count();
         $adherant=User::count();
+        $association=Association::all();
         $tontine=Tontine::all();
-        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant'));
+        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant', 'association'));
     }
 
     public function dashboard_agence(){
@@ -63,6 +64,7 @@ class AdminController extends Controller
         $agence=Agence::find($id);
         $identification=$request->file('image');
         $image=$request->file('image');
+        $association=Association::all();
         $agence->update([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -70,18 +72,20 @@ class AdminController extends Controller
             'ville'=>$request->ville,
             'chef_d_agence_id'=>$request->chef_d_agence_id,
             'pays'=>$request->pays,
+            'association_id'=>$request->association_id,
             'budget'=>$request->budget,
             'identification'=>$identification,
             'image'=>$image,
         ]);
 
-        return view('admin.admin.agences.agence', compact('agence', 'tontine'));
+        return view('admin.admin.agences.agence', compact('agence', 'tontine', 'association'));
     }
 
     public function creer_agence(){
         $tontine=Tontine::all();
         $gerant=Chef_d_agence::all();
-        return view('admin.admin.agences.creer', compact('tontine', 'gerant'));
+        $association=Association::all();
+        return view('admin.admin.agences.creer', compact('tontine', 'gerant', 'association'));
     }
 
     public function add_agence(Request $request){
@@ -90,6 +94,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $tontine=Tontine::all();
         $agences=Agence::all();
+        $association=Association::all();
 
         Agence::create([
             'name'=>$request->name,
@@ -97,6 +102,7 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'chef_d_agence_id'=>$request->chef_d_agence_id,
+            'association_id'=>$request->association_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
             'identification'=>$identification,
@@ -104,7 +110,7 @@ class AdminController extends Controller
             ]);
 
 
-        return view('admin.admin.agences.agence', compact('agences', 'tontine'));
+        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association'));
 
         //     return to_route('agence.tontine');
     }
@@ -134,8 +140,9 @@ class AdminController extends Controller
 
     public function association_creer_association(){
         $tontine=Tontine::all();
+        $association=Association::all();
         $gerant=Gerant::all();
-        return view('admin.admin.association.creer', compact('tontine', 'gerant'));
+        return view('admin.admin.association.creer', compact('tontine', 'gerant', 'association'));
     }
 
     public function add_association(Request $request){
@@ -167,6 +174,7 @@ class AdminController extends Controller
         $identification=$request->file('image');
         $tontine=Tontine::all();
         $gerant=Gerant::all();
+        $association=Association::all();
         Gerant::create([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -175,6 +183,7 @@ class AdminController extends Controller
             'pays'=>$request->pays,
             'identification'=>$request->identification,
             'role_id'=>'5',
+            'association_id'=>$request->association_id,
             'image'=>$image,
             'password'=>Hash::make($request->password),
         ]);
@@ -191,7 +200,7 @@ class AdminController extends Controller
             'password'=>Hash::make($request->password),
         ]);
 
-        return view('admin.admin.association.creer', compact('tontine', 'gerant'));
+        return view('admin.admin.association.creer', compact('tontine', 'gerant', 'association'));
     }
 
     public function association_details(){
@@ -221,15 +230,17 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $commercial=Commercial::all();
+        $association=Association::all();
         $agences=Agence::all();
         Zone::create([
             'name'=>$request->name,
             'agence_id'=>$request->agence_id,
             'commercial_id'=>$request->commercial_id,
+            'association_id'=>$request->association_id,
             'image'=>$image,
         ]);
 
-        return view('admin.admin.zones.creer', compact('commercial', 'agences', 'tontine'));
+        return view('admin.admin.zones.creer', compact('commercial', 'agences', 'tontine', 'association'));
     }
 
     public function creer_tontine(){
@@ -271,19 +282,23 @@ class AdminController extends Controller
     }
 
     public function creer_chef_agence(){
+        $association=Association::all();
         $tontine=Tontine::all();
-        return view('admin.admin.chef_agence.creer', compact('tontine'));
+        return view('admin.admin.chef_agence.creer', compact('tontine', 'association'));
     }
 
     public function add_chef_d_agence(Request $request){
         $image=$request->file('image');
+        $image->store('public/images');
         $tontine=Tontine::all();
+        $association=Association::all();
         Chef_d_agence::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
+            'association_id'=>$request->association_id,
             'identification'=>$request->identification,
             'role_id'=>'2',
             'image'=>$image,
@@ -301,7 +316,7 @@ class AdminController extends Controller
             'image'=>$image,
             'password'=>Hash::make($request->password),
         ]);
-        return view('admin.admin.chef_agence.creer', compact('tontine'));
+        return view('admin.admin.chef_agence.creer', compact('tontine', 'association'));
     }
 
     public function commercial(){
@@ -328,6 +343,7 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $agence=Agence::all();
+        $association=Association::all();
         $zones=Zone::all();
 
 
@@ -338,6 +354,7 @@ class AdminController extends Controller
             'ville'=>$request->ville,
             'pays'=>$request->pays,
             'identification'=>$request->identification,
+            'association_id'=>$request->association_id,
             'role_id'=>'3',
             'image'=>$image,
             'agence_id'=>$request->agence_id,
@@ -355,7 +372,7 @@ class AdminController extends Controller
             'image'=>$image,
             'password'=>Hash::make($request->password)
         ]);
-        return view('admin.admin.commerciaux.creer', compact('tontine', 'agence', 'zones'));
+        return view('admin.admin.commerciaux.creer', compact('tontine', 'agence', 'zones', 'association'));
     }
 
     public function agences_transaction(){
