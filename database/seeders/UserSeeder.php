@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'ville'=>'Douala',
             'pays'=>'Cameroun',
             'identification'=>'123456789',
+            'image'=>'123456789',
             'role_id'=>'1',
             'password'=>'superadmin'
         ]);

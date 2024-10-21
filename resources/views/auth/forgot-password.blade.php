@@ -1,25 +1,62 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-admin-dashboard/forgot-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:35 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TCA - Mot de Passe oublie</title>
+
+    <!-- Meta -->
+    <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
+    <meta name="author" content="Bootstrap Gallery" />
+    <link rel="canonical" href="https://www.bootstrap.gallery/">
+    <meta property="og:url" content="https://www.bootstrap.gallery/">
+    <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+    <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta property="og:type" content="Website">
+    <meta property="og:site_name" content="Bootstrap Gallery">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" />
+
+    <!-- *************
+			************ CSS Files *************
+		************* -->
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/fonts/bootstrap/bootstrap-icons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main.min.css') }}" />
+</head>
+
+  <body class="login-bg">
+    <!-- Container start -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-sm-6 col-12">
+          <form method="POST" action="{{ route('password.email') }}" class="my-5">
+                @csrf
+            <div class="login-form rounded-4 p-4 mt-5">
+              <a href="index.html" class="mb-4 d-flex">
+                <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid login-logo" alt="Earth Admin Dashboard" />
+              </a>
+              <h5 class="fw-light mb-5 lh-2">
+                Pour pouvoir recuperer votre compte, s'il vous plait saisissez l'addresse mail que vous avez saisie lors de votre enregistrement.
+              </h5>
+              <div class="mb-3">
+                <label class="form-label" for="yEmail">Votre Email</label>
+                <input type="text" id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+              </div>
+              <div class="d-grid py-3 mt-4">
+                <button type="submit" class="btn btn-lg btn-primary">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+    <!-- Container end -->
+  </body>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-admin-dashboard/forgot-password.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:35 GMT -->
+</html>
