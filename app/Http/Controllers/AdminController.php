@@ -63,9 +63,9 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $agence=Agence::find($id);
         $image=$request->file('image');
-        $image->store('public/images');
+        $path=$image->store('images','public');
         $identification=$request->file('image');
-        $identification->store('public/images');
+        $path=$identification->store('images','public');
         $association=Association::all();
         $agence->update([
             'name'=>$request->name,
@@ -76,8 +76,8 @@ class AdminController extends Controller
             'pays'=>$request->pays,
             'association_id'=>$request->association_id,
             'budget'=>$request->budget,
-            'identification'=>$identification,
-            'image'=>$image,
+            'identification'=>$path,
+            'image'=>$path,
         ]);
 
         return view('admin.admin.agences.agence', compact('agence', 'tontine', 'association'));
@@ -93,9 +93,9 @@ class AdminController extends Controller
     public function add_agence(Request $request){
 
         $image=$request->file('image');
-        $image->store('public/images');
+        $path=$image->store('images','public');
         $identification=$request->file('image');
-        $identification->store('public/images');
+        $path=$identification->store('images','public');
         $tontine=Tontine::all();
         $agences=Agence::all();
         $association=Association::all();
@@ -109,8 +109,8 @@ class AdminController extends Controller
             'association_id'=>$request->association_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
-            'identification'=>$identification,
-            'image'=>$image,
+            'identification'=>$path,
+            'image'=>$path,
             ]);
 
 
@@ -154,7 +154,7 @@ class AdminController extends Controller
         $association=Association::all();
         $gerant=Gerant::all();
         $image=$request->file('image');
-        $image->store('public/images');
+        $path=$image->store('images','public');
         Association::create([
             'name'=>$request->name,
             'description'=>$request->description,
@@ -162,7 +162,7 @@ class AdminController extends Controller
             'ville'=>$request->ville,
             'pays'=>$request->pays,
             'gerant_id'=>$request->gerant_id,
-            'image'=>$image,
+            'image'=>$path,
         ]);
         return view('admin.admin.association.association', compact('tontine', 'association', 'gerant'));
     }
@@ -175,9 +175,9 @@ class AdminController extends Controller
 
     public function admin_ajouter_gerant(Request $request){
         $image=$request->file('image');
-        $image->store('public/images');
+        $path=$image->store('images','public');
         $identification=$request->file('image');
-        $identification->store('public/images');
+        $path=$identification->store('images','public');
         $tontine=Tontine::all();
         $gerant=Gerant::all();
         $association=Association::all();
@@ -187,10 +187,10 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$identification,
+            'identification'=>$path,
             'role_id'=>'5',
             'association_id'=>$request->association_id,
-            'image'=>$image,
+            'image'=>$path,
             'password'=>Hash::make($request->password),
         ]);
 
@@ -260,7 +260,7 @@ class AdminController extends Controller
 
         $image=$request->file('image');
         $tontine=Tontine::all();
-        // $image=store('public/images');
+        // $image=store('images','public');
         Tontine::create([
             'name'=>$request->name,
             'description'=>$request->description,
@@ -281,26 +281,22 @@ class AdminController extends Controller
     public function chef_agence(){
         $tontine=Tontine::all();
         $responsables=Chef_d_agence::all();
-        // $image-store::files('public/images');
-
         $roles=Role::all();
         $agences=Agence::all();
 
-        return $responsables;
-        // return view('admin.admin.chef_agence.chef_agence', compact('responsables','agences','roles', 'tontine'));
+        // return $responsables;
+        return view('admin.admin.chef_agence.chef_agence', compact('responsables','agences','roles', 'tontine'));
     }
 
     public function creer_chef_agence(){
         $association=Association::all();
-        // $image=$request->file('image');Request $request, 'image'
-        // $image->store('public','images');
         $tontine=Tontine::all();
         return view('admin.admin.chef_agence.creer', compact('tontine', 'association'));
     }
 
     public function add_chef_d_agence(Request $request){
         $image=$request->file('image');
-        $image->store('images','public');
+        $path=$image->store('images','public');
         $identification=$request->file('image');
         $path=$identification->store('images','public');
         $tontine=Tontine::all();
@@ -314,7 +310,7 @@ class AdminController extends Controller
             'association_id'=>$request->association_id,
             'identification'=>$path,
             'role_id'=>'2',
-            'image'=>$image,
+            'image'=>$path,
             'password'=>Hash::make($request->password),
         ]);
 
@@ -326,7 +322,7 @@ class AdminController extends Controller
             'pays'=>$request->pays,
             'identification'=>$path,
             'role_id'=>'2',
-            'image'=>$image,
+            'image'=>$path,
             'password'=>Hash::make($request->password),
         ]);
         return view('admin.admin.chef_agence.creer', compact('tontine', 'association'));
@@ -355,9 +351,9 @@ class AdminController extends Controller
     public function ajouter_commercial(Request $request){
         $tontine=Tontine::all();
         $image=$request->file('image');
-        $image->store('public/images');
+        $path=$image->store('images','public');
         $identification=$request->file('image');
-        $identification->store('public/images');
+        $path=$identification->store('images','public');
         $agence=Agence::all();
         $association=Association::all();
         $zones=Zone::all();
@@ -369,10 +365,10 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$identification,
+            'identification'=>$path,
             'association_id'=>$request->association_id,
             'role_id'=>'3',
-            'image'=>$image,
+            'image'=>$path,
             'agence_id'=>$request->agence_id,
             'password'=>Hash::make($request->password)
         ]);
