@@ -54,6 +54,7 @@ class AgenceController extends Controller
 
         $tontine=Tontine::all();
         $image=$request->file('image');
+        $image->store('public/images');
         Zone::create([
             'name'=>$request->name,
             'agence_id'=>$request->agence_id,
@@ -91,8 +92,10 @@ class AgenceController extends Controller
     }
 
     public function dashboard_ajouter_commercial(Request $request){
-        $tontine=Tontine::all();
-        $image=$request->file('image');
+        $tontine=Tontine::all();$image=$request->file('image');
+        $image->store('public/images');
+        $identification=$request->file('image');
+        $identification->store('public/images');
         $agence=Agence::all();
         $zones=Zone::all();
 
@@ -103,7 +106,7 @@ class AgenceController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'3',
             'image'=>$image,
             'agence_id'=>$request->agence_id,
@@ -116,7 +119,7 @@ class AgenceController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'3',
             'image'=>$image,
             'password'=>Hash::make($request->password)

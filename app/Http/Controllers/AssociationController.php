@@ -77,8 +77,10 @@ class AssociationController extends Controller
 
     public function association_add_agence(Request $request){
 
-        $identification=$request->file('image');
         $image=$request->file('image');
+        $image->store('public/images');
+        $identification=$request->file('image');
+        $identification->store('public/images');
         $tontine=Tontine::all();
         $agences=Agence::all();
 
@@ -134,6 +136,7 @@ class AssociationController extends Controller
     public function association_ajouter_zone(Request $request){
         $tontine=Tontine::all();
         $image=$request->file('image');
+        $image->store('public/images');
         $commercial=Commercial::all();
         $agences=Agence::all();
         Zone::create([
@@ -156,6 +159,7 @@ class AssociationController extends Controller
     public function association_add_tontine(Request $request){
 
         $image=$request->file('image');
+        $image->store('public/images');
         $tontine=Tontine::all();
         // $image=store('public/images');
         Tontine::create([
@@ -191,6 +195,9 @@ class AssociationController extends Controller
 
     public function association_add_chef_d_agence(Request $request){
         $image=$request->file('image');
+        $image->store('public/images');
+        $identification=$request->file('image');
+        $identification->store('public/images');
         $tontine=Tontine::all();
         Chef_d_agence::create([
             'name'=>$request->name,
@@ -198,7 +205,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'2',
             'image'=>$image,
             'password'=>Hash::make($request->password),
@@ -210,7 +217,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'2',
             'image'=>$image,
             'password'=>Hash::make($request->password),
@@ -241,6 +248,9 @@ class AssociationController extends Controller
     public function association_ajouter_commercial(Request $request){
         $tontine=Tontine::all();
         $image=$request->file('image');
+        $image->store('public/images');
+        $identification=$request->file('image');
+        $identification->store('public/images');
         $agence=Agence::all();
         $zones=Zone::all();
 
@@ -251,7 +261,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'3',
             'image'=>$image,
             'agence_id'=>$request->agence_id,
@@ -264,7 +274,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$request->identification,
+            'identification'=>$identification,
             'role_id'=>'3',
             'image'=>$image,
             'password'=>Hash::make($request->password)

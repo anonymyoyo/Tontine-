@@ -90,7 +90,7 @@
                   <div class="card-body">
                     <div class="d-flex align-items-center flex-column">
                       <div class="mb-3">
-                        <img src="{{ asset('images/$image.png') }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
+                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
                       </div>
                       <h5 class="mb-2">{{ $responsable->name }}</h5>
                       <h6 class="mb-3 text-secondary fw-light">{{ $role->name }}</h6>
