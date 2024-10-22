@@ -89,7 +89,7 @@
                                 <tr>
                                     <td>#{{ $membre->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ asset('images/$image.png') }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                     </div>{{ $membre->name }}</a></td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>

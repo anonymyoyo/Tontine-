@@ -88,7 +88,7 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center flex-column">
                                 <div class="mb-3">
-                                    <img src="{{ asset('images/$image.png') }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
+                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
                                 </div>
                                 <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
                                 @foreach ($gerant as $gerants)

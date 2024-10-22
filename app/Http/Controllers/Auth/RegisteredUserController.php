@@ -53,12 +53,15 @@ class RegisteredUserController extends Controller
             'role_id' =>'4',
             // 'image' => $path1,
             'identification'=>$path2,
+            // 'identification'=>$identification,
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
+
+        // return $user;
 
         return redirect(route('user', absolute: false));
     }

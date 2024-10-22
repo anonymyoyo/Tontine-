@@ -32,7 +32,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-4 col-lg-5 col-sm-6 col-12">
-          <form method="POST" action="{{ route('register') }}" class="my-5">
+          <form method="POST" action="{{ route('register') }}" class="my-5" enctype="multipart/form-data">
                 @csrf
             <div class="login-form rounded-4 p-4 mt-5">
               <a href="index.html" class="mb-4 d-flex">
@@ -63,10 +63,6 @@
                 <label class="form-label" required for="yEmail">Piece d'identification</label>
                 <input type="file" name="identification" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
               </div>
-              {{-- <div class="mb-3">
-                <label class="form-label" required for="yEmail">photo</label>
-                <input type="file" name="image" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
-              </div> --}}
               <div class="mb-3">
                 <label class="form-label" for="pwd">Votre Mot de passe (Min 08 caracteres)</label>
                 <input type="password" name="password" required id="pwd" class="form-control border-0" placeholder="Enter password" />

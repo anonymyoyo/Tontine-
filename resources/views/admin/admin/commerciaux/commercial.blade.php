@@ -88,13 +88,13 @@
                     <tbody>
                         @foreach ($commercial as $commerciaux)
 
-                        {{-- @foreach ($roles as $role) --}}
+                        {{-- @foreach ($roles as $role) Storage::url($responsable->image)--}}
 
 
                             <tr class="grd-primary-light">
                                 <td>{{ $commerciaux->id }}</td>
                                 <td><a href="#" class="text-red"><div class="mb-3">
-                                    <img src="{{ asset('images/$image.png') }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                   </div>{{ $commerciaux->name }}</a></td>
                                 <td>{{ $commerciaux->email }}</td>
                                 <td>{{ $commerciaux->phone }}</td>
