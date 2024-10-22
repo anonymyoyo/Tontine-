@@ -103,7 +103,7 @@
                             <tr class="grd-primary-light">
                                 <th scope="row">
                                     <a href="{{ route('agence.detail', $agence->id) }}"></a>
-                                <img class="rounded-circle img-3x me-2" src="{{ asset('dashboard/assets/images/user.png') }}"
+                                <img class="rounded-circle img-3x me-2" src="{{ Storage::url($agence->image) }}"
                                     alt="Bootstrap Gallery" />{{ $agence->name }}
                                 </th>
 

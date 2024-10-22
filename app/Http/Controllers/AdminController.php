@@ -209,11 +209,12 @@ class AdminController extends Controller
         return view('admin.admin.association.creer', compact('tontine', 'gerant', 'association'));
     }
 
-    public function association_details(){
+    public function association_details($id){
         $tontine=Tontine::all();
-        $association=Association::all();
+        $association=Association::find($id);
+        $commercial=Commercial::all();
         $gerant=Gerant::all();
-        return view('admin.admin.association.details', compact('tontine', 'gerant', 'association'));
+        return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial'));
     }
 
     public function zone(){

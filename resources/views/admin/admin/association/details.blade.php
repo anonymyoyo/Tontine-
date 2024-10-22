@@ -66,10 +66,11 @@
         <!-- App body ends -->
 
         <!-- App body starts -->
-        @foreach ($association as $associations)
-            <div class="app-body">
+        {{-- @foreach ($association as $associations) --}}
 
-                <!-- Row start -->
+            <div class="app-body">
+@foreach ($gerant as $gerants)
+@if ($association->gerant_id === $gerants->id)                <!-- Row start -->
                 <div class="row justify-content-center">
                 <div class="col-xxl-12">
                     <div class="card mb-3 bg-primary">
@@ -77,15 +78,15 @@
                         <!-- Row start -->
                         <div class="row align-items-center">
                         <div class="col-auto">
-                            <img src="assets/images/user5.png" class="img-5xx rounded-circle" alt="Bootstrap Gallery" />
+                            <img src="{{ Storage::url($gerants->image) }}" class="img-5xx rounded-circle" alt="Bootstrap Gallery" />
                         </div>
                         <div class="col">
-                            <h6 class="text-white">{{ $associations->name }}</h6>
-                            @foreach ($gerant as $gerants)
-                                @if ($associations->gerant_id === $gerants->id)
+                            <h6 class="text-white">{{ $association->name }}</h6>
+
+
                                     <h4 class="m-0 text-white">{{ $gerants->name }}</h4>
-                                @endif
-                            @endforeach
+
+
 
                         </div>
                         <div class="col-12 col-md-auto">
@@ -96,7 +97,8 @@
                     </div>
                     </div>
                 </div>
-                </div>
+                </div>  @endif
+                @endforeach
                 <!-- Row end -->
 
                 <!-- Row start -->
@@ -155,13 +157,13 @@
                 <div class="col-xxl-6 col-sm-12 col-12 order-xxl-2 order-xl-1 order-lg-1 order-md-1 order-sm-1">
                     <div class="card mb-3">
                     <div class="card-img">
-                        <img src="assets/images/flowers/img1.jpg" class="card-img-top img-fluid"
+                        <img src="{{ Storage::url($association->image) }}" class="card-img-top img-fluid"
                         alt="Bootstrap Dashboards" />
                     </div>
                     <div class="card-body">
                         <h4 class="card-title mb-3">Description</h4>
                         <p class="mb-3">
-                        {{ $associations->description}}.
+                        {{ $association->description}}.
                         </p>
                         {{-- <div class="d-flex align-items-center">
                         <img src="assets/images/user.png" class="rounded-circle me-3 img-4x" alt="Bootstrap Admin" />
@@ -173,9 +175,9 @@
                         {{-- <img src="assets/images/user5.png" class="rounded-circle me-3 img-4x" alt="Bootstrap Themes" /> --}}
                         <div class="flex-grow-1">
                             <h4 class="card-title mb-3">Reglement</h4>
-                            <p class="text-muted">{{ $associations->created_at }}</p>
+                            <p class="text-muted">{{ $association->created_at }}</p>
                             <p>
-                                {{ $associations->reglement}}.
+                                {{ $association->reglement}}.
                             </p>
                             <div class="row gx-3">
                             <div class="col-12">
@@ -216,13 +218,18 @@
                         <div class="card-header">
                             <h5 class="card-title">Commerciaux</h5>
                         </div>
-                        <div class="card-body">
-                            <div class="row g-2 row-cols-3">
-                            <div class="col">
-                                <img src="{{ asset('dashboard/assets/images/user.png')}}" class="img-fluid rounded-2" alt="Bootstrap Themes" />
+                        @foreach ($commercial as $commerciaux)
+                        @if ($association->id === $commerciaux->association_id)
+                            <div class="card-body">
+                                <div class="row g-2 row-cols-3">
+                                <div class="col">
+                                    <img src="{{ Storage::url($commerciaux->image) }}" class="img-fluid rounded-2" alt="Bootstrap Themes" />
+                                </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
+
                     </div>
 
 
@@ -256,7 +263,7 @@
 
             </div>
       <!-- App container ends -->
-        @endforeach
+        {{-- @endforeach --}}
     </div>
     <!-- Main container end -->
 

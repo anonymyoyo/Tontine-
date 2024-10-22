@@ -83,35 +83,35 @@
             <div class="row gx-3">
 
                 @foreach ($association as $associations)
+                @foreach ($gerant as $gerants)    @if ($gerants->id === $associations->gerant_id)
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="d-flex align-items-center flex-column">
-                                <div class="mb-3">
-                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
-                                </div>
-                                <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
-                                @foreach ($gerant as $gerants)
-                                    @if ($gerants->id === $associations->gerant_id)
-                                        <h5 class="mb-2">{{ $gerants->name }}</h5>
-                                    @endif
-                                @endforeach
 
-                                <p></p>
-                                <div class="mb-3">
-                                    <span class="badge bg-opacity-10 bg-danger text-danger"></span>
-                                    <span class="badge bg-opacity-10 bg-info text-info"></span>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="{{ route('association.details') }}" class="btn btn-success">Voir</a>
-                                </div>
+
+                                    <div class="mb-3">
+                                        <img src="{{ Storage::url($gerants->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
+                                    </div>
+                                    <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
+                                            <h5 class="mb-2">{{ $gerants->name }}</h5>
+                                    <p></p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-opacity-10 bg-danger text-danger"></span>
+                                        <span class="badge bg-opacity-10 bg-info text-info"></span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="{{ route('association.details', $associations->id) }}" class="btn btn-success">Voir</a>
+                                    </div>
+
+
                                 </div>
                             </div>
 
                         </div>
-                    </div>
+                    </div> @endif
                 @endforeach
-
+                @endforeach
 
             </div>
             <!-- Row end -->
