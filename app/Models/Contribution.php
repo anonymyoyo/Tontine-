@@ -11,9 +11,6 @@ class Contribution extends Model
     protected $fillable = [
         'montant',
         'mode_paiement',
-        'etat_id',
-        'tontine_id',
-        'association_id',
-        'membre_id',
+        'transaction_id',
     ];
 }

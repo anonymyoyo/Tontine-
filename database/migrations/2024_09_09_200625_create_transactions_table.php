@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('type');
-            $table->string('montant');
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('description');
             $table->timestamps();
         });

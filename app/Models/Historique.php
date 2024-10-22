@@ -9,11 +9,7 @@ class Historique extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tontine_id',
-        'user_id',
-        'agence_id',
-        'action',
-        'montant',
+        'contribution_id',
         'date_action',
         'description',
     ];

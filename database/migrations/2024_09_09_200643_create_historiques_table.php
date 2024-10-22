@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Agence;
+use App\Models\Contribution;
 use App\Models\Membre;
 use App\Models\Tontine;
 use App\Models\User;
@@ -18,11 +19,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('historiques', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->string('action');
-            $table->string('montant');
+            $table->foreignIdFor(Contribution::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->date('date_action');
             $table->string('description');
             $table->timestamps();

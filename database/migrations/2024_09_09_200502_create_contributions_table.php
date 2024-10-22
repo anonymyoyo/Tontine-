@@ -2,6 +2,7 @@
 
 use App\Models\Association;
 use App\Models\Tontine;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,10 +20,7 @@ return new class extends Migration
             $table->id();
             $table->string('montant');
             $table->string('mode_paiement');#
-            $table->string('type');
-            $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(Transaction::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });
     }
