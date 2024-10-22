@@ -117,54 +117,32 @@
                     <div class="col-lg-8">
                         <div class="recent-left">
                             <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
-                                <h3>Recent Predictions</h3>
-                                <span class="secondary-btn">3570 / 5,000 tickets sold</span>
+                                <h3>Historique transactions</h3>
+                                <span class="secondary-btn">.</span>
                             </div>
                             <div class="winner-table-wrapper">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Prediction (USDT)</th>
-                                            <th>Time</th>
-                                            <th>Hash</th>
+                                            <th>Transaction (XAF)</th>
+                                            <th>Date</th>
+                                            <th>Type</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>49,070.5282</td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,067.4504</td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,074.6163</td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,063.3261 </td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,077.5507 </td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,060.5290</td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
-                                        <tr>
-                                            <td>49,059.6853 </td>
-                                            <td>2 Hours ago</td>
-                                            <td>-</td>
-                                        </tr>
+                                        {{-- @foreach ($membre as $membres) --}}
+                                        @foreach($transaction as $transactions)
+                                        @if (auth()->user()->id === $transactions->id)
+                                            {{-- <option placeholder="Choix de la Tontine" value="">{{ $tontines->name }}</option> --}}
+                                            <tr>
+                                                <td>{{ $transactions->montant }}</td>
+                                                <td>{{ $transactions->created_at }}</td>
+                                                <td>{{ $transactions->type }}</td>
+                                            </tr>
+                                        @endif
+                                        {{-- @endforeach --}}
+                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
@@ -174,72 +152,29 @@
                         <div class="recent-right">
                             <div class="d-flex align-items-center justify-content-start">
                                 <img src="{{ asset('assets/images/custom/reward/small-trophy.png')}}" alt="Trophy">
-                                <h3>Prizes</h3>
+                                <h3>Mes tontines</h3>
                             </div>
                             <div class="prize-wrapper">
                                 <div class="prize-inner">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Rank</th>
-                                                <th>Prize Amount</th>
+                                                <th>#</th>
+                                                <th>Nom de la tontine</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>$1,500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>$1,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>$500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4-5</td>
-                                                <td>$100</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6-7</td>
-                                                <td>$50</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8-10</td>
-                                                <td>$30</td>
-                                            </tr>
-                                            <tr>
-                                                <td>11-15</td>
-                                                <td>$20</td>
-                                            </tr>
-                                            <tr>
-                                                <td>16-20</td>
-                                                <td>$15</td>
-                                            </tr>
-                                            <tr>
-                                                <td>21-30</td>
-                                                <td>$10</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>31-40</td>
-                                                <td>$8</td>
-                                            </tr>
-                                            <tr>
-                                                <td>41-50</td>
-                                                <td>$7</td>
-                                            </tr>
-                                            <tr>
-                                                <td>51-60</td>
-                                                <td>$6</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>61-100</td>
-                                                <td>$5</td>
-                                            </tr>
+                                            @foreach ($membre as $membres)
+                                            @foreach($tontine as $tontines)
+                                            @if (auth()->user()->email === $membres->email && $membres->tontine_id === $tontines->id)
+                                                {{-- <option placeholder="Choix de la Tontine" value="">{{ $tontines->name }}</option> --}}
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>{{ $tontines->name }}</td>
+                                                </tr>
+                                            @endif
+                                            @endforeach
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

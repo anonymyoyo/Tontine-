@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Gerant;
 use App\Models\Membre;
 use App\Models\Tontine;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -25,6 +26,7 @@ class UserController extends Controller
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
         $membre=Membre::all();
         $membres=Membre::count('tontine_id');
+        $transaction=Transaction::all();
 //         $user=Auth::user();
 //         if(!$user){
 //             redirect()->back()->with('error', 'Vous devez etre connecter pour rejoindre la tontine');
@@ -40,7 +42,7 @@ class UserController extends Controller
         // $lien=route('invite',[$id, Str::random(40)]);, 'CountMembre'
         // $token=$lien;'id', 'token',
         // $tontines=Tontine::find($id);
-        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'membres'));
+        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'membres', 'transaction'));
 
         // return $membre.$tontine;
     }
