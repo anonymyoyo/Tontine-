@@ -7,8 +7,254 @@
     @include('users/header')
     <!-- header end -->
 
+
+        <!-- predict banner section start -->
+    <section class="container-fluid banner-container bg-img predict-banner-two">
+        <div class="container">
+            <div class="banner-wrapper">
+                <h2>Bienvenu {{ auth()->user()->name }}</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('user') }}" class="large">Profil</a></li>
+                        <li class="breadcrumb-item active large" aria-current="page"> <i class="flaticon-right"></i>
+                            Compte</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="banner-thumb predict-banner-thumb d-none d-lg-block">
+                <img src="{{ asset('assets/images/custom/banner/predict-banner-illustration.png')}}" alt="Predict Illustration">
+            </div>
+        </div>
+    </section>
+    <!-- predict banner section end -->
+
+    <!-- predict token details start -->
+    <section class="predict-token-details-container pt-120">
+        <div class="container">
+            <div class="predict-token-details-wrapper">
+                <div
+                    class="predict-token-details-header d-flex flex-column flex-sm-row align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-center justify-content-sm-start item-left">
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                        <div class="token-info">
+                            <h3>TCA</h3>
+                            <p class="primary">Tontine Communautaire d'Afrique</p>
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <p class="secondary">Date derniere transaction</p>
+                        <h4>12:30 PM, 28 Aug</h4>
+                    </div>
+                </div>
+                <div class="row token-details-price">
+                    <div class="col-sm-6 col-lg-4 text-center tickets-sold">
+                        <h3 class="text-center">3.99 XAF</h3>
+                        <p class="secondary text-center">Solde du compte</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 text-center tickets">
+                        {{-- <h3 class="text-center">3,570 <span>/ 5000</span></h3>
+                        <p class="secondary text-center">Tickets Sold</p> --}}
+                    </div>
+                    <div class="col-sm-12 col-lg-4 text-center estimated-value">
+                        <h3 class="text-center">48,414.6667 XAF</h3>
+                        <p class="secondary text-center">Total Transactions</p>
+                    </div>
+                </div>
+                <div class="my-prediction">
+                    <h3>Montant Transaction</h3>
+                    <div class="prediction-value">
+                        <input type="text" maxlength="1" class="single-character" placeholder="4">
+                        <input type="text" maxlength="1" class="single-character" placeholder="3">
+                        <input type="text" maxlength="1" class="single-character" placeholder="6">
+                        <input type="text" maxlength="1" class="single-character" placeholder="4">
+                        <input type="text" maxlength="1" class="single-character" placeholder="2">
+                        <span class="dot">.</span>
+                        <input type="text" maxlength="1" class="single-character" placeholder="9">
+                        <input type="text" maxlength="1" class="single-character" placeholder="2">
+                        <input type="text" maxlength="1" class="single-character" placeholder="9">
+                        <input type="text" maxlength="1" class="single-character" placeholder="7">
+                        <span class="currency">XAF</span>
+                    </div>
+                    <a href="#submit-token" class="primary-btn primary-effect open-submit-token">Faites un Depot</a>
+                    <a href="#submit-token" class="primary-btn primary-effect open-submit-token">Faites un Retrait</a>
+                    <div id="submit-token" class="white-popup mfp-hide">
+                        <div class="submit-token-details">
+                            <h5>Votre Solde $100.00</h5>
+                            <div class="text-center submit-token-content">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                                <div class="submit-time">
+                                    <p class="primary text-center">Merci de nous faire confiance</p>
+                                    <h6 id="bit-predict" class="text-center"></h6>
+                                </div>
+                                <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p>
+                                <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
+                            </div>
+                            <a href="javascript:void(0)" class="primary-btn primary-effect">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-block">
+                    <p class="timer-numbers">
+                        <span>0</span> days
+                        <span>00</span> hrs
+                        <span>00</span> mins
+                        <span>00</span> s left
+                    </p>
+                    <div id="btc" class="timer-line">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- predict token details end -->
+
+    <!-- recent prediction section start -->
+    <section class="recent-prediction pt-120 pb-120">
+        <div class="container">
+            <div class="recent-prediction-wrapper">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="recent-left">
+                            <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between">
+                                <h3>Recent Predictions</h3>
+                                <span class="secondary-btn">3570 / 5,000 tickets sold</span>
+                            </div>
+                            <div class="winner-table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Prediction (USDT)</th>
+                                            <th>Time</th>
+                                            <th>Hash</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>49,070.5282</td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,067.4504</td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,074.6163</td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,063.3261 </td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,077.5507 </td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,060.5290</td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49,059.6853 </td>
+                                            <td>2 Hours ago</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="recent-right">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <img src="{{ asset('assets/images/custom/reward/small-trophy.png')}}" alt="Trophy">
+                                <h3>Prizes</h3>
+                            </div>
+                            <div class="prize-wrapper">
+                                <div class="prize-inner">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Prize Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>$1,500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>$1,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>$500</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4-5</td>
+                                                <td>$100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6-7</td>
+                                                <td>$50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8-10</td>
+                                                <td>$30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11-15</td>
+                                                <td>$20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16-20</td>
+                                                <td>$15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>21-30</td>
+                                                <td>$10</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>31-40</td>
+                                                <td>$8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>41-50</td>
+                                                <td>$7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>51-60</td>
+                                                <td>$6</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>61-100</td>
+                                                <td>$5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- recent prediction section end -->
+
+
     <!-- invest banner section start -->
-    <section class="trade-banner-container bg-img">
+    {{-- <section class="trade-banner-container bg-img">
         <div class="container">
             <div class="trade-banner-wrapper lend-banner">
                 <div class="row">
@@ -17,7 +263,6 @@
                             <h1>Gagner 40% sur vos investissements</h1>
                             <p>Ouvrer un compte epargne d'investissement a un taux de 40%
                                 qui vous seront reverses apres 06 mois dans un intervalle de 03mois.</p>
-                            {{-- <a href="#registration-popup" class="primary-btn primary-effect registration-popup-link"></a> --}}
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -29,11 +274,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- invest banner section end -->
 
     <!-- invest calculator start -->
-    <div class="invest-calculator pt-120">
+    {{-- <div class="invest-calculator pt-120">
         <div class="container">
             <div class="invest-calculator-wrapper">
                 <form action="{{ route('user.depot') }}" method="POST">
@@ -83,11 +328,11 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- invest calculator end -->
 
     <!-- why choose crypdo section start -->
-    <section class="choose-crikto-container pt-90 pb-120">
+    {{-- <section class="choose-crikto-container pt-90 pb-120">
         <div class="container">
             <div class="choose-crikto-wrapper">
                 <div class="row d-flex align-items-center">
@@ -117,12 +362,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- why choose crypdo section end -->
 
 
     <!-- crikto invest work section start -->
-    <section class="crikto-invest-work-container pt-120 pb-120">
+    {{-- <section class="crikto-invest-work-container pt-120 pb-120">
         <div class="container">
             <div class="crikto-invest-work-wrapper">
                 <div class="title-wrapper">
@@ -158,7 +403,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- crikto invest work section end -->
 
     <!-- boost earning slider start -->
@@ -205,11 +450,11 @@
                             </div>
                         </div>
                         <div class="boost-footer d-flex flex-column flex-sm-row align-items-center justify-content-between">
-                            {{-- @foreach ($membres as $adherant)
-                                @if ($adherant->tontine_id === $tontines->id) --}}
+                            @foreach ($membres as $adherant)
+                                @if ($adherant->tontine_id === $tontines->id)
                                     <p>{{ $tontines->nbre_membre }} Ont souscrits</p>
-                                {{-- @endif
-                            @endforeach --}}
+                                @endif
+                            @endforeach
 
                             <a href="invest-pricing.html" class="primary-btn primary-effect">Souscrire</a>
                         </div>
