@@ -1,8 +1,13 @@
 <nav id="sidebar" class="sidebar-wrapper">
 
+
     <!-- Sidebar profile starts -->
     <div class="sidebar-profile">
-      <img src="{{ asset('dashboard/assets/images/user3.png') }}" class="profile-user mb-3" alt="Admin Dashboard" />
+        @foreach ($user as $users)
+            @if ($users->id === auth()->user()->id)
+                <img src="{{ Storage::url($user->image) }}" class="profile-user mb-3" alt="Admin Dashboard" />
+            @endif
+        @endforeach
       <div class="text-center">
         <h6 class="profile-name m-0 text-nowrap text-truncate">
             {{ auth()->user()->name }}

@@ -42,7 +42,8 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $agences=Agence::all();
         $gerant=Chef_d_agence::all();
-        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'gerant'));
+        $association=Association::all();
+        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'gerant', 'association'));
     }
 
     public function agence_detail($id){
@@ -95,6 +96,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
+        $gerant=Chef_d_agence::all();
         $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $agences=Agence::all();
@@ -114,7 +116,7 @@ class AdminController extends Controller
             ]);
 
 
-        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association'));
+        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'gerant'));
 
         //     return to_route('agence.tontine');
     }

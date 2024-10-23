@@ -94,7 +94,7 @@
                             <th scope="col">Nbre Commerciaux</th>
                             <th scope="col">Date creation</th>
                             <th scope="col">Nbre Membre</th>
-                            <th scope="col">Budget</th>
+                            <th scope="col">Association mere</th>
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
@@ -123,7 +123,12 @@
                                     aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 </td>
-                                <td>{{ $agence->budget }}</td>
+                                @foreach ($association as $associations)
+                                   @if ($agence->association_id===$associations->id)
+                                       <td>{{ $associations->name }}</td>
+                                   @endif
+                                @endforeach
+
                                 <td>
                                 {{-- <a class="btn btn-info btn-sm" href="#"><i class="bi bi-pencil"></i>
                                 </a> Page detail pas necessaire pour le moment --}}
