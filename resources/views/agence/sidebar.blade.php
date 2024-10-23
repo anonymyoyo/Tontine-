@@ -4,9 +4,11 @@
     <!-- Sidebar profile starts -->
     <div class="sidebar-profile">
         @foreach ($user as $users)
-            @if ($users->id === auth()->user()->id)
-                <img src="{{ Storage::url($user->image) }}" class="profile-user mb-3" alt="Admin Dashboard" />
+        @foreach ($a as $gerants)
+            @if (auth()->user() && $users->name === $gerants->name)
+                <img src="{{ Storage::url($gerants->image) }}" class="profile-user mb-3" alt="Admin Dashboard" />
             @endif
+        @endforeach
         @endforeach
       <div class="text-center">
         <h6 class="profile-name m-0 text-nowrap text-truncate">

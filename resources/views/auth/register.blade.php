@@ -64,6 +64,10 @@
                 <input type="file" name="identification" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
               </div>
               <div class="mb-3">
+                <label class="form-label" required for="yEmail">Photo</label>
+                <input type="file" name="image" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+              </div>
+              <div class="mb-3">
                 <label class="form-label" for="pwd">Votre Mot de passe (Min 08 caracteres)</label>
                 <input type="password" name="password" required id="pwd" class="form-control border-0" placeholder="Enter password" />
               </div>

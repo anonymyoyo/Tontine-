@@ -25,7 +25,7 @@ class User extends Authenticatable
         'ville',
         'pays',
         'identification',
-        // 'image',
+        'image',
         'role_id',
         'password',
     ];
