@@ -20,29 +20,33 @@ class CommercialController extends Controller
 
     //
     public function commercial(){
+        $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.commercial', compact('tontine'));
+        return view('commercial.commercial', compact('tontine', 'roles'));
     }
 
     public function commercial_agence(){
+        $roles=Role::all();
         $agences=Agence::all();
         $gerant=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('commercial.agence.agences', compact('tontine', 'agences', 'gerant'));
+        return view('commercial.agence.agences', compact('tontine', 'agences', 'gerant', 'roles'));
     }
 
     public function commercial_agence_detail($id){
+        $roles=Role::all();
         $agence=Agence::find($id);
         $tontine=Tontine::all();
-        return view('commercial.agence.details', compact('tontine', 'agence'));
+        return view('commercial.agence.details', compact('tontine', 'agence', 'roles'));
     }
 
     public function commercial_agence_zone(){
+        $roles=Role::all();
         $zones=Zone::all();
         $commerciaux=Commercial::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
-        return view('commercial.zone.zone', compact('tontine', 'commerciaux', 'agences', 'zones'));
+        return view('commercial.zone.zone', compact('tontine', 'commerciaux', 'agences', 'zones', 'roles'));
     }
 
     public function commercial_chef_agence(){
@@ -64,18 +68,21 @@ class CommercialController extends Controller
     }
 
     public function commercial_agences_transaction(){
+        $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.transaction.transaction', compact('tontine'));
+        return view('commercial.transaction.transaction', compact('tontine', 'roles'));
     }
 
     public function commercial_agences_versement(){
+        $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.versement.versement', compact('tontine'));
+        return view('commercial.versement.versement', compact('tontine', 'roles'));
     }
 
     public function commercial_agences_reglage(){
+        $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.commercial.commercial', compact('tontine'));
+        return view('commercial.commercial.commercial', compact('tontine', 'roles'));
     }
 
     public function commercial_agences_membre(){
@@ -129,8 +136,9 @@ foreach($request->tontine_id as $tontineId){
     }
 
     public function commercial_agences_tontine($id){
+        $roles=Role::all();
         $tontine=Tontine::find($id);
-        return view('commercial.tontine.tontine', compact('tontine'));
+        return view('commercial.tontine.tontine', compact('tontine', 'roles'));
     }
 
 

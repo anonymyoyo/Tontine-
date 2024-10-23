@@ -19,50 +19,56 @@ class AgenceController extends Controller
     //
     public function agence(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.agence', compact('tontine', 'user', 'a'));
+        return view('agence.agence', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agence(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $agences=Agence::all();
         $gerant=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.agence.agences', compact('tontine', 'agences', 'gerant', 'user', 'a'));
+        return view('agence.agence.agences', compact('tontine', 'agences', 'gerant', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agence_detail($id){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $agence=Agence::find($id);
         $tontine=Tontine::all();
-        return view('agence.agence.details', compact('tontine', 'agence', 'user', 'a'));
+        return view('agence.agence.details', compact('tontine', 'agence', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agence_zone(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $zones=Zone::all();
         $commerciaux=Commercial::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
-        return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agences', 'zones', 'user', 'a'));
+        return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agences', 'zones', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agence_creer_zone(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $commercial=Commercial::all();
         $agences=Agence::all();
         $zones=Zone::all();
         $tontine=Tontine::all();
-        return view('agence.zone.creer', compact('tontine', 'commercial', 'agences', 'zones', 'user', 'a'));
+        return view('agence.zone.creer', compact('tontine', 'commercial', 'agences', 'zones', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agence_ajouter_zone(Request $request){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();
         $image=$request->file('image');
@@ -73,7 +79,7 @@ class AgenceController extends Controller
             'commercial_id'=>$request->commercial_id,
             'image'=>$path,
         ]);
-        return view('agence.zone.creer', compact('tontine', 'user', 'a'));
+        return view('agence.zone.creer', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_chef_agence(){
@@ -111,6 +117,7 @@ class AgenceController extends Controller
 
     public function dashboard_ajouter_commercial(Request $request){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();$image=$request->file('image');
         $path=$image->store('images','public');
@@ -144,28 +151,31 @@ class AgenceController extends Controller
             'image'=>$image,
             'password'=>Hash::make($request->password)
         ]);
-        return view('agence.commercial.creer', compact('tontine', 'agence', 'zones', 'user', 'a'));
+        return view('agence.commercial.creer', compact('tontine', 'agence', 'zones', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agences_transaction(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.transaction.transaction', compact('tontine', 'user', 'a'));
+        return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agences_versement(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.versement.versement', compact('tontine', 'user', 'a'));
+        return view('agence.versement.versement', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agences_reglage(){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.agence.agences', compact('tontine', 'user', 'a'));
+        return view('agence.agence.agences', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agences_membre(){
@@ -179,9 +189,10 @@ class AgenceController extends Controller
 
     public function dashboard_agences_tontine($id){
         $user=User::all();
+        $roles=Role::all();
         $a=Chef_d_agence::all();
         $tontine=Tontine::find($id);
-        return view('agence.tontine.tontine', compact('tontine', 'user', 'a'));
+        return view('agence.tontine.tontine', compact('tontine', 'user', 'a', 'roles'));
     }
 
 }
