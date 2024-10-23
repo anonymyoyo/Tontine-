@@ -2,7 +2,7 @@
 
     <!-- Sidebar profile starts -->
     <div class="sidebar-profile">
-      <img src="{{ asset('dashboard/assets/images/user3.png') }}" class="profile-user mb-3" alt="Admin Dashboard" />
+      <img src="{{ Storage::url(auth()->user()->image) }}" class="profile-user mb-3" alt="Admin Dashboard" />
       <div class="text-center">
         <h6 class="profile-name m-0 text-nowrap text-truncate">
             {{ auth()->user()->name }}

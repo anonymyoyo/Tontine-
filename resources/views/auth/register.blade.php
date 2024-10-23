@@ -41,39 +41,39 @@
               {{-- <h2 class="fw-light mb-4">S'inscrire</h2> --}}
               <div class="mb-3">
                 <label class="form-label" for="yEmail">Votre Nom</label>
-                <input type="text" name="name" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="text" name="name" required id="yEmail" class="form-control border-0" placeholder="Entrer votre nom" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="yEmail">Votre Email</label>
-                <input type="email" name="email" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="email" name="email" required id="yEmail" class="form-control border-0" placeholder="Entrer votre email" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="yEmail">Numer de Telephone</label>
-                <input type="text" name="phone" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="text" name="phone" required id="yEmail" class="form-control border-0" placeholder="Entrer votre emnumero de telephone" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="yEmail">Votre Ville</label>
-                <input type="text" name="ville" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="text" name="ville" required id="yEmail" class="form-control border-0" placeholder="Entrer votre ville" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="yEmail">Votre Pays</label>
-                <input type="text" name="pays" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="text" name="pays" required id="yEmail" class="form-control border-0" placeholder="Entrer votre pays" />
               </div>
               <div class="mb-3">
                 <label class="form-label" required for="yEmail">Piece d'identification</label>
-                <input type="file" name="identification" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="file" name="identification" required id="yEmail" class="form-control border-0" placeholder="Filmer votre CNI" />
               </div>
               <div class="mb-3">
                 <label class="form-label" required for="yEmail">Photo</label>
-                <input type="file" name="image" required id="yEmail" class="form-control border-0" placeholder="Enter your email" />
+                <input type="file" name="image" required id="yEmail" class="form-control border-0" placeholder="Envoyer votre photo" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="pwd">Votre Mot de passe (Min 08 caracteres)</label>
-                <input type="password" name="password" required id="pwd" class="form-control border-0" placeholder="Enter password" />
+                <input type="password" name="password" required id="pwd" class="form-control border-0" placeholder="Entrer votre mot de passe" />
               </div>
               <div class="mb-3">
                 <label class="form-label" for="cofPwd">Confirmer Mot de Passe</label>
-                <input type="password" name="password_confirmation" required id="cofPwd" class="form-control border-0" placeholder="Re-enter password" />
+                <input type="password" name="password_confirmation" required id="cofPwd" class="form-control border-0" placeholder="Confirmer mot de passe" />
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <div class="form-check m-0">

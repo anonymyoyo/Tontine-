@@ -206,12 +206,16 @@
       <div class="dropdown ms-3">
         <a id="userSettings" class="dropdown-toggle d-flex py-2 align-items-center text-decoration-none" href="#!"
           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="{{ asset('dashboard/assets/images/user2.png') }}" class="rounded-2 img-3x" alt="Bootstrap Gallery" />
+          <img src="{{ Storage::url(auth()->user()->image) }}" class="rounded-2 img-3x" alt="Bootstrap Gallery" />
           <div class="ms-2 text-truncate d-lg-block d-none text-white">
             <span class="d-flex opacity-50 small">
-                Admin
+                {{ auth()->user()->name }}
             </span>
-            <span>Taylor Franklin</span>
+            @foreach ($roles as $role)
+                @if (auth()->user()->role_id === $role->id)
+                    <span>{{ $role->name }}</span>
+                @endif
+            @endforeach
           </div>
         </a>
         <div class="dropdown-menu dropdown-menu-end shadow-lg">
