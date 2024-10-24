@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Agence extends Model
 {
@@ -20,4 +21,12 @@ class Agence extends Model
         'image',
         'identification',
     ];
+
+    public function chefagence(): HasOne{
+        return $this->hasOne(Chef_d_agence::class);
+    }
+
+    public function association(): HasOne{
+        return $this->hasOne(Association::class);
+    }
 }

@@ -70,7 +70,7 @@
           <div class="app-body">
             <div class="ms-auto d-lg-flex d-none flex-row">
                 <div class="d-flex flex-row gap-1">
-                  <a href="{{ route('creer.chef_agence') }}" class="btn btn-primary">Creer Chef Agence</a>
+                  <a href="{{ route('association.creer.chef_agence') }}" class="btn btn-primary">Creer Chef Agence</a>
                 </div>
             </div><br><br>
             <!-- Row start -->

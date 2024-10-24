@@ -73,6 +73,7 @@ Route::middleware(['auth', 'association'])->group(function(){
     Route::get('Association/Agences/Tontine/Creer', [AssociationController::class, 'association_creer_tontine'])->name('association.creer.tontine');
     Route::post('Association/Agence/Ajouter_tontine', [AssociationController::class, 'association_add_tontine'])->name('association.ajouter.tontine');
     Route::get('Association/Agences/Chef_d_agence/Liste', [AssociationController::class, 'association_chef_agence'])->name('association.chef_agence');
+    // Route::get('Association/Chef')
     Route::get('Association/Chef_d_agence/Creer', [AssociationController::class, 'association_creer_chef_agence'])->name('association.creer.chef_agence');
     Route::post('Association/Chef_d_agence/Ajouter', [AssociationController::class, 'association_add_chef_d_agence'])->name('association.ajouter.chef_d_agence');
     Route::get('Association/Agences/Commerciaux/Liste', [AssociationController::class, 'association_commercial'])->name('association.commercial');
