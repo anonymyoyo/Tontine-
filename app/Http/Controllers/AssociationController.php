@@ -76,11 +76,15 @@ class AssociationController extends Controller
     //     return view('association.agences.agence', compact('agence', 'tontine'));
     // }
 
-    public function association_creer_agence(){
+    public function association_creer_agence($id){
         $roles=Role::all();
-        $association=Association::all();
+        $association=Association::find($id);
         $tontine=Tontine::all();
         $gerant=Chef_d_agence::all();
+        // $association=Association::all();
+        $a=Agence::where('association_id', $association->id);
+
+        // return $a;
         return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
     }
 
