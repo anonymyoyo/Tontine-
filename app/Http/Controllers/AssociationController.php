@@ -103,7 +103,7 @@ class AssociationController extends Controller
             'email'=>$request->email,
             'phone'=>$request->phone,
             'ville'=>$request->ville,
-            'chef_d_agence_id'=>$request->chef_d_agence_id,
+            'user_id'=>$request->user_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
             'identification'=>$path2,

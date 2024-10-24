@@ -108,7 +108,7 @@
                                 </th>
 
                                 @foreach ($gerant as $gerants)
-                                    @if ($agence->chef_d_agence_id === $gerants->id)
+                                    @if ($agence->user_id === $gerants->id)
                                     <td>{{ $gerants->name }}</td>
                                 @endif
                                 @endforeach
