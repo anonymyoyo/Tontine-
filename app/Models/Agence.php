@@ -18,7 +18,7 @@ class Agence extends Model
         'email',
         'phone',
         'ville',
-        'chef_d_agence_id',
+        'user_id',
         'association_id',
         'pays',
         'budget',

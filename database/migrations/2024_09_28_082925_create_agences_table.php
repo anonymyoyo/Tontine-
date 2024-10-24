@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('ville');
-            $table->foreignIdFor(Chef_d_agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('pays');
             $table->string('budget');

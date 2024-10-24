@@ -92,9 +92,9 @@
 
                             @foreach ($gerant as $gerants)
                             @foreach ($association as $associations)
-                                {{-- @if ($gerants->id === $associations->gerant_id) --}}
-                                        <option value="{{ $gerant->associations()->id }}" class="form-option">{{ $gerant->associations()->name }}</option>
-                                {{-- @endif --}}
+                                @if ($gerants->id === $associations->gerant_id)
+                                        <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                                @endif
                             @endforeach
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}

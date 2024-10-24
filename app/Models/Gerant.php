@@ -20,4 +20,6 @@ class Gerant extends Model
         'password',
     ];
 
+    
+
 }

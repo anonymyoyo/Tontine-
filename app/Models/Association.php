@@ -16,7 +16,7 @@ class Association extends Model
         'reglement',
         'ville',
         'pays',
-        'gerant_id',
+        'user_id',
         'image',
     ];
 
