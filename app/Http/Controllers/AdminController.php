@@ -72,6 +72,7 @@ class AdminController extends Controller
         $identification=$request->file('image');
         $path2=$identification->store('images','public');
         $association=Association::all();
+
         $agence->update([
             'name'=>$request->name,
             'email'=>$request->email,
@@ -194,6 +195,7 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $gerant=Gerant::all();
         $association=Association::all();
+
         Gerant::create([
             'name'=>$request->name,
             'email'=>$request->email,

@@ -71,9 +71,7 @@
           <div class="app-body">
             <div class="ms-auto d-lg-flex d-none flex-row">
                 <div class="d-flex flex-row gap-1">
-                    {{-- @foreach ($agences as $agence) --}}
-                  <a href="{{ route('association.creer.agence', $agence->id) }}" class="btn btn-primary">Creer une Agence</a>
-                    {{-- @endforeach --}}
+                  <a href="{{ route('association.creer.agence') }}" class="btn btn-primary">Creer une Agence</a>
                 </div>
                 {{-- <div class="d-flex flex-row gap-1">
                     <a href="{{ route('creer.tontine') }}" class="btn btn-primary">Creer une Tontine</a>

@@ -64,7 +64,7 @@ Route::middleware(['auth', 'association'])->group(function(){
     Route::get('Association/Agences/{id}', [AssociationController::class, 'association_agence_detail'])->name('association.detail');
     Route::get('Association/Agences/Modifier/Agence/{id}', [AssociationController::class, 'edit_association_agence'])->name('edit.association_agence');
     Route::post('Association/Agence/{id}/Modifiee', [AssociationController::class, 'edit_associaiton_agence'])->name('edit.association_agence');
-    Route::get('Association/Agences/Creer/Nouvelle_agence/{id}', [AssociationController::class, 'association_creer_agence'])->name('association.creer.agence');
+    Route::get('Association/Agences/Creer/Nouvelle_agence', [AssociationController::class, 'association_creer_agence'])->name('association.creer.agence');
     Route::post('Association/Ajouter/Agence', [AssociationController::class, 'association_add_agence'])->name('association.add.agence');
     Route::post('Association/Supprimer/Agence/{id}', [AssociationController::class, 'delete_association_agence'])->name('delete.association_agence');
     Route::get('Association/Agences/Zones/Liste', [AssociationController::class, 'association_zone'])->name('association.zones');
