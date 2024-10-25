@@ -82,7 +82,7 @@ class AssociationController extends Controller
         $tontine=Tontine::all();
         $gerant=Chef_d_agence::all();
         // $association=Association::all();
-        $agence=Agence::where('association_id', $association->id)->first();
+        $agence=Agence::where('association_id', auth()->user()->id)->first();
 
         return $agence;
         // return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));

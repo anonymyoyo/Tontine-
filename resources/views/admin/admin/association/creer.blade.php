@@ -83,7 +83,7 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">President de l'association</label>
-                        <select name="gerant_id"  class="form-select">
+                        <select name="user_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($gerant as $gerants)
                                 <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>

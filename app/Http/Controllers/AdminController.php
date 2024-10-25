@@ -173,7 +173,7 @@ class AdminController extends Controller
             'reglement'=>$request->reglement,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'gerant_id'=>$request->gerant_id,
+            'user_id'=>$request->user_id,
             'image'=>$path,
         ]);
         return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));

@@ -83,7 +83,8 @@
             <div class="row gx-3">
 
                 @foreach ($association as $associations)
-                @foreach ($gerant as $gerants)    @if ($gerants->id === $associations->gerant_id)
+                @foreach ($gerant as $gerants)
+                @if ($gerants->id === $associations->gerant_id)
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card mb-3">
                             <div class="card-body">
@@ -109,7 +110,8 @@
                             </div>
 
                         </div>
-                    </div> @endif
+                    </div>
+                    @endif
                 @endforeach
                 @endforeach
 
