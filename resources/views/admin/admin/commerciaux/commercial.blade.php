@@ -81,8 +81,9 @@
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Zone de deploiement</th>
+                        {{-- <th>Zone de deploiement</th> --}}
                         <th>Agence mere</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,20 +95,29 @@
                             <tr class="grd-primary-light">
                                 <td>{{ $commerciaux->id }}</td>
                                 <td><a href="#" class="text-red"><div class="mb-3">
-                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                    <img src="{{ Storage::url($commerciaux->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                   </div>{{ $commerciaux->name }}</a></td>
                                 <td>{{ $commerciaux->email }}</td>
                                 <td>{{ $commerciaux->phone }}</td>
-                              @foreach ($zones as $zone)
+                              {{-- @foreach ($zones as $zone)
                                 @if ($commerciaux->zone_id === $zone->id)
                                     <td>{{ $zone->name }}</td>
                                 @endif
-                              @endforeach
+                              @endforeach --}}
                               @foreach ($agences as $agence)
                                 @if ($commerciaux->agence_id === $agence->id)
                                     <td>{{ $agence->name }}</td>
                                 @endif
                               @endforeach
+                              <td>
+                                <form method="POST" action="{{ route('delete.admin_agence_commercial', $commerciaux->id) }}" id="delete">
+                                    @csrf
+                                    @method('delete')
+                                </form>
+                                <a  class="btn btn-danger btn-icon btn-sm mb-1" onclick="event.preventDefault();
+                                document.getElementById('delete').submit()"><i class="bi bi-trash"></i>
+                                </a>
+                              </td>
 
                             </tr>
 

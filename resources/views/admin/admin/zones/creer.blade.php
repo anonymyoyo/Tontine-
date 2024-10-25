@@ -89,12 +89,24 @@
                         <label class="form-label">Agence mere</label>
                     <select name="agence_id"  class="form-select">
                         <option value="0">Select</option>
-
-                        {{-- @foreach ($zones as $zone) --}}
-
                         @foreach ($agences as $agence)
                         {{-- @if ($zone->agence_id === $agence->id) --}}
                             <option value="{{ $agence->id }}" class="form-option">{{ $agence->name }}</option>
+                        {{-- @endif --}}
+                        {{-- @endforeach --}}
+                        @endforeach
+                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                    </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Association mere</label>
+                    <select name="agence_id"  class="form-select">
+                        <option value="0">Select</option>
+                        @foreach ($association as $associations)
+                        {{-- @if ($zone->associations_id === $associations->id) --}}
+                            <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
                         {{-- @endif --}}
                         {{-- @endforeach --}}
                         @endforeach

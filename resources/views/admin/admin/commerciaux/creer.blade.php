@@ -137,6 +137,18 @@
                         </select>
                         </div>
                     </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                        <label class="form-label">Association mere</label>
+                        <select name="association_id"  class="form-select">
+                            <option value="0">Select</option>
+                            @foreach ($association as $associations)
+                                <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                            @endforeach
+                            {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                        </select>
+                        </div>
+                    </div>
                     {{-- <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Zone de deploiement</label>

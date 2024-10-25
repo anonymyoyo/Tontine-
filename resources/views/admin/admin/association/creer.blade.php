@@ -85,9 +85,13 @@
                         <label class="form-label">President de l'association</label>
                         <select name="user_id"  class="form-select">
                             <option value="0">Select</option>
-                            @foreach ($gerant as $gerants)
-                                <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
+                            {{-- @foreach ($gerant as $gerants) --}}
+                                @foreach ($user as $users)
+                                @if ($users->role_id === 5)
+                                    <option value="{{ $users->id }}" class="form-option">{{ $users->name }}</option>
+                                @endif
                             @endforeach
+                            {{-- @endforeach --}}
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>
                         </div>

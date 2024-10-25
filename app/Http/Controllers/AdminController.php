@@ -140,30 +140,34 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::all();
+        $user=User::all();
         $gerant=Gerant::all();
-        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
+        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles', 'user'));
     }
 
     public function dashboard_association_gerant(){
         $tontine=Tontine::all();
         $associations=Association::all();
         $roles=Role::all();
+        $user=User::all();
         $gerant=Gerant::all();
-        return view('admin.admin.association.gerant', compact('tontine', 'gerant', 'associations', 'roles'));
+        return view('admin.admin.association.gerant', compact('tontine', 'gerant', 'associations', 'roles', 'user'));
     }
 
     public function association_creer_association(){
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::all();
+        $user=User::all();
         $gerant=Gerant::all();
-        return view('admin.admin.association.creer', compact('tontine', 'gerant', 'association', 'roles'));
+        return view('admin.admin.association.creer', compact('tontine', 'user', 'association', 'roles', 'gerant'));
     }
 
     public function add_association(Request $request){
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::all();
+        $user=User::all();
         $gerant=Gerant::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -176,7 +180,7 @@ class AdminController extends Controller
             'user_id'=>$request->user_id,
             'image'=>$path,
         ]);
-        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
+        return view('admin.admin.association.association', compact('tontine', 'association', 'user', 'roles', 'gerant'));
     }
 
     public function association_creer_president_association(){
@@ -359,8 +363,9 @@ class AdminController extends Controller
             $roles=Role::all();
             $zones=Zone::all();
             $agences=Agence::all();
+            $association=Association::all();
             $commercial=Commercial::all();
-            return view('admin.admin.commerciaux.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones'));
+            return view('admin.admin.commerciaux.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'association'));
     }
 
     public function creer_commercial(){
@@ -369,7 +374,8 @@ class AdminController extends Controller
         $zones=Zone::all();
         $roles=Role::all();
         $agence=Agence::all();
-        return view('admin.admin.commerciaux.creer', compact('commercial', 'zones', 'roles', 'agence', 'tontine'));
+        $association=Association::all();
+        return view('admin.admin.commerciaux.creer', compact('commercial', 'zones', 'roles', 'agence', 'tontine', 'association'));
     }
 
     public function ajouter_commercial(Request $request){
@@ -410,6 +416,16 @@ class AdminController extends Controller
             'password'=>Hash::make($request->password)
         ]);
         return view('admin.admin.commerciaux.creer', compact('tontine', 'agence', 'zones', 'association', 'roles'));
+    }
+
+    public function delete_admin_agence_commercial($id){
+        $commercial=Commercial::find($id);
+        $commercial->delete();
+        $roles=Role::all();
+        $tontine=Tontine::all();
+
+        return view('admin.admin.commerciaux.creer', compact('tontine', 'commercial', 'roles'));
+
     }
 
     public function agences_transaction(){

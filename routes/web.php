@@ -50,6 +50,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::post('Chef_d_agence/Ajouter', [AdminController::class, 'add_chef_d_agence'])->name('ajouter.chef_d_agence');
     Route::get('Agences/Commerciaux/Liste', [AdminController::class, 'commercial'])->name('admin.commercial');
     Route::get('Agences/Creer/Commerciaux', [AdminController::class, 'creer_commercial'])->name('creer.commercial');
+    Route::post('Agences/Commercial/Delete/{id}', [AdminController::class, 'delete_admin_agence_commercial'])->name('delete.admin_agence_commercial');
     Route::post('Agences/Commercial', [AdminController::class, 'ajouter_commercial'])->name('ajouter.commercial'); #fgfdgfdgdf
     Route::get('Agence/Transactions', [AdminController::class, 'agences_transaction'])->name('transaction');
     Route::get('Agence/Versements', [AdminController::class, 'agences_versement'])->name('versement');
