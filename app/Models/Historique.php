@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Historique extends Model
 {
@@ -13,4 +15,8 @@ class Historique extends Model
         'date_action',
         'description',
     ];
+
+    public function user():HasMany{
+        return $this->hasMany(User::class);
+    }
 }

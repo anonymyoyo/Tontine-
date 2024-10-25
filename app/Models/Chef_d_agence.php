@@ -51,4 +51,8 @@ class Chef_d_agence extends Model
     public function zones():HasMany{
         return $this->hasMany(Zone::class);
     }
+
+    public function user():HasMany{
+        return $this->hasMany(User::class);
+    }
 }

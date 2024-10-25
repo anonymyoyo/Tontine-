@@ -38,8 +38,8 @@ class Agence extends Model
         return $this->hasMany(Commercial::class);
     }
 
-    public function membre():HasMany{
-        return $this->hasMany(Membre::class);
+    public function user():HasMany{
+        return $this->hasMany(User::class);
     }
 
     public function zones():HasMany{

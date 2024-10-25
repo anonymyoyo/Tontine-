@@ -36,8 +36,8 @@ class Commercial extends Model
         return $this->hasOne(Association::class);
     }
 
-    public function membre():HasMany{
-        return $this->hasMany(Membre::class);
+    public function user():HasMany{
+        return $this->hasMany(User::class);
     }
 
     public function zones():HasMany{

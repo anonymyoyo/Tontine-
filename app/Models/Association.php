@@ -24,8 +24,8 @@ class Association extends Model
         return $this->hasMany(Agence::class);
     }
 
-    public function membres():HasMany{
-        return $this->hasMany(Membre::class);
+    public function user():HasMany{
+        return $this->hasMany(User::class);
     }
 
     public function chefagence():HasMany{
