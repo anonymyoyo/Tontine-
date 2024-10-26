@@ -59,7 +59,7 @@ class AdminController extends Controller
         $roles=Role::all();
         $agence=Agence::find($id);
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
+        $gerant=User::all();
         return view('admin.admin.agences.edit', compact('tontine', 'agence', 'gerant', 'roles'));
     }
 
@@ -92,7 +92,7 @@ class AdminController extends Controller
     public function creer_agence(){
         $roles=Role::all();
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
+        $gerant=User::all();
         $association=Association::all();
         return view('admin.admin.agences.creer', compact('tontine', 'gerant', 'association', 'roles'));
     }
@@ -102,7 +102,7 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
-        $gerant=Chef_d_agence::all();
+        $gerant=User::all();
         $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $agences=Agence::all();
@@ -242,8 +242,9 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $zones=Zone::all();
         $commerciaux=Commercial::all();
+        $association=Association::all();
         $agences=Agence::all();
-        return view('admin.admin.zones.zone', compact('tontine', 'zones', 'commerciaux', 'agences', 'roles'));
+        return view('admin.admin.zones.zone', compact('tontine', 'zones', 'commerciaux', 'agences', 'roles', 'association'));
     }
 
     public function creer_zone(){
@@ -251,8 +252,9 @@ class AdminController extends Controller
         $commercial=Commercial::all();
         $agences=Agence::all();
         $zones=Zone::all();
+        $association=Association::all();
         $tontine=Tontine::all();
-        return view('admin.admin.zones.creer', compact('tontine', 'commercial', 'agences', 'zones', 'roles'));
+        return view('admin.admin.zones.creer', compact('tontine', 'commercial', 'agences', 'zones', 'roles', 'association'));
     }
 
     public function ajouter_zone(Request $request){

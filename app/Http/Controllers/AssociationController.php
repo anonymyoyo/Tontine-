@@ -31,10 +31,15 @@ class AssociationController extends Controller
 
     public function association_agence(){
         $roles=Role::all();
-        $association=Association::all();
+        $agences=Agence::where('user_id', auth()->user()->id)->get();
+        $association=Association::where('user_id', auth()->user()->id)->get();
+        $agence=Agence::where('user_id', auth()->user()->id)->get();
         $tontine=Tontine::all();
-        $agences=Agence::all();
+
         $gerant=Chef_d_agence::all();
+
+        // return $association;
+        // return $agence;
         return view('association.agence.agences', compact('agences', 'tontine', 'gerant', 'roles', 'association'));
     }
 
@@ -78,19 +83,19 @@ class AssociationController extends Controller
 
     public function association_creer_agence(){
         $roles=Role::all();
-        $association=Association::all();
+        $association=Association::where('user_id', auth()->user()->id)->get();
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
+        $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
         // $association=Association::all();
-        $agence=Agence::where('association_id', auth()->user()->id)->first();
+        // $agence=Agence::where('association_id', auth()->user()->id)->first();
 
-        return $agence;
-        // return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
+        // return $gerant;
+        return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
     }
 
     public function association_add_agence(Request $request){
         $roles=Role::all();
-        $association=Association::all();
+        $association=Association::where('user_id', auth()->user()->id)->get();
         $image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
@@ -104,6 +109,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'user_id'=>$request->user_id,
+            'association_id'=>$request->association_id,
             'pays'=>$request->pays,
             'budget'=>$request->budget,
             'identification'=>$path2,

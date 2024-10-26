@@ -107,9 +107,9 @@
                                     alt="Bootstrap Gallery" />{{ $agence->name }}
                                 </th>
 
-                                @foreach ($gerant as $gerants)
-                                    @if ($agence->user_id === $gerants->id)
-                                    <td>{{ $gerants->name }}</td>
+                                @foreach ($user as $users)
+                                    @if ($agence->user_id === $users->id)
+                                    <td>{{ $users->name }}</td>
                                 @endif
                                 @endforeach
                                     <td>{{ $agence->email }}</td>
