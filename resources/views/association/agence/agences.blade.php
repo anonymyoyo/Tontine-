@@ -98,39 +98,39 @@
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
-                        @foreach ($agences as $agence)
+                        {{-- @foreach ($agence as $agences) --}}
                             <tbody>
                             <tr class="grd-primary-light">
                                 <th scope="row">
-                                    <a href="{{ route('agence.detail', $agence->id) }}"></a>
+                                    <a href="{{ route('association.detail', $agences->id) }}"></a>
                                 <img class="rounded-circle img-3x me-2" src="{{ asset('dashboard/assets/images/user.png') }}"
-                                    alt="Bootstrap Gallery" />{{ $agence->name }}
+                                    alt="Bootstrap Gallery" />{{ $agences->name }}
                                 </th>
 
                                 @foreach ($user as $users)
-                                    @if ($agence->user_id === $users->id)
+                                    @if ($agences->user_id === $users->id)
                                     <td>{{ $users->name }}</td>
                                 @endif
                                 @endforeach
-                                    <td>{{ $agence->email }}</td>
+                                    <td>{{ $agences->email }}</td>
 
-                                <td>{{ $agence->ville }}, {{ $agence->pays }}</td>
+                                <td>{{ $agences->ville }}, {{ $agences->pays }}</td>
                                 <td>#</td>
-                                <td>{{ $agence->created_at }}</td>
+                                <td>{{ $agences->created_at }}</td>
                                 <td>
                                 <div class="progress small">
                                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 </td>
-                                <td>{{ $agence->budget }}</td>
+                                <td>{{ $agences->budget }}</td>
                                 <td>
                                 {{-- <a class="btn btn-info btn-sm" href="{{ route('agence.detail') }}"><i class="bi bi-pencil"></i>
                                 </a> --}}
                                 </td>
                             </tr>
                             </tbody>
-                        @endforeach
+                        {{-- @endforeach --}}
 
                       </table>
                     </div>

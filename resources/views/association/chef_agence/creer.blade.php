@@ -90,12 +90,12 @@
                         <select name="association_id"  class="form-select">
                             <option value="0">Selectionner</option>
 
-                            @foreach ($gerant as $gerants)
+                            {{-- @foreach ($gerant as $gerants) --}}
                             @foreach ($association as $associations)
-                                @if ($gerants->id === $associations->gerant_id)
+                                {{-- @if ($gerants->id === $associations->gerant_id) --}}
                                         <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
-                                @endif
-                            @endforeach
+                                {{-- @endif --}}
+                            {{-- @endforeach --}}
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>

@@ -73,7 +73,7 @@
     </div>
     <div class="card-body">
       <!-- Row start -->
-      <form action="{{ route('add.agence') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('association.add.agence') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row gx-3">
             <div class="col-lg-3 col-sm-4 col-12">

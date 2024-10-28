@@ -65,7 +65,7 @@
 
           </div>
           <!-- App Hero header ends -->
-<div class="ms-auto d-lg-flex d-none flex-row">
+            <div class="ms-auto d-lg-flex d-none flex-row">
                 <div class="d-flex flex-row gap-1">
                   <a href="{{ route('creer.zone') }}" class="btn btn-primary">Creer une Zone</a>
                 </div>

@@ -73,6 +73,11 @@
 
             <!-- Row start -->
             <div class="row gx-3">
+                <div class="ms-auto d-lg-flex d-none flex-row">
+                    <div class="d-flex flex-row gap-1">
+                      <a href="{{ route('association.creer.zone') }}" class="btn btn-primary">Creer une Zone</a>
+                    </div>
+                </div><br><br>
                 @foreach ($zones as $zone)
                 @foreach ($commerciaux as $commercial)
                 @foreach ($agences as $agence)
@@ -85,7 +90,7 @@
                   <div class="card-body">
                     <div class="d-flex align-items-center flex-column">
                       <div class="mb-3">
-                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
+                        <img src="{{ Storage::url($zone->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
                       </div>
                       <h5 class="mb-2">{{ $zone->name }}</h5>
                       <h6 class="mb-3 text-secondary fw-light">{{ $commercial->name }}</h6>
