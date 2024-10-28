@@ -96,9 +96,11 @@
                                         <img src="{{ Storage::url($associations->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
                                     </div>
                                     <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
-                                    {{-- @foreach ($gerant as $gerants)  @if ($gerants->email === $users->email) --}}
-                                        <h5 class="mb-2">{{ $associations->user_id }}</h5>
-                                    {{-- @endif   @endforeach --}}
+                                    @foreach ($user as $users)
+                                    @if ($associations->user_id === $users->id)
+                                        <h5 class="mb-2">{{ $users->name }}</h5>
+                                    @endif
+                                    @endforeach
                                     <p></p>
                                     <div class="mb-3">
                                         <span class="badge bg-opacity-10 bg-danger text-danger"></span>

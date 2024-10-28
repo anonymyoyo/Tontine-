@@ -6,6 +6,7 @@ use App\Models\Agence;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Association extends Model
 {
@@ -24,8 +25,8 @@ class Association extends Model
         return $this->hasMany(Agence::class);
     }
 
-    public function user():HasMany{
-        return $this->hasMany(User::class);
+    public function user():HasOne{
+        return $this->hasOne(User::class);
     }
 
     public function chefagence():HasMany{

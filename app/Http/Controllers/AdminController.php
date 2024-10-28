@@ -92,7 +92,7 @@ class AdminController extends Controller
     public function creer_agence(){
         $roles=Role::all();
         $tontine=Tontine::all();
-        $gerant=User::all();
+        $gerant=Chef_d_agence::all();
         $association=Association::all();
         return view('admin.admin.agences.creer', compact('tontine', 'gerant', 'association', 'roles'));
     }

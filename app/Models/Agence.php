@@ -26,9 +26,9 @@ class Agence extends Model
         'identification',
     ];
 
-    public function chefagence(): HasOne{
-        return $this->hasOne(Chef_d_agence::class);
-    }
+    // public function chefagence(): HasOne{
+    //     return $this->hasOne(Chef_d_agence::class);
+    // }
 
     public function association(): HasOne{
         return $this->hasOne(Association::class);
@@ -38,8 +38,8 @@ class Agence extends Model
         return $this->hasMany(Commercial::class);
     }
 
-    public function user():HasMany{
-        return $this->hasMany(User::class);
+    public function user():HasOne{
+        return $this->hasOne(User::class);
     }
 
     public function zones():HasMany{

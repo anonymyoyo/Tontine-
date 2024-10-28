@@ -28,21 +28,23 @@ class AssociationController extends Controller
 
     public function association_agence(){
         $roles=Role::all();
-        $user=User::all();
-        // $agences=Agence::where('user_id', auth()->user()->id)->get();
-        $association=Association::where('user_id', auth()->user()->id)->get();
-        $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('association_id', $association->id)->get();
-        $agence=Agence::where('user_id', auth()->user()->id)->get();
+        // $association=Association::where('user_id', auth()->user()->id)->get();
+        $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
+        // $association=Association::where('user_id', auth()->user()->id)->get();
+        // $agence=Agence::where('user_id', auth()->user()->id)->get();
+        // $agence=Agence::where('user_id', $association->id)->get();
         $tontine=Tontine::all();
 
         // $gerant=Chef_d_agence::all();
 
-        // return $agence;
+        // return $agences;
         // return $gerant;
-        // return $association;
-        return view('association.agence.agences', compact('agence', 'tontine', 'gerant', 'roles', 'association', 'user'));
+        return $association;
+        // return view('association.agence.agences', compact('agence', 'tontine', 'gerant', 'roles', 'association', 'user'));
     }
 
     public function association_agence_detail($id){
@@ -87,14 +89,14 @@ class AssociationController extends Controller
         $roles=Role::all();
         $association=Association::where('user_id', auth()->user()->id)->get();
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
+        $gerant=Chef_d_agence::where('user_id', auth()->user()->id)->get();
         // $association=Association::all();
-        $agence=Agence::where('association_id', auth()->user()->id)->get();
+        $agence=Agence::where('user_id', auth()->user()->id)->get();
 
         // return $request->user_id;
         // return $agence;
-        return $gerant;
-        // return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
+        // return $gerant;
+        return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
     }
 
     public function association_add_agence(Request $request){
