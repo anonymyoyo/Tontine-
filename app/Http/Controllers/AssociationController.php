@@ -37,14 +37,14 @@ class AssociationController extends Controller
         $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('association_id', $association->id)->get();
-        $agence=Agence::where('association_id', auth()->user()->id)->get();
+        $agences=Agence::where('association_id', auth()->user()->id)->first();
         $tontine=Tontine::all();
 
         // $gerant=Chef_d_agence::all();
 
         // return $agence;
         // return $gerant;
-        return view('association.agence.agences', compact('agence', 'tontine', 'gerant', 'roles', 'association', 'user'));
+        return view('association.agence.agences', compact('agences', 'tontine', 'gerant', 'roles', 'association', 'user'));
     }
 
     public function association_agence_detail($id){
@@ -154,9 +154,9 @@ class AssociationController extends Controller
         $commerciaux=Commercial::where('association_id', auth()->user()->id)->get();
         $agences=Agence::where('association_id',auth()->user()->id)->get();
 
-        return $zones;
+        // return $zones;
 
-        // return view('association.zone.zonne', compact('tontine', 'zones', 'commerciaux', 'agences', 'roles', 'association'));
+        return view('association.zone.zonne', compact('tontine', 'zones', 'commerciaux', 'agences', 'roles', 'association'));
     }
 
     public function association_creer_zone(){
@@ -201,9 +201,9 @@ class AssociationController extends Controller
         $roles=Role::all();
         $agences=Agence::all();
 
-        // return $responsables;
+        return $responsables;
         // return $association;
-        return view('association.chef_agence.chef_dagence', compact('responsables','agences','roles', 'tontine', 'roles', 'association', 'gerant'));
+        // return view('association.chef_agence.chef_dagence', compact('responsables','agences','roles', 'tontine', 'roles', 'association', 'gerant'));
     }
 
     public function association_creer_chef_agence(){

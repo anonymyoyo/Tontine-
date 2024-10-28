@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            // $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('pays');
             $table->string('identification');
             $table->string('image');

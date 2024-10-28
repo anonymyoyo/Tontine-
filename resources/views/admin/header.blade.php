@@ -13,8 +13,8 @@
 
     <!-- App brand starts -->
     <div class="app-brand py-2 col">
-      <a href="index.html">
-        <img src="{{ asset('dashboard/assets/images/logo.svg') }}" class="logo" alt="Bootstrap Gallery" />
+      <a href="{{ route('dashboard') }}">
+        <img src="{{ asset('assets/images/logo.png') }}" class="logo" alt="Bootstrap Gallery" />
       </a>
     </div>
     <!-- App brand ends -->
