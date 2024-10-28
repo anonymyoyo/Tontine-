@@ -16,7 +16,7 @@ class Chef_d_agence extends Model
         'phone',
         'ville',
         'role_id',
-        'user_id',
+        // 'user_id',
         'pays',
         'image',
         'identification',

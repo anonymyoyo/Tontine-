@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            // $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('password');
             $table->timestamps();
         });

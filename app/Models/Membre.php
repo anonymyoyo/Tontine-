@@ -20,7 +20,7 @@ class Membre extends Model
         'association_id',
         'role_id',
         'tontine_id',
-        'user_id',
+        // 'user_id',
         'image',
         'password',
     ];

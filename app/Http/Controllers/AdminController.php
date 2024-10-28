@@ -206,6 +206,7 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
+            // 'user_id'=>$request->user_id,
             'identification'=>$path2,
             'role_id'=>'5',
             'association_id'=>$request->association_id,
