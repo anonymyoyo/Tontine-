@@ -22,6 +22,7 @@ class Commercial extends Model
         'pays',
         'identification',
         'role_id',
+        'user_id',
         'image',
         'agence_id',
         'association_id',

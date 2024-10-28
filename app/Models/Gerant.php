@@ -18,6 +18,7 @@ class Gerant extends Model
         'pays',
         'identification',
         'role_id',
+        'user_id',
         'image',
         'password',
     ];
