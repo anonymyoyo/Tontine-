@@ -25,7 +25,7 @@ class UserController extends Controller
         $tontin=Membre::where('tontine_id', auth()->user()->id);
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
         $membre=Membre::all();
-        $membres=Membre::count('tontine_id');
+        // $membres=Membre::count('tontine_id');
         $transaction=Transaction::all();
 //         $user=Auth::user();
 //         if(!$user){
@@ -40,9 +40,9 @@ class UserController extends Controller
 
         // $tontines=Tontine::all();
         // $lien=route('invite',[$id, Str::random(40)]);, 'CountMembre'
-        // $token=$lien;'id', 'token',
+        // $token=$lien;'id', 'token',, 'membres'
         // $tontines=Tontine::find($id);
-        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'membres', 'transaction'));
+        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction'));
 
         // return $membre.$tontine;
     }

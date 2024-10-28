@@ -142,6 +142,9 @@ class AdminController extends Controller
         $association=Association::all();
         $user=User::all();
         $gerant=Gerant::all();
+
+        // return $association;
+        // return $gerant;
         return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles', 'user'));
     }
 

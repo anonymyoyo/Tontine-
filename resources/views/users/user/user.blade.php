@@ -188,30 +188,6 @@
     <!-- recent prediction section end -->
 
 
-    <!-- invest banner section start -->
-    {{-- <section class="trade-banner-container bg-img">
-        <div class="container">
-            <div class="trade-banner-wrapper lend-banner">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="trade-banner-content">
-                            <h1>Gagner 40% sur vos investissements</h1>
-                            <p>Ouvrer un compte epargne d'investissement a un taux de 40%
-                                qui vous seront reverses apres 06 mois dans un intervalle de 03mois.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="trade-banner-thumb d-none d-lg-block">
-                            <img src="{{ asset('assets/images/custom/banner/invest-banner-illustration.png') }}"
-                                alt="Invest Banner Illustration">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- invest banner section end -->
-
     <!-- invest calculator start -->
     {{-- <div class="invest-calculator pt-120">
         <div class="container">
@@ -385,11 +361,11 @@
                             </div>
                         </div>
                         <div class="boost-footer d-flex flex-column flex-sm-row align-items-center justify-content-between">
-                            @foreach ($membres as $adherant)
+                            {{-- @foreach ($membres as $adherant)
                                 @if ($adherant->tontine_id === $tontines->id)
                                     <p>{{ $tontines->nbre_membre }} Ont souscrits</p>
                                 @endif
-                            @endforeach
+                            @endforeach --}}
 
                             <a href="invest-pricing.html" class="primary-btn primary-effect">Souscrire</a>
                         </div>

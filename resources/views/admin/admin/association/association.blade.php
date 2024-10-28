@@ -83,9 +83,9 @@
             <div class="row gx-3">
 
                 @foreach ($association as $associations)
-                @foreach ($user as $users)
-                @foreach ($gerant as $gerants)
-                @if ($users->id === $associations->user_id && $users->email === $gerants->email)
+                {{-- @foreach ($user as $users) --}}
+                {{-- @foreach ($gerant as $gerants) --}}
+                {{-- @if ($associations->user_id === $users->id && $gerants->email === $users->email) --}}
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card mb-3">
                             <div class="card-body">
@@ -96,7 +96,9 @@
                                         <img src="{{ Storage::url($associations->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
                                     </div>
                                     <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
-                                            <h5 class="mb-2">{{ $users->name }}</h5>
+                                    {{-- @foreach ($gerant as $gerants)  @if ($gerants->email === $users->email) --}}
+                                        <h5 class="mb-2">{{ $associations->user_id }}</h5>
+                                    {{-- @endif   @endforeach --}}
                                     <p></p>
                                     <div class="mb-3">
                                         <span class="badge bg-opacity-10 bg-danger text-danger"></span>
@@ -112,10 +114,10 @@
 
                         </div>
                     </div>
-                    @endif
+                    {{-- @endif --}}
+                {{-- @endforeach --}}
                 @endforeach
-                @endforeach
-@endforeach
+{{-- @endforeach --}}
             </div>
             <!-- Row end -->
 

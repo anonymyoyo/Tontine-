@@ -86,11 +86,11 @@
                         <select name="user_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($gerant as $gerants)
-                                @foreach ($user as $users)
-                                @if ($users->role_id === 5)
-                                    <option value="{{ $users->id }}" class="form-option">{{ $users->name }}</option>
+                                {{-- @foreach ($user as $users) --}}
+                                @if ($gerants->role_id === 5)
+                                    <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
                                 @endif
-                            @endforeach
+                            {{-- @endforeach --}}
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>

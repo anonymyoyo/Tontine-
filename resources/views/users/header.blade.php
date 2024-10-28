@@ -115,17 +115,15 @@
 
                                 <a class="nav-link dropdown-toggle secondary-effect" href="#"
                                 data-bs-toggle="dropdown" data-bs-auto-close="outside">Profil</a>
-
-
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a class="dropdown-item secondary-effect mt-0" href="{{ route('login') }}">Connexion</a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="{{ route('register') }}" class="dropdown-item secondary-effect" >
                                             Inscription
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                             </li>
 
