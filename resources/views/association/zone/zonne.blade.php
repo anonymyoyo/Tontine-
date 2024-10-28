@@ -69,20 +69,20 @@
           <div class="app-body">
 
 
-
-
-            <!-- Row start -->
-            <div class="row gx-3">
-                <div class="ms-auto d-lg-flex d-none flex-row">
+<div class="ms-auto d-lg-flex d-none flex-row">
                     <div class="d-flex flex-row gap-1">
                       <a href="{{ route('association.creer.zone') }}" class="btn btn-primary">Creer une Zone</a>
                     </div>
                 </div><br><br>
+
+            <!-- Row start -->
+            <div class="row gx-3">
+
                 @foreach ($zones as $zone)
                 @foreach ($commerciaux as $commercial)
                 @foreach ($agences as $agence)
 
-                    @if ($commercial->id === $zone->commercial_id && $zone->agence_id === $agence->id)
+                    {{-- @if ($commercial->id === $zone->commercial_id && $zone->agence_id === $agence->id) --}}
 
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="card mb-3">
@@ -107,7 +107,7 @@
 
                 </div>
               </div>
-                    @endif
+                    {{-- @endif --}}
                 @endforeach
                 @endforeach
                 @endforeach

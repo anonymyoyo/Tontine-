@@ -83,6 +83,7 @@
                         <th>Phone</th>
                         <th>Zone de deploiement</th>
                         <th>Agence mere</th>
+                        <th>Association mere</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -99,14 +100,10 @@
                                 <td>{{ $commerciaux->email }}</td>
                                 <td>{{ $commerciaux->phone }}</td>
                               @foreach ($zones as $zone)
-                                @if ($commerciaux->zone_id === $zone->id)
                                     <td>{{ $zone->name }}</td>
-                                @endif
                               @endforeach
                               @foreach ($agences as $agence)
-                                @if ($commerciaux->agence_id === $agence->id)
                                     <td>{{ $agence->name }}</td>
-                                @endif
                               @endforeach
 
                             </tr>
