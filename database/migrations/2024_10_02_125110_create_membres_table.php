@@ -3,6 +3,7 @@
 use App\Models\Association;
 use App\Models\Role;
 use App\Models\Tontine;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('password');
             $table->timestamps();
         });

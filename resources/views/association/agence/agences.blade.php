@@ -98,7 +98,7 @@
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
-                        {{-- @foreach ($agence as $agences) --}}
+                        @foreach ($agence as $agences)
                             <tbody>
                             <tr class="grd-primary-light">
                                 <th scope="row">
@@ -130,7 +130,7 @@
                                 </td>
                             </tr>
                             </tbody>
-                        {{-- @endforeach --}}
+                        @endforeach
 
                       </table>
                     </div>

@@ -3,6 +3,7 @@
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\Role;
+use App\Models\User;
 use App\Models\Zone;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('pays');
             $table->string('identification');
             $table->string('image');
