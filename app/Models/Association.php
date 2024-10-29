@@ -13,7 +13,9 @@ class Association extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'email',
         'description',
+        'phone',
         'reglement',
         'ville',
         'pays',
@@ -28,15 +30,6 @@ class Association extends Model
     public function user():HasOne{
         return $this->hasOne(User::class);
     }
-
-    public function chefagence():HasMany{
-        return $this->hasMany(Chef_d_agence::class);
-    }
-
-    public function commercial():HasMany{
-        return $this->hasMany(Commercial::class);
-    }
-
     public function zones():HasMany{
         return $this->hasMany(Zone::class);
     }

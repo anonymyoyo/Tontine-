@@ -20,10 +20,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('description');
+            $table->string('phone');
             $table->string('ville');
             $table->string('pays');
-            $table->string('reglement');
             $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');
             $table->timestamps();

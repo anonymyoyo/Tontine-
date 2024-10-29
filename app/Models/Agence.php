@@ -19,23 +19,13 @@ class Agence extends Model
         'phone',
         'ville',
         'user_id',
-        'association_id',
         'pays',
-        'budget',
         'image',
-        'identification',
     ];
 
-    // public function chefagence(): HasOne{
-    //     return $this->hasOne(Chef_d_agence::class);
-    // }
 
-    public function association(): HasOne{
+    public function associations(): HasOne{
         return $this->hasOne(Association::class);
-    }
-
-    public function commercial():HasMany{
-        return $this->hasMany(Commercial::class);
     }
 
     public function user():HasOne{
