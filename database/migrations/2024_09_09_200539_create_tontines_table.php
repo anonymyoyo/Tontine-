@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('montant_total');
             $table->string('reglement');
             $table->string('nbre_membre');
-            // $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('prix');
             $table->string('image');
             $table->timestamps();

@@ -16,7 +16,6 @@ class Tontine extends Model
         'description',
         'montant_total',
         'reglement',
-        'association_id',
         'nbre_membre',
         'prix',
         'image',

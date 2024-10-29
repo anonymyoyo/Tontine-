@@ -12,6 +12,7 @@ class Historique extends Model
     use HasFactory;
     protected $fillable = [
         'contribution_id',
+        'user_id',
         'date_action',
         'description',
     ];
