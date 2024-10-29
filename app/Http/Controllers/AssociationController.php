@@ -98,8 +98,8 @@ class AssociationController extends Controller
         // return $request->user_id;
         // return $agence;
         // return $association;
-        // return $gerant;
-        return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
+        return $gerant;
+        // return view('association.agence.creer', compact('tontine', 'gerant', 'roles', 'association'));
     }
 
     public function association_add_agence(Request $request){
@@ -198,21 +198,23 @@ class AssociationController extends Controller
 
     public function association_chef_agence(){
         $tontine=Tontine::all();
-        $association=Association::where('user_id', auth()->user()->id)->get();
+        $associations=Association::where('user_id', auth()->user()->id)->get();
         // $user=User::find(auth()->user()->id);
         // $gerant=$user->gerants;fin
         // $user=User::find(auth()->user()->id);
         // $responsables=$user->chefdagen
         // $agences=Agence::where('association_id', auth()->user()->id);
-        $responsables=User::where('role_id', 2)->first();
+        $responsables=User::where('role_id', auth()->user()->role_id)->get();
+        // $agences=Agence::where('user_id', $responsables->agence_id);
         // $image=store::files('public/images');
+        // $responsables->associations;
         $roles=Role::all();
         $agences=Agence::all();
 
-        return $responsables;
+        // return $responsables;
         // return $gerant;
         // return $agences;
-        // return view('association.chef_agence.chef_dagence', compact('responsables','agences','roles', 'tontine', 'roles', 'association'));
+        return view('association.chef_agence.chef_dagence', compact('responsables','agences','roles', 'tontine', 'associations'));
     }
 
     public function association_creer_chef_agence(){

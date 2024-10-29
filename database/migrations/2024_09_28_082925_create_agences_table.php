@@ -20,13 +20,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('description');
             $table->string('ville');
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('pays');
-            $table->string('budget');
-            $table->string('identification');
+            $table->string('reglement');
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');
             $table->timestamps();
         });

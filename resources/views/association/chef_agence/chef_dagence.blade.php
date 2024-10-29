@@ -76,12 +76,11 @@
             <!-- Row start -->
             <div class="row gx-3">
                 @foreach ($responsables as $responsable)
-            {{-- @foreach ($roles as $role) --}}
+            @foreach ($associations as $association)
             @foreach ($agences as $agence)
 
-            @foreach ($responsable->association as $association)
-
-              <div class="col-lg-4 col-sm-6 col-12">
+            @if ($association->id === $agence->association_id && $agence->user_id === $responsable->id)
+                <div class="col-lg-4 col-sm-6 col-12">
 
                 <div class="card mb-3">
                   <div class="card-body">
@@ -109,9 +108,14 @@
                 </div>
 
               </div>
-              @endforeach
+            @endif
+
+            {{-- @foreach ($responsable->associations as $association) --}}
+
+
+              {{-- @endforeach --}}
             @endforeach
-            {{-- @endforeach --}}
+            @endforeach
             @endforeach
             </div>
             <!-- Row end -->
