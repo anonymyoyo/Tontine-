@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Agence;
 use App\Models\Association;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Commercial;
 use App\Models\Gerant;
 use App\Models\Membre;
@@ -33,7 +33,7 @@ class AssociationController extends Controller
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('association_id', $association->id)->get();
         // $association=Association::where('user_id', auth()->user()->id)->get();
-        // $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
+        // $gerant=User::where('association_id', auth()->user()->id)->get();
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('user_id', $association->id)->get();
@@ -72,7 +72,7 @@ class AssociationController extends Controller
     //         'email'=>$request->email,
     //         'phone'=>$request->phone,
     //         'ville'=>$request->ville,
-    //         'chef_d_agence_id'=>$request->chef_d_agence_id,
+    //         'User_id'=>$request->User_id,
     //         'pays'=>$request->pays,
     //         'budget'=>$request->budget,
     //         'identification'=>$identification,

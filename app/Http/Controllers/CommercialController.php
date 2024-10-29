@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agence;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Commercial;
 use App\Models\Membre;
 use App\Models\Role;
@@ -49,7 +49,7 @@ class CommercialController extends Controller
     }
 
     public function commercial_chef_agence(){
-        $responsables=Chef_d_agence::all();
+        $responsables=User::all();
         $roles=Role::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
@@ -57,7 +57,7 @@ class CommercialController extends Controller
     }
 
     public function commercial_commercial(){
-        $responsables=Chef_d_agence::all();
+        $responsables=User::all();
         $roles=Role::all();
         $zones=Zone::all();
         $agences=Agence::all();

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agence;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Commercial;
 use App\Models\Gerant;
 use App\Models\Role;
@@ -20,7 +20,7 @@ class AgenceController extends Controller
     public function agence(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         return view('agence.agence', compact('tontine', 'user', 'a', 'roles'));
     }
@@ -44,7 +44,7 @@ class AgenceController extends Controller
     public function dashboard_agence_zone(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $zones=Zone::all();
         $commerciaux=Commercial::all();
         $agences=Agence::all();
@@ -55,7 +55,7 @@ class AgenceController extends Controller
     public function dashboard_agence_creer_zone(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $commercial=Commercial::all();
         $agences=Agence::all();
         $zones=Zone::all();
@@ -66,7 +66,7 @@ class AgenceController extends Controller
     public function dashboard_agence_ajouter_zone(Request $request){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -81,8 +81,8 @@ class AgenceController extends Controller
 
     public function dashboard_chef_agence(){
         $user=User::all();
-        $a=Chef_d_agence::all();
-        $responsables=Chef_d_agence::all();
+        $a=User::all();
+        $responsables=User::all();
         $roles=Role::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
@@ -91,8 +91,8 @@ class AgenceController extends Controller
 
     public function dashboard_commercial(){
         $user=User::all();
-        $a=Chef_d_agence::all();
-        $responsables=Chef_d_agence::all();
+        $a=User::all();
+        $responsables=User::all();
         $roles=Role::all();
         $zones=Zone::all();
         $agences=Agence::all();
@@ -103,7 +103,7 @@ class AgenceController extends Controller
 
     public function dashboard_creer_commercial(){
         $user=User::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $commercial=Commercial::all();
         $zones=Zone::all();
         $roles=Role::all();
@@ -115,7 +115,7 @@ class AgenceController extends Controller
     public function dashboard_ajouter_commercial(Request $request){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();$image=$request->file('image');
         $path=$image->store('images','public');
         $identification=$request->file('image');
@@ -154,7 +154,7 @@ class AgenceController extends Controller
     public function dashboard_agences_transaction(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles'));
     }
@@ -162,7 +162,7 @@ class AgenceController extends Controller
     public function dashboard_agences_versement(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         return view('agence.versement.versement', compact('tontine', 'user', 'a', 'roles'));
     }
@@ -170,14 +170,14 @@ class AgenceController extends Controller
     public function dashboard_agences_reglage(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         return view('agence.agence.agences', compact('tontine', 'user', 'a', 'roles'));
     }
 
     public function dashboard_agences_membre(){
         $user=User::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::all();
         $users=User::all();
         $roles=Role::all();
@@ -187,7 +187,7 @@ class AgenceController extends Controller
     public function dashboard_agences_tontine($id){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
+        $a=User::all();
         $tontine=Tontine::find($id);
         return view('agence.tontine.tontine', compact('tontine', 'user', 'a', 'roles'));
     }

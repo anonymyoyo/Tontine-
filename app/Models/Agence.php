@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Association;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Commercial;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

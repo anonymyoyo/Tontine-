@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Association;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;

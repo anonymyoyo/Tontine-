@@ -74,7 +74,7 @@
             </div>
             <div class="card-body">
 
-        <form action="{{ route('ajouter.chef_d_agence') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('ajouter.User') }}" method="post" enctype="multipart/form-data">
                     @csrf
             <!-- Row start -->
             <div class="row gx-3">

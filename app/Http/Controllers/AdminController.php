@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
-use App\Models\Chef_d_agence;
+use App\Models\User;
 use App\Models\Commercial;
 use App\Models\Gerant;
 use App\Models\Membre;
@@ -88,7 +88,7 @@ class AdminController extends Controller
     public function creer_agence(){
         $roles=Role::all();
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
+        $gerant=User::all();
         $association=Association::all();
         return view('admin.admin.agences.creer', compact('tontine', 'gerant', 'association', 'roles'));
     }
@@ -308,7 +308,7 @@ class AdminController extends Controller
 
     public function chef_agence(){
         $tontine=Tontine::all();
-        $responsables=Chef_d_agence::all();
+        $responsables=User::all();
         $roles=Role::all();
         $agences=Agence::all();
 
@@ -323,7 +323,7 @@ class AdminController extends Controller
         return view('admin.admin.chef_agence.creer', compact('tontine', 'association', 'roles'));
     }
 
-    public function add_chef_d_agence(Request $request){
+    public function add_User(Request $request){
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -331,7 +331,7 @@ class AdminController extends Controller
         $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $association=Association::all();
-        Chef_d_agence::create([
+        User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -360,7 +360,7 @@ class AdminController extends Controller
 
     public function commercial(){
             $tontine=Tontine::all();
-            $responsables=Chef_d_agence::all();
+            $responsables=User::all();
             // $image=store::files('public/images');
             $roles=Role::all();
             $zones=Zone::all();
