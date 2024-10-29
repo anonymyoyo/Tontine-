@@ -34,9 +34,9 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <i class="bi bi-house lh-1"></i>
-                  <a href="{{ route('dashboard') }}" class="text-decoration-none">Home</a>
+                  <a href="index.html" class="text-decoration-none">Ajouter</a>
                 </li>
-                <li class="breadcrumb-item" aria-current="page">Association</li>
+                <li class="breadcrumb-item" aria-current="page">Gerant</li>
               </ol>
               <!-- Breadcrumb end -->
 
@@ -58,73 +58,67 @@
                   </button>
                 </div>
               </div>
+
               <!-- Sales stats end -->
 
             </div>
             <!-- Breadcrumb and stats end -->
 
           </div>
+          <!-- App Hero header ends -->
 
-        <div class="card mb-3">
+
+          <div class="card mb-3">
             <div class="card-header">
-            <h5 class="card-title">Nouvelle association</h5>
+              <h5 class="card-title">Enregistrer Gerant</h5>
             </div>
             <div class="card-body">
-            <!-- Row start -->
-            <form action="{{ route('add.associations') }}" method="post" enctype="multipart/form-data">
+              <!-- Row start -->
+              <form action="{{ route('admin.ajouter_gerant') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row gx-3">
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
-                        <label class="form-label">Nom de l'association</label>
+                        <label class="form-label">Nom du membre</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
-                        <div class="mb-3">
-                        <label class="form-label">President de l'association</label>
-                        <select name="user_id"  class="form-select">
-                            <option value="0">Select</option>
-                            @foreach ($gerant as $gerants)
-                                @if ($gerants->role_id === 5)
-                                    <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter email address" />
+                    </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Telephone</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Enter phone number" />
+                    </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Ville</label>
+                        <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                    </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Pays</label>
+                        <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
+                    </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Photo/ piece identificative</label>
+                        <input type="file" name="image" class="form-control" placeholder="Enter company name" />
+                    </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
-                            <label class="form-label">Image de l'agence</label>
-                            <input type="file" name="image" class="form-control" placeholder="Enter company name" />
+                            <label class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Enter company name" />
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Ville</label>
-                            <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Pays</label>
-                            <input type="text" name="pays" class="form-control" placeholder="Enter company name" />
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
-                            <textarea class="form-control" name="description" placeholder="Description" rows="3"></textarea>
-                        </div>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                            <div class="mb-3">
-                            <label class="form-label">Reglements</label>
-                            <textarea class="form-control" name="reglement" placeholder="Reglement" rows="3"></textarea>
-                            </div>
-                        </div>
-                    <br><br>
-
+                        </div><br><br>
                 </div>
                 <div class="col-sm-6 col-12">
                     <div class="mb-3">
@@ -132,37 +126,33 @@
                     <input class="form-control" value="Submit" type="submit">
                     </div>
                 </div>
-            </form>
+              </form>
 
-            <!-- Row end -->
+              <!-- Row end -->
             </div>
             <div class="card-footer">
-            <div class="d-flex gap-2 justify-content-end">
+              <div class="d-flex gap-2 justify-content-end">
                 {{-- <button type="button" class="btn btn-outline-secondary">
-                Cancel
+                  Cancel
                 </button> --}}
                 <button type="button" class="btn btn-success">
-                Creer
+                  Creer
                 </button>
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
 
+
+          <!-- App footer start -->
+          {{-- @include('../admin.footer') --}}
+          <!-- App footer end -->
+
+        </div>
+        <!-- App container ends -->
+
+      </div>
+      <!-- Main container end -->
 
     </div>
-    <!-- Row end -->
-
-  </div>
-  <!-- App body ends -->
-
-
-</div>
-<!-- App container ends -->
-
-</div>
-<!-- Main container end -->
-
-</div>
-<!-- Page wrapper end -->
+    <!-- Page wrapper end -->
 @include('../admin.script')
-

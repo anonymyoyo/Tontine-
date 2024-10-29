@@ -8,13 +8,9 @@ use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\User;
-use App\Models\Commercial;
-use App\Models\Gerant;
-use App\Models\Membre;
 use App\Models\Role;
 use App\Models\Tontine;
 use App\Models\Transaction;
-use App\Models\User;
 use App\Models\Versement;
 use App\Models\Zone;
 use Illuminate\Contracts\Cache\Store as CacheStore;
@@ -136,12 +132,12 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::all();
-        $user=User::all();
+        // $user=User::all();
         $gerant=User::all();
 
         // return $association;
         // return $gerant;
-        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles', 'user'));
+        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
     }
 
     public function dashboard_association_gerant(){
@@ -232,7 +228,7 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::find($id);
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $gerant=User::all();
         return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles'));
     }
@@ -241,7 +237,7 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $zones=Zone::all();
-        $commerciaux=Commercial::all();
+        $commerciaux=User::all();
         $association=Association::all();
         $agences=Agence::all();
         return view('admin.admin.zones.zone', compact('tontine', 'zones', 'commerciaux', 'agences', 'roles', 'association'));
@@ -249,7 +245,7 @@ class AdminController extends Controller
 
     public function creer_zone(){
         $roles=Role::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $agences=Agence::all();
         $zones=Zone::all();
         $association=Association::all();
@@ -261,7 +257,7 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $image=$request->file('image');
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $association=Association::all();
         $agences=Agence::all();
         Zone::create([
@@ -366,13 +362,13 @@ class AdminController extends Controller
             $zones=Zone::all();
             $agences=Agence::all();
             $association=Association::all();
-            $commercial=Commercial::all();
+            $commercial=User::all();
             return view('admin.admin.commerciaux.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'association'));
     }
 
     public function creer_commercial(){
         $tontine=Tontine::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $zones=Zone::all();
         $roles=Role::all();
         $agence=Agence::all();
@@ -421,7 +417,7 @@ class AdminController extends Controller
     }
 
     public function delete_admin_agence_commercial($id){
-        $commercial=Commercial::find($id);
+        $commercial=User::find($id);
         $commercial->delete();
         $roles=Role::all();
         $tontine=Tontine::all();

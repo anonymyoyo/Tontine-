@@ -149,7 +149,7 @@ class AssociationController extends Controller
         $association=Association::all();
         $tontine=Tontine::all();
         $zones=Zone::where('association_id', auth()->user()->id)->get();
-        $commerciaux=Commercial::where('association_id', auth()->user()->id)->get();
+        $commerciaux=User::where('association_id', auth()->user()->id)->get();
         $agences=Agence::where('association_id',auth()->user()->id)->get();
 
         // return $zones;
@@ -160,7 +160,7 @@ class AssociationController extends Controller
     public function association_creer_zone(){
         $roles=Role::all();
         $association=Association::where('user_id', auth()->user()->id)->get();
-        $commercial=Commercial::where('association_id', auth()->user()->id)->get();
+        $commercial=User::where('association_id', auth()->user()->id)->get();
         $agences=Agence::where('association_id',auth()->user()->id)->get();
 
         // return $agences;
@@ -176,7 +176,7 @@ class AssociationController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $agences=Agence::all();
         Zone::create([
             'name'=>$request->name,

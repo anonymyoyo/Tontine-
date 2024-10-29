@@ -42,7 +42,7 @@ class CommercialController extends Controller
     public function commercial_agence_zone(){
         $roles=Role::all();
         $zones=Zone::all();
-        $commerciaux=Commercial::all();
+        $commerciaux=User::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
         return view('commercial.zone.zone', compact('tontine', 'commerciaux', 'agences', 'zones', 'roles'));
@@ -61,7 +61,7 @@ class CommercialController extends Controller
         $roles=Role::all();
         $zones=Zone::all();
         $agences=Agence::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $tontine=Tontine::all();
         return view('commercial.commercial.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones'));
     }

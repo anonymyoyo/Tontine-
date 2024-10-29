@@ -46,7 +46,7 @@ class AgenceController extends Controller
         $roles=Role::all();
         $a=User::all();
         $zones=Zone::all();
-        $commerciaux=Commercial::all();
+        $commerciaux=User::all();
         $agences=Agence::all();
         $tontine=Tontine::all();
         return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agences', 'zones', 'user', 'a', 'roles'));
@@ -56,7 +56,7 @@ class AgenceController extends Controller
         $user=User::all();
         $roles=Role::all();
         $a=User::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $agences=Agence::all();
         $zones=Zone::all();
         $tontine=Tontine::all();
@@ -96,7 +96,7 @@ class AgenceController extends Controller
         $roles=Role::all();
         $zones=Zone::all();
         $agences=Agence::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $tontine=Tontine::all();
         return view('agence.commercial.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'user', 'a'));
     }
@@ -104,7 +104,7 @@ class AgenceController extends Controller
     public function dashboard_creer_commercial(){
         $user=User::all();
         $a=User::all();
-        $commercial=Commercial::all();
+        $commercial=User::all();
         $zones=Zone::all();
         $roles=Role::all();
         $agence=Agence::all();

@@ -69,6 +69,9 @@
                 <div class="d-flex flex-row gap-1">
                   <a href="{{ route('association.creer.association') }}" class="btn btn-primary">Nouvelle Association</a>
                 </div>
+                <div class="d-flex flex-row gap-1">
+                    <a href="{{ route('association.creer.president_association') }}" class="btn btn-primary">Nouveau Gerant</a>
+                  </div>
             </div><br><br>
           <!-- App body starts -->
           <div class="app-body">
@@ -80,10 +83,10 @@
             <div class="row gx-3">
 
                 {{-- @foreach ($association as $associations) --}}
-                @foreach ($user as $users)
-                    @if($users->role_id === 5)
+                @foreach ($gerant as $gerants)
+                    @if($gerants->role_id === 5)
                 {{-- @foreach ($gerant as $gerants) --}}
-                {{-- @if ($associations->user_id === $users->id && $gerants->email === $users->email) --}}
+                {{-- @if ($associations->gerant_id === $gerants->id && $gerants->email === $gerants->email) --}}
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="card mb-3">
                             <div class="card-body">
@@ -91,10 +94,10 @@
 
 
                                     <div class="mb-3">
-                                        <img src="{{ Storage::url($users->image) }}" class="img-6x rounded-circle" alt="Image chef de l'user" />
+                                        <img src="{{ Storage::url($gerants->image) }}" class="img-6x rounded-circle" alt="Image chef de l'gerant" />
                                     </div>
-                                    <h6 class="mb-3 text-secondary fw-light">{{ $users->name }}</h6>
-                                    {{-- @foreach ($user as $users)
+                                    <h6 class="mb-3 text-secondary fw-light">{{ $gerants->name }}</h6>
+                                    {{-- @foreach ($gerant as $users)
                                     @if ($associations->user_id === $users->id)
                                         <h5 class="mb-2">{{ $users->name }}</h5>
                                     @endif
@@ -105,7 +108,7 @@
                                         <span class="badge bg-opacity-10 bg-info text-info"></span>
                                     </div>
                                     <div class="mt-3">
-                                        <a href="{{ route('association.details', $users->id) }}" class="btn btn-success">Voir</a>
+                                        <a href="{{ route('association.details', $gerants->id) }}" class="btn btn-success">Voir</a>
                                     </div>
 
 
