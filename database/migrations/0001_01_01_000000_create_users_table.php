@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('phone');
             $table->string('ville');
             $table->string('pays');
-            $table->string('identification');
             $table->string('image');
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->timestamp('email_verified_at')->nullable();
