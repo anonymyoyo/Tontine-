@@ -28,9 +28,8 @@ class CommercialController extends Controller
     public function commercial_agence(){
         $roles=Role::all();
         $agences=Agence::all();
-        $gerant=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('commercial.agence.agences', compact('tontine', 'agences', 'gerant', 'roles'));
+        return view('commercial.agence.agences', compact('tontine', 'agences', 'roles'));
     }
 
     public function commercial_agence_detail($id){

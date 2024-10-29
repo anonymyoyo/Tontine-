@@ -42,17 +42,15 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $agences=Agence::all();
-        $gerant=Chef_d_agence::all();
         $association=Association::all();
-        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'gerant', 'association', 'roles'));
+        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'roles'));
     }
 
     public function agence_detail($id){
         $roles=Role::all();
         $tontine=Tontine::all();
         $agence=Agence::find($id);
-        $gerant=Chef_d_agence::all();
-        return view('admin.admin.agences.detail', compact('agence', 'tontine', 'gerant', 'roles'));
+        return view('admin.admin.agences.detail', compact('agence', 'tontine', 'roles'));
     }
 
     public function edit_admin_agence($id){
@@ -81,8 +79,6 @@ class AdminController extends Controller
             'user_id'=>$request->user_id,
             'pays'=>$request->pays,
             'association_id'=>$request->association_id,
-            'budget'=>$request->budget,
-            'identification'=>$path2,
             'image'=>$path,
         ]);
 
@@ -92,9 +88,8 @@ class AdminController extends Controller
     public function creer_agence(){
         $roles=Role::all();
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
         $association=Association::all();
-        return view('admin.admin.agences.creer', compact('tontine', 'gerant', 'association', 'roles'));
+        return view('admin.admin.agences.creer', compact('tontine', 'association', 'roles'));
     }
 
     public function add_agence(Request $request){
@@ -141,11 +136,10 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $association=Association::all();
         $user=User::all();
-        $gerant=Gerant::all();
 
         // return $association;
         // return $gerant;
-        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles', 'user'));
+        return view('admin.admin.association.association', compact('tontine', 'association', 'roles', 'user'));
     }
 
     public function dashboard_association_gerant(){

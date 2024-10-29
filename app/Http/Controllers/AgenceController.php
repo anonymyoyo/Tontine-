@@ -28,20 +28,17 @@ class AgenceController extends Controller
     public function dashboard_agence(){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
         $agences=Agence::all();
-        $gerant=Chef_d_agence::all();
         $tontine=Tontine::all();
-        return view('agence.agence.agences', compact('tontine', 'agences', 'gerant', 'user', 'a', 'roles'));
+        return view('agence.agence.agences', compact('tontine', 'agences', 'user', 'roles'));
     }
 
     public function dashboard_agence_detail($id){
         $user=User::all();
         $roles=Role::all();
-        $a=Chef_d_agence::all();
         $agence=Agence::find($id);
         $tontine=Tontine::all();
-        return view('agence.agence.details', compact('tontine', 'agence', 'user', 'a', 'roles'));
+        return view('agence.agence.details', compact('tontine', 'agence', 'user', 'roles'));
     }
 
     public function dashboard_agence_zone(){

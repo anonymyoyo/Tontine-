@@ -69,9 +69,6 @@
                 <div class="d-flex flex-row gap-1">
                   <a href="{{ route('association.creer.association') }}" class="btn btn-primary">Nouvelle Association</a>
                 </div>
-                <div class="d-flex flex-row gap-1">
-                    <a href="{{ route('association.creer.president_association') }}" class="btn btn-primary">Nouveau Gerant</a>
-                  </div>
             </div><br><br>
           <!-- App body starts -->
           <div class="app-body">

@@ -33,19 +33,17 @@ class AssociationController extends Controller
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('association_id', $association->id)->get();
         // $association=Association::where('user_id', auth()->user()->id)->get();
-        $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
+        // $gerant=Chef_d_agence::where('association_id', auth()->user()->id)->get();
         // $association=Association::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('user_id', auth()->user()->id)->get();
         // $agence=Agence::where('user_id', $association->id)->get();
         $tontine=Tontine::all();
 
-        // $gerant=Chef_d_agence::all();
-
         // return $agences;
         // return $gerant;
         // return $association;
         // return $user;
-        return view('association.agence.agences', compact('agence', 'tontine', 'gerant', 'roles', 'user'));
+        return view('association.agence.agences', compact('agence', 'tontine', 'roles', 'user'));
     }
 
     public function association_agence_detail($id){
@@ -53,8 +51,7 @@ class AssociationController extends Controller
         $association=Association::all();
         $tontine=Tontine::all();
         $agence=Agence::find($id);
-        $gerant=Chef_d_agence::all();
-        return view('association.agence.details', compact('agence', 'tontine', 'gerant', 'roles', 'association'));
+        return view('association.agence.details', compact('agence', 'tontine', 'roles', 'association'));
     }
 
     public function edit_association_agence($id){
@@ -62,8 +59,7 @@ class AssociationController extends Controller
         $association=Association::all();
         $agence=Agence::find($id);
         $tontine=Tontine::all();
-        $gerant=Chef_d_agence::all();
-        return view('association.agences.edit', compact('tontine', 'agence', 'gerant', 'roles', 'association'));
+        return view('association.agences.edit', compact('tontine', 'agence', 'roles', 'association'));
     }
 
     // public function edit_edit_agence(Request $request, $id){
