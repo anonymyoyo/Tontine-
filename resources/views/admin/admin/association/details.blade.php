@@ -69,8 +69,8 @@
         {{-- @foreach ($association as $associations) --}}
 
             <div class="app-body">
-@foreach ($gerant as $gerants)
-@if ($association->gerant_id === $gerants->id)                <!-- Row start -->
+@foreach ($user as $users)
+@if ($users->role_id === 5)                <!-- Row start -->
                 <div class="row justify-content-center">
                 <div class="col-xxl-12">
                     <div class="card mb-3 bg-primary">
@@ -78,13 +78,13 @@
                         <!-- Row start -->
                         <div class="row align-items-center">
                         <div class="col-auto">
-                            <img src="{{ Storage::url($gerants->image) }}" class="img-5xx rounded-circle" alt="Bootstrap Gallery" />
+                            <img src="{{ Storage::url($users->image) }}" class="img-5xx rounded-circle" alt="Bootstrap Gallery" />
                         </div>
                         <div class="col">
-                            <h6 class="text-white">{{ $association->name }}</h6>
+                            <h6 class="text-white">{{ $users->name }}</h6>
 
 
-                                    <h4 class="m-0 text-white">{{ $gerants->name }}</h4>
+                                    {{-- <h4 class="m-0 text-white">{{ $gerants->name }}</h4> --}}
 
 
 
@@ -97,8 +97,9 @@
                     </div>
                     </div>
                 </div>
-                </div>  @endif
-                @endforeach
+                </div>
+                @endif
+                {{-- @endforeach --}}
                 <!-- Row end -->
 
                 <!-- Row start -->
@@ -157,13 +158,13 @@
                 <div class="col-xxl-6 col-sm-12 col-12 order-xxl-2 order-xl-1 order-lg-1 order-md-1 order-sm-1">
                     <div class="card mb-3">
                     <div class="card-img">
-                        <img src="{{ Storage::url($association->image) }}" class="card-img-top img-fluid"
+                        <img src="{{ Storage::url($users->image) }}" class="card-img-top img-fluid"
                         alt="Bootstrap Dashboards" />
                     </div>
                     <div class="card-body">
                         <h4 class="card-title mb-3">Description</h4>
                         <p class="mb-3">
-                        {{ $association->description}}.
+                        {{-- {{ $association->description}}. --}}
                         </p>
                         {{-- <div class="d-flex align-items-center">
                         <img src="assets/images/user.png" class="rounded-circle me-3 img-4x" alt="Bootstrap Admin" />
@@ -175,9 +176,9 @@
                         {{-- <img src="assets/images/user5.png" class="rounded-circle me-3 img-4x" alt="Bootstrap Themes" /> --}}
                         <div class="flex-grow-1">
                             <h4 class="card-title mb-3">Reglement</h4>
-                            <p class="text-muted">{{ $association->created_at }}</p>
+                            <p class="text-muted">{{ $users->created_at }}</p>
                             <p>
-                                {{ $association->reglement}}.
+                                {{-- {{ $association->reglement}}. --}}
                             </p>
                             <div class="row gx-3">
                             <div class="col-12">
@@ -218,8 +219,8 @@
                         <div class="card-header">
                             <h5 class="card-title">Commerciaux</h5>
                         </div>
-                        @foreach ($commercial as $commerciaux)
-                        @if ($association->id === $commerciaux->association_id)
+                        {{-- @foreach ($commercial as $commerciaux) --}}
+                        {{-- @if ($association->id === $commerciaux->association_id)
                             <div class="card-body">
                                 <div class="row g-2 row-cols-3">
                                 <div class="col">
@@ -228,7 +229,7 @@
                                 </div>
                             </div>
                         @endif
-                        @endforeach
+                        @endforeach --}}
 
                     </div>
 
@@ -263,7 +264,7 @@
 
             </div>
       <!-- App container ends -->
-        {{-- @endforeach --}}
+        @endforeach
     </div>
     <!-- Main container end -->
 

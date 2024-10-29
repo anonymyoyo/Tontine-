@@ -108,24 +108,13 @@
                         <div class="mb-3">
                             <label class="form-label">Pays</label>
                             <input type="text" name="pays" class="form-control" placeholder="Enter company name" />
+                            <input type="hidden" name="user_id" class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
-                    <div class="col-sm-6 col-12">
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
-                            <textarea class="form-control" name="description" placeholder="Description" rows="3"></textarea>
-                        </div>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                            <div class="mb-3">
-                            <label class="form-label">Reglements</label>
-                            <textarea class="form-control" name="reglement" placeholder="Reglement" rows="3"></textarea>
-                            </div>
-                        </div>
                         <div class="col-lg-3 col-sm-4 col-12">
                             <div class="mb-3">
                                 <label class="form-label">Mot de Passe</label>
-                                <input type="text" name="password" class="form-control" placeholder="Enter company name" />
+                                <input type="password" name="password" class="form-control" placeholder="Enter company name" />
                             </div>
                         </div>
                     <br><br>

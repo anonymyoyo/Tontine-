@@ -79,8 +79,9 @@
             <!-- Row start -->
             <div class="row gx-3">
 
-                @foreach ($association as $associations)
-                {{-- @foreach ($user as $users) --}}
+                {{-- @foreach ($association as $associations) --}}
+                @foreach ($user as $users)
+                    @if($users->role_id === 5)
                 {{-- @foreach ($gerant as $gerants) --}}
                 {{-- @if ($associations->user_id === $users->id && $gerants->email === $users->email) --}}
                     <div class="col-lg-4 col-sm-6 col-12">
@@ -90,21 +91,21 @@
 
 
                                     <div class="mb-3">
-                                        <img src="{{ Storage::url($associations->image) }}" class="img-6x rounded-circle" alt="Image chef de l'association" />
+                                        <img src="{{ Storage::url($users->image) }}" class="img-6x rounded-circle" alt="Image chef de l'user" />
                                     </div>
-                                    <h6 class="mb-3 text-secondary fw-light">{{ $associations->name }}</h6>
-                                    @foreach ($user as $users)
+                                    <h6 class="mb-3 text-secondary fw-light">{{ $users->name }}</h6>
+                                    {{-- @foreach ($user as $users)
                                     @if ($associations->user_id === $users->id)
                                         <h5 class="mb-2">{{ $users->name }}</h5>
                                     @endif
-                                    @endforeach
+                                    @endforeach --}}
                                     <p></p>
                                     <div class="mb-3">
                                         <span class="badge bg-opacity-10 bg-danger text-danger"></span>
                                         <span class="badge bg-opacity-10 bg-info text-info"></span>
                                     </div>
                                     <div class="mt-3">
-                                        <a href="{{ route('association.details', $associations->id) }}" class="btn btn-success">Voir</a>
+                                        <a href="{{ route('association.details', $users->id) }}" class="btn btn-success">Voir</a>
                                     </div>
 
 
@@ -113,8 +114,7 @@
 
                         </div>
                     </div>
-                    {{-- @endif --}}
-                {{-- @endforeach --}}
+                    @endif
                 @endforeach
 {{-- @endforeach --}}
             </div>
