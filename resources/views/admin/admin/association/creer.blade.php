@@ -82,18 +82,14 @@
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
-                        <label class="form-label">President de l'association</label>
-                        <select name="user_id"  class="form-select">
-                            <option value="0">Select</option>
-                            @foreach ($gerant as $gerants)
-                                {{-- @foreach ($user as $users) --}}
-                                @if ($gerants->role_id === 5)
-                                    <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
-                                @endif
-                            {{-- @endforeach --}}
-                            @endforeach
-                            {{-- <option value="1">{{ $gerant->name }}</option> --}}
-                        </select>
+                            <label class="form-label">Email de l'agence</label>
+                            <input type="mail" name="email" class="form-control" placeholder="Enter company name" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Numero de l'agence</label>
+                            <input type="text" name="phone" class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
@@ -126,12 +122,17 @@
                             <textarea class="form-control" name="reglement" placeholder="Reglement" rows="3"></textarea>
                             </div>
                         </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Mot de Passe</label>
+                                <input type="text" name="password" class="form-control" placeholder="Enter company name" />
+                            </div>
+                        </div>
                     <br><br>
 
                 </div>
                 <div class="col-sm-6 col-12">
                     <div class="mb-3">
-                    {{-- <label class="form-label">Reglements</label> --}}
                     <input class="form-control" value="Submit" type="submit">
                     </div>
                 </div>

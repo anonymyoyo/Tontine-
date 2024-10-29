@@ -25,7 +25,6 @@ class User extends Authenticatable
         'phone',
         'ville',
         'pays',
-        'identification',
         'image',
         'role_id',
         'password',
@@ -54,25 +53,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function membre(): HasOne{
-        return $this->hasOne(Membre::class);
-    }
-
     public function associations(): HasMany{
         return $this->hasMany(Association::class);
     }
 
     public function agences(): HasMany{
         return $this->hasMany(Agence::class);
-    }
-
-    public function gerants(): HasOne{
-        return $this->hasOne(Gerant::class);
-    }
-    public function commerciaux(): HasOne{
-        return $this->hasOne(Commercial::class);
-    }
-    public function chefdagence(): HasOne{
-        return $this->hasOne(Chef_d_agence::class);
     }
 }
