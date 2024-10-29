@@ -168,6 +168,7 @@ class AdminController extends Controller
         $path=$image->store('images','public');
         Association::create([
             'name'=>$request->name,
+            'email'=>$request->email,
             'description'=>$request->description,
             'reglement'=>$request->reglement,
             'ville'=>$request->ville,
@@ -194,20 +195,6 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $gerant=User::all();
         $association=Association::all();
-
-        Gerant::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'pays'=>$request->pays,
-            // 'user_id'=>$request->user_id,
-            'identification'=>$path2,
-            'role_id'=>'5',
-            'association_id'=>$request->association_id,
-            'image'=>$path,
-            'password'=>Hash::make($request->password),
-        ]);
 
         User::create([
             'name'=>$request->name,

@@ -60,4 +60,8 @@ class User extends Authenticatable
     public function agences(): HasMany{
         return $this->hasMany(Agence::class);
     }
+
+    public function roles(): HasOne{
+        return $this->hasOne(Role::class);
+    }
 }

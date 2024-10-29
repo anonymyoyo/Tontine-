@@ -101,6 +101,12 @@
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
+                            <label class="form-label">Email de l'association</label>
+                            <input type="mail" name="email" class="form-control" placeholder="Enter company name" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-12">
+                        <div class="mb-3">
                             <label class="form-label">Ville</label>
                             <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
                         </div>

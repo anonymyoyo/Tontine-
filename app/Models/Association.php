@@ -15,7 +15,6 @@ class Association extends Model
         'name',
         'email',
         'description',
-        'phone',
         'reglement',
         'ville',
         'pays',
