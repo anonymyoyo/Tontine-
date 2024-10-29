@@ -5,7 +5,7 @@
                         <header>
                             <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
                                 <div class="container">
-                                    <a class="navbar-brand" href="{{ route('user') }}">
+                                    <a class="navbar-brand" href="{{ route('home') }}">
                                         <!-- logo start -->
                                         <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="logo">
                                         <!-- logo end -->
@@ -19,7 +19,7 @@
                                     <div class="collapse navbar-collapse justify-content-end order-3 order-lg-2" id="primaryNav">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
-                                                <a class="nav-link link-active secondary-effect" href="{{ route('user') }}">Acceuil</a>
+                                                <a class="nav-link link-active secondary-effect" href="{{ route('home') }}">Acceuil</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link secondary-effect" href="{{ route('about') }}">A propos</a>

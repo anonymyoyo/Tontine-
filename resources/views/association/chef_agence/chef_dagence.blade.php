@@ -76,10 +76,10 @@
             <!-- Row start -->
             <div class="row gx-3">
                 @foreach ($responsables as $responsable)
-            @foreach ($roles as $role)
-            {{-- @foreach ($agences as $agence) --}}
+            {{-- @foreach ($roles as $role) --}}
+            @foreach ($agences as $agence)
 
-            @if ($role->id === 2 && $responsable->role_id === $role->id)
+            @foreach ($responsable->association as $association)
 
               <div class="col-lg-4 col-sm-6 col-12">
 
@@ -90,10 +90,15 @@
                         <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
                       </div>
                       <h5 class="mb-2">{{ $responsable->name }}</h5>
-                      <h6 class="mb-3 text-secondary fw-light">{{ $role->name }}</h6>
+                      {{-- <h6 class="mb-3 text-secondary fw-light">{{ $role->name }}</h6> --}}
                       <p>Working on the latest API integration.</p>
                       <div class="mb-3">
+                        @foreach ($roles as $role)
+                        @if ($responsable->role_id === $role->id)
                         <span class="badge bg-opacity-10 bg-danger text-danger">{{ $role->name }}</span>
+                        @endif
+
+                        @endforeach
                         {{-- <span class="badge bg-opacity-10 bg-info text-info">{{ $agence->name }}</span> --}}
                       </div>
                       <div class="mt-3">
@@ -104,7 +109,7 @@
                 </div>
 
               </div>
-              @endif
+              @endforeach
             @endforeach
             {{-- @endforeach --}}
             @endforeach

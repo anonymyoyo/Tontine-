@@ -108,9 +108,9 @@
                                 </th>
 
                                 @foreach ($user as $users)
-                                    @if ($agences->user_id === $users->id)
-                                    <td>{{ $users->name }}</td>
-                                @endif
+                                    {{-- @if ($agences->user_id === $users->id) --}}
+                                    {{-- <td>{{ $users->name }}</td> --}}
+                                {{-- @endif --}}
                                 @endforeach
                                     <td>{{ $agences->email }}</td>
 

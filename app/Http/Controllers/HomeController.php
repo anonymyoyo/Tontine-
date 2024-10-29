@@ -9,7 +9,8 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        return view('users.home');
+        $tontine=Tontine::all();
+        return view('users.home', compact('tontine'));
     }
 
     public function about(){
