@@ -16,23 +16,17 @@ class chefagenceSeeder extends Seeder
         //
         ChefAgence::create([
             "name"=> "Romeo Badang",
-            "email"=> "romeobadang@tca.com",
-            "phone"=> "694865872",
-            "ville"=> "Douala",
-            "pays"=> "Cameroon",
+            "association_id"=> 2,
             "image"=> "images/NLPtCJvBjUhHKXTfKK5zU8eqR8okQFavc0ZQ1xdr.png",
-            "role_id"=> 2,
+            "user_id"=> 4,
         ]);
 
 
         ChefAgence::create([
             "name"=> "Jacques",
-            "email"=> "jacques@association.com",
-            "phone"=> "694865872",
-            "ville"=> "Douala",
-            "pays"=> "Cameroon",
+            "association_id"=> 1,
             "image"=> "images/oqh4DkGgkqALv2JRRfq0hJLXhDAkzPkcHJGfjrAL.png",
-            "role_id"=> 2,
+            "user_id"=> 5,
         ]);
     }
 }

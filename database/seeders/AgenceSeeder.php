@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Agence;
 use App\Models\Association;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,7 +16,7 @@ class AgenceSeeder extends Seeder
     {
         //
 
-        Association::create([
+        Agence::create([
             "name"=> "BBP yaounde",
             "email"=> "bbp@gmail.com",
             "phone"=> "694865872",
@@ -27,7 +28,7 @@ class AgenceSeeder extends Seeder
         ]);
 
 
-        Association::create([
+        Agence::create([
             "name"=> "Association EDEA",
             "email"=> "associationedea@association.com",
             "phone"=> "694865872",
