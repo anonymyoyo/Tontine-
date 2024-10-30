@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Agence;
+use App\Models\Association;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,6 +16,11 @@ return new class extends Migration
     {
         Schema::create('membres', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->string('image');
             $table->timestamps();
         });
     }

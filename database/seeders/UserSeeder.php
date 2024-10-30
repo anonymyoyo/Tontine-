@@ -33,9 +33,7 @@ class UserSeeder extends Seeder
             "pays"=> "Cameroon",
             "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php8AFE.tmp",
             "role_id"=> 5,
-            "email_verified_at"=> null,
-            "created_at"=> "2024-10-29T22:46:21.000000Z",
-            "updated_at"=> "2024-10-29T22:46:21.000000Z"
+            'password'=>'bitinza'
         ]);
 
         User::create([
@@ -46,9 +44,7 @@ class UserSeeder extends Seeder
             "pays"=> "Cameroon",
             "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpC61C.tmp",
             "role_id"=> 5,
-            "email_verified_at"=> null,
-            "created_at"=> "2024-10-29T23:02:59.000000Z",
-            "updated_at"=> "2024-10-29T23:02:59.000000Z"
+            'password'=>'moussidilan'
         ]);
     }
 }

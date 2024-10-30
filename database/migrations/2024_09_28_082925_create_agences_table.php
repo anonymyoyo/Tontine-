@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('pays');
             $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');
             $table->timestamps();
         });
