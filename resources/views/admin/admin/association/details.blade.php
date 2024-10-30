@@ -90,7 +90,7 @@
 
                         </div>
                         <div class="col-12 col-md-auto">
-                            <a href="#!" class="btn btn-light btn-lg"> Follow</a>
+                            <a href="#!" class="btn btn-light btn-lg"> .</a>
                         </div>
                         </div>
                         <!-- Row end -->
@@ -115,19 +115,19 @@
                         <span> {{ $association->ville }}, {{ $association->pays }}</span>
                         </h6>
                         <h6 class="d-flex align-items-center mb-3">
-                        <i class="bi bi-building fs-2 me-2"></i> Categorie @
+                        <i class="bi bi-building fs-2 me-2"></i>
                         @foreach ($gerant as $gerants)
-                        @foreach ($roles as $role)
-                            @if ($gerants->role_id === 5 )
-                            <span class="text-primary">{{ $role->name }}</span>
-                            @endif
+                        {{-- @foreach ($roles as $role) --}}
+                            {{-- @if ($gerants->role_id === $role->id ) --}}
+                            <span class="text-primary">{{ $gerants->phone }}</span>
+                            {{-- @endif --}}
                         @endforeach
-                        @endforeach
+                        {{-- @endforeach --}}
 
                         </h6>
                         <h6 class="d-flex align-items-center mb-3">
-                        <i class="bi bi-globe-americas fs-2 me-2"></i>
-                        <span class="text-primary">www.bootstrap.gallery</span>
+                        <i class="bi bi-globe-americas fs-2 me-2"></i> Categorie @
+                        <span class="text-primary">Association</span>
                         </h6>
                     </div>
                     </div>
@@ -137,12 +137,15 @@
                     </div>
                     <div class="card-body">
                         <div class="d-inline-flex gap-2 flex-wrap">
-                        <span class="badge bg-danger">HTML</span>
-                        <span class="badge bg-info">Javascript</span>
-                        <span class="badge bg-success">React</span>
-                        <span class="badge bg-warning">Scss</span>
-                        <span class="badge bg-primary">Angular</span>
-                        <span class="badge bg-secondary">CSS</span>
+                            @foreach ($agences as $agence)
+                                <span class="badge bg-danger">{{ $agence->name }}</span>
+                                <span class="badge bg-info">{{ $agence->name }}</span>
+                                <span class="badge bg-success">{{ $agence->name }}</span>
+                                <span class="badge bg-warning">{{ $agence->name }}</span>
+                                <span class="badge bg-primary">{{ $agence->name }}</span>
+                                <span class="badge bg-secondary">{{ $agence->name }}</span>
+                            @endforeach
+
                         </div>
                     </div>
                     </div>
@@ -226,8 +229,8 @@
                         <div class="card-header">
                             <h5 class="card-title">Commerciaux</h5>
                         </div>
-                        {{-- @foreach ($commercial as $commerciaux) --}}
-                        {{-- @if ($association->id === $commerciaux->association_id)
+                        @foreach ($commercial as $commerciaux)
+                        @if ($association->id === $commerciaux->association_id)
                             <div class="card-body">
                                 <div class="row g-2 row-cols-3">
                                 <div class="col">
@@ -236,7 +239,7 @@
                                 </div>
                             </div>
                         @endif
-                        @endforeach --}}
+                        @endforeach
 
                     </div>
 

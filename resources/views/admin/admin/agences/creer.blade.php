@@ -89,7 +89,9 @@
                         <select name="user_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($gerant as $gerants)
-                                <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
+                                @if ($gerants->role_id===2)
+                                    <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
+                                @endif
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>
@@ -129,19 +131,6 @@
                     <div class="mb-3">
                         <label class="form-label">Pays</label>
                         <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Capital de l'agence</label>
-                        <input type="text" name="budget" class="form-control" placeholder="Enter province/territory" />
-                    </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Piece de legalite</label>
-                        <input type="file" name="identification" class="form-control" placeholder="Enter postal code" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">

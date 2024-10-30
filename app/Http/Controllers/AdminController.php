@@ -38,8 +38,9 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $agences=Agence::all();
+        $gerant=User::all();
         $association=Association::all();
-        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'roles'));
+        return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'roles', 'gerant'));
     }
 
     public function agence_detail($id){
@@ -133,11 +134,11 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $association=Association::all();
         // $user=User::all();
-        $gerant=User::all();
+        $gerant=User::where('role_id', 5)->get();
 
-        // return $association;
+        return $association;
         // return $gerant;
-        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
+        // return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
     }
 
     public function dashboard_association_gerant(){
@@ -217,7 +218,8 @@ class AdminController extends Controller
         $association=Association::find($id);
         $commercial=User::all();
         $gerant=User::all();
-        return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles'));
+        $agences=Agence::all();
+        return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
     }
 
     public function zone(){
@@ -314,18 +316,6 @@ class AdminController extends Controller
         $path2=$identification->store('images','public');
         $tontine=Tontine::all();
         $association=Association::all();
-        User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'pays'=>$request->pays,
-            'association_id'=>$request->association_id,
-            'identification'=>$path2,
-            'role_id'=>'2',
-            'image'=>$path,
-            'password'=>Hash::make($request->password),
-        ]);
 
         User::create([
             'name'=>$request->name,
@@ -333,7 +323,6 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$path2,
             'role_id'=>'2',
             'image'=>$path,
             'password'=>Hash::make($request->password),
@@ -349,7 +338,7 @@ class AdminController extends Controller
             $zones=Zone::all();
             $agences=Agence::all();
             $association=Association::all();
-            $commercial=User::all();
+            $commercial=User::where('role_id', 3);
             return view('admin.admin.commerciaux.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'association'));
     }
 
@@ -374,28 +363,12 @@ class AdminController extends Controller
         $association=Association::all();
         $zones=Zone::all();
 
-
-        Commercial::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'pays'=>$request->pays,
-            'identification'=>$path2,
-            'association_id'=>$request->association_id,
-            'role_id'=>'3',
-            'image'=>$path,
-            'agence_id'=>$request->agence_id,
-            'password'=>Hash::make($request->password)
-        ]);
-
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$identification,
             'role_id'=>'3',
             'image'=>$image,
             'password'=>Hash::make($request->password)
@@ -427,7 +400,7 @@ class AdminController extends Controller
 
     public function agences_membre(){
         $tontine=Tontine::all();
-        $membres=Membre::all();
+        $membres=User::where('role_id', 4);
         $roles=Role::all();
         return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }
