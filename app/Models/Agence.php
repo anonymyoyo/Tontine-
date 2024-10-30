@@ -20,6 +20,7 @@ class Agence extends Model
         'phone',
         'ville',
         'user_id',
+        'association_id',
         'pays',
         'image',
     ];

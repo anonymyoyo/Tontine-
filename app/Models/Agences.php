@@ -4,20 +4,22 @@ namespace App\Models;
 
 use App\Models\Association;
 use App\Models\User;
-use App\Models\Zone;
+use App\Models\Commercial;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Gerant extends Model
+class Agence extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'name',
-        'agence_id',
-        'association_id',
+        'email',
+        'phone',
+        'ville',
+        'user_id',
+        'pays',
         'image',
     ];
 
