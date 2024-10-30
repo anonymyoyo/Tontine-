@@ -40,6 +40,7 @@ class AdminController extends Controller
         $agences=Agence::all();
         $gerant=User::all();
         $association=Association::all();
+        // return $agences;
         return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'roles', 'gerant'));
     }
 

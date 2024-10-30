@@ -16,7 +16,7 @@ class Membre extends Model
 
     protected $fillable = [
         'name',
-        'agence_id',
+        'membre_id',
         'association_id',
         'image',
     ];
