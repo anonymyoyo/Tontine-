@@ -136,9 +136,9 @@ class AdminController extends Controller
         // $user=User::all();
         $gerant=User::where('role_id', 5)->get();
 
-        return $association;
+        // return $association;
         // return $gerant;
-        // return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
+        return view('admin.admin.association.association', compact('tontine', 'association', 'gerant', 'roles'));
     }
 
     public function dashboard_association_gerant(){
