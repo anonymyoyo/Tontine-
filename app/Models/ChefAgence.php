@@ -16,7 +16,6 @@ class ChefAgence extends Model
 
     protected $fillable = [
         'name',
-        'agence_id',
         'association_id',
         'image',
     ];

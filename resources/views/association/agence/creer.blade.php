@@ -136,13 +136,6 @@
                 <input type="text" name="budget" class="form-control" placeholder="Enter province/territory" />
             </div>
             </div>
-
-            <div class="col-lg-3 col-sm-4 col-12">
-            <div class="mb-3">
-                <label class="form-label">Piece de legalite</label>
-                <input type="file" name="identification" class="form-control" placeholder="Enter postal code" />
-            </div>
-            </div>
             <div class="col-lg-3 col-sm-4 col-12">
             <div class="mb-3">
                 <label class="form-label">Image de l'agence</label>

@@ -127,12 +127,6 @@
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
-                        <label class="form-label">Piece d'identification</label>
-                        <input type="file" name="identification" class="form-control" placeholder="Enter province/territory" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
                         <label class="form-label">Photo</label>
                         <input type="file" name="image" class="form-control" placeholder="Enter postal code" />
                     </div>

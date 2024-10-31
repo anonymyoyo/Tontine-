@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
+use App\Models\Commercial;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Tontine;
@@ -333,19 +334,19 @@ class AdminController extends Controller
 
     public function commercial(){
             $tontine=Tontine::all();
-            $responsables=User::all();
-            // $image=store::files('public/images');
             $roles=Role::all();
+            // $user=User::where('role_id', 3)->get();
             $zones=Zone::all();
             $agences=Agence::all();
             $association=Association::all();
-            $commercial=User::where('role_id', 3);
-            return view('admin.admin.commerciaux.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'association'));
+            $commercial=User::where('role_id', 3)->get();
+            return view('admin.admin.commerciaux.commercial', compact('agences','roles', 'tontine', 'commercial', 'zones', 'association'));
     }
 
     public function creer_commercial(){
         $tontine=Tontine::all();
         $commercial=User::all();
+
         $zones=Zone::all();
         $roles=Role::all();
         $agence=Agence::all();
@@ -358,11 +359,16 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $identification=$request->file('image');
-        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $association=Association::all();
         $zones=Zone::all();
+
+        Commercial::create([
+            'name'=>$request->name,
+            'agence_id'=>$request->agence_id,
+            'association_id'=>$request->association_id,
+            'image'=>$image,
+        ]);
 
         User::create([
             'name'=>$request->name,

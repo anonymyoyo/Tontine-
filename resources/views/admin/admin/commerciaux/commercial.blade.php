@@ -87,8 +87,8 @@
                       </tr>
                     </thead>
                     <tbody>
+                        {{-- @foreach ($user as $users) --}}
                         @foreach ($commercial as $commerciaux)
-
                         {{-- @foreach ($roles as $role) Storage::url($responsable->image)--}}
 
 

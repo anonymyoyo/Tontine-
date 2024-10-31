@@ -17,7 +17,6 @@ return new class extends Migration
         Schema::create('commercials', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');
