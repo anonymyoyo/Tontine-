@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -57,11 +58,11 @@ class User extends Authenticatable
         return $this->hasMany(Association::class);
     }
 
-    public function agences(): HasMany{
-        return $this->hasMany(Agence::class);
+    public function agences(): HasOne{
+        return $this->hasOne(Agence::class);
     }
 
-    public function roles(): HasOne{
-        return $this->hasOne(Role::class);
+    public function roles(): BelongsTo{
+        return $this->belongsTo(Role::class,'role_id');
     }
 }

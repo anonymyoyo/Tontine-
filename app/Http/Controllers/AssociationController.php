@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AssociationResource;
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\ChefAgence;
@@ -29,11 +30,23 @@ class AssociationController extends Controller
     public function association_agence(){
         $roles=Role::all();
         $user=User::find(auth()->user()->id);
-        $association=$user->associations;
+        // $association=$user->associations;
         $tontine=Tontine::all();
-        $agence=Agence::where('association_id', $association[0]->id)->get();
+        // $agence=Agence::where('association_id', $association[0]->id)->get();
+        // $agence=Association::join('users', 'user_id', 'associations.user_id')
+        //             ->join('agences', 'agences.association_id', 'associations.id')
+
+        //             ->where('users.id', auth()->user()->id)->get();
+
+        $association=AssociationResource::collection(
+            Association::where('user_id', auth()->user()->id)->get()
+        );
+
         // return $association[0]->id;
-        return view('association.agence.agences', compact('agence', 'tontine', 'roles', 'user', 'association'));
+        // return $agence;
+        return $association;
+        // return $user->roles->name;
+        return view('association.agence.agences', compact('agence', 'tontine', 'roles'));
     }
 
     public function association_agence_detail($id){
