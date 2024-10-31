@@ -29,21 +29,10 @@ class AssociationController extends Controller
     public function association_agence(){
         $roles=Role::all();
         $user=User::find(auth()->user()->id);
-        // $agence=$user->agences;
         $association=$user->associations;
-        // $agence=Association::where('user_id', auth()->user()->id)->get();
-        // $agence=Agence::where('association_id', $user->id)->get();
-        // $agence=Association::where('user_id', auth()->user()->id)->get();
-        // $gerant=User::where('association_id', auth()->user()->id)->get();
-        // $agence=Agence::where('association_id', $association->id)->get();
-        $agence=Agence::where('user_id', auth()->user()->id)->get();
-        // $agence=Agence::where('user_id', $agence[0]->id)->get();
         $tontine=Tontine::all();
-
-        // return $agence;
-        // return $gerant;
-        // return $association[0]->name. $association[0]->id. $association[0]->pays. $association[0]->ville ;
-        // return $user;
+        $agence=Agence::where('association_id', $association[0]->id)->get();
+        // return $association[0]->id;
         return view('association.agence.agences', compact('agence', 'tontine', 'roles', 'user', 'association'));
     }
 

@@ -104,12 +104,12 @@ class AdminController extends Controller
         $agences=Agence::all();
         $association=Association::all();
 
-        ChefAgence::create([
-            'name'=>$request->name,
-            'association_id'=>$request->association_id,
-            'image'=>$path,
-            'user_id'=>$request->user_id,
-        ]);
+        // ChefAgence::create([
+        //     'name'=>$request->name,
+        //     'association_id'=>$request->association_id,
+        //     'image'=>$path,
+        //     'user_id'=>$request->user_id,
+        // ]);
 
         Agence::create([
             'name'=>$request->name,

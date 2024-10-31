@@ -47,27 +47,27 @@ class UserSeeder extends Seeder
             'password'=>'moussidilan'
         ]);
 
-        User::create([
-            "name"=> "Romeo Badang",
-            "email"=> "romeobadang@tca.com",
-            "phone"=> "694865872",
-            "ville"=> "Douala",
-            "pays"=> "Cameroon",
-            "image"=> "images/NLPtCJvBjUhHKXTfKK5zU8eqR8okQFavc0ZQ1xdr.png",
-            "role_id"=> 2,
-            'password'=>'romeobadang'
-        ]);
+        // User::create([
+        //     "name"=> "Romeo Badang",
+        //     "email"=> "romeobadang@tca.com",
+        //     "phone"=> "694865872",
+        //     "ville"=> "Douala",
+        //     "pays"=> "Cameroon",
+        //     "image"=> "images/NLPtCJvBjUhHKXTfKK5zU8eqR8okQFavc0ZQ1xdr.png",
+        //     "role_id"=> 2,
+        //     'password'=>'romeobadang'
+        // ]);
 
 
-        User::create([
-            "name"=> "Jacques",
-            "email"=> "jacques@association.com",
-            "phone"=> "694865872",
-            "ville"=> "Douala",
-            "pays"=> "Cameroon",
-            "image"=> "images/oqh4DkGgkqALv2JRRfq0hJLXhDAkzPkcHJGfjrAL.png",
-            "role_id"=> 2,
-            'password'=>'jacques'
-        ]);
+        // User::create([
+        //     "name"=> "Jacques",
+        //     "email"=> "jacques@association.com",
+        //     "phone"=> "694865872",
+        //     "ville"=> "Douala",
+        //     "pays"=> "Cameroon",
+        //     "image"=> "images/oqh4DkGgkqALv2JRRfq0hJLXhDAkzPkcHJGfjrAL.png",
+        //     "role_id"=> 2,
+        //     'password'=>'jacques'
+        // ]);
     }
 }
