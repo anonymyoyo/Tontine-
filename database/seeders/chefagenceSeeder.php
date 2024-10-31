@@ -18,7 +18,6 @@ class chefagenceSeeder extends Seeder
             "name"=> "Romeo Badang",
             "association_id"=> 2,
             "image"=> "images/NLPtCJvBjUhHKXTfKK5zU8eqR8okQFavc0ZQ1xdr.png",
-            "user_id"=> 4,
         ]);
 
 
@@ -26,7 +25,6 @@ class chefagenceSeeder extends Seeder
             "name"=> "Jacques",
             "association_id"=> 1,
             "image"=> "images/oqh4DkGgkqALv2JRRfq0hJLXhDAkzPkcHJGfjrAL.png",
-            "user_id"=> 5,
         ]);
     }
 }

@@ -7,11 +7,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
+use App\Models\ChefAgence;
 use App\Models\Commercial;
-use App\Models\User;
 use App\Models\Role;
 use App\Models\Tontine;
 use App\Models\Transaction;
+use App\Models\User;
 use App\Models\Versement;
 use App\Models\Zone;
 use Illuminate\Contracts\Cache\Store as CacheStore;
@@ -102,6 +103,13 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $agences=Agence::all();
         $association=Association::all();
+
+        ChefAgence::create([
+            'name'=>$request->name,
+            'association_id'=>$request->association_id,
+            'image'=>$path,
+            'user_id'=>$request->user_id,
+        ]);
 
         Agence::create([
             'name'=>$request->name,
