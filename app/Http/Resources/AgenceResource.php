@@ -14,6 +14,13 @@ class AgenceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id'=>$this->id,
+            'nameAgence'=>$this->name,
+            'emailAgence'=>$this->email,
+            // 'user_id'=>auth()->user()->id#
+            'chefAgence'=>$this->user->name,
+            'image'=>$this->image,
+        ];
     }
 }

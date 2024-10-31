@@ -75,25 +75,25 @@
             </div><br><br>
             <!-- Row start -->
             <div class="row gx-3">
-                @foreach ($responsables as $responsable)
-            @foreach ($associations as $association)
-            @foreach ($agences as $agence)
+                {{-- @foreach ($responsables as $responsable)--}}
+            @foreach ($responsables as $user)
+            @foreach ($agences as $chefagence)
 
-            @if ($association->id === $agence->association_id && $agence->user_id === $responsable->id)
+            @if ($chefagence->user_id === $user->id)
                 <div class="col-lg-4 col-sm-6 col-12">
 
                 <div class="card mb-3">
                   <div class="card-body">
                     <div class="d-flex align-items-center flex-column">
                       <div class="mb-3">
-                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
+                        <img src="{{ Storage::url($user->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
                       </div>
-                      <h5 class="mb-2">{{ $responsable->name }}</h5>
+                      <h5 class="mb-2">{{ $user->name }}</h5>
                       {{-- <h6 class="mb-3 text-secondary fw-light">{{ $role->name }}</h6> --}}
                       <p>Working on the latest API integration.</p>
                       <div class="mb-3">
                         @foreach ($roles as $role)
-                        @if ($responsable->role_id === $role->id)
+                        @if ($user->role_id === $role->id)
                         <span class="badge bg-opacity-10 bg-danger text-danger">{{ $role->name }}</span>
                         @endif
 
@@ -116,7 +116,7 @@
               {{-- @endforeach --}}
             @endforeach
             @endforeach
-            @endforeach
+            {{-- @endforeach --}}
             </div>
             <!-- Row end -->
 

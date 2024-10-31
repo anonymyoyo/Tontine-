@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\AgenceResource;
+use App\Models\Agence;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +21,9 @@ class AssociationResource extends JsonResource
             'name'=>$this->name,
             'email'=>$this->email,
             // 'user_id'=>auth()->user()->id#
-            'agence'=>$this->agences,
+            'agence'=>AgenceResource::collection(
+                Agence::where('association_id', $this->id)->get()
+            ),
             'image'=>$this->image,
         ];
     }

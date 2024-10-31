@@ -94,11 +94,13 @@
                             <th scope="col">Nbre Commerciaux</th>
                             <th scope="col">Date creation</th>
                             <th scope="col">Nbre Membre</th>
-                            <th scope="col">Budget</th>
                             <th scope="col">Actions</th>
                           </tr>
                         </thead>
                         @foreach ($agence as $agences)
+                        {{-- @foreach ($gerant as $gerants) --}}
+
+
                             <tbody>
                             <tr class="grd-primary-light">
                                 <th scope="row">
@@ -128,6 +130,7 @@
                                 </td>
                             </tr>
                             </tbody>
+                        {{-- @endforeach --}}
                         @endforeach
 
                       </table>

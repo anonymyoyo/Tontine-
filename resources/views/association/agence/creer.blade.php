@@ -87,10 +87,10 @@
                 <label class="form-label">Chef d'agence</label>
                 <select name="user_id"  class="form-select">
                     <option value="0">Select</option>
-                    {{-- @foreach ($gerant as $gerants)
+                    @foreach ($gerant as $gerants)
                         <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
-                    @endforeach --}}
-                    {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                    @endforeach
+                    <option value="1">{{ $gerant->name }}</option>
                 </select>
                 </div>
             </div>

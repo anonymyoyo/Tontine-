@@ -58,8 +58,8 @@ class User extends Authenticatable
         return $this->hasMany(Association::class);
     }
 
-    public function agences(): HasOne{
-        return $this->hasOne(Agence::class);
+    public function agences(): HasMany{
+        return $this->hasMany(Agence::class);
     }
 
     public function roles(): BelongsTo{
