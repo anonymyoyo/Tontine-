@@ -61,12 +61,12 @@
             </ul>
           </li>
 
-        <li>
+        {{-- <li>
           <a href="{{ route('agence.chef_agence') }}">
             <i class="bi bi-check-circle"></i>
             <span class="menu-text">Chefs Agences</span>
           </a>
-        </li>
+        </li> --}}
         <li>
             <a href="{{ route('agence.commercial') }}">
                 <i class="fs-3 bi bi-people"></i>
@@ -91,12 +91,12 @@
             <span class="menu-text">Settings</span>
           </a>
         </li>
-        {{-- <li>
+        <li>
           <a href="{{ route('agence.membres') }}">
             <i class="bi bi-person"></i>
             <span class="menu-text">Membres</span>
           </a>
-        </li> --}}
+        </li>
       </ul>
     </div>
 

@@ -42,7 +42,8 @@ class AdminController extends Controller
         $agences=Agence::all();
         $gerant=User::all();
         $association=Association::all();
-        // return $agences;
+        // $a=Tontine::all();
+        // return $a;
         return view('admin.admin.agences.agence', compact('agences', 'tontine', 'association', 'roles', 'gerant'));
     }
 
@@ -287,9 +288,7 @@ class AdminController extends Controller
         Tontine::create([
             'name'=>$request->name,
             'description'=>$request->description,
-            'montant_total'=>$request->montant_total,
             'reglement'=>$request->reglement,
-            'nbre_membre'=>$request->nbre_membre,
             'prix'=>$request->prix,
             'image'=>$image,
             ]);

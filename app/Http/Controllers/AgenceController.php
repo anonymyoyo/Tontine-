@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agence;
-use App\Models\User;
-use App\Models\Commercial;
-use App\Models\Gerant;
 use App\Models\Role;
 use App\Models\Tontine;
 use App\Models\User;
@@ -26,11 +23,16 @@ class AgenceController extends Controller
     }
 
     public function dashboard_agence(){
-        $user=User::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
         $roles=Role::all();
-        $agences=Agence::all();
+        $gerant=User::where('role_id', 2);
+        $agencies=Agence::where('association_id', auth()->user()->association_id)->get();
         $tontine=Tontine::all();
-        return view('agence.agence.agences', compact('tontine', 'agences', 'user', 'roles'));
+
+        // return $agences;
+        return view('agence.agence.agences', compact('tontine', 'agencies', 'gerant', 'roles'));
     }
 
     public function dashboard_agence_detail($id){
@@ -124,18 +126,18 @@ class AgenceController extends Controller
         $zones=Zone::all();
 
 
-        Commercial::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'pays'=>$request->pays,
-            'identification'=>$path2,
-            'role_id'=>'3',
-            'image'=>$path,
-            'agence_id'=>$request->agence_id,
-            'password'=>Hash::make($request->password)
-        ]);
+        // Commercial::create([
+        //     'name'=>$request->name,
+        //     'email'=>$request->email,
+        //     'phone'=>$request->phone,
+        //     'ville'=>$request->ville,
+        //     'pays'=>$request->pays,
+        //     'identification'=>$path2,
+        //     'role_id'=>'3',
+        //     'image'=>$path,
+        //     'agence_id'=>$request->agence_id,
+        //     'password'=>Hash::make($request->password)
+        // ]);
 
         User::create([
             'name'=>$request->name,

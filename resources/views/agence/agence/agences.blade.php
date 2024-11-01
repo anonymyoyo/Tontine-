@@ -85,41 +85,32 @@
                             <th scope="col">Address</th>
                             <th scope="col">Nbre Commerciaux</th>
                             <th scope="col">Date creation</th>
-                            <th scope="col">Nbre Membre</th>
-                            <th scope="col">Budget</th>
-                            <th scope="col">Actions</th>
                           </tr>
                         </thead>
-                        @foreach ($agences as $agence)
+                        @foreach ($agencies as $agency)
                             <tbody>
                             <tr class="grd-primary-light">
                                 <th scope="row">
-                                    <a href="{{ route('agence.detail', $agence->id) }}"></a>
-                                <img class="rounded-circle img-3x me-2" src="{{ asset('dashboard/assets/images/user.png') }}"
-                                    alt="Bootstrap Gallery" />{{ $agence->name }}
+                                    <a href="{{ route('agence.detail', $agency->id) }}"></a>
+                                <img class="rounded-circle img-3x me-2" src="{{ Storage::url($agency->image) }}"
+                                    alt="Bootstrap Gallery" />{{ $agency->name }}
                                 </th>
 
                                 @foreach ($gerant as $gerants)
-                                    @if ($agence->user_id === $gerants->id)
+                                    @if ($agency->user_id === $gerants->id)
                                     <td>{{ $gerants->name }}</td>
                                 @endif
                                 @endforeach
-                                    <td>{{ $agence->email }}</td>
+                                    <td>#</td>
 
-                                <td>{{ $agence->ville }}, {{ $agence->pays }}</td>
-                                <td>#</td>
-                                <td>{{ $agence->created_at }}</td>
+                                <td>{{ $agency->email }}</td>
+                                <td>{{ $agency->ville }}, {{ $agency->pays }}</td>
+                                <td>{{ $agency->created_at }}</td>
                                 <td>
                                 <div class="progress small">
                                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
                                     aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                </td>
-                                <td>{{ $agence->budget }}</td>
-                                <td>
-                                {{-- <a class="btn btn-info btn-sm" href="{{ route('agence.detail') }}"><i class="bi bi-pencil"></i>
-                                </a> --}}
-                                </td>
                             </tr>
                             </tbody>
                         @endforeach
