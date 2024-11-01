@@ -90,7 +90,7 @@
                     @foreach ($gerant as $gerants)
                         <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
                     @endforeach
-                    <option value="1">{{ $gerant->name }}</option>
+                    {{-- <option value="1">{{ $gerant->name }}</option> --}}
                 </select>
                 </div>
             </div>
@@ -128,12 +128,6 @@
             <div class="mb-3">
                 <label class="form-label">Pays</label>
                 <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
-            </div>
-            </div>
-            <div class="col-lg-3 col-sm-4 col-12">
-            <div class="mb-3">
-                <label class="form-label">Capital de l'agence</label>
-                <input type="text" name="budget" class="form-control" placeholder="Enter province/territory" />
             </div>
             </div>
             <div class="col-lg-3 col-sm-4 col-12">

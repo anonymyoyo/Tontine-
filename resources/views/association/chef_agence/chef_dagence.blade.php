@@ -77,9 +77,9 @@
             <div class="row gx-3">
                 {{-- @foreach ($responsables as $responsable)--}}
             @foreach ($responsables as $user)
-            @foreach ($agences as $chefagence)
+            {{-- @foreach ($agences as $chefagence) --}}
 
-            @if ($chefagence->user_id === $user->id)
+            {{-- @if ($chefagence->user_id === $user->id) --}}
                 <div class="col-lg-4 col-sm-6 col-12">
 
                 <div class="card mb-3">
@@ -108,13 +108,13 @@
                 </div>
 
               </div>
-            @endif
+            {{-- @endif --}}
 
             {{-- @foreach ($responsable->associations as $association) --}}
 
 
               {{-- @endforeach --}}
-            @endforeach
+            {{-- @endforeach --}}
             @endforeach
             {{-- @endforeach --}}
             </div>
