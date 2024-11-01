@@ -44,37 +44,43 @@ class AgenceController extends Controller
     }
 
     public function dashboard_agence_zone(){
-        $user=User::all();
         $roles=Role::all();
-        $a=User::all();
-        $zones=Zone::all();
-        $commerciaux=User::all();
-        $agences=Agence::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
         $tontine=Tontine::all();
-        return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agences', 'zones', 'user', 'a', 'roles'));
+
+        // return $commerciaux;
+        return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agence', 'zones', 'roles'));
     }
 
     public function dashboard_agence_creer_zone(){
-        $user=User::all();
         $roles=Role::all();
-        $a=User::all();
-        $commercial=User::all();
-        $agences=Agence::all();
-        $zones=Zone::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
         $tontine=Tontine::all();
-        return view('agence.zone.creer', compact('tontine', 'commercial', 'agences', 'zones', 'user', 'a', 'roles'));
+        return view('agence.zone.creer', compact('tontine', 'commerciaux', 'agence', 'zones', 'roles'));
     }
 
     public function dashboard_agence_ajouter_zone(Request $request){
-        $user=User::all();
         $roles=Role::all();
-        $a=User::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
         Zone::create([
             'name'=>$request->name,
             'agence_id'=>$request->agence_id,
+            'user_id'=>$request->user_id,
             'commercial_id'=>$request->commercial_id,
             'image'=>$path,
         ]);
@@ -92,15 +98,16 @@ class AgenceController extends Controller
     }
 
     public function dashboard_commercial(){
-        $user=User::all();
-        $a=User::all();
-        $responsables=User::all();
         $roles=Role::all();
-        $zones=Zone::all();
-        $agences=Agence::all();
-        $commercial=User::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        $commercial=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
         $tontine=Tontine::all();
-        return view('agence.commercial.commercial', compact('responsables','agences','roles', 'tontine', 'commercial', 'zones', 'user', 'a'));
+        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+
+        // return $agence;
+        return view('agence.commercial.commercial', compact('roles', 'tontine', 'commercial', 'zones', 'agence'));
     }
 
     public function dashboard_creer_commercial(){
@@ -120,24 +127,8 @@ class AgenceController extends Controller
         $a=User::all();
         $tontine=Tontine::all();$image=$request->file('image');
         $path=$image->store('images','public');
-        $identification=$request->file('image');
-        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $zones=Zone::all();
-
-
-        // Commercial::create([
-        //     'name'=>$request->name,
-        //     'email'=>$request->email,
-        //     'phone'=>$request->phone,
-        //     'ville'=>$request->ville,
-        //     'pays'=>$request->pays,
-        //     'identification'=>$path2,
-        //     'role_id'=>'3',
-        //     'image'=>$path,
-        //     'agence_id'=>$request->agence_id,
-        //     'password'=>Hash::make($request->password)
-        // ]);
 
         User::create([
             'name'=>$request->name,
@@ -145,9 +136,8 @@ class AgenceController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$identification,
             'role_id'=>'3',
-            'image'=>$image,
+            'image'=>$path,
             'password'=>Hash::make($request->password)
         ]);
         return view('agence.commercial.creer', compact('tontine', 'agence', 'zones', 'user', 'a', 'roles'));

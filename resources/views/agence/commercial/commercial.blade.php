@@ -94,19 +94,18 @@
                             <tr class="grd-primary-light">
                                 <td>{{ $commerciaux->id }}</td>
                                 <td><a href="#" class="text-red"><div class="mb-3">
-                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                    <img src="{{ Storage::url($commerciaux->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                   </div>{{ $commerciaux->name }}</a></td>
                                 <td>{{ $commerciaux->email }}</td>
                                 <td>{{ $commerciaux->phone }}</td>
                               @foreach ($zones as $zone)
-                                @if ($commerciaux->zone_id === $zone->id)
+                                @if ($commerciaux->id === $zone->user_id)
                                     <td>{{ $zone->name }}</td>
                                 @endif
                               @endforeach
-                              @foreach ($agences as $agence)
-                                @if ($commerciaux->agence_id === $agence->id)
-                                    <td>{{ $agence->name }}</td>
-                                @endif
+
+                              @foreach ($agence as $agences)
+                                    <td>{{ $agences->name }}</td>
                               @endforeach
 
                             </tr>

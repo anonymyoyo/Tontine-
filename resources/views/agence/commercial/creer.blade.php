@@ -108,27 +108,15 @@
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Capital de l'agence</label>
-                        <input type="text" name="budget" required class="form-control" placeholder="Enter province/territory" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Piece d'identite</label>
-                        <input type="file" name="identification" required class="form-control" placeholder="Enter postal code" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
-                            <label class="form-label">Photo</label>
+                            <label class="form-label">Photo/Piece d'identite</label>
                             <input type="file" name="image" required class="form-control" placeholder="Enter postal code" />
                         </div>
                         </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Agence mere</label>
-                        <select name="agence_id"  class="form-select">
+                        <select name="com_agence_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($agence as $agences)
                                 <option value="{{ $agences->id }}" required class="form-option">{{ $agences->name }}</option>
@@ -137,18 +125,6 @@
                         </select>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-3 col-sm-4 col-12">
-                        <div class="mb-3">
-                        <label class="form-label">Zone de deploiement</label>
-                        <select name="zone_id"  class="form-select">
-                            <option value="0">Select</option>
-                            @foreach ($zones as $zone)
-                                <option value="{{ $zone->id }}" class="form-option">{{ $zone->name }}</option>
-                            @endforeach
-                            <option value="1">{{ $gerant->name }}</option>
-                        </select>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Mot de passe</label>

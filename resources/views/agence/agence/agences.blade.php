@@ -96,21 +96,21 @@
                                     alt="Bootstrap Gallery" />{{ $agency->name }}
                                 </th>
 
-                                @foreach ($gerant as $gerants)
+                                {{-- @foreach ($gerant as $gerants)
                                     @if ($agency->user_id === $gerants->id)
                                     <td>{{ $gerants->name }}</td>
                                 @endif
-                                @endforeach
+                                @endforeach --}}
                                     <td>#</td>
 
                                 <td>{{ $agency->email }}</td>
                                 <td>{{ $agency->ville }}, {{ $agency->pays }}</td>
-                                <td>{{ $agency->created_at }}</td>
                                 <td>
                                 <div class="progress small">
                                     <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
                                     aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                                </div></td>
+                                <td>{{ $agency->created_at }}</td>
                             </tr>
                             </tbody>
                         @endforeach
