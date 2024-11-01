@@ -81,7 +81,6 @@
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Zone de deploiement</th>
                         <th>Agence mere</th>
                         <th>Association mere</th>
                       </tr>
@@ -105,6 +104,10 @@
                               @foreach ($agences as $agence)
                                     <td>{{ $agence->name }}</td>
                               @endforeach
+                              @foreach ($association as $associations)
+                                    <td>{{ $associations->name }}</td>
+                              @endforeach
+
 
                             </tr>
 
