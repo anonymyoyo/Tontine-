@@ -29,6 +29,7 @@ class AssociationController extends Controller
 
     public function association_agence(){
         $roles=Role::all();
+        // $a=Agence::all();
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $tontine=Tontine::all();
@@ -44,7 +45,7 @@ class AssociationController extends Controller
         // return $association[0]->id;
         // return $agence->data;
         //  return $agence;
-
+        // return $a;
         // return $user->roles->name;
         return view('association.agence.agences', compact('agence', 'tontine', 'roles'));
     }
@@ -176,16 +177,19 @@ class AssociationController extends Controller
 
     public function association_ajouter_zone(Request $request){
         $roles=Role::all();
-        $association=Association::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $commercial=User::all();
         $agences=Agence::all();
+        $commercial=User::where('com_association_id', $association[0]->id)->get();
+        $agences=Agence::where('association_id', $association[0]->id)->get();
+
         Zone::create([
             'name'=>$request->name,
+            'user_id'=>$request->user_id,
             'agence_id'=>$request->agence_id,
-            'commercial_id'=>$request->commercial_id,
             'association_id'=>$request->commercial_id,
             'image'=>$path,
         ]);

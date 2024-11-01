@@ -47,27 +47,49 @@ class UserSeeder extends Seeder
             'password'=>'moussidilan'
         ]);
 
-        // User::create([
-        //     "name"=> "Romeo Badang",
-        //     "email"=> "romeobadang@tca.com",
-        //     "phone"=> "694865872",
-        //     "ville"=> "Douala",
-        //     "pays"=> "Cameroon",
-        //     "image"=> "images/NLPtCJvBjUhHKXTfKK5zU8eqR8okQFavc0ZQ1xdr.png",
-        //     "role_id"=> 2,
-        //     'password'=>'romeobadang'
-        // ]);
+        User::create([
+            "id"=> 4,
+            "name"=> "BITINZA",
+            "email"=> "superadmin@gmail.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> "Cameroon",
+            "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php33BF.tmp",
+            "association_id"=> null,
+            "com_association_id"=> null,
+            "com_agence_id"=> null,
+            "role_id"=> 5,
+            'password'=>'admin123'
+        ]);
 
+        User::create([
+            "id"=> 5,
+            "name"=> "Marole",
+            "email"=> "marole@tca.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> "Cameroon",
+            "image"=> "images/IgOMR0TPOFHaTkaPUOw4lXJ3LrYaCGUQkwoal2hU.png",
+            "association_id"=> "3",
+            "com_association_id"=> null,
+            "com_agence_id"=> null,
+            "role_id"=> 2,
+            'password'=>'marole'
+        ]);
 
-        // User::create([
-        //     "name"=> "Jacques",
-        //     "email"=> "jacques@association.com",
-        //     "phone"=> "694865872",
-        //     "ville"=> "Douala",
-        //     "pays"=> "Cameroon",
-        //     "image"=> "images/oqh4DkGgkqALv2JRRfq0hJLXhDAkzPkcHJGfjrAL.png",
-        //     "role_id"=> 2,
-        //     'password'=>'jacques'
-        // ]);
+        User::create([
+            "id"=> 7,
+            "name"=> "Emauel",
+            "email"=> "superadmi1@gmail.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> "Cameroon",
+            "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php1A3B.tmp",
+            "association_id"=> null,
+            "com_association_id"=> "3",
+            "com_agence_id"=> null,
+            "role_id"=> 3,
+            'password'=>'emauel'
+        ]);
     }
 }

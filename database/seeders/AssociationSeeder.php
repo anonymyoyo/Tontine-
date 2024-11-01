@@ -36,5 +36,17 @@ class AssociationSeeder extends Seeder
             "user_id"=> 3,
             "image"=> "images/4Ky2OIfpwBonvhHtgyWd6QmHIkxVseVM9rWlV2pU.png",
         ]);
+
+        Association::create([
+            "id"=> 3,
+            "name"=> "TCA Miracle",
+            "email"=> "tcabertoua@tca.com",
+            "description"=> "adasadas",
+            "ville"=> "Bertoua",
+            "pays"=> "Cameroon",
+            "reglement"=> "asdasds",
+            "user_id"=> 4,
+            "image"=> "images/QRjj4iYewYT74BdX9XKHQqcdrXGgk8hCraQN4Dpn.png",
+        ]);
     }
 }

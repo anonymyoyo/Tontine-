@@ -112,7 +112,7 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Collectrice</label>
-                    <select name="commercial_id"  class="form-select">
+                    <select name="user_id"  class="form-select">
                         <option value="0">Select</option>
                         @foreach ($commercial as $commerciaux)
                             <option value="{{ $commerciaux->id }}" required class="form-option">{{ $commerciaux->name }}</option>

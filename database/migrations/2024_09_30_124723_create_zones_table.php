@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignIdFor(Association::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->foreignIdFor(Agence::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('image');
             $table->timestamps();
         });
