@@ -86,18 +86,6 @@
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
-                        <label class="form-label">Capital</label>
-                        <input type="text" name="montant_total" required class="form-control" placeholder="Entrer l'addresse mail " />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Nombre d'adherant</label>
-                        <input type="text" name="nbre_membre" required class="form-control" placeholder="Entrer le nombre d'adherant" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
                         <label class="form-label">Montant minimum a Cotiser</label>
                         <input type="text" name="prix" required class="form-control" placeholder="Entrer le montant minimum des recharges" />
                     </div>

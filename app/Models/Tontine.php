@@ -14,9 +14,7 @@ class Tontine extends Model
     protected $fillable = [
         'name',
         'description',
-        'montant_total',
         'reglement',
-        'nbre_membre',
         'prix',
         'image',
     ];

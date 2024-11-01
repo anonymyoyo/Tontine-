@@ -102,26 +102,8 @@
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Pays</label>
-                        <input type="text" name="pays" class="form-control" required placeholder="Enter business address" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Capital de l'agence</label>
-                        <input type="text" name="budget" class="form-control" required placeholder="Enter province/territory" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Piece d'identite</label>
-                        <input type="file" name="identification" class="form-control" required placeholder="Enter postal code" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
-                            <label class="form-label">Photo</label>
+                            <label class="form-label">Photo/Piece d'identite</label>
                             <input type="file" name="image" class="form-control" required placeholder="Enter postal code" />
                         </div>
                         </div>

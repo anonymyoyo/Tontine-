@@ -190,7 +190,7 @@ class AssociationController extends Controller
             'name'=>$request->name,
             'user_id'=>$request->user_id,
             'agence_id'=>$request->agence_id,
-            'association_id'=>$request->commercial_id,
+            'association_id'=>$request->association_id,
             'image'=>$path,
         ]);
 
