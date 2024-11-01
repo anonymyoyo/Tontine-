@@ -81,7 +81,7 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Nom du chef d'agence</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                    <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
@@ -90,7 +90,7 @@
                     <select name="association_id"  class="form-select">
                         <option value="0">Selectionner</option>
                         @foreach ($association as $associations)
-                            <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                            <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
                         @endforeach
                         {{-- <option value="1">{{ $gerant->name }}</option> --}}
                     </select>
@@ -99,38 +99,38 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Enter email address" />
+                    <input type="email" name="email" class="form-control" required placeholder="Enter email address" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Telephone</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Enter phone number" />
+                    <input type="text" name="phone" class="form-control" required placeholder="Enter phone number" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Ville</label>
-                    <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                    <input type="text" name="ville" class="form-control" required placeholder="Enter company name" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Pays</label>
-                    <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
+                    <input type="text" name="pays" class="form-control" required placeholder="Enter business address" />
                 </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Photo/Piece d'identification</label>
-                    <input type="file" name="image" class="form-control" placeholder="Enter postal code" />
+                    <input type="file" name="image" class="form-control" required placeholder="Enter postal code" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                     <label class="form-label">Mot de passe</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter postal code" />
+                    <input type="password" name="password" class="form-control" required placeholder="Enter postal code" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-12">

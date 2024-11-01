@@ -96,37 +96,37 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Image de l'agence</label>
-                            <input type="file" name="image" class="form-control" placeholder="Enter company name" />
+                            <input type="file" name="image" required class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Email de l'association</label>
-                            <input type="mail" name="email" class="form-control" placeholder="Enter company name" />
+                            <input type="mail" name="email" required class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Ville</label>
-                            <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                            <input type="text" name="ville" required class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Pays</label>
-                            <input type="text" name="pays" class="form-control" placeholder="Enter company name" />
+                            <input type="text" name="pays" required class="form-control" placeholder="Enter company name" />
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
                         <div class="mb-3">
                             <label class="form-label">Description</label>
-                            <textarea class="form-control" name="description" placeholder="Description" rows="3"></textarea>
+                            <textarea class="form-control" name="description" required placeholder="Description" rows="3"></textarea>
                         </div>
                         </div>
                         <div class="col-sm-6 col-12">
                             <div class="mb-3">
                             <label class="form-label">Reglements</label>
-                            <textarea class="form-control" name="reglement" placeholder="Reglement" rows="3"></textarea>
+                            <textarea class="form-control" name="reglement" required placeholder="Reglement" rows="3"></textarea>
                             </div>
                         </div>
                     <br><br>

@@ -80,49 +80,49 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom du commercial</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                        <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter email address" />
+                            <input type="email" name="email" required class="form-control" placeholder="Enter email address" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Telephone</label>
-                        <input type="text" name="phone" class="form-control" placeholder="Enter phone number" />
+                        <input type="text" name="phone" required class="form-control" placeholder="Enter phone number" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Ville</label>
-                        <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                        <input type="text" name="ville" required class="form-control" placeholder="Enter company name" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Pays</label>
-                        <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
+                        <input type="text" name="pays" required class="form-control" placeholder="Enter business address" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Capital de l'agence</label>
-                        <input type="text" name="budget" class="form-control" placeholder="Enter province/territory" />
+                        <input type="text" name="budget" required class="form-control" placeholder="Enter province/territory" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Piece d'identite</label>
-                        <input type="file" name="identification" class="form-control" placeholder="Enter postal code" />
+                        <input type="file" name="identification" required class="form-control" placeholder="Enter postal code" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Photo</label>
-                            <input type="file" name="image" class="form-control" placeholder="Enter postal code" />
+                            <input type="file" name="image" required class="form-control" placeholder="Enter postal code" />
                         </div>
                         </div>
                     <div class="col-lg-3 col-sm-4 col-12">
@@ -131,7 +131,7 @@
                         <select name="agence_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($agence as $agences)
-                                <option value="{{ $agences->id }}" class="form-option">{{ $agences->name }}</option>
+                                <option value="{{ $agences->id }}" required class="form-option">{{ $agences->name }}</option>
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>
@@ -152,7 +152,7 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Mot de passe</label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter postal code" />
+                            <input type="password" name="password" required class="form-control" placeholder="Enter postal code" />
                         </div>
                     </div>
                     <br><br>

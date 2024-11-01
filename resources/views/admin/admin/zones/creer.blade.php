@@ -81,7 +81,7 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom de la Zone</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                        <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
@@ -91,7 +91,7 @@
                         <option value="0">Select</option>
                         @foreach ($agences as $agence)
                         {{-- @if ($zone->agence_id === $agence->id) --}}
-                            <option value="{{ $agence->id }}" class="form-option">{{ $agence->name }}</option>
+                            <option value="{{ $agence->id }}" required class="form-option">{{ $agence->name }}</option>
                         {{-- @endif --}}
                         {{-- @endforeach --}}
                         @endforeach
@@ -106,7 +106,7 @@
                         <option value="0">Select</option>
                         @foreach ($association as $associations)
                         {{-- @if ($zone->associations_id === $associations->id) --}}
-                            <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                            <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
                         {{-- @endif --}}
                         {{-- @endforeach --}}
                         @endforeach
@@ -120,7 +120,7 @@
                     <select name="commercial_id"  class="form-select">
                         <option value="0">Select</option>
                         @foreach ($commercial as $commerciaux)
-                            <option value="{{ $commerciaux->id }}" class="form-option">{{ $commerciaux->name }}</option>
+                            <option value="{{ $commerciaux->id }}" required class="form-option">{{ $commerciaux->name }}</option>
 
                         @endforeach
                         {{-- <option value="1">{{ $gerant->name }}</option> --}}
@@ -130,7 +130,7 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
                     <label class="form-label">Photo</label>
-                    <input type="file" name="image" class="form-control" placeholder="Enter postal code" />
+                    <input type="file" name="image" class="form-control" required placeholder="Enter postal code" />
                 </div>
                 </div>
                 <div class="col-sm-6 col-12">
