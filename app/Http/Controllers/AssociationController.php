@@ -102,12 +102,12 @@ class AssociationController extends Controller
 
     public function association_add_agence(Request $request){
         $roles=Role::all();
-        $association=Association::where('user_id', auth()->user()->id)->get();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
         $image=$request->file('image');
         $path=$image->store('images','public');
         $tontine=Tontine::all();
         $agence=Agence::all();
-        $user=User::all();
 
         Agence::create([
             'name'=>$request->name,
@@ -129,7 +129,8 @@ class AssociationController extends Controller
 
     public function delete_association_agence($id){
         $roles=Role::all();
-        $association=Association::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
         $agences=Agence::find($id);
         $tontine=Tontine::all();
         $agences->delete();
@@ -146,11 +147,13 @@ class AssociationController extends Controller
 
     public function association_zone(){
         $roles=Role::all();
-        $association=Association::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
         $tontine=Tontine::all();
-        $zones=Zone::where('association_id', auth()->user()->id)->get();
-        $commerciaux=User::where('association_id', auth()->user()->id)->get();
-        $agences=Agence::where('association_id',auth()->user()->id)->get();
+        $zones=Zone::where('association_id', $association[0]->id)->get();
+        $commerciaux=User::where('association_id', $association[0]->id)->get();
+        $agences=Agence::where('association_id', $association[0]->id)->get();
 
         // return $zones;
 
@@ -217,11 +220,12 @@ class AssociationController extends Controller
 
     public function association_creer_chef_agence(){
         $roles=Role::all();
-        $association=Association::where('user_id', auth()->user()->id)->first();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
         $tontine=Tontine::all();
-        $responsables=User::where('role_id', 2)->where('association_id', $association->id)->get();
+        $responsables=User::where('role_id', 2)->where('association_id', $association[0]->id)->get();
 
-        return $responsables;
+        // return $responsables;
         // return $association;
         return view('association.chef_agence.creer', compact('tontine', 'roles', 'association', 'responsables'));
     }
@@ -251,7 +255,9 @@ class AssociationController extends Controller
 
     public function association_commercial(){
             $tontine=Tontine::all();
-            $association=Association::where('user_id', auth()->user()->id)->get();
+            $user=User::find(auth()->user()->id);
+            $association=$user->associations;
+            $commercial=User::where('role_id', 3)->where('association_id', $association[0]->id)->get();
             // $image=store::files('public/images');
             $roles=Role::all();
             $zones=Zone::all();
@@ -260,18 +266,20 @@ class AssociationController extends Controller
             // $commercial=$user->commerciaux;
             // return $agences;
             // return $commercial;
-            return view('association.commercial.commercial', compact('agences','roles', 'tontine', 'zones', 'association'));
+            return view('association.commercial.commercial', compact('agences','roles', 'tontine', 'zones', 'association', 'commercial'));
     }
 
     public function association_creer_commercial(){
         $tontine=Tontine::all();
-        $association=Association::where('user_id', auth()->user()->id)->get();
-        $zones=Zone::where('association_id', auth()->user()->id)->get();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        // $zones=Zone::where('association_id', auth()->user()->id)->get();
         $roles=Role::all();
-        $agence=Agence::where('association_id', auth()->user()->id)->get();
+        // $agence=Agence::where('association_id', auth()->user()->id)->get();
 
         // return $association;
-        return view('association.commercial.creer', compact('zones', 'roles', 'agence', 'tontine', 'association'));
+        return view('association.commercial.creer', compact( 'roles', 'agence', 'tontine', 'association'));
     }
 
     public function association_ajouter_commercial(Request $request){
@@ -280,10 +288,10 @@ class AssociationController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $identification=$request->file('image');
-        $path2=$identification->store('images','public');
         $agence=Agence::all();
         $zones=Zone::all();
+        $user=User::find(auth()->user()->id);
+        $agence=$user->agences;
 
 
         User::create([
@@ -292,7 +300,7 @@ class AssociationController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'identification'=>$identification,
+            'com_association_id'=>$agence[0]->id,
             'role_id'=>'3',
             'image'=>$image,
             'password'=>Hash::make($request->password)

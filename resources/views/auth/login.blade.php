@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main.min.css') }}" />
 </head>
 
-  <body class="login-bg">
+  <body style="backround: green;">
     <!-- Container start -->
     <div class="container">
       <div class="row justify-content-center">

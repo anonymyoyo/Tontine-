@@ -81,43 +81,43 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom de la tontine</label>
-                        <input type="text" name="name" class="form-control" placeholder="Entrer le nom complet" />
+                        <input type="text" name="name" required class="form-control" placeholder="Entrer le nom complet" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Capital</label>
-                        <input type="text" name="montant_total" class="form-control" placeholder="Entrer l'addresse mail " />
+                        <input type="text" name="montant_total" required class="form-control" placeholder="Entrer l'addresse mail " />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nombre d'adherant</label>
-                        <input type="text" name="nbre_membre" class="form-control" placeholder="Entrer le nombre d'adherant" />
+                        <input type="text" name="nbre_membre" required class="form-control" placeholder="Entrer le nombre d'adherant" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Montant minimum a Cotiser</label>
-                        <input type="text" name="prix" class="form-control" placeholder="Entrer le montant minimum des recharges" />
+                        <input type="text" name="prix" class="form-control" required placeholder="Entrer le montant minimum des recharges" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Photo</label>
-                        <input type="file" name="image" class="form-control" placeholder="Telecharger une image" />
+                        <input type="file" name="image" class="form-control" required placeholder="Telecharger une image" />
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
                     <div class="mb-3">
                         <label class="form-label">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Description" rows="3"></textarea>
+                        <textarea class="form-control" name="description" required placeholder="Description" rows="3"></textarea>
                     </div>
                     </div>
                     <div class="col-sm-6 col-12">
                         <div class="mb-3">
                         <label class="form-label">Reglements</label>
-                        <textarea class="form-control" name="reglement" placeholder="Reglement" rows="3"></textarea>
+                        <textarea class="form-control" name="reglement" required placeholder="Reglement" rows="3"></textarea>
                         </div>
                     </div>
                 </div>

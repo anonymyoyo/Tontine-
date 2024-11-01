@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('pays');
             $table->string('image');
             $table->string('association_id')->nullable();
+            $table->string('com_association_id')->nullable();
             $table->string('com_agence_id')->nullable();
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->timestamp('email_verified_at')->nullable();

@@ -77,7 +77,7 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom de l'association</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                        <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
@@ -87,7 +87,7 @@
                             <option value="0">Select</option>
                             @foreach ($gerant as $gerants)
                                 @if ($gerants->role_id === 5)
-                                    <option value="{{ $gerants->id }}" class="form-option">{{ $gerants->name }}</option>
+                                    <option value="{{ $gerants->id }}" required class="form-option">{{ $gerants->name }}</option>
                                 @endif
                             @endforeach
                         </select>

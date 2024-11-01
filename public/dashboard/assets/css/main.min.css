@@ -16,7 +16,7 @@
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-black: #000000;
-    --bs-white: #ffffff;
+    --bs-white: #1b8002;
     --bs-gray: #527094;
     --bs-gray-dark: #2d435d;
     --bs-gray-100: #eff2f6;
@@ -92,7 +92,7 @@
     --bs-tertiary-bg: #eff2f6;
     --bs-tertiary-bg-rgb: 239, 242, 246;
     --bs-heading-color: inherit;
-    --bs-link-color: #1a73e8;
+    --bs-link-color: #09a016;
     --bs-link-color-rgb: 26, 115, 232;
     --bs-link-decoration: underline;
     --bs-link-hover-color: #155cba;

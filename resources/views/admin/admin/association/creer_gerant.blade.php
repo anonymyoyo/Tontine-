@@ -80,43 +80,43 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom du membre</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                        <input type="text" name="name" class="form-control" required placeholder="Enter fullname" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email address" />
+                        <input type="email" name="email" class="form-control" required placeholder="Enter email address" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Telephone</label>
-                        <input type="text" name="phone" class="form-control" placeholder="Enter phone number" />
+                        <input type="text" name="phone" class="form-control" required placeholder="Enter phone number" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Ville</label>
-                        <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                        <input type="text" name="ville" class="form-control" required placeholder="Enter company name" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Pays</label>
-                        <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
+                        <input type="text" name="pays" class="form-control" required placeholder="Enter business address" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Photo/ piece identificative</label>
-                        <input type="file" name="image" class="form-control" placeholder="Enter company name" />
+                        <input type="file" name="image" class="form-control" required placeholder="Enter company name" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter company name" />
+                            <input type="password" name="password" class="form-control" required placeholder="Enter company name" />
                         </div>
                         </div><br><br>
                 </div>

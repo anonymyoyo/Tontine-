@@ -81,7 +81,7 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Nom du chef d'agence</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter fullname" />
+                        <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
@@ -93,7 +93,7 @@
                             {{-- @foreach ($gerant as $gerants) --}}
                             @foreach ($association as $associations)
                                 {{-- @if ($gerants->id === $associations->gerant_id) --}}
-                                        <option value="{{ $associations->id }}" class="form-option">{{ $associations->name }}</option>
+                                        <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
                                 {{-- @endif --}}
                             {{-- @endforeach --}}
                             @endforeach
@@ -104,37 +104,37 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email address" />
+                        <input type="email" name="email" required class="form-control" placeholder="Enter email address" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Telephone</label>
-                        <input type="text" name="phone" class="form-control" placeholder="Enter phone number" />
+                        <input type="text" name="phone" required class="form-control" placeholder="Enter phone number" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Ville</label>
-                        <input type="text" name="ville" class="form-control" placeholder="Enter company name" />
+                        <input type="text" name="ville" required class="form-control" placeholder="Enter company name" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Pays</label>
-                        <input type="text" name="pays" class="form-control" placeholder="Enter business address" />
+                        <input type="text" name="pays" required class="form-control" placeholder="Enter business address" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                         <label class="form-label">Photo</label>
-                        <input type="file" name="image" class="form-control" placeholder="Enter postal code" />
+                        <input type="file" name="image" required class="form-control" placeholder="Enter postal code" />
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Mot de passe</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter postal code" />
+                        <input type="password" name="password" required class="form-control" placeholder="Enter postal code" />
                         </div>
                     </div>
                     <div class="col-sm-6 col-12">
