@@ -114,10 +114,22 @@
                 <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
                     <label class="form-label">Tontine choisi</label>
-                    <select name="tontine_id[]" class="form-select">
+                    <select name="mem_tontine_id" class="form-select">
                         <option value="0">Selectionner</option>
                         @foreach ($tontine as $tontines)
                             <option value="{{ $tontines->id }}" required class="form-option">{{ $tontines->name }}</option>
+                        @endforeach
+                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                    </select>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                    <label class="form-label">Association Mere</label>
+                    <select name="association_id" class="form-select">
+                        <option value="0">Selectionner</option>
+                        @foreach ($association as $associations)
+                            <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
                         @endforeach
                         {{-- <option value="1">{{ $gerant->name }}</option> --}}
                     </select>

@@ -414,8 +414,10 @@ class AdminController extends Controller
 
     public function agences_membre(){
         $tontine=Tontine::all();
-        $membres=User::where('role_id', 4);
+        $membres=User::where('role_id', 4)->get();
         $roles=Role::all();
+
+        // return $membres;
         return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }
 
@@ -444,9 +446,9 @@ class AdminController extends Controller
             'ville'=>$request->ville,
             'pays'=>$request->pays,
             'image'=>$path,
-            'association_id'=>$association->id,
-            'mem_agence_id'=>$agence->id,
-            'role_id'=>$request->role_id,
+            'association_id'=>$association[0]->id,
+            'mem_tontine_id'=>$tontine[0]->id,
+            'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);
 

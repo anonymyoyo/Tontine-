@@ -89,24 +89,26 @@
                           </tr>
                         </thead>
                         @foreach ($membres as $membre)
-                        @foreach ($tontines as $tontine)
+
                             <tbody>
                                 <tr>
                                     <td>#{{ $membre->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                        <img src="{{ Storage::url($membre->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                     </div>{{ $membre->name }}</a></td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>
-                                    @if ($membre->tontine_id === $tontine->id)
-                                        <td>{{ $tontine->name }}</td>
-                                    @endif
+                                    @foreach ($tontine as $tontines)
+                                        @if ($tontines->id === $membre->mem_tontine_id)
+                                            <td>{{ $tontines->name }}</td>
+                                        @endif
+                                    @endforeach
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
-                                    <td>10/10/2022 4:30pm</td>
+                                    <td>{{ $membre->created_at }}</td>
                                 </tr>
                             </tbody>
-                        @endforeach
+
                         @endforeach
                       </table>
                     </div>
