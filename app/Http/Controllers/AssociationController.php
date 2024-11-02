@@ -333,10 +333,15 @@ class AssociationController extends Controller
 
     public function association_agences_membre(){
         $tontine=Tontine::all();
-        $association=Association::all();
+        $user=User::find(auth()->user()->id);
+        $agence=$user->associations;
+        $association=$user->associations;
         $roles=Role::all();
-        $users=User::all();
-        return view('association.membre.membre', compact('tontine', 'roles', 'users', 'roles', 'association'));
+        $users=User::where('role_id', 4)
+                    ->where('association_id', $user->association_id)->get();
+
+        return $users;
+        return view('association.membre.membre', compact('tontine', 'roles', 'users', 'association'));
     }
 
     public function association_agences_tontine($id){

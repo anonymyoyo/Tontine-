@@ -90,12 +90,12 @@
             <span class="menu-text">Settings</span>
           </a>
         </li>
-        {{-- <li>
+        <li>
           <a href="{{ route('association.membres') }}">
             <i class="bi bi-person"></i>
             <span class="menu-text">Membres</span>
           </a>
-        </li> --}}
+        </li>
       </ul>
     </div>
 

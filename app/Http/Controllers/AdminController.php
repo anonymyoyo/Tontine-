@@ -415,6 +415,7 @@ class AdminController extends Controller
     public function agences_membre(){
         $tontine=Tontine::all();
         $membres=User::where('role_id', 4)->get();
+        // $t=$user->tontines;->where('mem_tontine_id', $tontine[0]->id)
         $roles=Role::all();
 
         // return $membres;

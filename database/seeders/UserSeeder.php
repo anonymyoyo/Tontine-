@@ -33,6 +33,7 @@ class UserSeeder extends Seeder
             "pays"=> "Cameroon",
             "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php8AFE.tmp",
             "role_id"=> 5,
+            "association_id"=> "1",
             'password'=>'bitinza'
         ]);
 
@@ -44,6 +45,7 @@ class UserSeeder extends Seeder
             "pays"=> "Cameroon",
             "image"=> "C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpC61C.tmp",
             "role_id"=> 5,
+            "association_id"=> "2",
             'password'=>'moussidilan'
         ]);
 
@@ -58,6 +60,7 @@ class UserSeeder extends Seeder
             "com_association_id"=> null,
             "com_agence_id"=> null,
             "role_id"=> 5,
+            "association_id"=> "3",
             'password'=>'admin123'
         ]);
 
@@ -101,6 +104,19 @@ class UserSeeder extends Seeder
             "com_agence_id"=> "1",
             "role_id"=> 3,
             'password'=>'serges'
+        ]);
+
+        User::create([
+            "name"=> "Tantanpion",
+            "email"=> "tantanpion@gmail.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> "Cameroon",
+            "image"=> "images/9SO00rUXl8yhr10OV7UgjzY9QVyFiCyoUK4kNHtY.png",
+            "association_id"=> "1",
+            "mem_tontine_id"=> "1",
+            "role_id"=> 4,
+            'password'=>'tantanpion'
         ]);
     }
 }
