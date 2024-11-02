@@ -107,7 +107,7 @@ class AgenceController extends Controller
         $tontine=Tontine::all();
         $zones=Zone::where('agence_id', $agence[0]->id)->get();
 
-        // return $agence;
+        // return $commercial;
         return view('agence.commercial.commercial', compact('roles', 'tontine', 'commercial', 'zones', 'agence'));
     }
 
@@ -175,12 +175,14 @@ class AgenceController extends Controller
     }
 
     public function dashboard_agences_membre(){
-        $user=User::all();
-        $a=User::all();
-        $tontine=Tontine::all();
-        $users=User::all();
         $roles=Role::all();
-        return view('agence.membre.membre', compact('tontine', 'users', 'roles', 'user', 'a'));
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $agence=$user->agences;
+        $tontine=Tontine::all();
+        $roles=Role::all();
+        $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $agence[0]->id);
+        return view('agence.membre.membre', compact('tontine', 'membre', 'roles'));
     }
 
     public function dashboard_agences_tontine($id){

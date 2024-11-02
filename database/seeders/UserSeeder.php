@@ -48,7 +48,6 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "id"=> 4,
             "name"=> "BITINZA",
             "email"=> "superadmin@gmail.com",
             "phone"=> "694865872",
@@ -63,7 +62,6 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "id"=> 5,
             "name"=> "Marole",
             "email"=> "marole@tca.com",
             "phone"=> "694865872",
@@ -78,7 +76,6 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "id"=> 7,
             "name"=> "Emauel",
             "email"=> "superadmi1@gmail.com",
             "phone"=> "694865872",
@@ -90,6 +87,20 @@ class UserSeeder extends Seeder
             "com_agence_id"=> null,
             "role_id"=> 3,
             'password'=>'emauel'
+        ]);
+
+        User::create([
+            "name"=> "Serges",
+            "email"=> "serges@commercial.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> null,
+            "image"=> "images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png",
+            "association_id"=> null,
+            "com_association_id"=> "3",
+            "com_agence_id"=> "1",
+            "role_id"=> 3,
+            'password'=>'serges'
         ]);
     }
 }

@@ -82,14 +82,14 @@
                             <th>Derniere Connexion</th>
                           </tr>
                         </thead>
-                        @foreach ($users as $user)
-                        @foreach ($roles as $role)
+                        @foreach ($membre as $user)
+                        {{-- @foreach ($roles as $role) --}}
                          @if ($role === 4 && $user->role_id === $role->id)
                             <tbody>
                                 <tr>
                                     <td>#{{ $user->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                        <img src="{{ Storage::url($user->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                     </div>{{ $user->name }}</a></td>
                                     <td>{{ $user->ville }}</td>
                                     <td>{{ $user->pays }}</td>
@@ -99,7 +99,7 @@
                                 </tr>
                             </tbody>
                          @endif
-                        @endforeach
+                        {{-- @endforeach --}}
                         @endforeach
 
                       </table>

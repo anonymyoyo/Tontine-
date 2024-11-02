@@ -30,6 +30,8 @@ class User extends Authenticatable
         'association_id',
         'com_agence_id',
         'com_association_id',
+        'mem_agence_id',
+        'mem_com_id',
         'role_id',
         'password',
     ];
