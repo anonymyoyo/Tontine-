@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AssociationSeeder::class,
             AgenceSeeder::class,
+            ZoneSeeder::class,
+            TontineSeeder::class,
     ]);
     }
 }

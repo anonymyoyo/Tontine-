@@ -102,12 +102,6 @@
                     </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Pays</label>
-                        <input type="text" name="pays" required class="form-control" placeholder="Enter business address" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                             <label class="form-label">Photo/Piece d'identite</label>
                             <input type="file" name="image" required class="form-control" placeholder="Enter postal code" />
@@ -123,6 +117,13 @@
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>
+                        {{-- <select name="com_association_id"  class="form-select">
+                            <option value="0">Select</option> --}}
+                            @foreach ($a as $association)
+                                <input  type="hidden" value="{{ $association->name }}" required class="form-option">
+                            @endforeach
+                            {{-- <option value="1">{{ $gerant->name }}</option> --}}
+                        {{-- </select> --}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">

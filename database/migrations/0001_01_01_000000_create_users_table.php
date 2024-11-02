@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('ville');
-            $table->string('pays');
+            $table->string('pays')->nullable();
             $table->string('image');
             $table->string('association_id')->nullable();
             $table->string('com_association_id')->nullable();

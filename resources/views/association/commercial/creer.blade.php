@@ -122,7 +122,7 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Association mere</label>
-                        <select name="association_id"  class="form-select">
+                        <select name="com_association_id"  class="form-select">
                             <option value="0">Select</option>
                             @foreach ($association as $associations)
                                 <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
