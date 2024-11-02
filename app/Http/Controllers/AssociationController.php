@@ -332,15 +332,15 @@ class AssociationController extends Controller
     }
 
     public function association_agences_membre(){
-        $tontine=Tontine::all();
+
         $user=User::find(auth()->user()->id);
         $agence=$user->associations;
         $association=$user->associations;
         $roles=Role::all();
         $users=User::where('role_id', 4)
-                    ->where('association_id', $user->association_id)->get();
-
-        return $users;
+                    ->where('association_id', $association[0]->id)->get();
+$tontine=Tontine::where('id', $users[0]->mem_tontine_id)->get();
+        // return $tontine;
         return view('association.membre.membre', compact('tontine', 'roles', 'users', 'association'));
     }
 

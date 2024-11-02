@@ -79,27 +79,32 @@
                             <th>Pays</th>
                             <th>Telephone</th>
                             <th>Email</th>
+                            <th>Tontine</th>
                             <th>Derniere Connexion</th>
                           </tr>
                         </thead>
                         @foreach ($users as $user)
-                        @foreach ($roles as $role)
-                         @if ($role === 4 && $user->role_id === $role->id)
+                        {{-- @foreach ($roles as $role) --}}
+                         {{-- @if ($role === 4 && $user->role_id === $role->id) --}}
                             <tbody>
                                 <tr>
                                     <td>#{{ $user->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                        <img src="{{ Storage::url($user->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                     </div>{{ $user->name }}</a></td>
                                     <td>{{ $user->ville }}</td>
                                     <td>{{ $user->pays }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->email }}</td>
+                                    @foreach ($tontine as $tontines)
+                                        <td>{{ $tontines->name }}</td>
+                                    @endforeach
+
                                     <td>10/10/2022 4:30pm</td>
                                 </tr>
                             </tbody>
-                         @endif
-                        @endforeach
+                         {{-- @endif --}}
+                        {{-- @endforeach --}}
                         @endforeach
 
                       </table>
