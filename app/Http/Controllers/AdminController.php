@@ -420,7 +420,7 @@ class AdminController extends Controller
     }
 
     public function admin_creer_membre(){
-        $tonine=Tontine::all();
+        $tontine=Tontine::all();
         $association=Association::all();
         $agence=Agence::all();
         $roles=Role::all();
@@ -429,12 +429,13 @@ class AdminController extends Controller
     }
 
     public function admin_ajouter_membre(Request $request){
-        $tonine=Tontine::all();
+        $tontine=Tontine::all();
         $association=Association::all();
         $agence=Agence::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
         $roles=Role::all();
+        $membres=User::where('role_id', 4);
 
         User::create([
             'name'=>$request->name,
@@ -448,6 +449,8 @@ class AdminController extends Controller
             'role_id'=>$request->role_id,
             'password'=>Hash::make($request->password),
         ]);
+
+        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }
 
     public function agences_tontine($id){

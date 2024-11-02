@@ -68,7 +68,7 @@
           <div class="row gx-3">
             <div class="ms-auto d-lg-flex d-none flex-row">
                 <div class="d-flex flex-row gap-1">
-                  <a href="{{ route('admin.creer_membre') }}" class="btn btn-primary">Ajouter Membre</a>
+                  <a href="{{ route('admin.creer_membres') }}" class="btn btn-primary">Ajouter Membre</a>
                 </div>
             </div>
             <div class="col-xxl-12">

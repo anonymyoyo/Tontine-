@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('com_agence_id')->nullable();
             $table->string('mem_agence_id')->nullable();
             $table->string('mem_com_id')->nullable();
+            $table->string('mem_association_id')->nullable();
+            $table->string('mem_tontine_id')->nullable();
             $table->foreignIdFor(Role::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
