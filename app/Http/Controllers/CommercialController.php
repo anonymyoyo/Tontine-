@@ -49,8 +49,11 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $zones=Zone::all();
-        $commerciaux=User::all();
+        $zones=Zone::where('agence_id', $user->com_agence_id)->get();
+        $agences=Agence::where('id', $zones[0]->agence_id)->get();
+        $commerciaux=User::where('role_id', 3)->where('com_agence_id', $user->com_agence_id)->get();
+
+        // return $zones;
         return view('commercial.zone.zone', compact('tontine', 'commerciaux', 'agences', 'zones', 'roles'));
     }
 
@@ -104,8 +107,10 @@ class CommercialController extends Controller
         $association=$user->associations;
         $agence=$user->agences;
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        // $t=Tontine::where('id', $membres->mem_tontine_id)->get();
         $roles=Role::all();
+
+        // return $membres;
         return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
     }
 
@@ -118,11 +123,12 @@ class CommercialController extends Controller
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $t=Tontine::where('id', $membres->mem_tontine_id)->get();
+        $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
         $roles=Role::all();
 
         // return $associations;
-        return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences'));
+        return $t;
+        // return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences'));
     }
 
     public function commercial_ajouter_membre(Request $request){

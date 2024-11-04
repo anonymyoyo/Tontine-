@@ -182,7 +182,7 @@ class AgenceController extends Controller
         $tontine=Tontine::all();
         $roles=Role::all();
         $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $agence[0]->id)->get();
-
+        $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
         // return $membre;
         return view('agence.membre.membre', compact('tontine', 'membre', 'roles'));
     }

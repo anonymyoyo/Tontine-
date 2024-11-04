@@ -77,7 +77,7 @@
                 @foreach ($commerciaux as $commercial)
                 @foreach ($agences as $agence)
 
-                    @if ($commercial->id === $zone->commercial_id && $zone->agence_id === $agence->id)
+                    {{-- @if ($commercial->id === $zone->commercial_id && $zone->agence_id === $agence->id) --}}
 
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="card mb-3">
@@ -85,7 +85,7 @@
                   <div class="card-body">
                     <div class="d-flex align-items-center flex-column">
                       <div class="mb-3">
-                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
+                        <img src="{{ Storage::url($zone->image) }}" class="img-6x rounded-circle" alt="Image chef d'agence" />
                       </div>
                       <h5 class="mb-2">{{ $zone->name }}</h5>
                       <h6 class="mb-3 text-secondary fw-light">{{ $commercial->name }}</h6>
@@ -102,7 +102,7 @@
 
                 </div>
               </div>
-                    @endif
+                    {{-- @endif --}}
                 @endforeach
                 @endforeach
                 @endforeach

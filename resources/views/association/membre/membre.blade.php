@@ -96,8 +96,8 @@
                                     <td>{{ $user->pays }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->email }}</td>
-                                    @foreach ($tontine as $tontines)
-                                        <td>{{ $tontines->name }}</td>
+                                    @foreach ($t as $ts)
+                                        <td>{{ $ts->name }}</td>
                                     @endforeach
 
                                     <td>10/10/2022 4:30pm</td>
