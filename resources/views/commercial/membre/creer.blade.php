@@ -109,12 +109,6 @@
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">
                     <div class="mb-3">
-                        <label class="form-label">Piece d'identification'</label>
-                        <input type="file" name="identification" required class="form-control" placeholder="Enter postal code" />
-                    </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
                         <label class="form-label">Photo</label>
                         <input type="file" name="image" required class="form-control" placeholder="Enter company name" />
                     </div>
@@ -122,13 +116,20 @@
                     <div class="col-lg-3 col-sm-4 col-12">
                         <div class="mb-3">
                         <label class="form-label">Tontines choisi</label>
-                        <select name="tontine_id[]" class="form-select">
+                        <select name="mem_tontine_id" class="form-select">
                             <option value="0">Selectionner</option>
                             @foreach ($tontine as $tontines)
                                 <option value="{{ $tontines->id }}" required class="form-option">{{ $tontines->name }}</option>
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}
                         </select>
+                        @foreach ($associations as $associacion)
+                            <input type="hidden" name="association_id" value="{{ $associacion->id }}">
+                        @endforeach
+                        @foreach ($agences as $agency)
+                        <input type="hidden" name="com_agence_id" value="{{ $agency->id }}">
+                        @endforeach
+
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-4 col-12">

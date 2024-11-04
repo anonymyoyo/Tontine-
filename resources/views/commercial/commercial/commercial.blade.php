@@ -66,11 +66,11 @@
           </div>
           <!-- App Hero header ends -->
           <div class="col-xxl-12">
-            <div class="ms-auto d-lg-flex d-none flex-row">
+            {{-- <div class="ms-auto d-lg-flex d-none flex-row">
                 <div class="d-flex flex-row gap-1">
                   <a href="{{ route('creer.commercial') }}" class="btn btn-primary">Creer un Commercial</a>
                 </div>
-            </div><br>
+            </div><br> --}}
             <div class="card mb-3">
               <div class="card-body">
                 <div class="table-responsive">
@@ -94,27 +94,27 @@
                             <tr class="grd-primary-light">
                                 <td>{{ $commerciaux->id }}</td>
                                 <td><a href="#" class="text-red"><div class="mb-3">
-                                    <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                    <img src="{{ Storage::url($commerciaux->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                   </div>{{ $commerciaux->name }}</a></td>
                                 <td>{{ $commerciaux->email }}</td>
                                 <td>{{ $commerciaux->phone }}</td>
                               @foreach ($zones as $zone)
-                                @if ($commerciaux->zone_id === $zone->id)
+                                @if ($commerciaux->id === $zone->user_id)
                                     <td>{{ $zone->name }}</td>
                                 @endif
                               @endforeach
                               @foreach ($agences as $agence)
-                                @if ($commerciaux->agence_id === $agence->id)
+                                {{-- @if ($commerciaux->agence_id === $agence->id) --}}
                                     <td>{{ $agence->name }}</td>
-                                @endif
+                                {{-- @endif --}}
                               @endforeach
 
                             </tr>
 
 
 
-                        @endforeach
                         {{-- @endforeach --}}
+                        @endforeach
                     </tbody>
                   </table>
                 </div>

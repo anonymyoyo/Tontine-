@@ -72,7 +72,7 @@
             <div class="row gx-3">
                 @foreach ($responsables as $responsable)
             @foreach ($roles as $role)
-            {{-- @foreach ($agences as $agence) --}}
+            @foreach ($agences as $agence)
 
             @if ($role->id === 2 && $responsable->role_id === $role->id)
 
@@ -88,8 +88,8 @@
                       <h6 class="mb-3 text-secondary fw-light">{{ $role->name }}</h6>
                       <p>Working on the latest API integration.</p>
                       <div class="mb-3">
-                        <span class="badge bg-opacity-10 bg-danger text-danger">{{ $role->name }}</span>
-                        {{-- <span class="badge bg-opacity-10 bg-info text-info">{{ $agence->name }}</span> --}}
+                        {{-- <span class="badge bg-opacity-10 bg-danger text-danger">{{ $role->name }}</span> --}}
+                        <span class="badge bg-opacity-10 bg-info text-info">{{ $agence->name }}</span>
                       </div>
                       <div class="mt-3">
                         <span class="btn btn-success">Subscribed</span>
@@ -101,7 +101,7 @@
               </div>
               @endif
             @endforeach
-            {{-- @endforeach --}}
+            @endforeach
             @endforeach
             </div>
             <!-- Row end -->
