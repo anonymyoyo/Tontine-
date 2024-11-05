@@ -22,9 +22,10 @@ class UserController extends Controller
 
         $tontine=Tontine::all();
 
-        $tontin=Membre::where('tontine_id', auth()->user()->id);
+        $tontin=User::where('mem_tontine_id', auth()->user()->id);
+        $user=User::find(auth()->user()->id);
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
-        $membre=Membre::all();
+        $membre=User::where('role_id', 4)->where('id', $user->id)->get();
         // $membres=Membre::count('tontine_id');
         $transaction=Transaction::all();
 //         $user=Auth::user();

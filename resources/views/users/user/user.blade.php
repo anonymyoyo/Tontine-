@@ -132,7 +132,7 @@
                                     <tbody>
                                         {{-- @foreach ($membre as $membres) --}}
                                         @foreach($transaction as $transactions)
-                                        @if (auth()->user()->id === $transactions->id)
+                                        @if (auth()->user()->id === $transactions->user_id)
                                             {{-- <option placeholder="Choix de la Tontine" value="">{{ $tontines->name }}</option> --}}
                                             <tr>
                                                 <td>{{ $transactions->montant }}</td>

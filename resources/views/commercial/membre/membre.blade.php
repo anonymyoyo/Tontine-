@@ -94,15 +94,17 @@
                                 <tr>
                                     <td>#{{ $membre->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ Storage::url($responsable->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                        <img src="{{ Storage::url($membre->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
                                     </div>{{ $membre->name }}</a></td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
-                               @foreach ($tontine as $tontines)     @if ($membre->tontine_id === $tontines->id)
+                               @foreach ($t as $tontines)
+                               {{-- @if ($membre->tontine_id === $tontines->id) --}}
                                         <td>{{ $tontines->name }}</td>
-                                    @endif @endforeach
+                                    {{-- @endif  --}}
+                                    @endforeach
 
 
                                     <td>10/10/2022 4:30pm</td>

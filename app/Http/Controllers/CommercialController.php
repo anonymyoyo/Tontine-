@@ -107,11 +107,22 @@ class CommercialController extends Controller
         $association=$user->associations;
         $agence=$user->agences;
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $t=Tontine::where('id', $membres->mem_tontine_id)->get();
-        $roles=Role::all();
+        if(!empty($membres[0]))
+        {
+            $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
 
-        // return $membres;
-        return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
+            $roles=Role::all();
+
+        // return $t;
+        return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 't'));
+        }
+        else{
+            $roles=Role::all();
+
+            // return $membres;
+            return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
+        }
+
     }
 
     public function commercial_creer_membre(){
@@ -123,12 +134,12 @@ class CommercialController extends Controller
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
         $roles=Role::all();
 
         // return $associations;
-        return $t;
-        // return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences'));
+        // return $t;
+        return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences'));
     }
 
     public function commercial_ajouter_membre(Request $request){
@@ -136,12 +147,12 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $commercial=User::where('id', $user->id)->first();
+        $commercial=User::where('id', $user->id)->get();
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_com_id', $user->mem_com_id)->get();
 
-        $tontiness=Tontine::where('id', $user[0]->mem_tontine_id)->get();
+        $t=Tontine::where('id', $user->mem_tontine_id)->get();
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -151,15 +162,16 @@ class CommercialController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'tontine_id'=>$tontine->id,
+            'mem_tontine_id'=>$t,
             'association_id'=>$associations[0]->id,
-            'com_agence_id'=>$agences->id,
+            'mem_com_id'=>$user->id,
+            'mem_agence_id'=>$agences[0]->id,
             'image'=>$path,
             'role_id'=>'4',
             'password'=>Hash::make($request->password),
         ]);
 
-        return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 'tontiness'));
+        return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
     }
 
     public function commercial_agences_tontine($id){

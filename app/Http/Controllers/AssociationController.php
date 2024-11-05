@@ -338,11 +338,21 @@ class AssociationController extends Controller
         $association=$user->associations;
         $roles=Role::all();
         $users=User::where('role_id', 4)->where('association_id', $user->association_id)->get();
-        $t=Tontine::where('id', $users[0]->mem_tontine_id)->get();
+        if(!empty($users[0]))
+        {
+            $t=Tontine::where('id', $users[0]->mem_tontine_id)->get();
 
-// return $users;
-        // return $t;
-        return view('association.membre.membre', compact('tontine', 'roles', 'users', 'association', 't'));
+            $roles=Role::all();
+
+        // return $users;
+        return view('association.membre.membre', compact('tontine', 'users', 'roles', 't', 'association'));
+        }
+        else{
+            $roles=Role::all();
+
+            // return $users;
+            return view('association.membre.membre', compact('tontine', 'roles', 'users', 'association'));
+        }
     }
 
     public function association_agences_tontine($id){
