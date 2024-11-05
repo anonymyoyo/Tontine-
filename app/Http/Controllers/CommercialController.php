@@ -106,7 +106,7 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
         if(!empty($membres[0]))
         {
             $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
@@ -162,7 +162,7 @@ class CommercialController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'mem_tontine_id'=>$t,
+            'mem_tontine_id'=>$tontine[0]->id,
             'association_id'=>$associations[0]->id,
             'mem_com_id'=>$user->id,
             'mem_agence_id'=>$agences[0]->id,
