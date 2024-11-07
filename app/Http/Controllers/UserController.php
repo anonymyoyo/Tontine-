@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Gerant;
 use App\Models\Membre;
 use App\Models\Tontine;
+use App\Models\TontineChoisie;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,8 +22,9 @@ class UserController extends Controller
         // $membre=Membre::where('user_id', auth()->user()->id)->get();
 
         $tontine=Tontine::all();
-
-        $tontin=User::where('mem_tontine_id', auth()->user()->id);
+        // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        
+        $tontin=Tontine::where('id', auth()->user()->mem_tontine_id)->get();
         $user=User::find(auth()->user()->id);
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
         $membre=User::where('role_id', 4)->where('id', $user->id)->get();
@@ -43,6 +45,7 @@ class UserController extends Controller
         // $lien=route('invite',[$id, Str::random(40)]);, 'CountMembre'
         // $token=$lien;'id', 'token',, 'membres'
         // $tontines=Tontine::find($id);
+        // return $tontin;
         return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction'));
 
         // return $membre.$tontine;
@@ -79,11 +82,12 @@ class UserController extends Controller
         $tontine=Tontine::find($id);
         $user=User::find(auth()->user()->id);
         $membres=User::where('role_id', 4)->where('id', $user->id)->get();
-        $membres->update([
-            'mem_tontine_id'=>$tontine->id,
+        TontineChoisie::create([
+            'user_id'=>$membres[0]->id,
+            'tontine_id'=>$tontine->id,
         ]);
 
-        return view('users.tontine', compact('membres', 'tontine'));
+        return view('users.user.user', compact('membres', 'tontine'));
     }
 
 }

@@ -63,7 +63,7 @@
                 <div class="my-prediction">
                     <h3>Montant Transaction</h3>
                     <div class="prediction-value">
-                        <input type="text" maxlength="1" class="single-character" placeholder="4">
+                        <input type="text" name="depot" maxlength="1" class="single-character" placeholder="4">
                         <input type="text" maxlength="1" class="single-character" placeholder="3">
                         <input type="text" maxlength="1" class="single-character" placeholder="6">
                         <input type="text" maxlength="1" class="single-character" placeholder="4">
@@ -76,20 +76,66 @@
                         <span class="currency">XAF</span>
                     </div>
                     <a href="#submit-token" class="primary-btn primary-effect open-submit-token">Faites un Depot</a>
-                    <a href="#submit-token" class="primary-btn primary-effect open-submit-token">Faites un Retrait</a>
+                    <a href="#submit-token-2" class="primary-btn primary-effect open-submit-token-2">Faites un Retrait</a>
+                    <a href="#submit-token-3" class="primary-btn primary-effect open-submit-token-3">Demande de pret</a>
                     <div id="submit-token" class="white-popup mfp-hide">
                         <div class="submit-token-details">
-                            <h5>Votre Solde $100.00</h5>
+                            <h5>Votre Solde 3.99 XAF</h5>
                             <div class="text-center submit-token-content">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                                {{-- <div class="submit-time"> --}}
+                                    <label class="primary text-center">Tontine</label>
+                                    <select class="form-control text-center">
+                                        <option value="">Selectionner Tontine</option>
+                                        @foreach($tontin as $tontines)
+                                            <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                                        @endforeach
+                                    </select>
+                                {{-- </div> --}}
                                 <div class="submit-time">
-                                    <p class="primary text-center">Merci de nous faire confiance</p>
-                                    <h6 id="bit-predict" class="text-center"></h6>
+                                    <p class="primary text-center">Montant a deposer</p>
+
+                                    <h6  class="text-center">436429297 XAF</h6>
                                 </div>
                                 <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p>
                                 <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
                             </div>
                             <a href="javascript:void(0)" class="primary-btn primary-effect">Buy Now</a>
+                        </div>
+                    </div>
+                    <div id="submit-token-2" class="white-popup mfp-hide">
+                        <<div class="text-center submit-token-content">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                            {{-- <div class="submit-time"> --}}
+                                <label class="primary text-center">Tontine</label>
+                                <select class="form-control text-center">
+                                    <option value="">Selectionner Tontine</option>
+                                    @foreach($tontin as $tontines)
+                                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                                    @endforeach
+                                </select>
+                            {{-- </div> --}}
+                            <div class="submit-time">
+                                <p class="primary text-center">Montant a Retirer</p>
+                                <h6  class="text-center">436429297 XAF</h6>
+                            </div>
+                            <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p>
+                            <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
+                        </div>
+                    </div>
+                    <div id="submit-token-3" class="white-popup mfp-hide">
+                        <div class="submit-token-details">
+                            <h5>Votre Solde $100.00</h5>
+                            <div class="text-center submit-token-content">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                                <form class="form-control" action="#">
+                                    <label class="form-control" for="Objet">Objet de la demande</label>
+                                    <input class="form-control" type="text" name="objet" placeholder="Objet de la demande" id="">
+                                    <label class="form-control" for="Montant">Montant du Pret</label>
+                                    <input class="form-control" type="number" name="montant" placeholder="Exemple 5.000.000 XAF" id="">
+                                </form>
+                            </div>
+                            <a href="javascript:void(0)" class="primary-btn primary-effect">Soumettre</a>
                         </div>
                     </div>
                 </div>

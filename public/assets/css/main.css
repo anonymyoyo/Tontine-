@@ -140,11 +140,11 @@
     --primary-bg: #90cf37;
     --alternate-bg: #4a7211;
     --accent-bg: #59861a;
-    --accent-primary-bg: #3c5c10;
+    --accent-primary-bg: #ffffff;
     --accent-secondary-bg: #344e0e;
     --accent-tertiary-bg: #374d19;
     --accent-fourier-bg: #597236;
-    --btn-bg: #67a018;
+    --btn-bg: #030303;
     --btn-primary-bg: #5d8d1a;
     --btn-secondary-bg: #628f23;
     --btn-transparent: transparent;
@@ -1467,7 +1467,7 @@ blog post search form style end
 }
 
 .nav-bg-active {
-  background-color: var(--accent-primary-bg);
+  background-color: #3c5c10;
 }
 
 .navbar-brand {
@@ -1504,7 +1504,7 @@ blog post search form style end
 .navbar-toggler .icon-bar {
   width: 35px;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: #40423e;
   margin: 0px;
   display: block;
   -webkit-transition: all 0.2s;
@@ -1595,14 +1595,14 @@ blog post search form style end
     margin-bottom: 75px;
   }
   .navbar {
-    background-color: var(--accent-primary-bg);
+    background-color: #3c5c10;
     -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
   }
   .nav-link {
     text-align: left;
     padding: 7px 15px 7px !important;
-    background-color: #0d045f;
+    background-color: #3c5c10;
     border-radius: 0px;
     margin: 2px 0px;
   }
@@ -4198,7 +4198,7 @@ newsletter section style end
 }
 
 .predict-token-details-header {
-  background-color: var(--accent-primary-bg);
+  background-color: whitesmoke;
   border-radius: var(--primary-radius);
   padding: 30px;
   width: 100%;
@@ -4280,7 +4280,7 @@ newsletter section style end
   text-align: center;
   border: none;
   outline: none;
-  background-color: var(--accent-tertiary-bg);
+  background-color: whitesmoke;
   color: var(--primary-color);
   padding: 10px;
   font-size: 66px;
@@ -6365,7 +6365,7 @@ blog post style end
   margin-right: 0px;
 }
 
-#submit-token {
+#submit-token, #submit-token-2, #submit-token-3 {
   max-width: 556px;
   margin: auto;
   position: relative !important;
@@ -6374,11 +6374,11 @@ blog post style end
   border-radius: var(--primary-radius);
 }
 
-#submit-token .submit-token-details {
+#submit-token, #submit-token-2, #submit-token-3, .submit-token-details {
   text-align: center;
 }
 
-#submit-token .submit-token-details h5 {
+#submit-token, #submit-token-2, #submit-token-3, .submit-token-details h5 {
   background-color: var(--accent-primary-bg);
   padding: 20px;
   border-radius: var(--primary-radius);

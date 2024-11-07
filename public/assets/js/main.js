@@ -406,6 +406,18 @@
       mainClass: "mfp-fade",
     });
 
+    $(".open-submit-token-2").magnificPopup({
+        type: "inline",
+        midClick: true,
+        mainClass: "mfp-fade",
+      });
+
+      $(".open-submit-token-3").magnificPopup({
+        type: "inline",
+        midClick: true,
+        mainClass: "mfp-fade",
+      });
+
     // custom submit token time
     var countDownDate =
       new Date(
