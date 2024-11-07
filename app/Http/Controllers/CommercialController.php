@@ -151,7 +151,7 @@ class CommercialController extends Controller
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_com_id', $user->mem_com_id)->get();
-
+        // *!}W[8th4b
         $t=Tontine::where('id', $user->mem_tontine_id)->get();
         $roles=Role::all();
         $image=$request->file('image');

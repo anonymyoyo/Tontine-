@@ -83,7 +83,7 @@
                                         <p>{{ $tontines->nbre_membre }} ont souscrit</p>
                                         @foreach ($membres as $membre)
                                             @if (auth()->user()->email === $membre->email)
-                                                <a href="{{ route('integrer.tontine') }}" class="primary-btn primary-effect">Souscrire</a>
+                                                <a href="{{ route('integrer.tontine', $tontines->id) }}" class="primary-btn primary-effect">Souscrire</a>
                                             @else
                                             <a href="{{ route('register') }}" class="primary-btn primary-effect">Souscrire</a>
                                             @endif

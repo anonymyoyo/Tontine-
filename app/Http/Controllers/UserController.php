@@ -65,21 +65,25 @@ class UserController extends Controller
     }
 
     public function tontines(){
-        $membres=Membre::all();
+        $tontin=User::where('mem_tontine_id', auth()->user()->id);
+        $user=User::find(auth()->user()->id);
+        $membres=User::where('role_id', 4)->where('id', $user->id)->get();
         $tontine=Tontine::all();
         return view('users.tontine', compact('membres','tontine'));
     }
 
-    public function integrer_tontine(Request $request){
+    public function integrer_tontine(Request $request, $id){
         // $tontine=Tontine::all();
-        $tontineId=$request->input('tontine_id');
-        $membre_id=$request->input('id');
-        $membres=Membre::find($membre_id);
+        // $tontineId=$request->input('tontine_id');
+        // $membre_id=$request->input('id');
+        $tontine=Tontine::find($id);
+        $user=User::find(auth()->user()->id);
+        $membres=User::where('role_id', 4)->where('id', $user->id)->get();
         $membres->update([
-            'tontine_id'=>$tontineId,
+            'mem_tontine_id'=>$tontine->id,
         ]);
 
-        return view('users.tontine', compact('membres'));
+        return view('users.tontine', compact('membres', 'tontine'));
     }
 
 }

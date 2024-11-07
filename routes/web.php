@@ -128,7 +128,7 @@ Route::middleware(['auth', 'user'])->group(function(){
     Route::get('Explorer', [UserController::class, 'association'])->name('user.association');
     Route::post('User/Depot/Succes', [UserController::class, 'depot'])->name('user.depot');
     Route::get('Tontines', [UserController::class, 'tontines'])->name('user.tontines');
-    Route::get('Integrer/Tontine', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
+    Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
     // Route::get('Creer une Association', [UserController::class, 'create_association'])->name('registation');
     // Route::post('Creer une Association', [UserController::class, 'store_association'])->name('register.association');
     // Route::get('Verification gerant', [UserController::class, 'verification_gerant'])->name('registration_gerant');

@@ -367,7 +367,7 @@
                                 @endif
                             @endforeach --}}
 
-                            <a href="invest-pricing.html" class="primary-btn primary-effect">Souscrire</a>
+                            <a href="{{ route('integrer.tontine', $tontines->id) }}" class="primary-btn primary-effect">Souscrire</a>
                         </div>
                     </div>
                 </div>

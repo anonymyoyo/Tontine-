@@ -33,7 +33,7 @@
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
                     <div class="footer-logo">
-                        <a href="index.html">
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="logo">
                         </a>
                     </div>
