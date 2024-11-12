@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'phone'=>'694865872',
             'ville'=>'Douala',
             'pays'=>'Cameroun',
-            'image'=>'images/5QHTgvFln3hvqaTuFgIwdEzTGGwzhKgLf0dlqIsE.png',
+            'image'=>'images/yoyo.png',
             'role_id'=>'1',
             'password'=>'superadmin'
         ]);

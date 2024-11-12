@@ -103,8 +103,8 @@
               <i class="bi bi-wallet2"></i>
               <span class="menu-text">Versement</span>
             </a>
-          </li>
-        <li> --}}
+          </li>--}}
+        <li>
           <a href="{{ route('reglage') }}">
             <i class="bi bi-gear"></i>
             <span class="menu-text">Settings</span>

@@ -55,11 +55,11 @@
           <div class="bg-transparent-light rounded-1 mb-3 position-relative">
             <div class="p-3 text-white">
               <div class="mb-2">
-                <i class="bi bi-bar-chart fs-1 lh-1"></i>
+                <i class="fs-3 bi bi-people"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="m-0 fw-normal">Adherants</h5>
-                <h3 class="m-0">3500</h3>
+                <h5 class="m-0 fw-normal">Associations</h5>
+                <h3 class="m-0">5</h3>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Versements</h5>
-                <h3 class="m-0">2900</h3>
+                <h3 class="m-0">750.000 XAF</h3>
               </div>
             </div>
           </div>
@@ -82,11 +82,11 @@
           <div class="bg-transparent-light rounded-1 mb-3 position-relative">
             <div class="p-3 text-white">
               <div class="mb-2">
-                <i class="bi bi-box-seam fs-1 lh-1"></i>
+                <i class="fs-3 bi bi-arrow-left-right"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Transactions</h5>
-                <h3 class="m-0">6500</h3>
+                <h3 class="m-0">3.055.200 XAF</h3>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Adhesions</h5>
-                <h3 class="m-0">7200</h3>
+                <h3 class="m-0">452</h3>
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@
                   <h3 class="mb-4">Congratulations {{ auth()->user()->name }} 🎉</h3>
                   <p>
                     Vous avez enregistre
-                    <span class="text-success fw-bold">65%</span> de versements supplementaire par rapport a l'annee precedente.
+                    <span class="text-success fw-bold">32%</span> de recouvrement supplementaire par rapport a l'exercice precedent.
                   </p>
                   <div class="mt-4 d-flex flex-wrap gap-3">
                     <div class="d-flex align-items-center">
@@ -129,8 +129,8 @@
                         <i class="bi bi-bag text-info fs-3"></i>
                       </div>
                       <div class="m-0">
-                        <h3 class="m-0 fw-semibold">$4800</h3>
-                        <p class="m-0 text-secondary">Cette annee</p>
+                        <h3 class="m-0 fw-semibold">+750.200 XAF</h3>
+                        <p class="m-0 text-secondary">Argent recouvert</p>
                       </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -138,8 +138,8 @@
                         <i class="bi bi-bag text-danger fs-3"></i>
                       </div>
                       <div class="m-0">
-                        <h3 class="m-0 fw-semibold">$2300</h3>
-                        <p class="m-0 text-secondary">Annee precedente</p>
+                        <h3 class="m-0 fw-semibold">2.305.700 XAF</h3>
+                        <p class="m-0 text-secondary">Argent non recouvert</p>
                       </div>
                     </div>
                   </div>
@@ -154,7 +154,7 @@
         <div class="col-xl-4 col-sm-12 col-12">
           <div class="card mb-3 grd-primary">
             <div class="card-body bg-hexagon height-230">
-              <h5 class="card-title text-white">Overall Sales</h5>
+              <h5 class="card-title text-white">Total versements    </h5>
               <div id="sales"></div>
             </div>
           </div>
@@ -178,7 +178,7 @@
       <!-- Row end -->
 
       <!-- Row start -->
-      <div class="row gx-3">
+      {{-- <div class="row gx-3">
         <div class="col-xl-6 col-12">
           <div class="card mb-3">
             <div class="card-header">
@@ -382,7 +382,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- Row end -->
 
       <!-- Row start -->
@@ -390,7 +390,7 @@
         <div class="col-xl-8 col-12">
           <div class="card mb-3">
             <div class="card-header">
-              <h5 class="card-title">Real Time</h5>
+              <h5 class="card-title">En temps reel</h5>
             </div>
             <div class="card-body">
               <div id="world-map-markers3" class="chart-height-lg position-relative"></div>
@@ -409,7 +409,7 @@
                   890
                   <i class="bi bi-arrow-up-right-circle-fill text-success ms-1"></i>
                 </h2>
-                <p class="text-truncate">7% higher than last year.</p>
+                <p class="text-truncate">7% en plus par rapport a l'annee derniere.</p>
               </div>
             </div>
           </div>

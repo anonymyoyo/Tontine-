@@ -2584,6 +2584,7 @@ blog post search form style end
 .main-home-banner .home-banner-thumb img {
   -webkit-transform: translateX(50px);
   transform: translateX(50px);
+  width: 1300px;*
 }
 
 @media only screen and (max-width: 991px) {
