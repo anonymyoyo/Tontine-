@@ -70,7 +70,7 @@
             <ul class="treeview-menu">
                 @foreach ($tontine as $tontines)
                     <li>
-                        <a href="{{ route('admin.tontine', $tontines->id) }}">{{ $tontines->name }}</a>
+                        <a href="#">{{ $tontines->name }}</a>
                     </li>
                 @endforeach
                 {{-- <li>

@@ -57,7 +57,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('Agence/Membres', [AdminController::class, 'agences_membre'])->name('admin.membres');
     Route::get('Agence/Creer/Membres', [AdminController::class, 'admin_creer_membre'])->name('admin.creer_membres');
     Route::post('Agence/Ajouter/Membres', [AdminController::class, 'admin_ajouter_membre'])->name('admin.ajouter_membres');
-    Route::get('Agence/Tontine/{id}', [AdminController::class, 'agences_tontine'])->name('admin.tontine');
+    Route::get('Agence/Tontine', [AdminController::class, 'agences_tontine'])->name('admin.tontine');
 });
 
 Route::middleware(['auth', 'association'])->group(function(){

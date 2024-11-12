@@ -466,9 +466,9 @@ class AdminController extends Controller
         return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }
 
-    public function agences_tontine($id){
+    public function agences_tontine(){
         $roles=Role::all();
-        $tontine=Tontine::find($id);
+        // $tontine=Tontine::find($id);
         return view('admin.admin.tontines.tontine', compact('tontine', 'id', 'roles'));
     }
 }

@@ -19,7 +19,7 @@
     <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
     <meta property="og:type" content="Website">
     <meta property="og:site_name" content="Bootstrap Gallery">
-    {{-- <li nk rel="shortcut icon" href="{{ asset('dashboard/assets/images/favicon.svg') }}" /> --}}
+    {{-- <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" /> --}}
 
     <!-- *************
             ************ CSS Files *************
