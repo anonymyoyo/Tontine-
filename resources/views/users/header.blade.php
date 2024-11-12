@@ -28,9 +28,9 @@
                                                 <a class="nav-link dropdown-toggle secondary-effect" href="#"
                                                     data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
                                                 <ul class="dropdown-menu">
-                                                    <li>
+                                                    {{-- <li>
                                                         <a class="dropdown-item secondary-effect" href="{{ route('user.association') }}">Explorer</a>
-                                                    </li>
+                                                    </li> --}}
                                                     <li>
                                                         <a class="dropdown-item secondary-effect" href="{{ route('user.tontines') }}">Tontines</a>
                                                     </li>
@@ -96,9 +96,9 @@
                                                 <a class="nav-link dropdown-toggle secondary-effect" href="#"
                                                     data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
                                                     <ul class="dropdown-menu">
-                                                        <li>
+                                                        {{-- <li>
                                                             <a class="dropdown-item secondary-effect" href="{{ route('user.association') }}">Explorer</a>
-                                                        </li>
+                                                        </li> --}}
                                                         <li>
                                                             <a class="dropdown-item secondary-effect" href="{{ route('user.tontines') }}">Tontines</a>
                                                         </li>

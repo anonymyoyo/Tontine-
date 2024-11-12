@@ -36,7 +36,7 @@
     <!-- about crikto section end -->
 
     <!-- build the future of technology section start -->
-    <section class="future-container pt-90 pb-120">
+    {{-- <section class="future-container pt-90 pb-120">
         <div class="container">
             <div class="future-wrapper">
                 <div class="row d-flex align-items-center">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- build the future of technology section end -->
 
     <!-- sign up bonus section start -->
@@ -74,11 +74,10 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="bonus-content">
-                            <h2>Predict.Win Cash</h2>
-                            <p>Take part in the first decentralized prediction on the market. CryptoCurrency is changing
-                                our world one coin at time. Learn about this world-changing movement and how you can be
-                                a part of it from Our experts.</p>
-                            <a href="#registration-popup" class="fourier-btn large primary-effect registration-popup-link">Sign up with $5 bonus</a>
+                            <h2>Investisser et gagner</h2>
+                            <p>Avec un taux d'interet de 40%, recuperer 20% de votre investissement apres chaque trimestre
+                                avant de recuperer la totalite de votre investissement a la fin de la periode.</p>
+                            <a href="{{ route('contact') }}" class="fourier-btn large primary-effect registration-popup-link">Contactez-nous</a>
                         </div>
                     </div>
                 </div>

@@ -52,8 +52,8 @@
                         <p class="secondary text-center">Solde du compte</p>
                     </div>
                     <div class="col-sm-6 col-lg-4 text-center tickets">
-                        <h3 class="text-center">3,570 <span>/ 5000</span></h3>
-                        <p class="secondary text-center">Tickets Sold</p>
+                        {{-- <h3 class="text-center">3,570 </h3>
+                        <p class="secondary text-center">Tickets Sold<span>/ 5000</span></p> --}}
                     </div>
                     <div class="col-sm-12 col-lg-4 text-center estimated-value">
                         <h3 class="text-center">48,414.6667 XAF</h3>
@@ -207,18 +207,20 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nom de la tontine</th>
+                                                <th>Solde</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($membre as $membres)
-                                            @foreach($tontine as $tontines)
-                                            @if (auth()->user()->email === $membres->email && $membres->tontine_id === $tontines->id)
+                                            @foreach($tontin as $tontines)
+                                            {{-- @if (auth()->user()->email === $membres->email && $membres->tontine_id === $tontines->id) --}}
                                                 {{-- <option placeholder="Choix de la Tontine" value="">{{ $tontines->name }}</option> --}}
                                                 <tr>
                                                     <td>1</td>
                                                     <td>{{ $tontines->name }}</td>
+                                                    <td>0 XAF</td>
                                                 </tr>
-                                            @endif
+                                            {{-- @endif --}}
                                             @endforeach
                                             @endforeach
                                         </tbody>
@@ -422,138 +424,6 @@
     </section>
     <!-- boost earning slider end -->
 
-
-    <!-- faq section start -->
-    <section class="home-faq-container invest-faq pb-120">
-        <div class="container">
-            <div class="home-faq-wrapper">
-                <div class="faq-title-wrapper text-center">
-                    <h2 class="text-center">Questions Frequements Posees</h2>
-                    <p class="text-center">Si vous avez la moindre interogation concernant le programme d'integration, S'il vous plait <a href="{{ route('contact') }}" style="color: #90cf37;">Contactez-nous</a>
-                    </p>
-                </div>
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-8 align-items-center">
-                        <div class="faq-left-content">
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed active" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Qu'est-ce que TCA?
-                                            <i class="flaticon-down-arrow"></i>
-                                        </button>
-                                    </h4>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">crikto is a prediction market protocol that provides
-                                            crypto traders a
-                                            simplified interface to make money by making the correct price prediction of
-                                            popular crypto
-                                            assets. <br> Due to its simplicity and ease of use, users often call it the
-                                            Uniswap of Prediction
-                                            Markets.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Comment epargner avec TCA?
-                                            <i class="flaticon-down-arrow"></i>
-                                        </button>
-                                    </h4>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">crikto is a prediction market protocol that provides
-                                            crypto traders a
-                                            simplified interface to make money by making the correct price prediction of
-                                            popular crypto
-                                            assets. <br> Due to its simplicity and ease of use, users often call it the
-                                            Uniswap of Prediction
-                                            Markets.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Comment investir avec TCA?
-                                            <i class="flaticon-down-arrow"></i>
-                                        </button>
-                                    </h4>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">crikto is a prediction market protocol that provides
-                                            crypto traders a
-                                            simplified interface to make money by making the correct price prediction of
-                                            popular crypto
-                                            assets. <br> Due to its simplicity and ease of use, users often call it the
-                                            Uniswap of Prediction
-                                            Markets.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="flush-headingThree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
-                                            Quel moyen de paiement je peux utiliser pour effectuer les transactions avec TCA?
-                                            <i class="flaticon-down-arrow"></i>
-                                        </button>
-                                    </h4>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">crikto is a prediction market protocol that provides
-                                            crypto traders a
-                                            simplified interface to make money by making the correct price prediction of
-                                            popular crypto
-                                            assets. <br> Due to its simplicity and ease of use, users often call it the
-                                            Uniswap of Prediction
-                                            Markets.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h4 class="accordion-header" id="flush-headingFour">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                            aria-expanded="false" aria-controls="flush-collapseFour">
-                                            Comment est-ce aue TCA concerve mes avoir?
-                                            <i class="flaticon-down-arrow"></i>
-                                        </button>
-                                    </h4>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">crikto is a prediction market protocol that provides
-                                            crypto traders a
-                                            simplified interface to make money by making the correct price prediction of
-                                            popular crypto
-                                            assets. <br> Due to its simplicity and ease of use, users often call it the
-                                            Uniswap of Prediction
-                                            Markets.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 align-items-center order-first order-lg-last">
-                        <div class="faq-right-content">
-                            <img src="assets/images/custom/faq/curious-man.png" alt="Frequently Asked Questions">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- faq section end -->
 
     <!-- footer start -->
     @include('users/newsletter_footer')

@@ -1,59 +1,3 @@
-<!-- team section start -->
-{{-- <section class="team-container pt-120 pb-120">
-    <div class="container">
-        <div class="team-wrapper">
-            <div class="title-wrapper text-center">
-                <h2 class="text-center">Meet Our Team</h2>
-                <p class="text-center">Meet the minds shaping the industry</p>
-            </div>
-            <div class="owl-team-carousel owl-carousel owl-theme">
-                <div class="team-single-item">
-                    <img src="assets/images/team-one.png" alt="Team Member One">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Marc Thomson</a></h4>
-                        <p class="primary text-center">CEO, Co-Founder</p>
-                    </div>
-                </div>
-                <div class="team-single-item">
-                    <img src="assets/images/team-two.png" alt="Team Member Two">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Jarley Quinn</a></h4>
-                        <p class="primary text-center">CEO, Founder</p>
-                    </div>
-                </div>
-                <div class="team-single-item">
-                    <img src="assets/images/team-three.png" alt="Team Member Three">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Tom Bariande</a></h4>
-                        <p class="primary text-center">CEO, Co-Founder</p>
-                    </div>
-                </div>
-                <div class="team-single-item">
-                    <img src="assets/images/team-one.png" alt="Team Member One">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Marc Thomson</a></h4>
-                        <p class="primary text-center">CEO, Co-Founder</p>
-                    </div>
-                </div>
-                <div class="team-single-item">
-                    <img src="assets/images/team-two.png" alt="Team Member Two">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Jarley Quinn</a></h4>
-                        <p class="primary text-center">CEO, Founder</p>
-                    </div>
-                </div>
-                <div class="team-single-item">
-                    <img src="assets/images/team-three.png" alt="Team Member Three">
-                    <div class="team-info text-center">
-                        <h4 class="text-center"><a href="about.html">Tom Bariande</a></h4>
-                        <p class="primary text-center">CEO, Co-Founder</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-<!-- team section end -->
 
 <!-- testimonial section start -->
 <section class="testimonial-container pt-120 pb-120">
@@ -62,7 +6,7 @@
             <div class="slider-title-wrapper d-flex flex-column flex-sm-row align-items-center justify-content-between">
                 <div class="title-content-left">
                     <h2 class="text-center text-sm-start">Avis de nos membres</h2>
-                    <p>Don't take our word for it, take theirs</p>
+                    <p>Ne prenez pas nos mots pour parole d'evangile, considerez les leurs</p>
                 </div>
                 <div class="title-content-right">
                     <button type="button" class="prev-slide">

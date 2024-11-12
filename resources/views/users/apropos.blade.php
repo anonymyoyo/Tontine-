@@ -23,8 +23,8 @@
                                                 alt="Single Item One">
                                         </div>
                                         <div class="about-crikto-single-item-content">
-                                            <h2>2.0B</h2>
-                                            <p>Average daily volume</p>
+                                            <h2>+100</h2>
+                                            <p>Clients enregistre</p>
                                         </div>
                                     </div>
                                 </div>
@@ -49,8 +49,8 @@
                                                 alt="Single Item Three">
                                         </div>
                                         <div class="about-crikto-single-item-content">
-                                            <h2>Secure</h2>
-                                            <p>KYC, 2FA,PIN access</p>
+                                            <h2>Securise</h2>
+                                            <p>Mot de passe</p>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="about-crikto-single-item-content">
                                             <h2>24/7</h2>
-                                            <p>Support</p>
+                                            <p>Service Client</p>
                                         </div>
                                     </div>
                                 </div>
