@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `agences` (
 
 -- Listage des données de la table tontine.agences : ~1 rows (environ)
 INSERT INTO `agences` (`id`, `name`, `email`, `phone`, `ville`, `pays`, `user_id`, `association_id`, `image`, `created_at`, `updated_at`) VALUES
-	(1, 'TCA Douala', 'tcadouala@tca.com', '694865872', 'Douala', 'Cameroon', 5, 3, 'images/0I66RqrbpB0GA0MWuRY8nSe1S3biOY3lRdsErjHq.png', '2024-11-05 22:23:55', '2024-11-05 22:23:55');
+	(1, 'TCA Douala', 'tcadouala@tca.com', '694865872', 'Douala', 'Cameroon', 5, 3, 'images/0I66RqrbpB0GA0MWuRY8nSe1S3biOY3lRdsErjHq.png', '2024-11-07 17:33:05', '2024-11-07 17:33:05');
 
 -- Listage de la structure de table tontine. associations
 CREATE TABLE IF NOT EXISTS `associations` (
@@ -61,13 +61,14 @@ CREATE TABLE IF NOT EXISTS `associations` (
   UNIQUE KEY `associations_email_unique` (`email`),
   KEY `associations_user_id_foreign` (`user_id`),
   CONSTRAINT `associations_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table tontine.associations : ~3 rows (environ)
+-- Listage des données de la table tontine.associations : ~4 rows (environ)
 INSERT INTO `associations` (`id`, `name`, `email`, `description`, `ville`, `pays`, `reglement`, `user_id`, `image`, `created_at`, `updated_at`) VALUES
-	(1, 'Association', 'bitinza@association.com', 'fdgffgdfg', 'Douala', 'Cameroon', 'dfgdfgd', 2, 'images/xbQm5lFBaRSo7RbevOOf3N1vwmR9Xa5BYxLTrNXM.png', '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(2, 'BBP', 'bbp@gmail.com', 'sdfsdfdsf', 'Douala', 'Cameroon', 'sfsfsfsfsdf', 3, 'images/4Ky2OIfpwBonvhHtgyWd6QmHIkxVseVM9rWlV2pU.png', '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(3, 'TCA Miracle', 'tcabertoua@tca.com', 'adasadas', 'Bertoua', 'Cameroon', 'asdasds', 4, 'images/QRjj4iYewYT74BdX9XKHQqcdrXGgk8hCraQN4Dpn.png', '2024-11-05 22:23:55', '2024-11-05 22:23:55');
+	(1, 'Association', 'bitinza@association.com', 'fdgffgdfg', 'Douala', 'Cameroon', 'dfgdfgd', 2, 'images/xbQm5lFBaRSo7RbevOOf3N1vwmR9Xa5BYxLTrNXM.png', '2024-11-07 17:33:04', '2024-11-07 17:33:04'),
+	(2, 'BBP', 'bbp@gmail.com', 'sdfsdfdsf', 'Douala', 'Cameroon', 'sfsfsfsfsdf', 3, 'images/4Ky2OIfpwBonvhHtgyWd6QmHIkxVseVM9rWlV2pU.png', '2024-11-07 17:33:04', '2024-11-07 17:33:04'),
+	(3, 'TCA Miracle', 'tcabertoua@tca.com', 'adasadas', 'Bertoua', 'Cameroon', 'asdasds', 4, 'images/QRjj4iYewYT74BdX9XKHQqcdrXGgk8hCraQN4Dpn.png', '2024-11-07 17:33:05', '2024-11-07 17:33:05'),
+	(4, 'PME ASSOCIATION', 'pme-association@pme.com', 'jjkjjjjjjjjjjjjjj', 'Bertoua', 'Cameroon', 'jkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkbbbbbbbbbbbbbbb', 10, 'images/w5f1UGx3Kzj65ok57VTHxMuKqHkqWvOacadO1tf3.png', '2024-11-08 18:09:23', '2024-11-08 18:09:23');
 
 -- Listage de la structure de table tontine. cache
 CREATE TABLE IF NOT EXISTS `cache` (
@@ -193,9 +194,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table tontine.migrations : ~12 rows (environ)
+-- Listage des données de la table tontine.migrations : ~13 rows (environ)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '0001_01_01_000000_create_users_table', 1),
 	(2, '0001_01_01_000001_create_cache_table', 1),
@@ -208,7 +209,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(9, '2024_09_09_200747_create_logs_table', 1),
 	(10, '2024_09_28_082925_create_agences_table', 1),
 	(11, '2024_09_30_124723_create_zones_table', 1),
-	(12, '2024_10_07_112552_create_associations_table', 1);
+	(12, '2024_10_07_112552_create_associations_table', 1),
+	(13, '2024_11_07_092352_create_tontine_choisies_table', 1);
 
 -- Listage de la structure de table tontine. password_reset_tokens
 CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
@@ -233,11 +235,11 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 -- Listage des données de la table tontine.roles : ~5 rows (environ)
 INSERT INTO `roles` (`id`, `name`, `description`, `permission`, `created_at`, `updated_at`) VALUES
-	(1, 'Admin', 'Administrateur general de la plateforme', 'Gestion des tontines et/ou associations sur la plateforme, gestion des utilisateurs et des differentes transactions', '2024-11-05 22:23:50', '2024-11-05 22:23:50'),
-	(2, 'Agence', 'Administrateur de lagence', 'Gestion des membres , voir historique', '2024-11-05 22:23:50', '2024-11-05 22:23:50'),
-	(3, 'Commercial', 'Membre de la tontine et/ou de lassociation', 'Effectuer les versements, voir historique', '2024-11-05 22:23:50', '2024-11-05 22:23:50'),
-	(4, 'User', 'Visiteur du site', 'Visite les pages sans pouvoir integrer une tontine ou une association', '2024-11-05 22:23:50', '2024-11-05 22:23:50'),
-	(5, 'Association', 'Administrateur de lassociation', 'Gestion de sa tontine et/ou son association, gesion des membres associers, voir historique', '2024-11-05 22:23:50', '2024-11-05 22:23:50');
+	(1, 'Admin', 'Administrateur general de la plateforme', 'Gestion des tontines et/ou associations sur la plateforme, gestion des utilisateurs et des differentes transactions', '2024-11-07 17:32:58', '2024-11-07 17:32:58'),
+	(2, 'Agence', 'Administrateur de lagence', 'Gestion des membres , voir historique', '2024-11-07 17:32:58', '2024-11-07 17:32:58'),
+	(3, 'Commercial', 'Membre de la tontine et/ou de lassociation', 'Effectuer les versements, voir historique', '2024-11-07 17:32:58', '2024-11-07 17:32:58'),
+	(4, 'User', 'Visiteur du site', 'Visite les pages sans pouvoir integrer une tontine ou une association', '2024-11-07 17:32:58', '2024-11-07 17:32:58'),
+	(5, 'Association', 'Administrateur de lassociation', 'Gestion de sa tontine et/ou son association, gesion des membres associers, voir historique', '2024-11-07 17:32:58', '2024-11-07 17:32:58');
 
 -- Listage de la structure de table tontine. sessions
 CREATE TABLE IF NOT EXISTS `sessions` (
@@ -252,9 +254,10 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `sessions_last_activity_index` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table tontine.sessions : ~1 rows (environ)
+-- Listage des données de la table tontine.sessions : ~2 rows (environ)
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-	('KKLnGwcvZEuKKWsstaOwX26P2rFv7k29FjzCQFBM', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTHMzRFpGWk5NTnBEUWhkQk5FTWd5b2YwVjZHRDliS3c2bVQwbE9pTSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9BZ2VuY2VzL1pvbmVzL0xpc3RlIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1730818662);
+	('d15D2pS0CiYmbMdwUusb9wozUNb7adjEnzDL1wdA', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZ0ZJYWg4eXBJUG9aMnBTVm1TOW51VjNnVVRxVWF3eGxDY29LZHBJQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9Vc2VyL0NyZWVyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1731063618),
+	('MDovowt58hddDR3G5eamCW3nukzZzr4VVqTXcuc9', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVlhuNXJKcXRGb2VQOHNNemZpcXhwZ29ZR0dJd3FXYVpiSlkwMklQeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1731077048);
 
 -- Listage de la structure de table tontine. tontines
 CREATE TABLE IF NOT EXISTS `tontines` (
@@ -271,10 +274,30 @@ CREATE TABLE IF NOT EXISTS `tontines` (
 
 -- Listage des données de la table tontine.tontines : ~4 rows (environ)
 INSERT INTO `tontines` (`id`, `name`, `description`, `reglement`, `prix`, `image`, `created_at`, `updated_at`) VALUES
-	(1, 'Tontine Electro-menager', 'fdgdfgdfg', 'dfgdfgdfgfdg', '5000', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php297F.tmp', '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(2, 'Tontine Simple', 'dfsdfsdfsd', 'fdsfsdfsdf', '500', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php951.tmp', '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(3, 'Tontine Scolaire', 'sdfsfsdfsdf', 'sdfsdfsdfsdf', '1000', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php75E6.tmp', '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(4, 'Tontine speciale fin d\'annee', 'gfdgdfgdf', 'gdfgdfgdfg', '500', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpF2E7.tmp', '2024-11-05 22:23:55', '2024-11-05 22:23:55');
+	(1, 'Tontine Electro-menager', 'fdgdfgdfg', 'dfgdfgdfgfdg', '5000', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php297F.tmp', '2024-11-07 17:33:06', '2024-11-07 17:33:06'),
+	(2, 'Tontine Simple', 'dfsdfsdfsd', 'fdsfsdfsdf', '500', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php951.tmp', '2024-11-07 17:33:06', '2024-11-07 17:33:06'),
+	(3, 'Tontine Scolaire', 'sdfsfsdfsdf', 'sdfsdfsdfsdf', '1000', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php75E6.tmp', '2024-11-07 17:33:06', '2024-11-07 17:33:06'),
+	(4, 'Tontine speciale fin d\'annee', 'gfdgdfgdf', 'gdfgdfgdfg', '500', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpF2E7.tmp', '2024-11-07 17:33:06', '2024-11-07 17:33:06');
+
+-- Listage de la structure de table tontine. tontine_choisies
+CREATE TABLE IF NOT EXISTS `tontine_choisies` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL,
+  `tontine_id` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `tontine_choisies_user_id_foreign` (`user_id`),
+  KEY `tontine_choisies_tontine_id_foreign` (`tontine_id`),
+  CONSTRAINT `tontine_choisies_tontine_id_foreign` FOREIGN KEY (`tontine_id`) REFERENCES `tontines` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `tontine_choisies_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Listage des données de la table tontine.tontine_choisies : ~3 rows (environ)
+INSERT INTO `tontine_choisies` (`id`, `user_id`, `tontine_id`, `created_at`, `updated_at`) VALUES
+	(1, 8, 3, '2024-11-07 17:33:49', '2024-11-07 17:33:49'),
+	(2, 8, 1, '2024-11-07 17:35:53', '2024-11-07 17:35:53'),
+	(3, 8, 1, '2024-11-07 18:48:53', '2024-11-07 18:48:53');
 
 -- Listage de la structure de table tontine. transactions
 CREATE TABLE IF NOT EXISTS `transactions` (
@@ -316,19 +339,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id_foreign` (`role_id`),
   CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table tontine.users : ~9 rows (environ)
+-- Listage des données de la table tontine.users : ~10 rows (environ)
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `ville`, `pays`, `image`, `association_id`, `com_association_id`, `com_agence_id`, `mem_agence_id`, `mem_com_id`, `mem_tontine_id`, `role_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'Admin', 'superadmin@icloud.com', '694865872', 'Douala', 'Cameroun', 'images/5QHTgvFln3hvqaTuFgIwdEzTGGwzhKgLf0dlqIsE.png', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '$2y$12$SDwrU7XHdPUTC3KQsj29jOrdKI4AT8x0Xn4XidyCsh1y95DHG1YR2', NULL, '2024-11-05 22:23:52', '2024-11-05 22:23:52'),
-	(2, 'BITINZA', 'bitinza@tca.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php8AFE.tmp', '1', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$mYQccqTBHfHwdDEFqZ9F6Od9C3Xf2FnnLWCxeInt8eSAmh1UdUC5y', NULL, '2024-11-05 22:23:52', '2024-11-05 22:23:52'),
-	(3, 'Moussi Teng Pierre Dilan', 'moussidilan@gmail.com', '694865872', 'Kribi', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpC61C.tmp', '2', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$tBbA.sYfHXntSugkKVorSuiToHQmfbpI7H671DPgW/C/d54lFFRHC', NULL, '2024-11-05 22:23:52', '2024-11-05 22:23:52'),
-	(4, 'BITINZA', 'superadmin@gmail.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php33BF.tmp', '3', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$f.IOAtIrwl3fvWmqMiEkt.yxzE81ozLenNZHsPqhjcNUwZDxrOKDO', NULL, '2024-11-05 22:23:53', '2024-11-05 22:23:53'),
-	(5, 'Marole', 'marole@tca.com', '694865872', 'Douala', 'Cameroon', 'images/IgOMR0TPOFHaTkaPUOw4lXJ3LrYaCGUQkwoal2hU.png', '3', NULL, NULL, NULL, NULL, NULL, 2, NULL, '$2y$12$WRVbpoK01vVhwqxLumU/sO24dcq8b1jJKaFzlaAWqAdIpilP9jN5m', NULL, '2024-11-05 22:23:53', '2024-11-05 22:23:53'),
-	(6, 'Emauel', 'superadmi1@gmail.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php1A3B.tmp', NULL, '3', NULL, NULL, NULL, NULL, 3, NULL, '$2y$12$Wk0yPOiHZyPS6RCtl4uV9ejdA9NVGhlXNhOyu8hCGsWcBX.FuggCi', NULL, '2024-11-05 22:23:54', '2024-11-05 22:23:54'),
-	(7, 'Serges', 'serges@commercial.com', '694865872', 'Douala', NULL, 'images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png', NULL, '3', '1', NULL, NULL, NULL, 3, NULL, '$2y$12$wWdyIPDrMLkxKEP6piU0leWZWlaspL6uKOsgdBuGExMyseV1HmrBS', NULL, '2024-11-05 22:23:54', '2024-11-05 22:23:54'),
-	(8, 'Tantanpion', 'tantanpion@gmail.com', '694865872', 'Douala', 'Cameroon', 'images/9SO00rUXl8yhr10OV7UgjzY9QVyFiCyoUK4kNHtY.png', '1', NULL, NULL, NULL, NULL, '1', 4, NULL, '$2y$12$z5Jqfpy4bMfXsSldQc5lEeviTAWof18OGM.kcXQOTfHQRAGsZzjeO', NULL, '2024-11-05 22:23:55', '2024-11-05 22:23:55'),
-	(10, 'Dora l\'exploratrice', 'dora@tca.com', '694865872', 'Douala', 'Cameroon', 'images/syQWxql8pd95yKfKoH1MyLSD36DT9hAsMYXgI2Qt.png', '3', NULL, NULL, '1', '7', '1', 4, NULL, '$2y$12$zmNDpL.2vEfnuun6hQMySeeFFPN55h08Oh4IRk1vAMRDHKH2.Y9OO', NULL, '2024-11-05 22:26:51', '2024-11-05 22:26:51');
+	(1, 'Admin', 'superadmin@icloud.com', '694865872', 'Douala', 'Cameroun', 'images/5QHTgvFln3hvqaTuFgIwdEzTGGwzhKgLf0dlqIsE.png', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '$2y$12$s7KpeK4JfEOStiLdQBfohuTRemR.sKBKUM9F46qpzVddL/Usw7D62', NULL, '2024-11-07 17:33:00', '2024-11-07 17:33:00'),
+	(2, 'BITINZA', 'bitinza@tca.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php8AFE.tmp', '1', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$FMXMVnYiDa7TQqBtVORDBuJVPBEoidwmMUj2Sju5ax07qCT.0gorC', NULL, '2024-11-07 17:33:00', '2024-11-07 17:33:00'),
+	(3, 'Moussi Teng Pierre Dilan', 'moussidilan@gmail.com', '694865872', 'Kribi', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpC61C.tmp', '2', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$BjyBfIv.pLSnNSMvsD2aHOFP4EIDgqArvmZ854B4eibWcyDr5dVhu', NULL, '2024-11-07 17:33:01', '2024-11-07 17:33:01'),
+	(4, 'BITINZA', 'superadmin@gmail.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php33BF.tmp', '3', NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$VV8IkJ22ssph0m4WJ3G/FOcIw6N/0LVB/zvv9ShQbJsCjvLklUi/6', NULL, '2024-11-07 17:33:01', '2024-11-07 17:33:01'),
+	(5, 'Marole', 'marole@tca.com', '694865872', 'Douala', 'Cameroon', 'images/IgOMR0TPOFHaTkaPUOw4lXJ3LrYaCGUQkwoal2hU.png', '3', NULL, NULL, NULL, NULL, NULL, 2, NULL, '$2y$12$KlhamR.Tg5lLZgS9N2H7BeC53nruaY3ul76qidPEqYmgI/g.n76p2', NULL, '2024-11-07 17:33:02', '2024-11-07 17:33:02'),
+	(6, 'Emauel', 'superadmi1@gmail.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php1A3B.tmp', NULL, '3', NULL, NULL, NULL, NULL, 3, NULL, '$2y$12$pVWJS2so7f0.isQ9/Ci2.ua2/xVljV1VMFYAGZ0Fwl3yveTA4KxpS', NULL, '2024-11-07 17:33:03', '2024-11-07 17:33:03'),
+	(7, 'Serges', 'serges@commercial.com', '694865872', 'Douala', NULL, 'images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png', NULL, '3', '1', NULL, NULL, NULL, 3, NULL, '$2y$12$68OJIhHA6vs.p.GPvJzKDOuDfk3XIkH0V9UjVP5lKHWs20/g6CnpS', NULL, '2024-11-07 17:33:03', '2024-11-07 17:33:03'),
+	(8, 'Tantanpion', 'tantanpion@gmail.com', '694865872', 'Douala', 'Cameroon', 'images/9SO00rUXl8yhr10OV7UgjzY9QVyFiCyoUK4kNHtY.png', '1', NULL, NULL, NULL, NULL, '1', 4, NULL, '$2y$12$7a2GS5T/UBOG7t8TtBCDxunkkkl5stMnQv0quzUO6vSfbjKOAJe9q', NULL, '2024-11-07 17:33:04', '2024-11-07 17:33:04'),
+	(9, 'Kamga', 'kamga@membre.com', '694865872', 'Douala', 'Cameroon', 'images/LDEDOZDCIAB7g2qBiM67vlB8etcRIrYwcDUV2C65.png', '3', NULL, NULL, '1', '7', '1', 4, NULL, '$2y$12$QWJnSZkqCPlwIvRwxqhgcOaNa4NmQOI/UEhcuRoMKJ6z7xpfQXIfC', NULL, '2024-11-07 23:25:01', '2024-11-07 23:25:01'),
+	(10, 'Titi', 'titi@icloud.com', '694865872', 'Kribi', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpA7F4.tmp', NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, '$2y$12$oTCqgCHtTBpOycVnqo7rh.VGIj75hEQik3CLUdhUV6E9IYnZgmSsq', NULL, '2024-11-08 18:08:08', '2024-11-08 18:08:08');
 
 -- Listage de la structure de table tontine. zones
 CREATE TABLE IF NOT EXISTS `zones` (
@@ -351,7 +375,7 @@ CREATE TABLE IF NOT EXISTS `zones` (
 
 -- Listage des données de la table tontine.zones : ~1 rows (environ)
 INSERT INTO `zones` (`id`, `name`, `association_id`, `agence_id`, `user_id`, `image`, `created_at`, `updated_at`) VALUES
-	(1, 'Marcher DAKAR', 3, 1, 7, 'images/qnspdmYOiaHpsaI4szHTeUpqlJR6SAJGmvTqP3d0.png', '2024-11-05 22:23:55', '2024-11-05 22:23:55');
+	(1, 'Marcher DAKAR', 3, 1, 7, 'images/qnspdmYOiaHpsaI4szHTeUpqlJR6SAJGmvTqP3d0.png', '2024-11-07 17:33:05', '2024-11-07 17:33:05');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

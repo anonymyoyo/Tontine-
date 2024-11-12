@@ -117,7 +117,7 @@
                         <div class="mb-3">
                         <label class="form-label">Tontines choisi</label>
                         <select name="mem_tontine_id" class="form-select">
-                            <option value="0">Selectionner</option>
+                            <option value="">Selectionner</option>
                             @foreach ($tontine as $tontines)
                                 <option value="{{ $tontines->id }}" required class="form-option">{{ $tontines->name }}</option>
                             @endforeach

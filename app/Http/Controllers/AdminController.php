@@ -227,9 +227,9 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::find($id);
-        $commercial=User::all();
-        $gerant=User::all();
-        $agences=Agence::all();
+        $commercial=User::where('role_id', 3)->where('association_id', $association[0]->id)->get();
+        $gerant=User::where('role_id', 5)->where('association_id', $association[0]->id)->get();
+        $agences=Agence::where('com_association_id', $gerant[0]->association_id)->where('association_id', $association->id)->get();
         return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
     }
 
