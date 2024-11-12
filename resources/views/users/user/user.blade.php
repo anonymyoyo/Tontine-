@@ -52,8 +52,8 @@
                         <p class="secondary text-center">Solde du compte</p>
                     </div>
                     <div class="col-sm-6 col-lg-4 text-center tickets">
-                        {{-- <h3 class="text-center">3,570 <span>/ 5000</span></h3>
-                        <p class="secondary text-center">Tickets Sold</p> --}}
+                        <h3 class="text-center">3,570 <span>/ 5000</span></h3>
+                        <p class="secondary text-center">Tickets Sold</p>
                     </div>
                     <div class="col-sm-12 col-lg-4 text-center estimated-value">
                         <h3 class="text-center">48,414.6667 XAF</h3>

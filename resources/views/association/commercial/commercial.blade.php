@@ -81,6 +81,7 @@
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Zone a collecter</th>
                         <th>Agence mere</th>
                         <th>Association mere</th>
                       </tr>

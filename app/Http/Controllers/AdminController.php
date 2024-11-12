@@ -227,10 +227,24 @@ class AdminController extends Controller
         $roles=Role::all();
         $tontine=Tontine::all();
         $association=Association::find($id);
-        $commercial=User::where('role_id', 3)->where('association_id', $association[0]->id)->get();
-        $gerant=User::where('role_id', 5)->where('association_id', $association[0]->id)->get();
-        $agences=Agence::where('com_association_id', $gerant[0]->association_id)->where('association_id', $association->id)->get();
-        return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
+        $gerant=User::where('role_id', 5)->where('association_id', $association->id)->get();
+
+
+        if(!empty($commercial))
+        {
+            $commercial=User::where('role_id', 3)->where('com_association_id', $association->id)->get();
+            $agences=Agence::where('association_id', $gerant[0]->association_id)->get();
+
+            // return $commercial;
+            return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
+        }else{
+            $commercial=User::where('role_id', 3)->where('com_association_id', $association->id)->get();
+            $agences=Agence::where('association_id', $gerant[0]->association_id)->get();
+            // return $commercial;
+            return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
+        }
+        // $agences=Agence::where('association_id', $gerant[0]->association_id)->get();
+        // return view('admin.admin.association.details', compact('tontine', 'gerant', 'association', 'commercial', 'roles', 'agences'));
     }
 
     public function zone(){
@@ -347,18 +361,18 @@ class AdminController extends Controller
             $agences=Agence::all();
             $association=Association::all();
             $commercial=User::where('role_id', 3)->get();
+            // return $commercial;
             return view('admin.admin.commerciaux.commercial', compact('agences','roles', 'tontine', 'commercial', 'zones', 'association'));
     }
 
-    public function creer_commercial(){
-        $tontine=Tontine::all();
-        $commercial=User::all();
-
-        $zones=Zone::all();
-        $roles=Role::all();
+    public function creer_commercial(Request $request){
+        // $agence=Agence::all();
         $agence=Agence::all();
         $association=Association::all();
-        return view('admin.admin.commerciaux.creer', compact('commercial', 'zones', 'roles', 'agence', 'tontine', 'association'));
+        $tontine=Tontine::all();
+        $zones=Zone::all();
+        $roles=Role::all();
+        return view('admin.admin.commerciaux.creer', compact( 'zones', 'roles', 'agence', 'tontine', 'association'));
     }
 
     public function ajouter_commercial(Request $request){
@@ -366,16 +380,10 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
+        $zones=Zone::all();
+        $user=User::find(auth()->user()->id);
         $agence=Agence::all();
         $association=Association::all();
-        $zones=Zone::all();
-
-        Commercial::create([
-            'name'=>$request->name,
-            'agence_id'=>$request->agence_id,
-            'association_id'=>$request->association_id,
-            'image'=>$path,
-        ]);
 
         User::create([
             'name'=>$request->name,
@@ -383,9 +391,11 @@ class AdminController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'role_id'=>'3',
             'image'=>$path,
-            'password'=>Hash::make($request->password)
+            'com_association_id'=>$association[0]->id,
+            'com_agence_id'=>$agence[0]->id,
+            'role_id'=>3,
+            'password'=>Hash::make($request->password),
         ]);
         return view('admin.admin.commerciaux.creer', compact('tontine', 'agence', 'zones', 'association', 'roles'));
     }

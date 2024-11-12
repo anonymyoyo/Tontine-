@@ -265,13 +265,10 @@ class AssociationController extends Controller
             $association=$user->associations;
             $agence=$user->agences;
             $commercial=User::where('role_id', 3)->where('com_association_id', $association[0]->id)->get();
-            // $image=store::files('public/images');
             $roles=Role::all();
             $zones=Zone::all();
             $agences=Agence::where('association_id', $association[0]->id)->get();
             $association=Agence::where('association_id', $association[0]->id)->get();
-            // $user=User::find(auth()->user()->id);
-            // $commercial=$user->commerciaux;
             // return $agences;
             // return $commercial;
             return view('association.commercial.commercial', compact('agences','roles', 'tontine', 'zones', 'association', 'commercial'));

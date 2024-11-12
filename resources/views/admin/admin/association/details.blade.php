@@ -139,11 +139,6 @@
                         <div class="d-inline-flex gap-2 flex-wrap">
                             @foreach ($agences as $agence)
                                 <span class="badge bg-danger">{{ $agence->name }}</span>
-                                <span class="badge bg-info">{{ $agence->name }}</span>
-                                <span class="badge bg-success">{{ $agence->name }}</span>
-                                <span class="badge bg-warning">{{ $agence->name }}</span>
-                                <span class="badge bg-primary">{{ $agence->name }}</span>
-                                <span class="badge bg-secondary">{{ $agence->name }}</span>
                             @endforeach
 
                         </div>
@@ -230,7 +225,7 @@
                             <h5 class="card-title">Commerciaux</h5>
                         </div>
                         @foreach ($commercial as $commerciaux)
-                        @if ($association->id === $commerciaux->association_id)
+                        {{-- @if ($association->id === $commerciaux->association_id) --}}
                             <div class="card-body">
                                 <div class="row g-2 row-cols-3">
                                 <div class="col">
@@ -238,7 +233,7 @@
                                 </div>
                                 </div>
                             </div>
-                        @endif
+                        {{-- @endif --}}
                         @endforeach
 
                     </div>
