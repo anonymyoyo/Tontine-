@@ -59,7 +59,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Associations</h5>
-                <h3 class="m-0">5</h3>
+                <h3 class="m-0">1</h3>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Transactions</h5>
-                <h3 class="m-0">3.055.200 XAF</h3>
+                <h3 class="m-0">1.055.900 XAF</h3>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Adhesions</h5>
-                <h3 class="m-0">452</h3>
+                <h3 class="m-0">152</h3>
               </div>
             </div>
           </div>
@@ -170,7 +170,9 @@
               <h5 class="card-title">Revenue</h5>
             </div>
             <div class="card-body">
-              <div id="revenue"></div>
+              <div id="revenue">
+
+              </div>
             </div>
           </div>
         </div>
@@ -393,7 +395,7 @@
               <h5 class="card-title">En temps reel</h5>
             </div>
             <div class="card-body">
-              <div id="world-map-markers3" class="chart-height-lg position-relative"></div>
+                <img src="{{ asset('assets/images/afrique.png') }}" alt="">
             </div>
           </div>
         </div>

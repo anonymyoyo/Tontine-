@@ -98,13 +98,13 @@
                                     </div>{{ $membre->name }}</a></td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>
-                                    @foreach ($tontine as $tontines)
-                                        @if ($tontines->id === $membre->mem_tontine_id)
-                                            <td>{{ $tontines->name }}</td>
-                                        @endif
-                                    @endforeach
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
+                                    @foreach ($t as $tontines)
+                                        {{-- @if ($tontines->id === $membre->mem_tontine_id) --}}
+                                            <td>{{ $tontines->name }}</td>
+                                        {{-- @endif --}}
+                                    @endforeach
                                     <td>{{ $membre->created_at }}</td>
                                 </tr>
                             </tbody>

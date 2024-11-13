@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main.min.css') }}" />
 </head>
 
-  <body style="backround: green;">
+  <body>
     <!-- Container start -->
     <div class="container">
       <div class="row justify-content-center">
@@ -67,11 +67,11 @@
                   <i class="bi bi-facebook me-2"></i>Facebook
                 </button>
               </div>
-              <div class="text-center pt-4">
+              {{-- <div class="text-center pt-4">
                 <span>Pas encore membre?</span>
                 <a href="{{ route('register') }}" class="text-white text-decoration-underline ms-2">
                   Inscrivez-vous</a>
-              </div>
+              </div> --}}
             </div>
           </form>
         </div>

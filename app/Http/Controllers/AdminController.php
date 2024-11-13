@@ -26,6 +26,7 @@ class AdminController extends Controller
 {
     //
     public function dashboard(){
+        $asso=Association::count();
         $roles=Role::all();
         $user=User::count();
         $transaction=Transaction::count();
@@ -33,7 +34,7 @@ class AdminController extends Controller
         $adherant=User::count();
         $association=Association::all();
         $tontine=Tontine::all();
-        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant', 'association'));
+        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant', 'association', 'asso'));
     }
 
     public function dashboard_agence(){
@@ -411,25 +412,28 @@ class AdminController extends Controller
     }
 
     public function agences_transaction(){
+        $asso=Association::count();
         $roles=Role::all();
         $tontine=Tontine::all();
-        return view('admin.admin.transactions.transaction', compact('tontine', 'roles'));
+        return view('admin.admin.transactions.transaction', compact('tontine', 'roles', 'asso'));
     }
 
     public function agences_versement(){
+        $asso=Association::count();
         $roles=Role::all();
         $tontine=Tontine::all();
-        return view('admin.admin.versements.versement', compact('tontine', 'roles'));
+        return view('admin.admin.versements.versement', compact('tontine', 'roles', 'asso'));
     }
 
     public function agences_membre(){
+
         $tontine=Tontine::all();
         $membres=User::where('role_id', 4)->get();
-        // $t=$user->tontines;->where('mem_tontine_id', $tontine[0]->id)
+        $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
         $roles=Role::all();
 
         // return $membres;
-        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
+        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles', 't'));
     }
 
     public function admin_creer_membre(){

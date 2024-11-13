@@ -16275,19 +16275,19 @@ a:hover {
 }
 
 .login-bg {
-    background: url("../images/login-bg.jpg");
+    background: black;
     background-size: cover;
     background-position: center center
 }
 
 .login-form {
     backdrop-filter: blur(7px);
-    background: rgba(0, 0, 0, .4);
-    color: #fff
+    background: #90cf37;
+    color: #000;
 }
 
 img.login-logo {
-    width: 180px
+    width: 200px
 }
 
 .error-screen {

@@ -466,7 +466,7 @@ a.fc-event:hover {
 	max-width: 100%;
 	overflow: hidden;
 }
-.fc-h-event .fc-event-title-container {
+.fc-h-event .fc-event-title- {
 	flex-grow: 1;
 	flex-shrink: 1;
 	min-width: 0;

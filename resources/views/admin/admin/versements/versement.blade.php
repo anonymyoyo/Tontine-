@@ -79,7 +79,7 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <h5 class="m-0 fw-normal">Associations</h5>
-                  <h3 class="m-0">5</h3>
+                  <h3 class="m-0">{{ $asso }}</h3>
                 </div>
               </div>
             </div>

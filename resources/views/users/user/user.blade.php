@@ -48,7 +48,7 @@
                 </div>
                 <div class="row token-details-price">
                     <div class="col-sm-6 col-lg-4 text-center tickets-sold">
-                        <h3 class="text-center">3.99 XAF</h3>
+                        <h3 class="text-center">13.700 XAF</h3>
                         <p class="secondary text-center">Solde du compte</p>
                     </div>
                     <div class="col-sm-6 col-lg-4 text-center tickets">
@@ -97,10 +97,10 @@
 
                                     <h6  class="text-center">436429297 XAF</h6>
                                 </div>
-                                <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p>
+                                {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
                                 <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
                             </div>
-                            <a href="javascript:void(0)" class="primary-btn primary-effect">Buy Now</a>
+                            <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div id="submit-token-2" class="white-popup mfp-hide">
@@ -119,9 +119,11 @@
                                 <p class="primary text-center">Montant a Retirer</p>
                                 <h6  class="text-center">436429297 XAF</h6>
                             </div>
-                            <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p>
+                            {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
                             <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
                         </div>
+                        <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a>
+
                     </div>
                     <div id="submit-token-3" class="white-popup mfp-hide">
                         <div class="submit-token-details">
@@ -135,7 +137,7 @@
                                     <input class="form-control" type="number" name="montant" placeholder="Exemple 5.000.000 XAF" id="">
                                 </form>
                             </div>
-                            <a href="javascript:void(0)" class="primary-btn primary-effect">Soumettre</a>
+                            {{-- <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a> --}}
                         </div>
                     </div>
                 </div>
