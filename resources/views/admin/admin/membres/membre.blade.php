@@ -85,7 +85,7 @@
                             <th>Telephone</th>
                             <th>Email</th>
                             <th>Tontine</th>
-                            <th>Derniere Connexion</th>
+                            <th>Association</th>
                           </tr>
                         </thead>
                         @foreach ($membres as $membre)
@@ -101,11 +101,12 @@
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
                                     @foreach ($t as $tontines)
-                                        {{-- @if ($tontines->id === $membre->mem_tontine_id) --}}
                                             <td>{{ $tontines->name }}</td>
-                                        {{-- @endif --}}
                                     @endforeach
-                                    <td>{{ $membre->created_at }}</td>
+                                    @foreach ($association as $associations)
+                                        <td>{{ $associations->name }}</td>
+                                    @endforeach
+
                                 </tr>
                             </tbody>
 

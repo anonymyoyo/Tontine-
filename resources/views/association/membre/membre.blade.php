@@ -66,6 +66,11 @@
           </div>
 
           <div class="row gx-3">
+            <div class="ms-auto d-lg-flex d-none flex-row">
+                <div class="d-flex flex-row gap-1">
+                  <a href="{{ route('association.creer_membres') }}" class="btn btn-primary">Ajouter Membre</a>
+                </div>
+            </div>
             <div class="col-xxl-12">
                 <div class="card mb-3">
                   <div class="card-body">
@@ -83,7 +88,7 @@
                             <th>Derniere Connexion</th>
                           </tr>
                         </thead>
-                        @foreach ($users as $user)
+                        @foreach ($membre as $user)
                         {{-- @foreach ($roles as $role) --}}
                          {{-- @if ($role === 4 && $user->role_id === $role->id) --}}
                             <tbody>

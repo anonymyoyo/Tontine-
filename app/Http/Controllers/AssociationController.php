@@ -334,22 +334,62 @@ class AssociationController extends Controller
         $agence=$user->associations;
         $association=$user->associations;
         $roles=Role::all();
-        $users=User::where('role_id', 4)->where('association_id', $user->association_id)->get();
-        if(!empty($users[0]))
+        $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->get();
+        if(!empty($membre[0]))
         {
-            $t=Tontine::where('id', $users[0]->mem_tontine_id)->get();
+            $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
 
             $roles=Role::all();
 
-        // return $users;
-        return view('association.membre.membre', compact('tontine', 'users', 'roles', 't', 'association'));
+        // return $membre;
+        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association'));
         }
         else{
             $roles=Role::all();
 
-            // return $users;
-            return view('association.membre.membre', compact('tontine', 'roles', 'users', 'association'));
+            // return $membre;
+            return view('association.membre.membre', compact('tontine', 'roles', 'membre', 'association'));
         }
+    }
+
+    public function association_agences_creer_membre(){
+        $tontine=Tontine::all();
+        $t=Tontine::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $associations=Association::where('id', $user->$association)->get();
+        $roles=Role::all();
+
+        return view('association.membre.creer', compact('tontine', 'association', 'roles', 't'));
+    }
+
+    public function association_agences_ajouter_membre(Request $request){
+        $tontine=Tontine::all();
+        $t=Tontine::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $associations=Association::where('id', $user->$association)->get();
+        $roles=Role::all();
+        $image=$request->file('image');
+        $path=$image->store('images','public');
+        $membre=User::where('role_id', 4);
+
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'ville'=>$request->ville,
+            'pays'=>$request->pays,
+            'image'=>$path,
+            'association_id'=>$association[0]->id,
+            'mem_tontine_id'=>$t[0]->id,
+            'role_id'=>4,
+            'password'=>Hash::make($request->password),
+        ]);
+
+        return $t;
+
+        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't'));
     }
 
     public function association_agences_tontine($id){

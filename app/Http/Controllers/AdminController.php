@@ -430,10 +430,11 @@ class AdminController extends Controller
         $tontine=Tontine::all();
         $membres=User::where('role_id', 4)->get();
         $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        $association=Association::where('id', $membres[0]->association_id)->get();
         $roles=Role::all();
 
         // return $membres;
-        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles', 't'));
+        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles', 't', 'association'));
     }
 
     public function admin_creer_membre(){

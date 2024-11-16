@@ -85,6 +85,8 @@ Route::middleware(['auth', 'association'])->group(function(){
     Route::get('Association/Agence/Versements', [AssociationController::class, 'association_agences_versement'])->name('association.versement');
     Route::get('Association/Agence/Reglages', [AssociationController::class, 'association_agences_reglage'])->name('association.reglage');
     Route::get('Association/Agence/Membres', [AssociationController::class, 'association_agences_membre'])->name('association.membres');
+    Route::get('Association/Agence/Creer/Membres', [AssociationController::class, 'association_agences_creer_membre'])->name('association.creer_membres');
+    Route::post('Association/Agence/Ajouter/Mambres', [AssociationController::class, 'association_agences_ajouter_membre'])->name('association.ajouter_membres');
     Route::get('Association/Agence/Tontine/{id}', [AssociationController::class, 'association_agences_tontine'])->name('association.tontine');
 });
 
