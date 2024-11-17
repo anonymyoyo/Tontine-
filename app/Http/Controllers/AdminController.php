@@ -429,7 +429,7 @@ class AdminController extends Controller
 
         $tontine=Tontine::all();
         $membres=User::where('role_id', 4)->get();
-        $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        $t=Tontine::all();
         $association=Association::where('id', $membres[0]->association_id)->get();
         $roles=Role::all();
 

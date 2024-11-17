@@ -72,7 +72,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class,'role_id');
     }
 
-    public function tontines(): BelongsTo{
-        return $this->belongsTo(Tontine::class,'role_id');
+    public function tontines(): HasMany{
+        return $this->hasMany(Tontine::class);
     }
 }

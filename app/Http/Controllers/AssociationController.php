@@ -333,14 +333,15 @@ class AssociationController extends Controller
         $user=User::find(auth()->user()->id);
         $agence=$user->associations;
         $association=$user->associations;
-        $roles=Role::all();
+        // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
         $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->get();
         if(!empty($membre[0]))
         {
-            $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
-
+            // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
+            $t=Tontine::all();
             $roles=Role::all();
 
+        // return $t;
         // return $membre;
         return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association'));
         }
@@ -382,12 +383,12 @@ class AssociationController extends Controller
             'pays'=>$request->pays,
             'image'=>$path,
             'association_id'=>$association[0]->id,
-            'mem_tontine_id'=>$t[0]->id,
+            'mem_tontine_id'=>$request->mem_tontine_id,
             'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);
 
-        return $t;
+        // return $t[1];
 
         return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't'));
     }

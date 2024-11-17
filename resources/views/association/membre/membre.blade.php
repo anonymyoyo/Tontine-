@@ -88,35 +88,33 @@
                             <th>Derniere Connexion</th>
                           </tr>
                         </thead>
-                        @foreach ($membre as $user)
-                        {{-- @foreach ($roles as $role) --}}
-                         {{-- @if ($role === 4 && $user->role_id === $role->id) --}}
+                        @foreach ($membre as $membres)
                             <tbody>
                                 <tr>
-                                    <td>#{{ $user->id }}</td>
+                                    <td>{{ $membres->id }}</td>
                                     <td><a href="#" class="text-red"><div class="mb-3">
-                                        <img src="{{ Storage::url($user->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
-                                    </div>{{ $user->name }}</a></td>
-                                    <td>{{ $user->ville }}</td>
-                                    <td>{{ $user->pays }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->email }}</td>
+                                        <img src="{{ Storage::url($membres->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
+                                    </div>{{ $membres->name }}</a></td>
+                                    <td>{{ $membres->ville }}</td>
+                                    <td>{{ $membres->pays }}</td>
+                                    <td>{{ $membres->phone }}</td>
+                                    <td>{{ $membres->email }}</td>
                                     @foreach ($t as $ts)
+                                    @if ($ts->id == $membres->mem_tontine_id)
                                         <td>{{ $ts->name }}</td>
+                                    @endif
                                     @endforeach
 
                                     <td>10/10/2022 4:30pm</td>
                                 </tr>
                             </tbody>
-                         {{-- @endif --}}
-                        {{-- @endforeach --}}
                         @endforeach
 
                       </table>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
           </div>
 
         </div>

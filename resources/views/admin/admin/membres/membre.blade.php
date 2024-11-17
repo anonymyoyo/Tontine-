@@ -100,8 +100,10 @@
                                     <td>{{ $membre->pays }}</td>
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
-                                    @foreach ($t as $tontines)
-                                            <td>{{ $tontines->name }}</td>
+                                    @foreach ($t as $ts)
+                                    @if ($ts->id == $membre->mem_tontine_id)
+                                        <td>{{ $ts->name }}</td>
+                                    @endif
                                     @endforeach
                                     @foreach ($association as $associations)
                                         <td>{{ $associations->name }}</td>

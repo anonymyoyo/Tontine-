@@ -184,8 +184,8 @@ class AgenceController extends Controller
         $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $agence[0]->id)->get();
         if(!empty($membre[0]))
         {
-            $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
-
+            // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
+            $t=Tontine::all();
             $roles=Role::all();
 
         // return $membre;
@@ -197,6 +197,46 @@ class AgenceController extends Controller
             // return $membre;
             return view('agence.membre.membre', compact('tontine', 'membre', 'roles'));
         }
+    }
+
+    public function dashboard_agences_creer_membre(){
+        $tontine=Tontine::all();
+        $t=Tontine::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $associations=Association::where('id', $user->$association)->get();
+        $roles=Role::all();
+
+        return view('agence.membre.creer', compact('tontine', 'association', 'roles', 't'));
+    }
+
+    public function dashboard_agences_ajouter_membre(Request $request){
+        $tontine=Tontine::all();
+        $t=Tontine::all();
+        $user=User::find(auth()->user()->id);
+        $association=$user->associations;
+        $associations=Association::where('id', $user->$association)->get();
+        $roles=Role::all();
+        $image=$request->file('image');
+        $path=$image->store('images','public');
+        $membre=User::where('role_id', 4);
+
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'ville'=>$request->ville,
+            'pays'=>$request->pays,
+            'image'=>$path,
+            'association_id'=>$association[0]->id,
+            'mem_tontine_id'=>$request->mem_tontine_id,
+            'role_id'=>4,
+            'password'=>Hash::make($request->password),
+        ]);
+
+        // return $t[1];
+
+        return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't'));
     }
 
     public function dashboard_agences_tontine($id){

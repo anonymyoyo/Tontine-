@@ -105,6 +105,8 @@ Route::middleware(['auth', 'agence'])->group(function(){
     Route::get('User/Versements', [AgenceController::class, 'dashboard_agences_versement'])->name('agence.versement');
     Route::get('User/Reglages', [AgenceController::class, 'dashboard_agences_reglage'])->name('agence.reglage');
     Route::get('User/Membres', [AgenceController::class, 'dashboard_agences_membre'])->name('agence.membres');
+    Route::get('User/Creer/Membres', [AgenceController::class, 'dashboard_agences_creer_membre'])->name('agence.creer_membres');
+    Route::post('User/Ajouter/Membres', [AgenceController::class, 'dashboard_agences_ajouter_membre'])->name('agence.ajouter_membres');
     Route::get('User/Tontine/{id}', [AgenceController::class, 'dashboard_agences_tontine'])->name('agence.tontine');
 });
 

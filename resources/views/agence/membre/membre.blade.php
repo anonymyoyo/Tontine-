@@ -79,12 +79,11 @@
                             <th>Pays</th>
                             <th>Telephone</th>
                             <th>Email</th>
+                            <th>Tontine</th>
                             <th>Derniere Connexion</th>
                           </tr>
                         </thead>
                         @foreach ($membre as $user)
-                        {{-- @foreach ($roles as $role) --}}
-                         @if ($role === 4 && $user->role_id === $role->id)
                             <tbody>
                                 <tr>
                                     <td>#{{ $user->id }}</td>
@@ -95,11 +94,14 @@
                                     <td>{{ $user->pays }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->email }}</td>
+                                    @foreach ($t as $ts)
+                                    @if ($ts->id == $user->mem_tontine_id)
+                                        <td>{{ $ts->name }}</td>
+                                    @endif
+                                    @endforeach
                                     <td>10/10/2022 4:30pm</td>
                                 </tr>
                             </tbody>
-                         @endif
-                        {{-- @endforeach --}}
                         @endforeach
 
                       </table>
