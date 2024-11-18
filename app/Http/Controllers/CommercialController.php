@@ -104,57 +104,44 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
-
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        // ->where('mem_tontine_id', $tontine[0]->id)
         return view('commercial.transaction.depot', compact('roles', 'tontine', 't', 'membres'));
     }
 
-    public function depot_commercial_client(Request $request, $id){
+    public function depot_commercial_client(Request $request){
         $roles=Role::all();
         $tontine=Tontine::all();
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
         // $soldes=Solde::all();
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
-
-        $soldes=Solde::find($id);
+        $t=Tontine::all();
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        // ->where('mem_tontine_id', $t[0]->id)
+        $soldes=Solde::find($request->input('id'));
         $montant=$request->input('montant');
 
-        Transaction::create([
-            'solde_id'=>$soldes->id,
-            'type'=>'depot',
-            'montant'=>$montant,
-            'tontine_id'=>$request->tontine_id,
-            'commercial_id'=>$user->id,
-        ]);
+        $transaction= new Transaction();
+        $transaction->solde_id = $soldes[0]->id;
+        $transaction->type ='depot';
+        $transaction->montant = $montant;
+        $transaction->save();
+        // Transaction::create([
+        //     'solde_id'=>$soldes[0]->id,
+        //     'type'=>'depot',
+        //     'montant'=>$montant,
+        //     'tontine_id'=>$request->tontine_id,
+        //     'commercial_id'=>$user->id,
+        // ]);
 
         $soldes->solde += $montant;
         $soldes->save();
 
 
-//         $transaction=Transaction::create([
-//             'type'=>'depot',
-//             'user_id'=>$membres[0]->id,
-//             'tontine_id'=>$request->tontine_id,
-//             'commercial_id'=>$user->id,
-//             'montant'=>$request->montant,
-//         ]);
-// for ($i=0; $i < $soldes->user_id ; $i++) {
-//     if ($soldes->user_id == $membres->id) {
-//         # code...
-//         Solde::create([
-//             'user_id'=>$membres[0]->id,
-
-//                 # code...
-
-//             'solde'=>$transaction->montant,
-//         ]);
-//     }
-
-
         return view('commercial.transaction.depot', compact('roles', 'tontine', 't', 'membres'));
     }
+
 
     public function commercial_retrait_client($id){
         $roles=Role::all();
@@ -163,7 +150,7 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
 
         return view('commercial.transaction.depot', compact('roles', 'tontine', 't', 'membres'));
     }
@@ -176,17 +163,25 @@ class CommercialController extends Controller
 
     public function commercial_agences_membre(){
         $tontine=Tontine::all();
+        $roles=Role::all();
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
+
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        // return $membres;
+        // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
         if(!empty($membres[0]))
         {
             $t=Tontine::all();
+            // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
 
             $roles=Role::all();
 
         // return $t;
+        // return $membres;
         return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 't'));
         }
         else{
@@ -195,6 +190,7 @@ class CommercialController extends Controller
             // return $membres;
             return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
         }
+        // return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 't'));
 
     }
 
@@ -206,13 +202,13 @@ class CommercialController extends Controller
         $commercial=User::where('id', $user->id)->first();
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
         $t=Tontine::all();
         $roles=Role::all();
 
         // return $associations;
         // return $t;
-        return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences', 't'));
+        return view('commercial.membre.creer', compact('tontine', 'roles', 'associations', 'commercial', 'agences', 't'));
     }
 
     public function commercial_ajouter_membre(Request $request){
@@ -223,9 +219,9 @@ class CommercialController extends Controller
         $commercial=User::where('id', $user->id)->get();
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
-        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_com_id', $user->mem_com_id)->get();
+        // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_com_id', $user->mem_com_id)->get();
         // *!}W[8th4b
-        $t=Tontine::all();
+        // $t=Tontine::all();
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -244,12 +240,19 @@ class CommercialController extends Controller
             'password'=>Hash::make($request->password),
         ]);
 
-        Solde::create([
-            'user_id'=>$membres[0]->id,
-        ]);
+        // if ($membres) {
+        //     # code...
+        //     Solde::create([
+        //     'user_id'=>$membres->id,
+        // ]);
 
         return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
     }
+
+
+
+        // return view('commercial.membre.membre', compact('tontine', 'membres', 'roles'));
+
 
     public function commercial_agences_tontine($id){
         $roles=Role::all();

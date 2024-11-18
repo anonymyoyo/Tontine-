@@ -121,16 +121,20 @@
 <div class="menu">
     <main>
         <section class="item">
-            <article>
+            <form action="{{ route('depot.commercial') }}" method="POST">
+                        @csrf
+                        <article>
                 <h1>DEPOT</h1>
                 <div class="p">
                     <div class="depot">
+
+
                         <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
                         <label class="primary text-center">Tontine</label>
-                        <select name="montant" required class="form-control text-center">
+                        <select name="tontine_id" required class="form-control text-center">
                             <option value="">Selectionner Tontine</option>
                             @foreach ($membres as $membre)
-                            @foreach ($t as $tontines)
+                            @foreach ($tontine as $tontines)
                             @if ($membre->mem_tontine_id == $tontines->id)
                                 <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
                             @endif
@@ -138,12 +142,13 @@
                             @endforeach
                         </select>
                         <div class="submit-time">
-                            <input class="form-control text-center" required min="500" type="number" name="" placeholder="Montant a deposer : Min 500 XAF">
+                            <input class="form-control text-center" required min="500" type="number" name="montant" placeholder="Montant a deposer : Min 500 XAF">
                         </div>
+
                     </div>
                 </div>
-                <a href="{{ route('depot.commercial') }}" class="primary-btn primary-effect"><button class="button">Deposer</button></a>
-            </article>
+                <button class="button">Deposer</button>
+            </article></form>
         </section>
     </main>
 </div>

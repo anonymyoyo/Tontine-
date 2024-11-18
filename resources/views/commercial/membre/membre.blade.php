@@ -90,9 +90,11 @@
                             <tbody>
                                 <tr>
                                     <td>#{{ $membre->id }}</td>
-                                    <td><a href="#" class="text-red"><div class="mb-3">
+                                    <td><a href="#" class="text-red">
+                                        <div class="mb-3">
                                         <img src="{{ Storage::url($membre->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
-                                    </div>{{ $membre->name }}</a></td>
+                                    </div>{{ $membre->name }}</a>
+                                    </td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>
                                     <td>{{ $membre->phone }}</td>
@@ -103,7 +105,7 @@
                                     @endif
                                     @endforeach
                                     <td>
-                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Transactions</span></a>
+                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Depot</span></a>
                                         <a href="{{ route('commercial.retrait', $membre->id) }}"><span class="btn btn-success">Retrait</span></a>
                                     </td>
                                 </tr>
