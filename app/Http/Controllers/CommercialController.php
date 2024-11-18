@@ -95,6 +95,13 @@ class CommercialController extends Controller
         return view('commercial.versement.versement', compact('tontine', 'roles'));
     }
 
+    public function commercial_depot_client(){
+        $roles=Role::all();
+        $tontine=Tontine::all();
+
+        return view('commercial.transaction.depot', compact('roles', 'tontine'));
+    }
+
     public function commercial_agences_reglage(){
         $roles=Role::all();
         $tontine=Tontine::all();

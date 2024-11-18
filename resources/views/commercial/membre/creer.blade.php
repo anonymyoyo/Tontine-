@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
 <!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-commercial-dashboard/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:11 GMT -->
 @include('../commercial.head')
 

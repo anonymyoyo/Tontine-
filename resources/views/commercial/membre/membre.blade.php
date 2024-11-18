@@ -106,8 +106,8 @@
                                     @endif
                                     @endforeach
                                     <td>
-                                        <a href="{{ route('commercial.depot') }}"><span class="btn btn-success">Depot</span></a>
-                                        <a href="{{ route('commercial.retrait') }}"><span class="btn btn-success">Retrait</span></a>
+                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Depot</span></a>
+                                        {{-- <a href="{{ route('commercial.retrait') }}"><span class="btn btn-success">Retrait</span></a> --}}
                                     </td>
                                 </tr>
                             </tbody>
