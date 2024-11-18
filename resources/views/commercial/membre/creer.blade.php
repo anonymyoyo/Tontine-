@@ -118,7 +118,7 @@
                         <label class="form-label">Tontines choisi</label>
                         <select name="mem_tontine_id" class="form-select">
                             <option value="">Selectionner</option>
-                            @foreach ($tontine as $tontines)
+                            @foreach ($t as $tontines)
                                 <option value="{{ $tontines->id }}" required class="form-option">{{ $tontines->name }}</option>
                             @endforeach
                             {{-- <option value="1">{{ $gerant->name }}</option> --}}

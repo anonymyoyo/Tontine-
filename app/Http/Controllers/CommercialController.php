@@ -109,7 +109,7 @@ class CommercialController extends Controller
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
         if(!empty($membres[0]))
         {
-            $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+            $t=Tontine::all();
 
             $roles=Role::all();
 
@@ -134,12 +134,12 @@ class CommercialController extends Controller
         $associations=Association::where('id', $user->com_association_id)->get();
         $agences=Agence::where('id', $user->com_agence_id)->get();
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
+        $t=Tontine::all();
         $roles=Role::all();
 
         // return $associations;
         // return $t;
-        return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences'));
+        return view('commercial.membre.creer', compact('tontine', 'membres', 'roles', 'associations', 'commercial', 'agences', 't'));
     }
 
     public function commercial_ajouter_membre(Request $request){
@@ -152,7 +152,7 @@ class CommercialController extends Controller
         $agences=Agence::where('id', $user->com_agence_id)->get();
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_com_id', $user->mem_com_id)->get();
         // *!}W[8th4b
-        $t=Tontine::where('id', $user->mem_tontine_id)->get();
+        $t=Tontine::all();
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -162,7 +162,7 @@ class CommercialController extends Controller
             'phone'=>$request->phone,
             'ville'=>$request->ville,
             'pays'=>$request->pays,
-            'mem_tontine_id'=>$tontine[0]->id,
+            'mem_tontine_id'=>$request->mem_tontine_id,
             'association_id'=>$associations[0]->id,
             'mem_com_id'=>$user->id,
             'mem_agence_id'=>$agences[0]->id,

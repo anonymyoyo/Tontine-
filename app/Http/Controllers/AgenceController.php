@@ -203,19 +203,21 @@ class AgenceController extends Controller
         $tontine=Tontine::all();
         $t=Tontine::all();
         $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $associations=Association::where('id', $user->$association)->get();
+        // $association=$user->associations;
+        $agence=$user->agences;
+        $associations=Association::where('id', $user->association_id)->get();
         $roles=Role::all();
-
-        return view('agence.membre.creer', compact('tontine', 'association', 'roles', 't'));
+        // return $associations;
+        return view('agence.membre.creer', compact('tontine', 'associations', 'roles', 't', 'agence'));
     }
 
     public function dashboard_agences_ajouter_membre(Request $request){
         $tontine=Tontine::all();
         $t=Tontine::all();
         $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $associations=Association::where('id', $user->$association)->get();
+        // $association=$user->associations;
+        $agence=$user->agences;
+        $associations=Association::where('id', $user->association_id)->get();
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
@@ -228,8 +230,9 @@ class AgenceController extends Controller
             'ville'=>$request->ville,
             'pays'=>$request->pays,
             'image'=>$path,
-            'association_id'=>$association[0]->id,
+            'association_id'=>$associations[0]->id,
             'mem_tontine_id'=>$request->mem_tontine_id,
+            'mem_agence_id'=>$request->mem_agence_id,
             'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);

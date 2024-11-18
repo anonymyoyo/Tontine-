@@ -6366,7 +6366,7 @@ blog post style end
   margin-right: 0px;
 }
 
-#submit-token, #submit-token-2, #submit-token-3 {
+#submit-token, #submit-token-2, #submit-token-3, #depot-token, #retrait-token {
   max-width: 556px;
   margin: auto;
   position: relative !important;
@@ -6375,11 +6375,11 @@ blog post style end
   border-radius: var(--primary-radius);
 }
 
-#submit-token, #submit-token-2, #submit-token-3, .submit-token-details {
+#submit-token, #submit-token-2, #submit-token-3,, #depot-token, #retrait-token, .submit-token-details {
   text-align: center;
 }
 
-#submit-token, #submit-token-2, #submit-token-3, .submit-token-details h5 {
+#submit-token, #submit-token-2, #submit-token-3,, #depot-token, #retrait-token, .submit-token-details h5 {
   background-color: var(--accent-primary-bg);
   padding: 20px;
   border-radius: var(--primary-radius);

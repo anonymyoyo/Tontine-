@@ -85,7 +85,7 @@
                             <th>Telephone</th>
                             <th>Email</th>
                             <th>Tontine</th>
-                            <th>Derniere Connexion</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         @foreach ($membres as $membre)
@@ -101,13 +101,14 @@
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
                                @foreach ($t as $tontines)
-                               {{-- @if ($membre->tontine_id === $tontines->id) --}}
+                               @if ($membre->mem_tontine_id == $tontines->id)
                                         <td>{{ $tontines->name }}</td>
-                                    {{-- @endif  --}}
+                                    @endif
                                     @endforeach
-
-
-                                    <td>10/10/2022 4:30pm</td>
+                                    <td>
+                                        <a href="{{ route('commercial.depot') }}"><span class="btn btn-success">Depot</span></a>
+                                        <a href="{{ route('commercial.retrait') }}"><span class="btn btn-success">Retrait</span></a>
+                                    </td>
                                 </tr>
                             </tbody>
 

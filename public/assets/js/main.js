@@ -418,6 +418,18 @@
         mainClass: "mfp-fade",
       });
 
+      $(".open-depot-token").magnificPopup({
+        type: "inline",
+        midClick: true,
+        mainClass: "mfp-fade",
+      });
+
+      $(".open-retrait-token").magnificPopup({
+        type: "inline",
+        midClick: true,
+        mainClass: "mfp-fade",
+      });
+
     // custom submit token time
     var countDownDate =
       new Date(
