@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -17,8 +18,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
-            $table->string('description');
+            $table->foreignIdFor(Solde::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->string('commercial_id')->nullable();
+            $table->string('montant');
             $table->timestamps();
         });
     }

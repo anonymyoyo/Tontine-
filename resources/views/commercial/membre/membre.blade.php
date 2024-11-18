@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 
 <!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-agence-dashboard/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:11 GMT -->
 @include('../commercial.head')
@@ -106,8 +103,8 @@
                                     @endif
                                     @endforeach
                                     <td>
-                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Depot</span></a>
-                                        {{-- <a href="{{ route('commercial.retrait') }}"><span class="btn btn-success">Retrait</span></a> --}}
+                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Transactions</span></a>
+                                        <a href="{{ route('commercial.retrait', $membre->id) }}"><span class="btn btn-success">Retrait</span></a>
                                     </td>
                                 </tr>
                             </tbody>

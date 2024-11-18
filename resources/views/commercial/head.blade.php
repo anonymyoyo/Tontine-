@@ -7,7 +7,7 @@
 <!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-admin-dashboard/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:10:32 GMT -->
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Templates - Dashboard Templates - Unify Admin Template</title>
 
     <!-- Meta -->

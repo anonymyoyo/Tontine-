@@ -62,6 +62,62 @@
 
           </div>
           <!-- App Hero header ends -->
+          <style>
+            .menu{
+                align-self: center;
+            }
+            section{
+                width: 45%;
+                background-color: #90cf37;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 20px;
+                /* display: center; */
+            }
+
+            img{
+                width: 150px;
+                height: 150px;
+                align-items: center;
+            }
+            .menu section{
+                display: inline-block;
+                align-items: center;
+
+            }
+            .depot .p{
+                text-align: center;
+                width: 50%;
+                size: 30;
+                margin-left: 50px;
+            }
+            .retrait .p{
+                text-align: center;
+                width: 50%;
+                size: 30px;
+            }
+            h1, .button{
+                background: aliceblue;
+                text-align: center;
+                color: black;
+                margin: 50px;
+            }
+            .button{
+                border-radius: 25px;
+                width: 150px;
+                height: 80px;
+                font-size: 20px;
+                margin-right: 50px;
+                background-color: black;
+                color: aliceblue;
+            }
+            .button:hover{
+                background-color: white;
+                color: black;
+                transition: .5s;
+            }
+            /* a{} */
+        </style>
 
 <div id="retrait-token" class="white-popup mfp-hide">
     <div class="submit-token-details">

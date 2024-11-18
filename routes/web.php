@@ -119,8 +119,10 @@ Route::middleware(['auth', 'commercial'])->group(function(){
     Route::get('Commercial/Commerciaux/Liste', [CommercialController::class, 'commercial_commercial'])->name('commercial.commercial'); #fgfdgfdgdf
     Route::get('Commercial/Transactions', [CommercialController::class, 'commercial_agences_transaction'])->name('commercial.transaction');
     Route::get('Commercial/Versements', [CommercialController::class, 'commercial_agences_versement'])->name('commercial.versement');
-    Route::get('Commercial/Depot_Retrait/{id}', [CommercialController::class, 'commercial_depot_client'])->name('commercial.depot');
-    // Route::get('Commercial/Retrait', [CommercialController::class, 'commercial_retrait_client'])->name('commercial.retrait');
+    Route::get('Commercial/Depot/{id}', [CommercialController::class, 'commercial_depot_client'])->name('commercial.depot');
+    Route::post('Commercial/Depot', [CommercialController::class, 'depot_commercial_client'])->name('depot.commercial');
+    Route::get('Commercial/Retrait/{id}', [CommercialController::class, 'commercial_retrait_client'])->name('commercial.retrait');
+    Route::post('Commercial/Retrait', [CommercialController::class, 'retrait_commercial_client'])->name('retrait.commercial');
     Route::get('Commercial/Reglages', [CommercialController::class, 'commercial_agences_reglage'])->name('commercial.reglage');
     Route::get('Commercial/Membres', [CommercialController::class, 'commercial_agences_membre'])->name('commercial.membres');
     Route::get('Commercial/Membre/Creer', [CommercialController::class, 'commercial_creer_membre'])->name('commercial.creer_membre');

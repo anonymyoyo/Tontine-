@@ -64,10 +64,10 @@
           <!-- App Hero header ends -->
 <style>
     .menu{
-        align-items: center;
+        align-self: center;
     }
     section{
-        width: 30%;
+        width: 45%;
         background-color: #90cf37;
         margin-left: auto;
         margin-right: auto;
@@ -78,25 +78,43 @@
     img{
         width: 150px;
         height: 150px;
+        align-items: center;
     }
     .menu section{
         display: inline-block;
+        align-items: center;
 
     }
-    .depot{
-        text-align: left;
+    .depot .p{
+        text-align: center;
         width: 50%;
-        size: 30
+        size: 30;
+        margin-left: 50px;
     }
-    .retrait{
-        text-align: right;
+    .retrait .p{
+        text-align: center;
         width: 50%;
         size: 30px;
     }
-    h1, h2{
+    h1, .button{
         background: aliceblue;
         text-align: center;
-        padding-right: auto;
+        color: black;
+        margin: 50px;
+    }
+    .button{
+        border-radius: 25px;
+        width: 150px;
+        height: 80px;
+        font-size: 20px;
+        margin-right: 50px;
+        background-color: black;
+        color: aliceblue;
+    }
+    .button:hover{
+        background-color: white;
+        color: black;
+        transition: .5s;
     }
     /* a{} */
 </style>
@@ -109,41 +127,22 @@
                     <div class="depot">
                         <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
                         <label class="primary text-center">Tontine</label>
-                        <select class="form-control text-center">
+                        <select name="montant" required class="form-control text-center">
                             <option value="">Selectionner Tontine</option>
+                            @foreach ($membres as $membre)
+                            @foreach ($t as $tontines)
+                            @if ($membre->mem_tontine_id == $tontines->id)
+                                <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                            @endif
+                            @endforeach
+                            @endforeach
                         </select>
                         <div class="submit-time">
-                            <p class="primary text-center">Montant a deposer</p>
-
-                            <h6  class="text-center">436429297 XAF</h6>
+                            <input class="form-control text-center" required min="500" type="number" name="" placeholder="Montant a deposer : Min 500 XAF">
                         </div>
                     </div>
-                    {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
-                    {{-- <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p> --}}
                 </div>
-                <a href="javascript:void(0)" class="primary-btn primary-effect"><h2>Deposer</h2></a>
-            </article>
-        </section>
-        <section class="item">
-            <article>
-                <h1>RETRAIT</h1>
-                <div class="p">
-                    <div class="retrait">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
-                        <label class="primary text-center">Tontine</label>
-                        <select class="form-control text-center">
-                            <option value="">Selectionner Tontine</option>
-                        </select>
-                        <div class="submit-time">
-                            <p class="primary text-center">Montant a deposer</p>
-
-                            <h6  class="text-center">436429297 XAF</h6>
-                        </div>
-                    </div>
-                    {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
-                    {{-- <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p> --}}
-                </div>
-                <a href="javascript:void(0)" class="primary-btn primary-effect"><h2>RETIRER</h2></a>
+                <a href="{{ route('depot.commercial') }}" class="primary-btn primary-effect"><button class="button">Deposer</button></a>
             </article>
         </section>
     </main>
