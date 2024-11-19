@@ -121,8 +121,9 @@
 <div class="menu">
     <main>
         <section class="item">
-            <form action="{{ route('depot.commercial') }}" method="POST">
+            <form action="{{ route('depot.commercial', $membres[0]->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <article>
                 <h1>DEPOT</h1>
                 <div class="p">
@@ -133,12 +134,12 @@
                         <label class="primary text-center">Tontine</label>
                         <select name="tontine_id" required class="form-control text-center">
                             <option value="">Selectionner Tontine</option>
-                            @foreach ($membres as $membre)
-                            @foreach ($tontine as $tontines)
-                            @if ($membre->mem_tontine_id == $tontines->id)
+                            {{-- @foreach ($membres as $membre) --}}
+                            @foreach ($t as $tontines)
+                            {{-- @if ($membre->mem_tontine_id === $tontines->id) --}}
                                 <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                            @endif
-                            @endforeach
+                            {{-- @endif --}}
+                            {{-- @endforeach --}}
                             @endforeach
                         </select>
                         <div class="submit-time">

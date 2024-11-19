@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             // $table->string('transaction_id')->nullable();
-            $table->string('solde')->nullable();
+            $table->integer('solde')->nullable();
             $table->timestamps();
         });
     }

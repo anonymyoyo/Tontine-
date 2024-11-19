@@ -18,10 +18,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->foreignIdFor(Solde::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->string('solde_id')->nullable();
             $table->foreignIdFor(Tontine::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
             $table->string('commercial_id')->nullable();
-            $table->string('montant');
+            $table->integer('montant');
             $table->timestamps();
         });
     }
