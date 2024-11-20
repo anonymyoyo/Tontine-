@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 
 <!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-agence-dashboard/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:11 GMT -->
 @include('../commercial.head')
@@ -82,6 +85,7 @@
                             <th>Telephone</th>
                             <th>Email</th>
                             <th>Tontine</th>
+                            <th>Solde</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -90,24 +94,28 @@
                             <tbody>
                                 <tr>
                                     <td>#{{ $membre->id }}</td>
-                                    <td><a href="#" class="text-red">
-                                        <div class="mb-3">
+                                    <td><a href="#" class="text-red"><div class="mb-3">
                                         <img src="{{ Storage::url($membre->image) }}" class="img-6x rounded-circle" alt="Image Commercial" />
-                                    </div>{{ $membre->name }}</a>
-                                    </td>
+                                    </div>{{ $membre->name }}</a></td>
                                     <td>{{ $membre->ville }}</td>
                                     <td>{{ $membre->pays }}</td>
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
                                @foreach ($t as $tontines)
-                               @if ($membre->mem_tontine_id == $tontines->id)
+                               {{-- @if ($membre->tontine_id === $tontines->id) --}}
                                         <td>{{ $tontines->name }}</td>
-                                    @endif
+                                    {{-- @endif --}}
                                     @endforeach
-                                    <td>
-                                        <a href="{{ route('commercial.depot', $membre->id) }}"><span class="btn btn-success">Depot</span></a>
-                                        <a href="{{ route('commercial.retrait', $membre->id) }}"><span class="btn btn-success">Retrait</span></a>
-                                    </td>
+
+                                    @foreach ($soldes as $solde)
+                                    {{-- @foreach ($sold as $montant) --}}
+                                    @if ($membre->id == $solde->user_id)
+                                        <td>{{ $solde }}</td>
+                                        @endif
+                                    {{-- @endforeach --}}
+                                    @endforeach
+                                    <td class="btn btn-success"><a href="{{ route('commercial.depot', $membre->id) }}">Depot</a></td>
+                                    <td class="btn btn-success"><a href="{{ route('commercial.retrait', $membre->id) }}">Retrait</a></td>
                                 </tr>
                             </tbody>
 

@@ -146,16 +146,6 @@
 
               <!-- Row end -->
             </div>
-            <div class="card-footer">
-              <div class="d-flex gap-2 justify-content-end">
-                {{-- <button type="button" class="btn btn-outline-secondary">
-                  Cancel
-                </button> --}}
-                <button type="button" class="btn btn-success">
-                  Creer
-                </button>
-              </div>
-            </div>
           </div>
 
 

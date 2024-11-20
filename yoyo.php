@@ -98,3 +98,6 @@ Schema::disableForeignKeyConstraints();
 
         return view('commercial.transaction.depot', compact('roles', 'tontine', 't', 'membres'));
     }
+
+
+    https://gitlab.com/tca6832443/agence
