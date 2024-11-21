@@ -78,8 +78,8 @@
                   <i class="fs-3 bi bi-people"></i>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 fw-normal">Associations</h5>
-                  <h3 class="m-0">5</h3>
+                  <h5 class="m-0 fw-normal">Total compte</h5>
+                  <h3 class="m-0">{{ $totalcompte }}</h3>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                   <h5 class="m-0 fw-normal">Transactions</h5>
-                  <h3 class="m-0">3.055.200 XAF</h3>
+                  <h3 class="m-0">{{ $total }} XAF</h3>
                 </div>
               </div>
             </div>
@@ -129,7 +129,53 @@
         <!-- Row end -->
       </div>
           <!-- Main container end -->
+          <div class="row gx-3">
+            <div class="col-xxl-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table align-middle table-hover m-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">Numero Transaction</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Proprietaire Compte</th>
+                          <th scope="col">Tontine</th>
+                          <th scope="col">Montant</th>
+                          <th scope="col">Jour</th>
+                        </tr>
+                      </thead>
+                      @foreach ($transactions as $transaction)
+                          <tbody>
+                          <tr class="grd-primary-light">
+                              <td>#{{ $transaction->id }}</td>
+                              <td>{{ $transaction->type }}</td>
+                              <td>-</td>
+                              @foreach ($membres as $membre)
+                              @foreach ($soldes as $solde)
+                                  @if ($transaction->solde_id === $solde->id && $solde->user_id === $membre->id)
+                                  <td>{{ $membre->name }}</td>
+                              @endif
+                              @endforeach
+                              @endforeach
+                              @foreach ($t as $tontine)
+                              @if ($tontine->id == $transaction->tontine_id)
+                                  <td>{{ $tontine->name }}</td>
+                              @endif
+                              @endforeach
 
+                              <td>{{ $transaction->montant }} XAF</td>
+                              <td>{{ $transaction->created_at }}</td>
+                          </tr>
+                          </tbody>
+                      @endforeach
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Page wrapper end -->
 

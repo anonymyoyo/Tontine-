@@ -44,11 +44,11 @@
           <div class="bg-transparent-light rounded-1 mb-3 position-relative">
             <div class="p-3 text-white">
               <div class="mb-2">
-                <i class="bi bi-bar-chart fs-1 lh-1"></i>
+                <i class="fs-3 bi bi-people"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="m-0 fw-normal">Sales</h5>
-                <h3 class="m-0">3500</h3>
+                <h5 class="m-0 fw-normal">Total compte</h5>
+                <h3 class="m-0">{{ $d }}</h3>
               </div>
             </div>
           </div>
@@ -56,12 +56,18 @@
         <div class="col-md-3 col-sm-6 col-12">
           <div class="bg-transparent-light rounded-1 mb-3 position-relative">
             <div class="p-3 text-white">
+                <div class="arrow-label">+18%</div>
               <div class="mb-2">
                 <i class="bi bi-bag-check fs-1 lh-1"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="m-0 fw-normal">Orders</h5>
-                <h3 class="m-0">2900</h3>
+                <h5 class="m-0 fw-normal">Versements</h5>
+                {{-- @foreach ($totalversement as $versement)
+                    @if ($versement->type === 'depot')
+                        {{ $versement->sum('montant') }}
+                    @endif
+                @endforeach --}}
+                <h3 class="m-0">750.000 XAF</h3>
               </div>
             </div>
           </div>
@@ -69,13 +75,12 @@
         <div class="col-md-3 col-sm-6 col-12">
           <div class="bg-transparent-light rounded-1 mb-3 position-relative">
             <div class="p-3 text-white">
-              <div class="arrow-label">+18%</div>
               <div class="mb-2">
-                <i class="bi bi-box-seam fs-1 lh-1"></i>
+                <i class="fs-3 bi bi-arrow-left-right"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="m-0 fw-normal">Invoices</h5>
-                <h3 class="m-0">6500</h3>
+                <h5 class="m-0 fw-normal">Transactions</h5>
+                <h3 class="m-0">{{ $total }} XAF</h3>
               </div>
             </div>
           </div>
@@ -88,8 +93,8 @@
                 <i class="bi bi-bell fs-1 lh-1"></i>
               </div>
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="m-0 fw-normal">Alerts</h5>
-                <h3 class="m-0">7200</h3>
+                <h5 class="m-0 fw-normal">Adhesions</h5>
+                <h3 class="m-0">{{ $totalcompte }}</h3>
               </div>
             </div>
           </div>
@@ -161,214 +166,6 @@
             </div>
             <div class="card-body">
               <div id="revenue"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Row end -->
-
-      <!-- Row start -->
-      <div class="row gx-3">
-        <div class="col-xl-6 col-12">
-          <div class="card mb-3">
-            <div class="card-header">
-              <h5 class="card-title">Pageviews</h5>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table align-middle">
-                  <thead>
-                    <tr>
-                      <th>Link</th>
-                      <th>Page Title</th>
-                      <th>Visitors</th>
-                      <th>Percentage</th>
-                      <th>Growth</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="grd-info-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Home</td>
-                      <td>56,000</td>
-                      <td>
-                        <div class="progress lg progress-spacer">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
-                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="m-0 text-info">8% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-success-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>About</td>
-                      <td>35,000</td>
-                      <td>
-                        <div class="progress lg progress-spacer">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: 60%"
-                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="m-0 text-success">12% low</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-warning-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Contact</td>
-                      <td>28,000</td>
-                      <td>
-                        <div class="progress lg progress-spacer">
-                          <div class="progress-bar bg-warning" role="progressbar" style="width: 70%"
-                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="m-0 text-warning">15% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-danger-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Services</td>
-                      <td>33,000</td>
-                      <td>
-                        <div class="progress lg progress-spacer">
-                          <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"
-                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="m-0 text-danger">9% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-primary-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Products</td>
-                      <td>98,000</td>
-                      <td>
-                        <div class="progress lg progress-spacer">
-                          <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"
-                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="m-0 text-primary">3% low</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 col-12">
-          <div class="card mb-3">
-            <div class="card-header">
-              <h5 class="card-title">Clicks</h5>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table align-middle">
-                  <thead>
-                    <tr>
-                      <th>Link</th>
-                      <th>Page Title</th>
-                      <th>Visitors</th>
-                      <th>Percentage</th>
-                      <th>Growth</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="grd-info-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Home</td>
-                      <td>56,000</td>
-                      <td>25%</td>
-                      <td>
-                        <p class="m-0 text-info">8% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-success-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>About</td>
-                      <td>35,000</td>
-                      <td>23%</td>
-                      <td>
-                        <p class="m-0 text-success">12% low</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-warning-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Contact</td>
-                      <td>28,000</td>
-                      <td>18%</td>
-                      <td>
-                        <p class="m-0 text-warning">15% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-danger-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Services</td>
-                      <td>33,000</td>
-                      <td>12%</td>
-                      <td>
-                        <p class="m-0 text-success">9% high</p>
-                      </td>
-                    </tr>
-                    <tr class="grd-primary-light">
-                      <td>
-                        <a href="javascript:void()" class="text-danger">
-                          <i class="bi bi-box-arrow-up-right fs-3"></i>
-                        </a>
-                      </td>
-                      <td>Products</td>
-                      <td>98,000</td>
-                      <td>16%</td>
-                      <td>
-                        <p class="m-0 text-primary">3% low</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>

@@ -18,13 +18,24 @@ use Illuminate\Support\Facades\Hash;
 
 class CommercialController extends Controller
 {
-    //
-
-    //
     public function commercial(){
+
         $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.commercial', compact('tontine', 'roles'));
+        $user=User::find(auth()->user()->id);
+        $transactions=Transaction::where('commercial_id', $user->id)->get();
+        $soldes=Solde::all();
+        $total=Solde::sum('solde');
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+        $totalversement=Transaction::where('type', 'depot')->get();
+        $totalcompte=$membres->count();
+        // $totalversement=Transaction::sum($versement);
+        $utilisateur=User::where('role_id', 4)->whereBetween('created_at', [now()->subDays(1), now()])->get();
+        $d=$utilisateur->count();
+        $membres=User::all();
+        $t=Tontine::all();
+        // return $d;
+        return view('commercial.commercial', compact('tontine', 'roles', 'transactions', 'membres', 'soldes', 't', 'total', 'totalcompte', 'd'));
     }
 
     public function commercial_agence(){
@@ -88,7 +99,18 @@ class CommercialController extends Controller
     public function commercial_agences_transaction(){
         $roles=Role::all();
         $tontine=Tontine::all();
-        return view('commercial.transaction.transaction', compact('tontine', 'roles'));
+        $user=User::find(auth()->user()->id);
+        $transactions=Transaction::where('commercial_id', $user->id)->get();
+        $soldes=Solde::all();
+        $total=Solde::sum('solde');
+        $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+
+        $totalcompte=$membres->count();
+
+        $membres=User::all();
+        $t=Tontine::all();
+        // return $membres;
+        return view('commercial.transaction.transaction', compact('tontine', 'roles', 'transactions', 'membres', 'soldes', 't', 'total', 'totalcompte'));
     }
 
     public function commercial_agences_versement(){
@@ -129,11 +151,11 @@ class CommercialController extends Controller
             'solde'=> $transaction->montant + $solde[0]->solde,
         ]);
 
-        $soldes=Solde::sum('solde');
+        // $soldes=Solde::sum('solde');
 
 
 
-// return $soldes;
+// return $transaction;
         return view('commercial.transaction.depot', compact('tontine', 'roles', 'membres', 't'));
     }
 
@@ -149,11 +171,12 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
+        $sold=Solde::sum('solde');
 $soldes=Solde::all();
 
 
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $soldes=Solde::where('user_id', $membres->id)->first();
+        // $soldes=Solde::where('user_id', $membres[0]->id)->get();
         $sold=Solde::sum('solde');
         // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
         if(!empty($membres[0]))
@@ -163,7 +186,7 @@ $soldes=Solde::all();
 // $compte=Solde::where('user_id', $membres[0]->id)->get();
             $roles=Role::all();
         // return $t;
-        return $sold;
+        // return $soldes;
         return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 't', 'soldes', 'sold'));
         }
         else{
@@ -226,7 +249,7 @@ $soldes=Solde::all();
             # code...
             Solde::create([
             'user_id'=>$membres->id,
-            'solde'=>(int)0,
+            'solde'=>1000,
         ]);
     }
 

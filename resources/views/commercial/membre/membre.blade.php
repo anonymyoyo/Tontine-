@@ -107,10 +107,10 @@
                                     {{-- @endif --}}
                                     @endforeach
 
-                                    @foreach ($soldes as $solde)
+                                    @foreach ($soldes as $sold)
                                     {{-- @foreach ($sold as $montant) --}}
-                                    @if ($membre->id == $solde->user_id)
-                                        <td>{{ $solde }}</td>
+                                    @if ($membre->id == $sold->user_id)
+                                        <td>{{ $sold->solde }}</td>
                                         @endif
                                     {{-- @endforeach --}}
                                     @endforeach
