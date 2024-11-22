@@ -13,6 +13,8 @@ use App\Models\Transaction;
 use App\Models\Zone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class CommercialController extends Controller
 {
@@ -33,11 +35,11 @@ class CommercialController extends Controller
         // $membres=User::all();
         $t=Tontine::all();
 
-        $memb=User::where('id', $soldes[0]->user_id)->get();
+        // $memb=User::where('id', $soldes[0]->user_id)->get();
 
-        $solde=Solde::where('user_id', $membres[0]->id)->get();
+        // $solde=Solde::where('user_id', $membres[0]->id)->get();
 
-        $totalsolde=$solde->sum('solde');
+        // $totalsolde=$solde->sum('solde');
 
         // return $totalsolde;
         // return $solde;
@@ -150,30 +152,27 @@ class CommercialController extends Controller
         $tontine=Tontine::all();
         $membres=User::find($id);
         $user=User::find(auth()->user()->id);
-        $sold=Solde::where('user_id', $membres->id)->get();
-        $t=Tontine::where('id', $membres->mem_tontine_id)->get();
-        $solde=Solde::where('user_id', $membres->id)->get();
-        // $transaction=Solde::where('user_id', )
+        $sold=Solde::where('user_id', $membres->id)->first();
+        $t=Tontine::where('id', $membres->mem_tontine_id)->first();
+        $solde=Solde::where('user_id', $membres->id)->first();
 
         $transaction=Transaction::create([
             'type'=>'depot',
-            'solde_id'=>$sold[0]->id,
-            'tontine_id'=>$t[0]->id,
+            'solde_id'=>$sold->id,
+            'tontine_id'=>$t->id,
             'commercial_id'=>$user->id,
             'montant'=>$request->montant,
         ]);
 
-        $sold=Solde::create([
+        $sold->update([
             'user_id'=>$membres->id,
-            'solde'=> $transaction->montant + $solde[0]->solde,
+            'solde'=> $solde->solde + $transaction->montant,
         ]);
-
-        $soldes=Solde::sum('solde');
-
+// return $sold;
 
 
 // return $transaction;
-        return view('commercial.transaction.depot', compact('tontine', 'roles', 'membres', 't'));
+return back();
     }
 
     public function commercial_retrait_client($id){
@@ -181,7 +180,7 @@ class CommercialController extends Controller
         $tontine=Tontine::all();
         $membres=User::find($id);
         $t=Tontine::where('id', $membres->mem_tontine_id)->get();
-
+// return $t;
         return view('commercial.transaction.retrait', compact('tontine', 'roles', 'membres', 't'));
     }
 
@@ -191,28 +190,26 @@ class CommercialController extends Controller
             $tontine=Tontine::all();
             $membres=User::find($id);
             $user=User::find(auth()->user()->id);
-            $sold=Solde::where('user_id', $membres->id)->get();
-            $t=Tontine::where('id', $membres->mem_tontine_id)->get();
-            $solde=Solde::where('user_id', $membres->id)->get();
-            $s=$solde->sum('solde');
-            // $transaction=Solde::where('user_id', )
+            $sold=Solde::where('user_id', $membres->id)->first();
+            $t=Tontine::where('id', $membres->mem_tontine_id)->first();
+            $solde=Solde::where('user_id', $membres->id)->first();
 
             $transaction=Transaction::create([
                 'type'=>'retrait',
-                'solde_id'=>$sold[0]->id,
-                'tontine_id'=>$t[0]->id,
+                'solde_id'=>$sold->id,
+                'tontine_id'=>$t->id,
                 'commercial_id'=>$user->id,
                 'montant'=>$request->montant,
             ]);
 
-            $sold=Solde::create([
+            $sold->update([
                 'user_id'=>$membres->id,
-                'solde'=> $solde[0]->solde - $transaction->montant,
+                'solde'=> $solde->solde - $transaction->montant,
             ]);
-
-            $soldes=$sold->solde -= $solde[0]->solde;
-            return $s;
-            return view('commercial.transaction.retrait', compact('tontine', 'roles', 'membres', 't', 'soldes'));
+            // $soldes=$sold->solde;
+            // return $sold->solde;
+            return back();
+            // return view('commercial.transaction.retrait', compact('tontine', 'roles', 'membres', 't', 'sold'));
     }
 
     public function commercial_agences_membre(){
@@ -221,31 +218,22 @@ class CommercialController extends Controller
         $user=User::find(auth()->user()->id);
         $association=$user->associations;
         $agence=$user->agences;
-        $sold=Solde::sum('solde');
+        // $sold=Solde::where('user_id', $membres->id)->first();
 $soldes=Solde::all();
 
 
 
 
         $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
-        // $soldes=Solde::where('user_id', $membres[0]->id)->get();
+        // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->first();
+        $t=Tontine::all();
         // $sold=Solde::sum('solde');
         // $membres=User::where('role_id', 4)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->where('mem_tontine_id', $tontine[0]->id)->get();
         if(!empty($membres[0]))
         {
-            // $t=Tontine::all();
-            $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
-// $compte=Solde::where('user_id', $membres[0]->id)->get();
             $roles=Role::all();
-        //     $memb=User::where('role_id', 4)->where('id', $soldes->user_id)->where('association_id', $user->com_association_id)->where('mem_agence_id', $user->com_agence_id)->get();
+            $sold=Solde::where('user_id', $membres[0]->id)->get();
 
-        // $solde=Solde::where('user_id', $memb[0]->id)->get();
-
-        // $totalsolde=$solde->sum('solde');
-
-        // return $t;
-        // return $solde;
-        // return $memb;
         return view('commercial.membre.membre', compact('tontine', 'membres', 'roles', 't', 'soldes', 'sold'));
         }
         else{
@@ -308,7 +296,7 @@ $soldes=Solde::all();
             # code...
             Solde::create([
             'user_id'=>$membres->id,
-            // 'solde'=>1000,
+            // 'solde'=>0,
         ]);
     }
 

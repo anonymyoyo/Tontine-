@@ -102,16 +102,16 @@
                                     <td>{{ $membre->phone }}</td>
                                     <td>{{ $membre->email }}</td>
                                @foreach ($t as $tontines)
-                               {{-- @if ($membre->tontine_id === $tontines->id) --}}
+                               @if ($membre->mem_tontine_id == $tontines->id)
                                         <td>{{ $tontines->name }}</td>
-                                    {{-- @endif --}}
+                                    @endif
                                     @endforeach
 
-                                    @foreach ($soldes as $sold)
-                                    {{-- @foreach ($sold as $montant) --}}
-                                    @if ($membre->id == $sold->user_id)
-                                        <td>{{ $sold->solde }}</td>
-                                        @endif
+                                    @foreach ($sold as $solde)
+                                    {{-- @foreach ($solde as $montant) --}}
+                                    {{-- @if ($membre->id == $solde->user_id) --}}
+                                        <td>{{ $solde->solde }}</td>
+                                        {{-- @endif --}}
                                     {{-- @endforeach --}}
                                     @endforeach
                                     <td class="btn btn-success"><a href="{{ route('commercial.depot', $membre->id) }}">Depot</a></td>

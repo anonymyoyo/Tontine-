@@ -43,12 +43,17 @@
                     </div>
                     <div class="item-right">
                         <p class="secondary">Date derniere transaction</p>
-                        <h4>12:30 PM, 28 Aug</h4>
+                        @foreach ($solde as $soldes)
+                        <h4 class="text-center">{{ $soldes->updated_at }}</h4>
+                        @endforeach
                     </div>
                 </div>
                 <div class="row token-details-price">
                     <div class="col-sm-6 col-lg-4 text-center tickets-sold">
-                        <h3 class="text-center">13.700 XAF</h3>
+                        @foreach ($solde as $soldes)
+                        <h3 class="text-center">{{ $soldes->solde }} XAF</h3>
+                        @endforeach
+
                         <p class="secondary text-center">Solde du compte</p>
                     </div>
                     <div class="col-sm-6 col-lg-4 text-center tickets">
@@ -61,7 +66,7 @@
                     </div>
                 </div>
                 <div class="my-prediction">
-                    <h3>Montant Transaction</h3>
+                    {{-- <h3>Montant Transaction</h3>
                     <div class="prediction-value">
                         <input type="text" name="depot" maxlength="1" class="single-character" placeholder="4">
                         <input type="text" maxlength="1" class="single-character" placeholder="3">
@@ -74,13 +79,15 @@
                         <input type="text" maxlength="1" class="single-character" placeholder="9">
                         <input type="text" maxlength="1" class="single-character" placeholder="7">
                         <span class="currency">XAF</span>
-                    </div>
+                    </div> --}}
                     <a href="#submit-token" class="primary-btn primary-effect open-submit-token">Faites un Depot</a>
                     <a href="#submit-token-2" class="primary-btn primary-effect open-submit-token-2">Faites un Retrait</a>
                     <a href="#submit-token-3" class="primary-btn primary-effect open-submit-token-3">Demande de pret</a>
                     <div id="submit-token" class="white-popup mfp-hide">
                         <div class="submit-token-details">
-                            <h5>Votre Solde 3.99 XAF</h5>
+                            @foreach ($solde as $soldes)
+                            <h5>Votre Solde {{ $soldes->solde }} XAF</h5>
+                            @endforeach
                             <div class="text-center submit-token-content">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
                                 {{-- <div class="submit-time"> --}}
@@ -100,42 +107,182 @@
                                 {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
                                 <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
                             </div>
-                            <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a>
+                            <div class="copy-wrapper">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/american-express.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/mastercard.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/diners.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/jcb.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/Momo.png')}}" alt="Instagram">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/visa.png')}}" alt="Linkedin">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a> --}}
                         </div>
                     </div>
                     <div id="submit-token-2" class="white-popup mfp-hide">
-                        <<div class="text-center submit-token-content">
-                            <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
-                            {{-- <div class="submit-time"> --}}
-                                <label class="primary text-center">Tontine</label>
-                                <select class="form-control text-center">
-                                    <option value="">Selectionner Tontine</option>
-                                    @foreach($tontin as $tontines)
-                                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                                    @endforeach
-                                </select>
-                            {{-- </div> --}}
-                            <div class="submit-time">
-                                <p class="primary text-center">Montant a Retirer</p>
-                                <h6  class="text-center">436429297 XAF</h6>
-                            </div>
-                            {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
-                            <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
-                        </div>
-                        <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a>
+                        <div class="submit-token-details">
+                            @foreach ($solde as $soldes)
+                            <h5>Votre Solde {{ $soldes->solde }} XAF</h5>
+                            @endforeach
+                            <div class="text-center submit-token-content">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                                {{-- <div class="submit-time"> --}}
+                                    <label class="primary text-center">Tontine</label>
+                                    <select class="form-control text-center">
+                                        <option value="">Selectionner Tontine</option>
+                                        @foreach($tontin as $tontines)
+                                            <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                                        @endforeach
+                                    </select>
+                                {{-- </div> --}}
+                                <div class="submit-time">
+                                    <p class="primary text-center">Montant a deposer</p>
 
+                                    <h6  class="text-center">436429297 XAF</h6>
+                                </div>
+                                {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
+                                <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
+                            </div>
+                            <div class="copy-wrapper">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/american-express.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/mastercard.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/diners.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/jcb.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/Momo.png')}}" alt="Instagram">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/visa.png')}}" alt="Linkedin">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a> --}}
+                        </div>
                     </div>
                     <div id="submit-token-3" class="white-popup mfp-hide">
                         <div class="submit-token-details">
-                            <h5>Votre Solde $100.00</h5>
+                            @foreach ($solde as $soldes)
+                            <h5>Votre Solde {{ $soldes->solde }} XAF</h5>
+                            @endforeach
                             <div class="text-center submit-token-content">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
-                                <form class="form-control" action="#">
-                                    <label class="form-control" for="Objet">Objet de la demande</label>
-                                    <input class="form-control" type="text" name="objet" placeholder="Objet de la demande" id="">
-                                    <label class="form-control" for="Montant">Montant du Pret</label>
-                                    <input class="form-control" type="number" name="montant" placeholder="Exemple 5.000.000 XAF" id="">
-                                </form>
+                                {{-- <div class="submit-time"> --}}
+                                    <label class="primary text-center">Tontine</label>
+                                    <select class="form-control text-center">
+                                        <option value="">Selectionner Tontine</option>
+                                        @foreach($tontin as $tontines)
+                                            <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                                        @endforeach
+                                    </select>
+                                {{-- </div> --}}
+                                <div class="submit-time">
+                                    <p class="primary text-center">Montant a deposer</p>
+
+                                    <h6  class="text-center">436429297 XAF</h6>
+                                </div>
+                                {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
+                                <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
+                            </div>
+                            <div class="copy-wrapper">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/american-express.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/mastercard.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/diners.png')}}" alt="Facebook">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/jcb.png')}}" alt="Twitter">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
+                                            <div class="social-wrapper">
+
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/Momo.png')}}" alt="Instagram">
+                                                </a>
+                                                <a href="#">
+                                                    <img src="{{ asset('assets/images/cards/visa.png')}}" alt="Linkedin">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             {{-- <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a> --}}
                         </div>
@@ -220,7 +367,9 @@
                                                 <tr>
                                                     <td>1</td>
                                                     <td>{{ $tontines->name }}</td>
-                                                    <td>0 XAF</td>
+                                                    @foreach ($solde as $soldes)
+                                                        <td>{{ $soldes->solde }} XAF</td>
+                                                    @endforeach
                                                 </tr>
                                             {{-- @endif --}}
                                             @endforeach
@@ -237,135 +386,6 @@
     </section>
     <!-- recent prediction section end -->
 
-
-    <!-- invest calculator start -->
-    {{-- <div class="invest-calculator pt-120">
-        <div class="container">
-            <div class="invest-calculator-wrapper">
-                <form action="{{ route('user.depot') }}" method="POST">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="items">
-                                <label for="investCalc" class="form-label">Choix de la tontine</label>
-                                <select required="required" id="investCalc" name="tokens">
-                                    @foreach ($membre as $membres)
-                                    @foreach($tontine as $tontines)
-                                    @if (auth()->user()->email === $membres->email && $membres->tontine_id === $tontines->id)
-                                        <option placeholder="Choix de la Tontine" value="">{{ $tontines->name }}</option>
-                                    @endif
-                                    @endforeach
-                                    @endforeach
-                                </select>
-                                <div class="foote">
-                                    <p class="secondary text-start">Choose period in months</p>
-                                    <a href="#0" class="invest-tab-btn-two">2</a>
-                                    <a href="#0" class="invest-tab-btn-two">3</a>
-                                    <a href="#0" class="invest-tab-btn-two invest-tab-active-two">6</a>
-                                    <a href="#0" class="invest-tab-btn-two">12</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="items">
-                                <label for="amountCalculator" class="form-label">Montant a deposer</label>
-                                <div class="number">
-                                    <input type="number" class="form-control" id="amountCalculator"
-                                        aria-describedby="amountCalculator" required="required" placeholder="500">
-                                    <span>FCFA</span>
-                                </div>
-                                <p class="secondary">minimum a deposer 500</p>
-                                <div
-                                    class="d-flex sed flex-column flex-sm-row flex-md-column flex-lg-row align-items-center justify-content-between">
-                                    <div class="increase-value d-flex align-items-center justify-content-between">
-                                        <p class="tertiary">+0.000021</p>
-                                        <span class="primary">+4.2%</span>
-                                    </div>
-                                    <button type="submit" class="primary-btn primary-effect">Deposer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
-    <!-- invest calculator end -->
-
-    <!-- why choose crypdo section start -->
-    {{-- <section class="choose-crikto-container pt-90 pb-120">
-        <div class="container">
-            <div class="choose-crikto-wrapper">
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg-6">
-                        <div class="choose-crikto-thumb">
-                            <img src="assets/images/custom/invest/choose-illustration.png" alt="Choose Illustration">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="choose-crikto-content">
-                            <h2>Pourquoi investir dans TCA</h2>
-                            <p class="immidiate">Nous investissons vos fonds dans un marcher securise, simple, rapide et plus securise.
-                                    Our unique selection of investment products, award-winning.</p>
-                            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
-                                <div class="choose-crikto-single-item card-effect">
-                                    <h3 class="text-center">+500</h3>
-                                    <p class="text-center secondary">Clients</p>
-                                </div>
-                                <div class="choose-crikto-single-item card-effect">
-                                    <h3 class="text-center">168%</h3>
-                                    <p class="text-center secondary">Retour en 2021</p>
-                                </div>
-                            </div>
-                            <a href="#registration-popup" class="primary-btn primary-effect registration-popup-link">Commencer maintenant</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- why choose crypdo section end -->
-
-
-    <!-- crikto invest work section start -->
-    {{-- <section class="crikto-invest-work-container pt-120 pb-120">
-        <div class="container">
-            <div class="crikto-invest-work-wrapper">
-                <div class="title-wrapper">
-                    <h2 class="text-center">
-                        Comment ca marche
-                    </h2>
-                    <p class="text-center">En quelques clics</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="crikto-work-single-item text-center card-effect">
-                            <img src="{{ asset('assets/images/custom/invest/invest-work-one.png') }}" alt="Step One">
-                            <h3 class="text-center">Inscription et authentification</h3>
-                            <p class="text-center">Inscrivez-vous gratuitement et verifiez votre identite</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="crikto-work-single-item text-center card-effect">
-                            <img src="{{ asset('assets/images/custom/invest/invest-work-two.png') }}" alt="Step Two">
-                            <h3 class="text-center">Faites un depot</h3>
-                            <p class="text-center">Faites un depot depuis votre compte bancaire, Orange MoneyMake a deposit from your bank
-                                account or crypto wallet</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="crikto-work-single-item text-center card-effect">
-                            <img src="{{ asset('assets/images/custom/invest/invest-work-three.png') }}" alt="Step Three">
-                            <h3 class="text-center">Investir et gagner</h3>
-                            <p class="text-center">Faites un investissement et faites des retrait a tout moment
-                                ou, profiter de 20% de retour sur unvestissement apres 03mois</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- crikto invest work section end -->
 
     <!-- boost earning slider start -->
     <section class="boost-earning-container pt-120 pb-120">

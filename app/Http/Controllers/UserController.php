@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gerant;
 use App\Models\Membre;
+use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\TontineChoisie;
 use App\Models\Transaction;
@@ -23,13 +24,14 @@ class UserController extends Controller
 
         $tontine=Tontine::all();
         // $t=Tontine::where('id', $membres[0]->mem_tontine_id)->get();
-        
+
         $tontin=Tontine::where('id', auth()->user()->mem_tontine_id)->get();
         $user=User::find(auth()->user()->id);
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
         $membre=User::where('role_id', 4)->where('id', $user->id)->get();
         // $membres=Membre::count('tontine_id');
         $transaction=Transaction::all();
+        $solde=Solde::where('user_id', $user->id)->get();
 //         $user=Auth::user();
 //         if(!$user){
 //             redirect()->back()->with('error', 'Vous devez etre connecter pour rejoindre la tontine');
@@ -46,7 +48,7 @@ class UserController extends Controller
         // $token=$lien;'id', 'token',, 'membres'
         // $tontines=Tontine::find($id);
         // return $tontin;
-        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction'));
+        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction', 'solde'));
 
         // return $membre.$tontine;
     }
