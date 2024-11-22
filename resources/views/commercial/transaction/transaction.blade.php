@@ -71,61 +71,61 @@
         @endif --}}
         <!-- Row start -->
         <div class="row gx-3">
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="bg-transparent-light rounded-1 mb-3 position-relative">
-              <div class="p-3 text-white">
-                <div class="mb-2">
-                  <i class="fs-3 bi bi-people"></i>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="bg-transparent-light rounded-1 mb-3 position-relative">
+                <div class="p-3 text-white">
+                  <div class="mb-2">
+                    <i class="fs-3 bi bi-people"></i>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h5 class="m-0 fw-normal">Total compte</h5>
+                    <h3 class="m-0">{{ $d }}</h3>
+                  </div>
                 </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 fw-normal">Total compte</h5>
-                  <h3 class="m-0">{{ $totalcompte }}</h3>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="bg-transparent-light rounded-1 mb-3 position-relative">
+                <div class="p-3 text-white">
+                    <div class="arrow-label">+18%</div>
+                  <div class="mb-2">
+                    <i class="bi bi-bag-check fs-1 lh-1"></i>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h5 class="m-0 fw-normal">Versements</h5>
+                    <h3 class="m-0">{{ $totalversement }} XAF</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="bg-transparent-light rounded-1 mb-3 position-relative">
+                <div class="p-3 text-white">
+                  <div class="mb-2">
+                    <i class="fs-3 bi bi-arrow-left-right"></i>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h5 class="m-0 fw-normal">Transactions</h5>
+                    <h3 class="m-0">{{ $total }} XAF</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="bg-transparent-light rounded-1 mb-3 position-relative">
+                <div class="p-3 text-white">
+                  <div class="arrow-label">+24%</div>
+                  <div class="mb-2">
+                    <i class="bi bi-bell fs-1 lh-1"></i>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h5 class="m-0 fw-normal">Adhesions</h5>
+                    <h3 class="m-0">{{ $totalcompte }}</h3>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="bg-transparent-light rounded-1 mb-3 position-relative">
-              <div class="p-3 text-white">
-                  <div class="arrow-label">+18%</div>
-                <div class="mb-2">
-                  <i class="bi bi-bag-check fs-1 lh-1"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 fw-normal">Versements</h5>
-                  <h3 class="m-0">750.000 XAF</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="bg-transparent-light rounded-1 mb-3 position-relative">
-              <div class="p-3 text-white">
-                <div class="mb-2">
-                  <i class="fs-3 bi bi-arrow-left-right"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 fw-normal">Transactions</h5>
-                  <h3 class="m-0">{{ $total }} XAF</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 col-12">
-            <div class="bg-transparent-light rounded-1 mb-3 position-relative">
-              <div class="p-3 text-white">
-                <div class="arrow-label">+24%</div>
-                <div class="mb-2">
-                  <i class="bi bi-bell fs-1 lh-1"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 fw-normal">Adhesions</h5>
-                  <h3 class="m-0">452</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Row end -->
       </div>
           <!-- Main container end -->
@@ -151,13 +151,22 @@
                               <td>#{{ $transaction->id }}</td>
                               <td>{{ $transaction->type }}</td>
                               <td>-</td>
-                              @foreach ($membres as $membre)
+                              {{-- @foreach ($memb as $membr)
+                              @foreach ($soldes as $solde)
+
+                              @if ($solde->user_id === $membr->id)
+<td>{{ $membr->name }}</td>
+                              @endif
+
+                              @endforeach
+                              @endforeach --}}
+                              {{-- @foreach ($membres as $membre)
                               @foreach ($soldes as $solde)
                                   @if ($transaction->solde_id === $solde->id && $solde->user_id === $membre->id)
                                   <td>{{ $membre->name }}</td>
                               @endif
                               @endforeach
-                              @endforeach
+                              @endforeach --}}
                               @foreach ($t as $tontine)
                               @if ($tontine->id == $transaction->tontine_id)
                                   <td>{{ $tontine->name }}</td>

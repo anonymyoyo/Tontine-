@@ -45,9 +45,6 @@
                                 <a class="nav-link pl-0" href="{{ route('home') }}">Acceuil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('about') }}">A propos</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.association') }}">Association</a>
                             </li>
                             <li class="nav-item">

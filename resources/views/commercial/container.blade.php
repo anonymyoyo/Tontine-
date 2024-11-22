@@ -62,12 +62,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Versements</h5>
-                {{-- @foreach ($totalversement as $versement)
-                    @if ($versement->type === 'depot')
-                        {{ $versement->sum('montant') }}
-                    @endif
-                @endforeach --}}
-                <h3 class="m-0">750.000 XAF</h3>
+                <h3 class="m-0">{{ $totalversement }} XAF</h3>
               </div>
             </div>
           </div>

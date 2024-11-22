@@ -119,32 +119,38 @@
             /* a{} */
         </style>
 
-<div id="retrait-token" class="white-popup mfp-hide">
-    <div class="submit-token-details">
-        <h5>RETRAIT</h5>
-        <div class="text-center submit-token-content">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
-            {{-- <div class="submit-time"> --}}
-                <label class="primary text-center">Tontine</label>
-                <select class="form-control text-center">
-                    <option value="">Selectionner Tontine</option>
-                    {{-- @foreach($tontin as $tontines)
-                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                    @endforeach --}}
-                </select>
-            {{-- </div> --}}
-            <div class="submit-time">
-                <p class="primary text-center">Montant a deposer</p>
+<div class="menu">
+    <main>
+        <section class="item">
+            <form action="{{ route('retrait.commercial', $membres->id) }}" method="POST">
+                        @csrf
+                        {{-- @method('PUT') --}}
+                        <article>
+                <h1>RETRAIT</h1>
+                <div class="p">
+                    <div class="retrait">
 
-                <h6  class="text-center">436429297 XAF</h6>
-            </div>
-            {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
-            <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
-        </div>
-        <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a>
-    </div>
+
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
+                        <label class="primary text-center">Tontine</label>
+                        <select name="tontine_id" required class="form-control text-center">
+                            <option value="">Selectionner Tontine</option>
+                            @foreach ($t as $tontines)
+                                <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                            @endforeach
+                        </select>
+                        <div class="submit-time">
+                            <input class="form-control text-center" required min="500" type="number" name="montant" placeholder="Montant a deposer : Min 500 XAF">
+                        </div>
+
+                    </div>
+                </div>
+                <button class="button">Deposer</button>
+                </article>
+            </form>
+        </section>
+    </main>
 </div>
-
 
 
 </div>

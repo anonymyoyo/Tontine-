@@ -22,24 +22,6 @@
                                                 <a class="nav-link link-active secondary-effect" href="{{ route('home') }}">Acceuil</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link secondary-effect" href="{{ route('about') }}">A propos</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle secondary-effect" href="#"
-                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
-                                                <ul class="dropdown-menu">
-                                                    {{-- <li>
-                                                        <a class="dropdown-item secondary-effect" href="{{ route('user.association') }}">Explorer</a>
-                                                    </li> --}}
-                                                    <li>
-                                                        <a class="dropdown-item secondary-effect" href="{{ route('user.tontines') }}">Tontines</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-item mb-0 secondary-effect" href="{{ route('blog') }}">Blog</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
                                                 <a class="nav-link secondary-effect" href="{{ route('contact') }}">Contact</a>
                                             </li>
                                             <li class="nav-item dropdown">
@@ -88,7 +70,7 @@
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
                                                 <a class="nav-link link-active secondary-effect" href="{{ route('home') }}">Acceuil</a>
-                                            </li>
+                                            {{-- </li>
                                             <li class="nav-item">
                                                 <a class="nav-link secondary-effect" href="{{ route('about') }}">A propos</a>
                                             </li>
@@ -96,9 +78,6 @@
                                                 <a class="nav-link dropdown-toggle secondary-effect" href="#"
                                                     data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
                                                     <ul class="dropdown-menu">
-                                                        {{-- <li>
-                                                            <a class="dropdown-item secondary-effect" href="{{ route('user.association') }}">Explorer</a>
-                                                        </li> --}}
                                                         <li>
                                                             <a class="dropdown-item secondary-effect" href="{{ route('user.tontines') }}">Tontines</a>
                                                         </li>
@@ -106,7 +85,7 @@
                                                             <a class="dropdown-item mb-0 secondary-effect" href="{{ route('blog') }}">Blog</a>
                                                         </li>
                                                     </ul>
-                                            </li>
+                                            </li> --}}
                                             <li class="nav-item">
                                                 <a class="nav-link secondary-effect" href="{{ route('contact') }}">Contact</a>
                                             </li>

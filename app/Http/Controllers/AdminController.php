@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
-use App\Models\ChefAgence;
-use App\Models\Commercial;
 use App\Models\Role;
 use App\Models\Tontine;
 use App\Models\Transaction;
@@ -26,15 +24,15 @@ class AdminController extends Controller
 {
     //
     public function dashboard(){
-        $asso=Association::count();
         $roles=Role::all();
-        $user=User::count();
-        $transaction=Transaction::count();
-        // $versement=Versement::count();
-        $adherant=User::count();
-        $association=Association::all();
+        $user=User::all();
+        $transaction=Transaction::sum('montant');
+        $adherant=$user->count();
+        $association=Association::count();
+        $versement=Transaction::where('type', 'depot')->get();
+        $totalversement=$versement->sum('montant');
         $tontine=Tontine::all();
-        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant', 'association', 'asso'));
+        return view('admin.dashboard', compact('tontine', 'roles', 'user', 'transaction', 'adherant', 'association', 'totalversement'));
     }
 
     public function dashboard_agence(){

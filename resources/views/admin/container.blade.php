@@ -59,7 +59,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Associations</h5>
-                <h3 class="m-0">1</h3>
+                <h3 class="m-0">{{ $association }}</h3>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Versements</h5>
-                <h3 class="m-0">750.000 XAF</h3>
+                <h3 class="m-0">{{ $totalversement }} XAF</h3>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Transactions</h5>
-                <h3 class="m-0">1.055.900 XAF</h3>
+                <h3 class="m-0">{{ $transaction }} XAF</h3>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <h5 class="m-0 fw-normal">Adhesions</h5>
-                <h3 class="m-0">152</h3>
+                <h3 class="m-0">{{ $adherant }}</h3>
               </div>
             </div>
           </div>
