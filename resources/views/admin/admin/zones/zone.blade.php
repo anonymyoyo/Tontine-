@@ -85,7 +85,7 @@
 
 
 
-                    @if ($commercial->id === $zone->commercial_id && $zone->agence_id === $agence->id)
+                    @if ($commercial->id === $zone->user_id && $zone->agence_id === $agence->id)
 
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="card mb-3">

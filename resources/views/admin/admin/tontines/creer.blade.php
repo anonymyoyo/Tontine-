@@ -34,7 +34,7 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <i class="bi bi-house lh-1"></i>
-                  <a href="index.html" class="text-decoration-none">Ajouter</a>
+                  <a href="{{ route('dashboard') }}" class="text-decoration-none">Ajouter</a>
                 </li>
                 <li class="breadcrumb-item" aria-current="page">Tontine</li>
               </ol>

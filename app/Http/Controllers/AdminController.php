@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
+use App\Models\ChefAgence;
 use App\Models\Role;
+use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\Transaction;
 use App\Models\User;
@@ -415,7 +417,7 @@ class AdminController extends Controller
         $membres=User::find($id);
         $t=Tontine::where('id', $membres->mem_tontine_id)->get();
 
-        return view('commercial.transaction.depot', compact('tontine', 'roles', 'membres', 't'));
+        return view('admin.admin.transactions.depot', compact('tontine', 'roles', 'membres', 't'));
     }
 
     public function depot_admin_client(Request $request, $id){
@@ -448,7 +450,7 @@ class AdminController extends Controller
         $membres=User::find($id);
         $t=Tontine::where('id', $membres->mem_tontine_id)->get();
 // return $t;
-        return view('admin.transaction.retrait', compact('tontine', 'roles', 'membres', 't'));
+        return view('admin.admin.transactions.retrait', compact('tontine', 'roles', 'membres', 't'));
     }
 
     public function retrait_admin_client(Request $request, $id){
@@ -480,10 +482,21 @@ class AdminController extends Controller
     }
 
     public function agences_transaction(){
-        $asso=Association::count();
+        $totalassociation=Association::count();
         $roles=Role::all();
         $tontine=Tontine::all();
-        return view('admin.admin.transactions.transaction', compact('tontine', 'roles', 'asso'));
+        $utilisateur=User::where('role_id', 4)->whereBetween('created_at', [now()->subDays(1), now()])->get();
+        $d=$utilisateur->count();
+        $total=Transaction::sum('montant');
+        $membres=User::where('role_id', 4)->get();
+        $versement=Transaction::where('type', 'depot')->get();
+        $totalcompte=$membres->count();
+        $totalversement=$versement->sum('montant');
+        $transactions=Transaction::all();
+        $t=Tontine::all();
+
+        // return $membres;
+        return view('admin.admin.transactions.transaction', compact('tontine', 'roles', 't', 'd', 'totalversement', 'total', 'totalcompte', 'transactions','totalassociation'));
     }
 
     public function agences_versement(){
@@ -500,9 +513,12 @@ class AdminController extends Controller
         $t=Tontine::all();
         $association=Association::where('id', $membres[0]->association_id)->get();
         $roles=Role::all();
+        $soldes=Solde::all();
+        $sold=Solde::where('user_id', $membres[0]->id)->get();
 
-        // return $membres;
-        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles', 't', 'association'));
+        // return $association;
+        // return $sold;
+        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles', 't', 'association', 'soldes'));
     }
 
     public function admin_creer_membre(){
@@ -521,9 +537,9 @@ class AdminController extends Controller
         $image=$request->file('image');
         $path=$image->store('images','public');
         $roles=Role::all();
-        $membres=User::where('role_id', 4);
+        // $membres=User::where('role_id', 4);
 
-        User::create([
+        $membres=User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -535,6 +551,14 @@ class AdminController extends Controller
             'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);
+
+        if ($membres) {
+            # code...
+            Solde::create([
+            'user_id'=>$membres->id,
+            'solde'=>0,
+        ]);
+    }
 
         return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }

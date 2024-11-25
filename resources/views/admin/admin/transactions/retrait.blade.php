@@ -1,40 +1,40 @@
-<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/unity-bootstrap-commercial-dashboard/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 22:12:11 GMT -->
-@include('../commercial.head')
+@include('admin.head')
 
-  <body>
-    <!-- Page wrapper start -->
-    <div class="page-wrapper">
+    <body>
+        <!-- Page wrapper start -->
+        <div class="page-wrapper">
 
-      <!-- App header starts -->
-      @include('../commercial.header')
+          <!-- App header starts -->
+            @include('admin.header')
 
-      <!-- App header ends -->
+          <!-- App header ends -->
 
-      <!-- Main container start -->
-      <div class="main-container">
+          <!-- Main container start -->
+          <div class="main-container">
 
-        <!-- Sidebar wrapper start -->
-        @include('../commercial.sidebar')
-        <!-- Sidebar wrapper end -->
+            <!-- Sidebar wrapper start -->
+            @include('admin.sidebar')
+            <!-- Sidebar wrapper end -->
 
-        <!-- App container starts -->
+             <!-- App container starts -->
         <div class="app-container">
 
-          <!-- App hero header starts -->
-          <div class="app-hero-header mb-4">
+            <!-- App hero header starts -->
+            <!-- App hero header starts -->
+    <div class="app-hero-header mb-4">
 
-            <!-- Breadcrumb and Stats start -->
-            <div class="d-flex align-items-center mb-3">
+        <!-- Breadcrumb and Stats start -->
+        <div class="d-flex align-items-center mb-3">
 
-              <!-- Breadcrumb start -->
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <i class="bi bi-house lh-1"></i>
-                  <a href="index.html" class="text-decoration-none">Ajouter</a>
-                </li>
-                <li class="breadcrumb-item" aria-current="page">Client</li>
-              </ol>
-              <!-- Breadcrumb end -->
+          <!-- Breadcrumb start -->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <i class="bi bi-house lh-1"></i>
+              <a href="{{ route('dashboard') }}" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item" aria-current="page">Dashboard</li>
+          </ol>
+          <!-- Breadcrumb end -->
 
               <!-- Sales stats start -->
               <div class="ms-auto d-lg-flex d-none flex-row">
@@ -122,7 +122,7 @@
 <div class="menu">
     <main>
         <section class="item">
-            <form action="{{ route('retrait.commercial', $membres->id) }}" method="POST">
+            <form action="{{ route('retrait.admin', $membres->id) }}" method="POST">
                         @csrf
                         {{-- @method('PUT') --}}
                         <article>
@@ -161,4 +161,4 @@
 
 </div>
 <!-- Page wrapper end -->
-@include('../commercial.script')
+   @include('admin.script')

@@ -86,6 +86,8 @@
                             <th>Email</th>
                             <th>Tontine</th>
                             <th>Association</th>
+                            <th>Solde</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         @foreach ($membres as $membre)
@@ -108,7 +110,15 @@
                                     @foreach ($association as $associations)
                                         <td>{{ $associations->name }}</td>
                                     @endforeach
-
+                                    @foreach ($soldes as $solde)
+                                    {{-- @foreach ($solde as $montant) --}}
+                                    @if ($membre->id == $solde->user_id)
+                                        <td>{{ $solde->solde }}</td>
+                                        @endif
+                                    {{-- @endforeach --}}
+                                    @endforeach
+                                    <td class="btn btn-success"><a href="{{ route('admin.depot', $membre->id) }}">Depot</a></td>
+                                    <td class="btn btn-success"><a href="{{ route('admin.retrait', $membre->id) }}">Retrait</a></td>
                                 </tr>
                             </tbody>
 

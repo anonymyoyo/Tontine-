@@ -215,7 +215,7 @@ class CommercialController extends Controller
         $association=$user->associations;
         $agence=$user->agences;
         // $sold=Solde::where('user_id', $membres->id)->first();
-$soldes=Solde::all();
+        $soldes=Solde::all();
 
 
 
