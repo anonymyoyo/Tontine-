@@ -23,7 +23,7 @@
                                                 alt="Single Item One">
                                         </div>
                                         <div class="about-crikto-single-item-content">
-                                            <h2>+100</h2>
+                                            <h2>+10k</h2>
                                             <p>Clients enregistre</p>
                                         </div>
                                     </div>
@@ -35,7 +35,7 @@
                                                 alt="Single Item Two">
                                         </div>
                                         <div class="about-crikto-single-item-content">
-                                            <h2>1M</h2>
+                                            <h2>+1M</h2>
                                             <p>Transactions</p>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="about-crikto-single-item-content">
                                             <h2>Securise</h2>
-                                            <p>Mot de passe</p>
+                                            <p>Technologies avancees</p>
                                         </div>
                                     </div>
                                 </div>

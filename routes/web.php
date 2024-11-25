@@ -51,6 +51,10 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('Agences/Creer/Commerciaux', [AdminController::class, 'creer_commercial'])->name('creer.commercial');
     Route::post('Agences/Commercial/Delete/{id}', [AdminController::class, 'delete_admin_agence_commercial'])->name('delete.admin_agence_commercial');
     Route::post('Agences/Commercial', [AdminController::class, 'ajouter_commercial'])->name('ajouter.commercial'); #fgfdgfdgdf
+    Route::get('Agence/Commercial/Depot/{id}', [AdminController::class, 'admin_depot_client'])->name('admin.depot');
+    Route::post('Agence/Commercial/Depot/{id}', [AdminController::class, 'depot_admin_client'])->name('depot.admin');
+    Route::get('Agence/Commercial/Retrait/{id}', [AdminController::class, 'admin_retrait_client'])->name('admin.retrait');
+    Route::post('Agence/Commercial/Retrait/{id}', [AdminController::class, 'retrait_admin_client'])->name('retrait.admin');
     Route::get('Agence/Transactions', [AdminController::class, 'agences_transaction'])->name('transaction');
     Route::get('Agence/Versements', [AdminController::class, 'agences_versement'])->name('versement');
     Route::get('Agence/Reglages', [AdminController::class, 'agences_reglage'])->name('reglage');

@@ -16278,7 +16278,8 @@ a:hover {
 .login-bg {
     background-color: #90cf37;
     background-size: cover;
-    background-position: center center
+    background-position: center center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .login-form {
@@ -16288,7 +16289,9 @@ a:hover {
 }
 
 img.login-logo {
-    width: 135px
+    width: 135px;
+    text-align:center;
+    margin-left: 30%;
 }
 
 .error-screen {

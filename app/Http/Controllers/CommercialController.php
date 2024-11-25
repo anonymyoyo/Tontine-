@@ -168,11 +168,7 @@ class CommercialController extends Controller
             'user_id'=>$membres->id,
             'solde'=> $solde->solde + $transaction->montant,
         ]);
-// return $sold;
-
-
-// return $transaction;
-return back();
+            return back();
     }
 
     public function commercial_retrait_client($id){

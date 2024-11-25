@@ -409,6 +409,76 @@ class AdminController extends Controller
 
     }
 
+    public function admin_depot_client($id){
+        $roles=Role::all();
+        $tontine=Tontine::all();
+        $membres=User::find($id);
+        $t=Tontine::where('id', $membres->mem_tontine_id)->get();
+
+        return view('commercial.transaction.depot', compact('tontine', 'roles', 'membres', 't'));
+    }
+
+    public function depot_admin_client(Request $request, $id){
+        $roles=Role::all();
+        $tontine=Tontine::all();
+        $membres=User::find($id);
+        $user=User::find(auth()->user()->id);
+        $sold=Solde::where('user_id', $membres->id)->first();
+        $t=Tontine::where('id', $membres->mem_tontine_id)->first();
+        $solde=Solde::where('user_id', $membres->id)->first();
+
+        $transaction=Transaction::create([
+            'type'=>'depot',
+            'solde_id'=>$sold->id,
+            'tontine_id'=>$t->id,
+            'commercial_id'=>$user->id,
+            'montant'=>$request->montant,
+        ]);
+
+        $sold->update([
+            'user_id'=>$membres->id,
+            'solde'=> $solde->solde + $transaction->montant,
+        ]);
+            return back();
+    }
+
+    public function admin_retrait_client($id){
+        $roles=Role::all();
+        $tontine=Tontine::all();
+        $membres=User::find($id);
+        $t=Tontine::where('id', $membres->mem_tontine_id)->get();
+// return $t;
+        return view('admin.transaction.retrait', compact('tontine', 'roles', 'membres', 't'));
+    }
+
+    public function retrait_admin_client(Request $request, $id){
+
+            $roles=Role::all();
+            $tontine=Tontine::all();
+            $membres=User::find($id);
+            $user=User::find(auth()->user()->id);
+            $sold=Solde::where('user_id', $membres->id)->first();
+            $t=Tontine::where('id', $membres->mem_tontine_id)->first();
+            $solde=Solde::where('user_id', $membres->id)->first();
+
+            $transaction=Transaction::create([
+                'type'=>'retrait',
+                'solde_id'=>$sold->id,
+                'tontine_id'=>$t->id,
+                'commercial_id'=>$user->id,
+                'montant'=>$request->montant,
+            ]);
+
+            $sold->update([
+                'user_id'=>$membres->id,
+                'solde'=> $solde->solde - $transaction->montant,
+            ]);
+            // $soldes=$sold->solde;
+            // return $sold->solde;
+            return back();
+            // return view('commercial.transaction.retrait', compact('tontine', 'roles', 'membres', 't', 'sold'));
+    }
+
     public function agences_transaction(){
         $asso=Association::count();
         $roles=Role::all();
