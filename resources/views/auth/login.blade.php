@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard/assets/css/main.min.css') }}" />
 </head>
 
-  <body>
+  <body class="login-bg">
     <!-- Container start -->
     <div class="container">
       <div class="row justify-content-center">
@@ -35,7 +35,7 @@
                 @csrf
             <div class="login-form rounded-4 p-4 mt-5">
               <a href="{{ route('home') }}" class="mb-4 d-flex">
-                <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid login-logo" alt="Unity Admin Dashboard" />
+                <img src="{{ asset('assets/images/logo.png') }}" class=" login-logo" alt="Unity Admin Dashboard" />
               </a>
               {{-- <h2 class="fw-light mb-4">Connexion</h2> --}}
               <div class="mb-3">

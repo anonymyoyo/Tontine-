@@ -1,6 +1,6 @@
 
     <!-- services section start -->
-    <section class="services-area pt-120">
+    {{-- <section class="services-area pt-120">
         <div class="container">
             <div class="services-wrapper">
                 <div class="title-wrapper">
@@ -24,7 +24,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- services section end -->
 
     <!-- about crikto section start -->

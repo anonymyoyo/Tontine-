@@ -1,12 +1,12 @@
 ﻿/*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)#90cf37;
  */
 :root,
 [data-bs-theme=light] {
     --bs-blue: #90cf37;
-    --bs-indigo: #90cf37;
+    --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
     --bs-red: #dc3545;
@@ -14,9 +14,9 @@
     --bs-yellow: #ffc107;
     --bs-green: #198754;
     --bs-teal: #20c997;
-    --bs-cyan: #90cf37;
+    --bs-cyan: #0dcaf0;
     --bs-black: #000000;
-    --bs-white: #1b8002;
+    --bs-white: #ffffff;
     --bs-gray: #527094;
     --bs-gray-dark: #2d435d;
     --bs-gray-100: #eff2f6;
@@ -28,11 +28,11 @@
     --bs-gray-700: #3f5773;
     --bs-gray-800: #2d435d;
     --bs-gray-900: #13171c;
-    --bs-primary: #90cf37;
+    --bs-primary: #1a73e8;
     --bs-secondary: #aab3c3;
     --bs-danger: #e4052e;
     --bs-success: #03835d;
-    --bs-info: #90cf37;
+    --bs-info: #3c69c4;
     --bs-warning: #f6bc02;
     --bs-light: #dfe6ef;
     --bs-dark: #000000;
@@ -44,7 +44,7 @@
     --bs-warning-rgb: 246, 188, 2;
     --bs-light-rgb: 223, 230, 239;
     --bs-dark-rgb: 0, 0, 0;
-    --bs-primary-text-emphasis: #90cf37;
+    --bs-primary-text-emphasis: #0a2e5d;
     --bs-secondary-text-emphasis: #44484e;
     --bs-success-text-emphasis: #013425;
     --bs-info-text-emphasis: #182a4e;
@@ -78,7 +78,7 @@
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
     --bs-body-color: #2e323c;
-    --bs-body-color-rgb:#2e323c;
+    --bs-body-color-rgb: 46, 50, 60;
     --bs-body-bg: #ffffff;
     --bs-body-bg-rgb: 255, 255, 255;
     --bs-emphasis-color: #000000;
@@ -91,11 +91,11 @@
     --bs-tertiary-color-rgb: 46, 50, 60;
     --bs-tertiary-bg: #eff2f6;
     --bs-tertiary-bg-rgb: 239, 242, 246;
-    --bs-heading-color: #2e323c;
-    --bs-link-color: #90cf37;
-    --bs-link-color-rgb: #90cf37;
+    --bs-heading-color: inherit;
+    --bs-link-color: #1a73e8;
+    --bs-link-color-rgb: 26, 115, 232;
     --bs-link-decoration: underline;
-    --bs-link-hover-color: #90cf37;
+    --bs-link-hover-color: #155cba;
     --bs-link-hover-color-rgb: 21, 92, 186;
     --bs-code-color: #d63384;
     --bs-highlight-color: #2e323c;
@@ -200,6 +200,7 @@ body {
     line-height: var(--bs-body-line-height);
     color: var(--bs-body-color);
     text-align: var(--bs-body-text-align);
+    /* background: --bs-body-bg; */
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
@@ -16275,19 +16276,19 @@ a:hover {
 }
 
 .login-bg {
-    background: black;
+    background-color: #90cf37;
     background-size: cover;
     background-position: center center
 }
 
 .login-form {
     backdrop-filter: blur(7px);
-    background: #90cf37;
+    background: aliceblue;
     color: #000;
 }
 
 img.login-logo {
-    width: 200px
+    width: 135px
 }
 
 .error-screen {

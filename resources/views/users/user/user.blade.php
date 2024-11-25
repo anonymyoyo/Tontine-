@@ -7,19 +7,35 @@
     @include('users/header')
     <!-- header end -->
 
+    {{-- <div class="boost-item d-flex align-items-center">
+        <img src="assets/images/custom/coins/binance-coin.png" alt="Binance Coin">
+        <h3>
+            Bienvenu {{ auth()->user()->name }}
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('user') }}" class="large">Profil</a></li>
+                    <li class="breadcrumb-item active large" aria-current="page"> <i class="flaticon-right"></i>
+                        Compte</li>
+                </ol>
+            </nav>
+        </h3>
+    </div> --}}
 
         <!-- predict banner section start -->
     <section class="container-fluid banner-container bg-img predict-banner-two">
         <div class="container">
             <div class="banner-wrapper">
-                <h2>Bienvenu {{ auth()->user()->name }}</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('user') }}" class="large">Profil</a></li>
-                        <li class="breadcrumb-item active large" aria-current="page"> <i class="flaticon-right"></i>
-                            Compte</li>
-                    </ol>
-                </nav>
+                <div class="boost-item d-flex align-items-center">
+                    <img width="250px" height="250" style="border-radius: 60%;" src="{{ Storage::url(auth()->user()->image) }}" alt="Binance Coin">
+                    <h3>
+                        Bienvenu {{ auth()->user()->name }}
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ route('user') }}" class="large">Client</a></li>
+                            </ol>
+                        </nav>
+                    </h3>
+                </div>
             </div>
             <div class="banner-thumb predict-banner-thumb d-none d-lg-block">
                 <img src="{{ asset('assets/images/custom/banner/predict-banner-illustration.png')}}" alt="Predict Illustration">
@@ -226,63 +242,12 @@
                             @endforeach
                             <div class="text-center submit-token-content">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="Bitcoin">
-                                {{-- <div class="submit-time"> --}}
-                                    <label class="primary text-center">Tontine</label>
-                                    <select class="form-control text-center">
-                                        <option value="">Selectionner Tontine</option>
-                                        @foreach($tontin as $tontines)
-                                            <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                                        @endforeach
-                                    </select>
-                                {{-- </div> --}}
-                                <div class="submit-time">
-                                    <p class="primary text-center">Montant a deposer</p>
-
-                                    <h6  class="text-center">436429297 XAF</h6>
-                                </div>
-                                {{-- <p class="tertiary text-center">Ticket de la Transaction : <span class="tertiary">3.99</span> XAF</p> --}}
-                                <p class="secondary text-center">Merci de bien vouloir choisir votre operateur/banque</p>
-                            </div>
-                            <div class="copy-wrapper">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-lg-4">
-                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
-                                            <div class="social-wrapper">
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/american-express.png')}}" alt="Facebook">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/mastercard.png')}}" alt="Twitter">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
-                                            <div class="social-wrapper">
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/diners.png')}}" alt="Facebook">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/jcb.png')}}" alt="Twitter">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="footer-social-wrapper d-flex align-items-center justify-content-lg-end">
-                                            <div class="social-wrapper">
-
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/Momo.png')}}" alt="Instagram">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="{{ asset('assets/images/cards/visa.png')}}" alt="Linkedin">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <form class="form-control" action="#">
+                                    <label class="form-control" for="Objet">Objet de la demande</label>
+                                    <input class="form-control" type="text" name="objet" placeholder="Objet de la demande" id="">
+                                    <label class="form-control" for="Montant">Montant du Pret</label>
+                                    <input class="form-control" type="number" name="montant" placeholder="Exemple 5.000.000 XAF" id="">
+                                </form>
                             </div>
                             {{-- <a href="javascript:void(0)" class="primary-btn primary-effect"><img src="{{ asset('assets/images/Momo.png') }}" alt=""></a> --}}
                         </div>

@@ -158,15 +158,15 @@
     --fiver-font: 18px;
     --accent-font: 18px;
     --theme-color: #235530;
-    --primary-color: #0e0d0d;
+    --primary-color: #fffcfc;
     --secondary-color: #54cc60;
     --tertiary-color: #e7ad27;
     --fourier-color: #00f0ff;
     --alternate-color: #0f0f0f;
-    --title-color: #181717;
+    --title-color: #ffffff;
     --title-primary-color: #54cc60;
     --title-secondary-color: #e7ad27;
-    --title-alternate-color: #070707;
+    --title-alternate-color: #ffffff;
     --btn-color: #ffffff;
     --btn-primary-color: #121213;
     --focus-color: #235530;
@@ -1468,6 +1468,7 @@ blog post search form style end
 
 .nav-bg-active {
   background-color: #3c5c10;
+  /* height: 150px; */
 }
 
 .navbar-brand {
@@ -1476,8 +1477,8 @@ blog post search form style end
 }
 
 .logo {
-  width: 150px;
-  height: 50px;
+  width: 130px;
+  height: 98px;
 }
 
 .out-link {
@@ -1620,8 +1621,8 @@ blog post search form style end
     color: var(--btn-color);
   }
   .logo {
-    width: 130px;
-    height: 45px;
+    width: 140px;
+    height: 98px;
   }
   .out-link .primary-btn {
     padding: 9px 30px 10px;
@@ -1655,8 +1656,8 @@ blog post search form style end
     margin-bottom: 70px;
   }
   .logo {
-    width: 130px;
-    height: 40px;
+    width: 110px;
+    height: 85px;
   }
 }
 
@@ -2026,7 +2027,7 @@ blog post search form style end
 */
 .home-banner-container {
   background-color: var(--alternate-bg);
-  padding-top: 360px;
+  padding-top: 240px;
   padding-bottom: 295px;
   background-position: top center;
   background-size: cover;
@@ -2067,7 +2068,7 @@ blog post search form style end
 
 @media only screen and (max-width: 991px) {
   .home-banner-container {
-    padding-top: 150px;
+    padding-top: 120px;
     padding-bottom: 219px;
   }
   .home-banner-left-col::before {
@@ -2584,7 +2585,7 @@ blog post search form style end
 .main-home-banner .home-banner-thumb img {
   -webkit-transform: translateX(50px);
   transform: translateX(50px);
-  width: 1300px;*
+  width: 1150px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -6375,11 +6376,11 @@ blog post style end
   border-radius: var(--primary-radius);
 }
 
-#submit-token, #submit-token-2, #submit-token-3,, #depot-token, #retrait-token, .submit-token-details {
+#submit-token, #submit-token-2, #submit-token-3, #depot-token, #retrait-token, .submit-token-details {
   text-align: center;
 }
 
-#submit-token, #submit-token-2, #submit-token-3,, #depot-token, #retrait-token, .submit-token-details h5 {
+#submit-token, #submit-token-2, #submit-token-3, #depot-token, #retrait-token, .submit-token-details h5 {
   background-color: var(--accent-primary-bg);
   padding: 20px;
   border-radius: var(--primary-radius);
@@ -6389,6 +6390,16 @@ blog post style end
   width: 80px;
   height: 80px;
 }
+
+#submit-token-2 .submit-token-details img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #submit-token-3 .submit-token-details img {
+    width: 80px;
+    height: 80px;
+  }
 
 #submit-token .mfp-close {
   top: 32px;
@@ -6401,9 +6412,9 @@ blog post style end
   padding: 30px 12px;
 }
 
-#submit-token .submit-token-content .submit-time {
+#submit-token, #submit-token-2 .submit-token-content .submit-time {
   padding: 20px 12px;
-  background-color: var(--accent-tertiary-bg);
+  /* background-color: var(--accent-tertiary-bg); */
   margin-top: 30px;
   border-radius: var(--primary-radius);
 }
@@ -9733,7 +9744,7 @@ blog post style end
 
 .footer-container {
   background-color: var(--primary-bg);
-  padding-top: 212px;
+  padding-top: 200px;
 }
 
 .footer-links .nav-link {
@@ -9785,13 +9796,13 @@ blog post style end
 
 @media only screen and (max-width: 1199px) {
   .footer-container {
-    padding-top: 220px;
+    padding-top: 210px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .footer-container {
-    padding-top: 204px;
+    padding-top: 198px;
   }
   .footer-links {
     margin-top: 20px;
@@ -9816,7 +9827,7 @@ blog post style end
 
 @media only screen and (max-width: 767px) {
   .footer-container {
-    padding-top: 179px;
+    padding-top: 170px;
   }
 }
 /*# sourceMappingURL=main.css.map */
