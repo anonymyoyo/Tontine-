@@ -1,32 +1,53 @@
-
-    <!-- services section start -->
-    {{-- <section class="services-area pt-120">
-        <div class="container">
-            <div class="services-wrapper">
-                <div class="title-wrapper">
-                    <h2 class="text-center">Nos services:</h2>
-                    <p class="text-center">TCA est pour tout le monde. Une plateforme digitale concu pour battir un meilleur avenir</p>
-                </div>
-                <div class="row">
-                    @foreach ($tontine as $tontines)
-                        <div class="col-md-6 col-lg-6">
-                            <div class="services-single-item text-center">
-                                <img src="{{ Storage::url($tontines->image) }}" alt="Trade Now">
-                                <h3 class="text-center">
-                                    {{ $tontines->name }}
-                                </h3>
-                                <p class="text-center">{{ $tontines->description }}</p>
-                                <a href="{{  route('user.tontines') }}" class="secondary-btn secondary-effect">Voir</a>
-                            </div>
+<!-- wallet section start -->
+<section class="wallet-container pb-120">
+    <div class="container">
+        <div class="wallet-wrapper">
+            <div class="row">
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="wallet-left">
+                        <div class="wallet-thumb">
+                            <img src="assets/images/custom/wallet-illustration.png" alt="Wallet Illustration">
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-
+                <div class="col-lg-5">
+                    <div class="wallet-right">
+                        <h2>Plus qu'un portefeuille</h2>
+                        <p class="immidiate">TCA permet de gerer les ressources d'une associaction.
+                            Il suffira pour cela d'installer notre application, prendre un pack et de le parametrer.
+                        </p>
+                        <div class="wallet-single-item d-flex align-items-center justify-content-start">
+                            <div class="wallet-icon-box d-flex align-items-center justify-content-center">
+                                <img src="assets/icons/custom/recieve.png" alt="Send & Recieve">
+                            </div>
+                            <h5>DEPOTS & RETRAITS</h5>
+                        </div>
+                        <div class="wallet-single-item d-flex align-items-center justify-content-start">
+                            <div class="wallet-icon-box d-flex align-items-center justify-content-center">
+                                <img src="assets/icons/custom/chart.png" alt="Trading Charts">
+                            </div>
+                            <h5>TRADING CHARTS</h5>
+                        </div>
+                        <div class="wallet-single-item d-flex align-items-center justify-content-start">
+                            <div class="wallet-icon-box d-flex align-items-center justify-content-center">
+                                <img src="assets/icons/custom/trade.png" alt="Real Time Trading">
+                            </div>
+                            <h5>SUIVIS DE COMPTE EN TEMPS REEL</h5>
+                        </div>
+                        <div class="wallet-single-item d-flex align-items-center justify-content-start">
+                            <div class="wallet-icon-box d-flex align-items-center justify-content-center">
+                                <img src="assets/icons/custom/wallet.png" alt="Secure Wallet">
+                            </div>
+                            <h5>100% SECURISE</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section> --}}
-    <!-- services section end -->
+    </div>
+</section>
+<!-- wallet section end -->
 
     <!-- about crikto section start -->
-    @include('users.apropos')
+    {{-- @include('users.apropos') --}}
     <!-- about crikto section end -->

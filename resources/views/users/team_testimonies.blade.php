@@ -5,7 +5,7 @@
         <div class="testimonial-wrapper">
             <div class="slider-title-wrapper d-flex flex-column flex-sm-row align-items-center justify-content-between">
                 <div class="title-content-left">
-                    <h2 class="text-center text-sm-start">Avis de nos membres</h2>
+                    <h2 class="text-center text-sm-start">Avis de nos membres et de nos clients</h2>
                     <p>Ne prenez pas nos mots pour parole d'evangile, considerez les leurs</p>
                 </div>
                 <div class="title-content-right">
@@ -113,3 +113,6 @@
     </div>
 </section>
 <!-- testimonial section end -->
+
+
+
