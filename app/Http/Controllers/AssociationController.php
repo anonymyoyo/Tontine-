@@ -7,12 +7,14 @@ use App\Http\Resources\AssociationResource;
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\ChefAgence;
-use App\Models\User;
 use App\Models\Commercial;
 use App\Models\Gerant;
 use App\Models\Membre;
 use App\Models\Role;
+use App\Models\Solde;
 use App\Models\Tontine;
+use App\Models\Transaction;
+use App\Models\User;
 use App\Models\Zone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -315,10 +317,37 @@ class AssociationController extends Controller
     }
 
     public function association_agences_transaction(){
+
         $roles=Role::all();
-        $association=Association::all();
         $tontine=Tontine::all();
-        return view('association.transaction.transaction', compact('tontine', 'roles', 'association'));
+        $user=User::find(auth()->user()->id);
+        $soldes=Solde::all();
+        $total=Transaction::sum('montant');
+        $membres=User::where('role_id', 4)->where('association_id', $user->association_id)->get();
+        $commercial=User::where('role_id', 3)->where('association_id', $user->association_id)->where('mem_agence_id', $user->com_agence_id)->first();
+        $transactions=Transaction::all();
+        $versement=Transaction::where('type', 'depot')->get();
+        $totalcompte=$membres->count();
+        $totalversement=$versement->sum('montant');
+        $utilisateur=User::where('role_id', 4)->whereBetween('created_at', [now()->subDays(1), now()])->get();
+        $d=$utilisateur->count();
+
+        $totalcompte=$membres->count();
+        $memb=User::where('id', $soldes[0]->user_id)->get();
+
+        $solde=Solde::where('user_id', $memb[0]->id)->get();
+
+
+
+        // $membres=User::all();
+        $t=Tontine::all();
+        // return $memb;
+
+
+        $association=Association::all();
+
+        // return $membres;
+        return view('association.transaction.transaction', compact('tontine', 'roles', 'association', 'transactions', 't', 'commercial', 'd', 'totalversement', 'total', 'totalcompte'));
     }
 
     public function association_agences_versement(){
@@ -340,10 +369,11 @@ class AssociationController extends Controller
             // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
             $t=Tontine::all();
             $roles=Role::all();
+            $sold=Solde::where('user_id', $membre[0]->id)->get();
 
         // return $t;
         // return $membre;
-        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association'));
+        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association', 'sold'));
         }
         else{
             $roles=Role::all();
@@ -373,9 +403,9 @@ class AssociationController extends Controller
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $membre=User::where('role_id', 4);
+        // $membre=User::where('role_id', 4);
 
-        User::create([
+        $membres=User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -387,6 +417,14 @@ class AssociationController extends Controller
             'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);
+
+        if ($membres) {
+            # code...
+            Solde::create([
+            'user_id'=>$membres->id,
+            'solde'=>0,
+        ]);
+    }
 
         // return $t[1];
 
@@ -401,3 +439,4 @@ class AssociationController extends Controller
     }
 
 }
+

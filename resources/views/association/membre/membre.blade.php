@@ -85,7 +85,7 @@
                             <th>Telephone</th>
                             <th>Email</th>
                             <th>Tontine</th>
-                            <th>Derniere Connexion</th>
+                            <th>Solde</th>
                           </tr>
                         </thead>
                         @foreach ($membre as $membres)
@@ -104,8 +104,9 @@
                                         <td>{{ $ts->name }}</td>
                                     @endif
                                     @endforeach
-
-                                    <td>10/10/2022 4:30pm</td>
+                                    @foreach ($sold as $solde)
+                                    <td>{{ $solde->solde }} XAF</td>
+                                    @endforeach
                                 </tr>
                             </tbody>
                         @endforeach

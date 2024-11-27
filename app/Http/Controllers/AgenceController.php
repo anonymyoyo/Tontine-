@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\Role;
+use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\User;
 use App\Models\Zone;
@@ -187,9 +188,10 @@ class AgenceController extends Controller
             // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
             $t=Tontine::all();
             $roles=Role::all();
+            $sold=Solde::where('user_id', $membre[0]->id)->get();
 
         // return $membre;
-        return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't'));
+        return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't', 'sold'));
         }
         else{
             $roles=Role::all();
@@ -221,9 +223,9 @@ class AgenceController extends Controller
         $roles=Role::all();
         $image=$request->file('image');
         $path=$image->store('images','public');
-        $membre=User::where('role_id', 4);
+        // $membre=User::where('role_id', 4);
 
-        User::create([
+        $membres=User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -236,6 +238,14 @@ class AgenceController extends Controller
             'role_id'=>4,
             'password'=>Hash::make($request->password),
         ]);
+
+        if ($membres) {
+            # code...
+            Solde::create([
+            'user_id'=>$membres->id,
+            'solde'=>0,
+        ]);
+    }
 
         // return $t[1];
 

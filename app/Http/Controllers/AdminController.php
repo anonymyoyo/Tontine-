@@ -514,7 +514,6 @@ class AdminController extends Controller
         $association=Association::where('id', $membres[0]->association_id)->get();
         $roles=Role::all();
         $soldes=Solde::all();
-        $sold=Solde::where('user_id', $membres[0]->id)->get();
 
         // return $association;
         // return $sold;
