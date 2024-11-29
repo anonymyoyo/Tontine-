@@ -3,12 +3,161 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .h2 {
-    margin-left: 30%;
+    /* margin-left: 30%; */
+    text-align: center;
     font-size: 45px;
+}
+
+.h3 {
+    margin-left: 20%;
+    font-size: 25px;
+    font-weight: 600px;
+    width: 80%;
+    text-align: left;
+}
+
+/* header section start */
+
+.login-header {
+    display: flex;
+    align-items: center;
+}
+
+.login-r {
+    width: 30%;
+}
+
+.login-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: small;
+    align-items: right;
+    height: 30px;
+    width: 60%;
+
+}
+
+.login-navbar ul {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.login-navbar .nav {
+    /* margin: 50%; */
+    margin-right: 50%;
+    margin-top: 0;
+    width: 50%;
+    height: 45px;
+    background-color: #3b5816;
+    border-radius: 25px;
+}
+
+
+
+/* end section  */
+
+/* header section start */
+
+.header {
+    display: flex;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.r {
+    width: 50%;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: small;
+    align-items: right;
+    height: 30px;
+    width: 60%;
+
+}
+
+.navbar ul {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+.navbar ul li a:hover {
+    color: aliceblue;
+    transition: .7s;
+}
+
+.navbar .nav {
+    /* margin: 50%; */
+    margin-right: 50px;
+    margin-top: 0;
+    width: auto;
+    height: 45px;
+    background-color: #030501;
+    border-radius: 25px;
+}
+
+li {
+    color: #0c1303;
+    font-size: 17px;
+    padding-bottom: 50px;
+    margin-left: 45px;
+    /* justify-content: space-between; */
+}
+
+li a {
+    text-decoration: none;
+    color: #90cf35;
+}
+
+li:hover {
+    color: #90cf35;
+    cursor: pointer;
+    transition: .5s;
+}
+
+li a:hover {
+    color: #0c1303;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 12%px;
+    height: 95px;
+}
+
+.logo-1 {
+    width: 150px;
+    height: 80px;
+}
+
+/* Header section end */
+
+/* Login Container Section */
+
+.login-bg {
+    background-color: #c6c7c542;
 }
 
 .container {
@@ -18,35 +167,49 @@ body {
     align-items: center;
     padding: 20px;
     margin: 40px auto;
-    width: 80%;
+    width: 90%;
+    border-radius: 25px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.formulaire {
-    width: 50%;
+.login-form {
+    /* opacity: 0.5; */
+    backdrop-filter: blur(5px);
+    background: rgba(184, 185, 185, 0.096);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
 
+.formulaire {
+    width: 35%;
+    /* backdrop-filter: blur(7px);
+    background: aliceblue;
+    color: #000; */
     border-radius: 15px;
     padding: 20px;
-    background-color: aliceblue;
+    opacity: .7;
+    background-color: rgba(130, 131, 133, 0.541);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .formulaire .li {
-    margin-left: 70px;
+    margin-left: 5%;
+    text-align: left;
+    margin-top: 20px;
 }
 
 .formulaire .li .li-1 {
     font-size: 18px;
-    width: 35px;
+    width: 80%;
 }
 
 .formulaire .li .li-2 {
     border: none;
     margin: auto;
-    width: 50%;
+    width: 75%;
     font-size: 16px;
-    margin-left: 70px;
+    margin-left: 10px;
     border-radius: 15px;
     padding: 10px;
     background-color: aliceblue;
@@ -56,19 +219,22 @@ body {
 
 .formulaire .li-3 {
     border: none;
-    width: 15%;
-    font-size: 13px;
+    width: 40%;
+    font-size: 20px;
     border-radius: 15px;
-    margin-left: 70%;
+    margin-left: 20%;
     padding: 8px;
-    background-color: aliceblue;
+    color: #263a0b;
+    background-color: #90cf35;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .formulaire .li-3:hover {
     border: none;
-    color: rgba(66, 3, 3, 0.644);
-    background-color: rgba(151, 22, 22, 0.644);
+    color: #8fe21b;
+    background-color: #567c21;
+    transition: .5s;
 }
 
 .image2 {
@@ -87,8 +253,35 @@ body {
         flex-direction: column;
     }
 
+    .header {
+        flex-direction: column;
+        /* width: 100%; */
+        /* margin-right: 20%; */
+        display: flex;
+    }
+
+    .header .logo {
+        width: 100px;
+    }
+
+    .header .navbar {
+        width: 50%;
+    }
+
     .formulaire {
         width: 100%;
+    }
+
+    .formulaire .li-3 {
+        border: none;
+        width: 15%;
+        font-size: 13px;
+        border-radius: 15px;
+        margin-left: 50%;
+        padding: 8px;
+        color: #263a0b;
+        background-color: #90cf35;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .h2 {
@@ -104,6 +297,21 @@ body {
 @media(max-width: 480px) {
     .container {
         padding: 10px;
+        /* flex-direction: column; */
+    }
+
+    .header {
+        /* padding: 10px; */
+        /* flex-direction: column; */
+        display: flex;
+    }
+
+    .header .logo {
+        width: 10%;
+    }
+
+    .header .navbar {
+        width: 50%;
     }
 
     .formulaire {
@@ -114,3 +322,54 @@ body {
         padding: 10px;
     }
 }
+
+/* end login section  */
+
+/* Contact container section */
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 150px auto;
+    width: 75%;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    /* opacity: 0.5; */
+    backdrop-filter: blur(5px);
+    background: rgba(184, 185, 185, 0.096);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.contact-container .formulaire {
+    width: 40%;
+    backdrop-filter: blur(7px);
+    background: aliceblue;
+    color: #000;
+    border-radius: 15px;
+    padding: 20px;
+    opacity: .7;
+    background-color: rgba(142, 143, 143, 0.397);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image2 {
+    width: 50%;
+    /* padding: 20px; */
+}
+
+.image2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*  end section */

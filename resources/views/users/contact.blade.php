@@ -13,7 +13,7 @@
 
 
     <!-- contact banner section start -->
-    <section class="container-fluid banner-container bg-img">
+    {{-- <section class="container-fluid banner-container bg-img">
         <div class="container">
             <div class="banner-wrapper">
                 <h1>Contact</h1>
@@ -29,11 +29,52 @@
                 <img src="assets/images/custom/banner/contact-banner-illustration.png" alt="Contact Illustration">
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- contact banner section end -->
 
     <!-- contact form section start -->
-    <section class="contact-form-container pt-120 pb-120">
+
+    <div class="contact-container contact-form">
+        <div class="formulaire">
+          <h2 class="h2">Formulaire</h2>
+          <form action="">
+            <div class="li">
+              <label class="li-1" for="nom">Nom & Prenom :</label>
+              <input class="li-2" type="text" id="nom"
+                placeholder="Veuiller entrer votre nom et votre prenom"><br><br>
+            </div>
+            <div class="li">
+              <label class="li-1" for="objet">Objet :</label>
+            </div>
+            <div class="li">
+              <input class="li-2" type="text" placeholder="Pourquoi nous contactez-vous ?" id="objet"><br><br>
+            </div>
+            <div class="li">
+              <label class="li-1" for="numero">Tel:</label>
+            </div>
+            <div class="li">
+              <input class="li-2" type="text" name="phone" id="phone"
+                placeholder="Veuiller entrer votre numero de telephone"><br><br>
+            </div>
+            <div class="li">
+                <label class="li-1" for="numero">Commentaire:</label>
+            </div>
+            <div class="li">
+              <textarea class="li-2" name="" id="" cols="30" rows="10"></textarea>
+              <br><br
+            </div>
+            <div class="li">
+              <input class="li-3" type="submit" value="Soumettre">
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+      <div class="image2">
+        <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
+      </div>
+    {{-- <section class="contact-form-container pt-120 pb-120">
         <div class="container">
             <div class="contact-form-wrapper">
                 <div class="row">
@@ -134,12 +175,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- contact form section end -->
 
 
     <!-- subscribe newsletter section start -->
-    @include('users.newsletter_footer')
+    {{-- @include('users.newsletter_footer') --}}
     <!-- footer end -->
 
     <!-- jquery v(3.6.0) minified source -->

@@ -2,7 +2,7 @@
 
 
                     @if (auth()->user())
-                        <header>
+                        {{-- <header>
                             <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
                                 <div class="container">
                                     <a class="navbar-brand" href="{{ route('home') }}">
@@ -50,9 +50,34 @@
                                     </div>
                                 </div>
                             </nav>
-                        </header>
+                        </header> --}}
+
+                        <div class="header">
+                            <div class="logo">
+                              <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" class="logo-1" alt="logo"></a>
+                            </div>
+                            <div class="r"></div>
+                            <div class="navbar">
+                              <nav class="nav">
+                                <ul>
+                                    <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
+                                    <li class="li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+                                    <li class="li"><a href="{{ route('user') }}">COMPTE {{ auth()->user()->name }}</a></li>
+                                    <li class="li">
+                                        <form action="{{ route('logout') }}" method="POST" id="logout">
+                                            @csrf
+                                        </form>
+                                        <a class="li-3" onclick="event.preventDefault();
+                                        document.getElementById('logout').submit();" >
+                                        Deconnexion
+                                        </a>
+                                    </li>
+                                </ul>
+                              </nav>
+                            </div>
+                        </div>
                     @else
-                        <header>
+                        {{-- <header>
                             <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
                                 <div class="container">
                                     <a class="navbar-brand" href="{{ route('home') }}">
@@ -70,22 +95,7 @@
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
                                                 <a class="nav-link link-active secondary-effect" href="{{ route('home') }}">Acceuil</a>
-                                            {{-- </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link secondary-effect" href="{{ route('about') }}">A propos</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle secondary-effect" href="#"
-                                                    data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <a class="dropdown-item secondary-effect" href="{{ route('user.tontines') }}">Tontines</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item mb-0 secondary-effect" href="{{ route('blog') }}">Blog</a>
-                                                        </li>
-                                                    </ul>
-                                            </li> --}}
+
                                             <li class="nav-item">
                                                 <a class="nav-link secondary-effect" href="{{ route('contact') }}">Contact</a>
                                             </li>
@@ -98,21 +108,30 @@
                                         <li>
                                             <a class="dropdown-item secondary-effect mt-0" href="{{ route('login') }}">Connexion</a>
                                         </li>
-                                        {{-- <li>
-                                            <a href="{{ route('register') }}" class="dropdown-item secondary-effect" >
-                                            Inscription
-                                            </a>
-                                        </li> --}}
+
                                     </ul>
                             </li>
 
-                    {{-- <li class="nav-item d-block d-sm-none">
-                        <a href="#"
-                            class="nav-link">Nous rejoindre</a>
-                    </li> --}}
+
                                         </ul>
                                     </div>
                                 </div>
                             </nav>
-                        </header>
+                        </header> --}}
+
+                        <div class="header">
+                            <div class="logo">
+                              <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" class="logo-1" alt="logo"></a>
+                            </div>
+                            <div class="r"></div>
+                            <div class="navbar">
+                              <nav class="nav">
+                                <ul>
+                                  <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
+                                  <li class="li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+                                  <li class="li"><a href="{{ route('login') }}">CONNEXION</a></li>
+                                </ul>
+                              </nav>
+                            </div>
+                        </div>
                         @endif

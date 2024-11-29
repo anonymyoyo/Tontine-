@@ -19,22 +19,25 @@
     <!-- author of this document -->
     <meta name="author" content="Softivus">
     <!-- bootstrap v(5) minified css source -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.min.css')}}"> --}}
     <!-- font awesome v(5) minified css source -->
-    <link rel="stylesheet" href="{{asset('assets/icons/font-awesome-five/css/all.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/icons/font-awesome-five/css/all.min.css')}}"> --}}
     <!-- flaticon css source -->
-    <link rel="stylesheet" href="{{asset('assets/icons/flaticon/flaticon.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/icons/flaticon/flaticon.css')}}"> --}}
     <!-- nice select v(1.0) css source -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/nice-select.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/nice-select.css')}}"> --}}
     <!-- magnific popup v(1.1.0) css source -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/magnific-popup.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/magnific-popup.css')}}"> --}}
     <!-- owl carousel v(2.3.4) minified css source -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/owl.carousel.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/owl.carousel.min.css')}}"> --}}
     <!-- owl carousel theme default v(2.3.4) minified css source -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendors/owl.theme.default.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/owl.theme.default.min.css')}}"> --}}
 
 
     <!-- custom css source -->
+
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
 </head>

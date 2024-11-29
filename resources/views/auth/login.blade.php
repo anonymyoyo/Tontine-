@@ -28,82 +28,40 @@
     {{-- <link rel="stylesheet" href="" /> --}}
 </head>
 
-  <body>
-    <!-- Container start -->
-    {{-- <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-4 col-lg-5 col-sm-6 col-12">
-          <form method="POST" action="{{ route('login') }}" class="my-5">
-                @csrf
-            <div class="login-form rounded-4 p-4 mt-5">
-              <a href="{{ route('home') }}" class="mb-4 d-flex">
-                <img src="{{ asset('assets/images/logo.png') }}" class=" login-logo" alt="Unity Admin Dashboard" />
-              </a>
-              <div class="mb-3">
-                <label class="form-label" for="yEmail">Votre Addresse mail</label>
-                <input type="text" id="yEmail" name="email" class="form-control border-0" placeholder="Enter your email" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label" for="pwd">Mot de Passe</label>
-                <input type="password" id="pwd" name="password" class="form-control border-0" placeholder="Enter password" />
-              </div>
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="form-check m-0">
-                  <input class="form-check-input border-0" type="checkbox" value="" id="rememberPassword" />
-                  <label class="form-check-label" for="rememberPassword">Se souvenir</label>
-                </div>
-                <a href="{{ route('password.request') }}" class="text-white text-decoration-underline">Mot de passe oublie?</a>
-              </div>
-              <div class="d-grid py-3 mt-3">
-                <button type="submit" class="btn btn-lg btn-primary">
-                  Login
-                </button>
-              </div>
-              <div class="text-center py-3">Se connecter avec</div>
-              <div class="d-flex gap-2 justify-content-center">
-                <button type="submit" class="btn btn-outline-light">
-                  <i class="bi bi-google me-2"></i>Gmail
-                </button>
-                <button type="submit" class="btn btn-outline-light">
-                  <i class="bi bi-facebook me-2"></i>Facebook
-                </button>
-              </div>
-            </div>
-          </form>
+  <body class="login-bg">
+
+    <div class="login-header">
+        <div class="logo">
+          <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-1"></a>
+        </div>
+        <div class="login-r"></div>
+        <div class="login-navbar burger">
+          <nav>
+            <ul>
+              <li>Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </div> --}}
-    <!-- Container end -->
 
-    <div class="container">
+    <div class="container login-form">
         <div class="formulaire">
-          <h2 class="h2">Formulaire</h2>
-          <form action="">
+          <h2 class="h2">Connexion</h2>
+          <form method="POST" action="{{ route('login') }}">
+          @csrf
             <div class="li">
               <label class="li-1" for="numero">Numero:</label>
-              <input class="li-2" type="text" name="phone" id="phone"
+            </div>
+            <div class="li">
+              <input class="li-2" required type="mail" name="email" id="phone"
                 placeholder="Veuiller entrer votre numero de telephone"><br><br>
             </div>
             <div class="li">
               <label class="li-1" for="mdp">Mot de Passe:</label>
-              <input class="li-2" type="password" name="password" id="password"><br><br>
             </div>
             <div class="li">
-              <label class="li-1" for="numero">Numero:</label>
-              <input class="li-2" type="text" name="phone" id="phone"
-                placeholder="Veuiller entrer votre numero de telephone"><br><br>
+              <input class="li-2" required type="password" name="password" id="password"><br><br>
             </div>
-            <div class="li">
-              <label class="li-1" for="numero">Numero:</label>
-              <input class="li-2" type="text" name="phone" id="phone"
-                placeholder="Veuiller entrer votre numero de telephone"><br><br>
-            </div>
-            <div class="li">
-              <label class="li-1" for="numero">Numero:</label>
-              <input class="li-2" type="text" name="phone" id="phone"
-                placeholder="Veuiller entrer votre numero de telephone"><br><br>
-            </div>
-
             <div class="li">
               <input class="li-3" type="submit" value="Connexion">
             </div>
@@ -111,7 +69,8 @@
           </form>
         </div>
         <div class="image2">
-          <img src="{{ asset('assets/css/img/wallet.svg') }}" alt="image">
+            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
+          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
         </div>
       </div>
   </body>
