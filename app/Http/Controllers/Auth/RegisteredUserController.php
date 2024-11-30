@@ -31,18 +31,18 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            // 'phone' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'phone' => ['required', 'string', 'max:255'],
             // 'ville' => ['required', 'string', 'max:255'],
             // 'pays' => ['required', 'string', 'max:255'],
             // 'identification' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $image=$request->file('image');
-        $path1=$image->store('images','public');
-        $identification=$request->file('identification');
-        $path2=$identification->store('identification','public');
+        $image = $request->file('image');
+        $path1 = $image->store('images', 'public');
+        $identification = $request->file('identification');
+        $path2 = $identification->store('identification', 'public');
 
         $user = User::create([
             'name' => $request->name,
@@ -50,9 +50,8 @@ class RegisteredUserController extends Controller
             'phone' => $request->phone,
             'ville' => $request->ville,
             'pays' => $request->pays,
-            'role_id' =>'4',
+            'role_id' => '4',
             'image' => $path1,
-            'identification'=>$path2,
             // 'identification'=>$identification,
             'password' => Hash::make($request->password),
         ]);

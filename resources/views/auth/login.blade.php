@@ -50,7 +50,7 @@
           <form method="POST" action="{{ route('login') }}">
           @csrf
             <div class="li">
-              <label class="li-1" for="numero">Numero:</label>
+              <label class="li-1" for="numero">Addresse Mail:</label>
             </div>
             <div class="li">
               <input class="li-2" required type="mail" name="email" id="phone"

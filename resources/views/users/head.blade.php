@@ -36,7 +36,7 @@
 
     <!-- custom css source -->
 
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"> --}}
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
