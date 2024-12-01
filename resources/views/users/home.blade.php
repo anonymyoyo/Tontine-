@@ -14,9 +14,9 @@
     @include('users.section')
     <!-- hero section end -->
 
-    @include('users.service_about')
+    {{-- @include('users.service_about') --}}
 
-    @include('users.team_testimonies')
+    {{-- @include('users.team_testimonies') --}}
     <!-- subscribe newsletter section start -->
     @include('users.newsletter_footer')
     <!-- footer end -->

@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     .slider {
       position: relative;
       width: 1500px;
@@ -50,83 +50,70 @@
       left: 50%;
       transform: translateX(-50%);
     } */
-</style>
+</style> --}}
 
-<section class="home-banner-container main-home-banner bg-img">
-
-    <div class="slider">
-        <div class="slide">
-            <img src="{{ asset('assets/images/custom/banner/home-illustration.png') }}"
-                alt="Illustration" class="image">
-          <div class="description">
-            <div class="home-banner-left-col">
-                <h1>NJOOOH !!!</h1>
-                {{-- <img src="{{ asset('assets/images/custom/banner/home-illustration.png') }}"
-                alt="Illustration" class="image"> --}}
-                {{-- <p class="tertiary">Trade, Predict , Invest, and Lend & Borrow  digital currencies. A leading digital asset company building a better future</p> --}}
-                <a href="{{ ('login') }}" class="primary fourier-btn primary-effect">Telecharger maintenant</a>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-
-          <div class="description">
-            <div class="home-banner-left-col">
-                <h1>Tontine Communautaire d'Afrique Pour tous</h1>
-                <p class="tertiary">Trade, Predict , Invest, and Lend & Borrow  digital currencies. A leading digital asset company building a better future</p>
-                <a href="{{ ('login') }}" class="primary fourier-btn primary-effect">Commencer maintenant</a>
-            </div>
-          </div>
-            <img src="{{ asset('assets/images/custom/banner/picture2.png') }}"
-                        alt="Illustration" class="image">
-        </div>
-        <div class="slide">
-
-          <div class="description">
-            <div class="home-banner-left-col">
-                <h1>Tontine Communautaire d'Afrique Pour tous</h1>
-                <p class="tertiary">Trade, Predict , Invest, and Lend & Borrow  digital currencies. A leading digital asset company building a better future</p>
-                <a href="{{ ('login') }}" class="primary fourier-btn primary-effect">Commencer maintenant</a>
-            </div>
-          </div>
-            <img src="{{ asset('assets/images/custom/banner/picture3.png') }}"
-                        alt="Illustration" class="image">
+<div class="slider">
+    <div class="slide">
+        <img src="{{ asset('assets/images/picture1.png') }}" alt="Image 3" class="image">
+        <div class="description">
+          <p>Notre Application est totalement gratuite !!!
+          </p>
+          <a href="{{ route('login') }}">Commencer</a>
         </div>
       </div>
+    <div class="slide">
+      <img src="{{ asset('assets/images/picture2.png') }}" alt="Image 1" class="image">
+      <div class="description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Distinctio soluta quaerat, aspernatur consequuntur, maxime eius numquam
+        </p>
+        <a href="{{ route('login') }}">Commencer</a>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="{{ asset('assets/images/picture3.png') }}" alt="Image 2" class="image">
+      <div class="description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Distinctio soluta quaerat, aspernatur consequuntur, maxime eius numquam
+        </p>
+        <a href="{{ route('login') }}">Commencer</a>
+      </div>
+    </div>
 
-    {{-- <div class="slider">
-        <div class="container">
-            <div class="home-banner-wrapper">
-                <div class="slides">
-                    <div class="row">
-                        <div class="slide active">
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="home-banner-left-col">
-                                    <h1>Tontine Communautaire d'Afrique Pour tous</h1>
-                                    <p class="tertiary">Trade, Predict , Invest, and Lend & Borrow  digital currencies. A leading digital asset company building a better future</p>
-                                    <a href="{{ ('login') }}" class="primary fourier-btn primary-effect">Commencer maintenant</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-xl-7 d-none d-lg-block">
-                                <div class="home-banner-right-col">
-                                    <div class="home-banner-thumb">
-                                        <img src="{{ asset('assets/images/custom/banner/home-illustration.png') }}"
-                                            alt="Illustration">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav">
-                    <button class="prev">Precedent</button>
-                    <button class="next">Suivant</button>
-                  </div>
+</div>
+
+<div class="section">
+    <h1>NOS SERVICES</h1>
+    <div class="sup_section">
+        <div class="sup-one">
+            <img src="{{ asset('assets/css/img/fone.png') }}" alt="">
+            <div class="sup_one">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" alt="">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" alt="">
             </div>
         </div>
-    </div> --}}
-</section>
-
+        <div class="sup-two">
+            <img src="{{ asset('assets/css/img/VF-features.png') }}" alt="">
+        </div>
+    </div>
+    <div class="sub_section">
+        <div class="sub_one">
+            <img src="{{ asset('assets/css/img/1-150x150.png') }}" alt="">
+            <h4>Cartes de paiement</h4>
+            <p>Effectuer vos paiements via vos cartes visa ou mastercard</p>
+        </div>
+        <div class="sub_two">
+            <img src="{{ asset('assets/css/img/2-150x150.png') }}" alt="">
+            <h4>Marketplace</h4>
+            <p>Achetez et payez des produits et articles electro-menagers sur notre marketplace.</p>
+        </div>
+        <div class="sub_tree">
+            <img src="{{ asset('assets/css/img/3-143x150.png') }}" alt="">
+            <h4>Micro-crédit</h4>
+            <p>Utilisez TCA et faites la demande d'un microcrédit.</p>
+        </div>
+    </div>
+</div>
 
 
 
@@ -134,7 +121,7 @@
     const slides = document.querySelectorAll('.slide');
 
     let currentSlide = 0;
-    const interval = 3000;
+    const interval = 3500;
 
     function updateSlides() {
       slides.forEach((slide, index) => {
