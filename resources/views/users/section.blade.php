@@ -1,4 +1,4 @@
-{{-- <style>
+ {{-- <style>
     .slider {
       position: relative;
       width: 1500px;
@@ -86,7 +86,7 @@
     <h1>NOS SERVICES</h1>
     <div class="sup_section">
         <div class="sup-one">
-            <img src="{{ asset('assets/css/img/fone.png') }}" alt="">
+            <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
             <div class="sup_one">
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" alt="">
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" alt="">

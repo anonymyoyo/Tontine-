@@ -147,35 +147,20 @@
                       </thead>
                       @foreach ($transactions as $transaction)
                           <tbody>
-                          <tr class="grd-primary-light">
-                              <td>#{{ $transaction->id }}</td>
-                              <td>{{ $transaction->type }}</td>
-                              <td>-</td>
-                              {{-- @foreach ($memb as $membr)
-                              @foreach ($soldes as $solde)
+                            <tr class="grd-primary-light">
+                                <td>#{{ $transaction->id }}</td>
+                                <td>{{ $transaction->type }}</td>
+                                <td>-</td>
+                                
+                                @foreach ($t as $tontine)
+                                @if ($tontine->id == $transaction->tontine_id)
+                                    <td>{{ $tontine->name }}</td>
+                                @endif
+                                @endforeach
 
-                              @if ($solde->user_id === $membr->id)
-<td>{{ $membr->name }}</td>
-                              @endif
-
-                              @endforeach
-                              @endforeach --}}
-                              {{-- @foreach ($membres as $membre)
-                              @foreach ($soldes as $solde)
-                                  @if ($transaction->solde_id === $solde->id && $solde->user_id === $membre->id)
-                                  <td>{{ $membre->name }}</td>
-                              @endif
-                              @endforeach
-                              @endforeach --}}
-                              @foreach ($t as $tontine)
-                              @if ($tontine->id == $transaction->tontine_id)
-                                  <td>{{ $tontine->name }}</td>
-                              @endif
-                              @endforeach
-
-                              <td>{{ $transaction->montant }} XAF</td>
-                              <td>{{ $transaction->created_at }}</td>
-                          </tr>
+                                <td>{{ $transaction->montant }} XAF</td>
+                                <td>{{ $transaction->created_at }}</td>
+                            </tr>
                           </tbody>
                       @endforeach
 

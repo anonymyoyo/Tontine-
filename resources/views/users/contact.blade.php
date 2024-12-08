@@ -10,7 +10,7 @@
        <div class="contact-container contact-form">
         <div class="formulaire">
           <h2 class="h2">Contactez-nous</h2>
-          <form action="{{ route('login') }}" method="post">
+          <form action="#" method="post">
             @csrf
             <div class="li">
               <label class="li-1" for="nom">Nom & Prenom :</label>
