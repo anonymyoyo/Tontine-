@@ -107,11 +107,11 @@
                                     @endif
                                     @endforeach
 
-                                    @foreach ($sold as $solde)
+                                    @foreach ($soldes as $solde)
                                     {{-- @foreach ($solde as $montant) --}}
-                                    {{-- @if ($membre->id == $solde->user_id) --}}
+                                    @if ($membre->id == $solde->user_id)
                                         <td>{{ $solde->solde }}</td>
-                                        {{-- @endif --}}
+                                        @endif
                                     {{-- @endforeach --}}
                                     @endforeach
                                     <td class="btn btn-success"><a href="{{ route('commercial.depot', $membre->id) }}">Depot</a></td>

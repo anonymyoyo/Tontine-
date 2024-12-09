@@ -28,7 +28,7 @@ class UserController extends Controller
         $user = User::find(auth()->user()->id);
         // $CountMembre=Membre::where('tontine_id', $tontine->$request->id)->get()->Count();
         $membre = User::where('role_id', 4)->where('id', $user->id)->get();
-        $client = User::where('role_id', 4)->where('association_id', $user->association_id);
+        $client = User::where('role_id', 4)->where('association_id', $user->association_id)->get();
         // $membres=Membre::count('tontine_id');
 
         $solde = Solde::where('user_id', $user->id)->get();
@@ -50,6 +50,7 @@ class UserController extends Controller
         // $tontines=Tontine::find($id);
         // return $tontin;
         // return $transaction;
+        // return $client;
         return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction', 'solde', 'client', 'transaction'));
 
         // return $membre.$tontine;
