@@ -602,8 +602,11 @@ class AdminController extends Controller
         return view('admin.admin.tontines.tontine', compact('tontine', 'id', 'roles'));
     }
 
-    public function admin_ajouter_produit()
+    public function admin_produit()
     {
-        return view('admin.admin.produit.produit');
+        $tontine = Tontine::all();
+        $roles = Role::all();
+
+        return view('admin.admin.produit.produit', compact('roles', 'tontine'));
     }
 }

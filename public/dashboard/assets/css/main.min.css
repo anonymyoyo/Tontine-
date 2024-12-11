@@ -16290,7 +16290,7 @@ a:hover {
 
 img.login-logo {
     width: 135px;
-    text-align:center;
+    text-align: center;
     margin-left: 30%;
 }
 
@@ -16304,4 +16304,70 @@ img.login-logo {
 .error-screen .error-title.h1 {
     font-size: 20vw;
     text-shadow: 1px 0px 1px #000, 0px 1px 1px #0c54b2, 2px 1px 1px #000, 1px 2px 1px #0c54b2, 3px 2px 1px #000, 2px 3px 1px #0c54b2, 4px 3px 1px #000, 3px 4px 1px #0c54b2, 5px 4px 1px #000, 4px 5px 1px #0c54b2, 6px 5px 1px #000, 5px 6px 1px #0c54b2, 7px 6px 1px #000, 6px 7px 1px #0c54b2, 8px 7px 1px #000, 7px 8px 1px #0c54b2, 9px 8px 1px #000, 8px 9px 1px #0c54b2
+}
+
+
+.body {
+    display: flex;
+}
+
+/* Navigation category */
+
+.nav_grid {
+    width: 20%;
+    margin-top: 65px;
+}
+
+.nav_grid nav ul li {
+    font-weight: 100;
+    list-style-type: circle;
+    margin-bottom: 20px;
+}
+
+
+/* end section  */
+.separator_vertical {
+    border-right: 1px solid #90cf35;
+    height: auto;
+    margin-top: 80px;
+}
+
+.body_grid {
+    width: 75%;
+    display: block;
+    margin-top: 50px;
+}
+
+.body_grid .grid_product {
+    display: flex;
+    border: 1px #90cf35;
+    border-radius: 25px;
+}
+
+.body_grid .grid_product .product {
+    width: 20%;
+    border: 1px #90cf35;
+    border-radius: 25px;
+}
+
+/* .body_grid .grid_product .product {
+    width: 25%;
+  } */
+
+.product_img {
+    height: 190px;
+    width: 70%;
+    border-radius: 25px;
+}
+
+.product {
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    /* background-color: #333; */
+    border: 1px solid #90cf35;
+}
+
+.product .nomproduit {
+    font-weight: 600;
 }
