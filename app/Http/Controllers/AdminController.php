@@ -8,6 +8,7 @@ use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
 use App\Models\ChefAgence;
+use App\Models\Produit;
 use App\Models\Role;
 use App\Models\Solde;
 use App\Models\Tontine;
@@ -606,7 +607,33 @@ class AdminController extends Controller
     {
         $tontine = Tontine::all();
         $roles = Role::all();
+        $produit = Produit::all();
 
-        return view('admin.admin.produit.produit', compact('roles', 'tontine'));
+        return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
+    }
+
+    public function admin_ajouter_produit()
+    {
+        $tontine = Tontine::all();
+        $roles = Role::all();
+
+        return view('admin.admin.produit.creer', compact('roles', 'tontine'));
+    }
+
+    public function admin_creer_produit(Request $request)
+    {
+        $tontine = Tontine::all();
+        $roles = Role::all();
+        $image = $request->file('image');
+        $path = $image->store('images', 'public');
+
+        $produit = Produit::create([
+            'image' => $path,
+            'name' => $request->name,
+            'prix_cash' => $request->prix_cash,
+            'prix_tontine' => $request->prix_tontine,
+        ]);
+
+        return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
     }
 }

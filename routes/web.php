@@ -64,7 +64,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('Agence/Ajouter/Membres', [AdminController::class, 'admin_ajouter_membre'])->name('admin.ajouter_membres');
     Route::get('Agence/Tontine', [AdminController::class, 'agences_tontine'])->name('admin.tontine');
     Route::get('Admin/Produit', [AdminController::class, 'admin_produit'])->name('admin.produit');
-    Route::post('Admin/Ajouter/Produit', [AdminController::class, 'admin_ajouter_produit'])->name('ajouter.produit');
+    Route::get('Admin/Ajouter/Produit', [AdminController::class, 'admin_ajouter_produit'])->name('ajouter.produit');
     Route::post('Admin/Creer/Produit', [AdminController::class, 'admin_creer_produit'])->name('creer.produit');
 });
 

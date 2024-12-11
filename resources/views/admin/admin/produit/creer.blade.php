@@ -68,80 +68,38 @@
 
     <div class="card mb-3">
         <div class="card-header">
-        <h5 class="card-title">Enregistrer Membre</h5>
+        <h5 class="card-title">Ajouter un produit</h5>
         </div>
         <div class="card-body">
         <!-- Row start -->
-        <form action="{{ route('admin.ajouter_membres') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('creer.produit') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row gx-3">
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
-                    <label class="form-label">Nom du membre</label>
-                    <input type="text" name="name" required class="form-control" placeholder="Enter fullname" />
+                    <label class="form-label">Nom du produit</label>
+                    <input type="text" name="name" required class="form-control" placeholder="Entrer le nom du produit" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" name="email" required class="form-control" placeholder="Enter email address" />
+                    <label class="form-label">Image du produit</label>
+                    <input type="file" name="image" required class="form-control"/>
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
-                    <label class="form-label">Telephone</label>
-                    <input type="text" name="phone" required class="form-control" placeholder="Enter phone number" />
+                    <label class="form-label">Prix en cash</label>
+                    <input type="text" name="prix_cash" required class="form-control" placeholder="Entrer le prix en cash" />
                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
-                    <label class="form-label">Ville</label>
-                    <input type="text" name="ville" required class="form-control" placeholder="Enter company name" />
+                    <label class="form-label">Prix en tontine</label>
+                    <input type="text" name="prix_tontine" required class="form-control" placeholder="Entrer le prix en tontine" />
                 </div>
                 </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                <div class="mb-3">
-                    <label class="form-label">Pays</label>
-                    <input type="text" name="pays" required class="form-control" placeholder="Enter business address" />
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                <div class="mb-3">
-                    <label class="form-label">Photo/Piece d'identification</label>
-                    <input type="file" name="image" required class="form-control" placeholder="Enter company name" />
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                    <label class="form-label">Tontine choisi</label>
-                    <select name="mem_tontine_id" class="form-select">
-                        <option value="0">Selectionner</option>
-                        @foreach ($tontine as $tontines)
-                            <option value="{{ $tontines->id }}" required class="form-option">{{ $tontines->name }}</option>
-                        @endforeach
-                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
-                    </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                    <label class="form-label">Association Mere</label>
-                    <select name="association_id" class="form-select">
-                        <option value="0">Selectionner</option>
-                        @foreach ($association as $associations)
-                            <option value="{{ $associations->id }}" required class="form-option">{{ $associations->name }}</option>
-                        @endforeach
-                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
-                    </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" name="password" required class="form-control" placeholder="Enter company name" />
-                    </div>
-                    </div><br><br>
-
+                <br><br>
             </div>
             <div class="col-sm-6 col-12">
                 <div class="mb-3">
@@ -153,7 +111,16 @@
 
         <!-- Row end -->
         </div>
-
+        <div class="card-footer">
+        <div class="d-flex gap-2 justify-content-end">
+            {{-- <button type="button" class="btn btn-outline-secondary">
+            Cancel
+            </button> --}}
+            <button type="button" class="btn btn-success">
+            Creer
+            </button>
+        </div>
+        </div>
     </div>
 
 </div>

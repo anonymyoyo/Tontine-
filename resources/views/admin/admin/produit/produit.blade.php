@@ -73,40 +73,20 @@
 
           <div class="body">
             <div class="body_grid">
-              <h1>NOS PRODUITS</h1>
-              <div class="grid_product">
-                <div class="product">
-                  <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
-                  <p class="nomproduit">Nom du produit <br>
-                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
-                  </p>
-                </div>
-                <div class="product">
-                  <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
-                  <p class="nomproduit">Nom du produit <br>
-                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
-                  </p>
-                </div>
-                <div class="product">
-                  <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
-                  <p class="nomproduit">Nom du produit <br>
-                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
-                  </p>
-                </div>
-                <div class="product">
-                  <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
-                  <p class="nomproduit">Nom du produit <br>
-                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
-                  </p>
-                </div>
-                <div class="product">
-                  <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
-                  <p class="nomproduit">Nom du produit <br>
-                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
-                  </p>
+
+
+                <div class="grid_product">
+                    @foreach ($produit as $product)
+                        <div class="product">
+                        <img src="{{ Storage::url($product->image) }}" class="product_img" alt="image du produit">
+                        <p class="nomproduit">{{ $product->name }} <br>
+                            <span class="prix">en cash :{{ $product->prix_cash }} XAF</span><br><span class="prix">en tontine :{{ $product->prix_tontine }} XAF</span>
+                        </p>
+                        </div>
+                    @endforeach
                 </div>
 
-              </div>
+
             </div>
             <div class="separator_vertical"></div>
             <div class="nav_grid">
