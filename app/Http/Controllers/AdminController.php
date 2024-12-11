@@ -601,4 +601,9 @@ class AdminController extends Controller
         // $tontine=Tontine::find($id);
         return view('admin.admin.tontines.tontine', compact('tontine', 'id', 'roles'));
     }
+
+    public function admin_ajouter_produit()
+    {
+        return view('admin.admin.produit.produit');
+    }
 }

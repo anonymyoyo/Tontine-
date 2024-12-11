@@ -92,6 +92,11 @@
               <span class="menu-text">Commerciaux</span>
             </a>
         </li>
+        <a href="{{ route('admin.produits') }}">
+            <i class="bi bi-wallet2"></i>
+            <span class="menu-text">Produits</span>
+          </a>
+        </li>
         <li>
           <a href="{{ route('transaction') }}">
             <i class="bi bi-wallet2"></i>
