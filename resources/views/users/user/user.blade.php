@@ -22,9 +22,9 @@
     <div class="user_profil">
         <div class="profil_grid">
           <img src="{{ Storage::url(auth()->user()->image) }}" class="image_profile" alt="image de profil"><span class="span">
-            {{-- @foreach ($solde as $sold)
+            @foreach ($solde as $sold)
             {{ $sold->solde }} XAF
-            @endforeach --}}
+            @endforeach
          </span>
           <p>{{ auth()->user()->name }}
             <form action="{{ route('logout') }}" method="POST" id="logout">

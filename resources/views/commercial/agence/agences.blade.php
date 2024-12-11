@@ -115,8 +115,6 @@
                                 </td>
                                 <td>{{ $agence->budget }}</td>
                                 <td>
-                                {{-- <a class="btn btn-info btn-sm" href="#"><i class="bi bi-pencil"></i>
-                                </a> --}}
                                 </td>
                             </tr>
                             </tbody>

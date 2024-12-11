@@ -304,7 +304,7 @@ class CommercialController extends Controller
             # code...
             Solde::create([
                 'user_id' => $membres->id,
-                // 'solde'=>0,
+                'solde' => 1000,
             ]);
         }
 
