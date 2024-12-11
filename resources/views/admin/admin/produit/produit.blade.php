@@ -65,6 +65,12 @@
 
           </div>
 
+          <div class="ms-auto d-lg-flex d-none flex-row">
+            <div class="d-flex flex-row gap-1">
+              <a href="{{ route('ajouter.produit') }}" class="btn btn-primary">Ajouter Produit</a>
+            </div>
+         </div>
+
           <div class="body">
             <div class="body_grid">
               <h1>NOS PRODUITS</h1>
@@ -72,22 +78,26 @@
                 <div class="product">
                   <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
                   <p class="nomproduit">Nom du produit <br>
-                    20 000 XAF <br>23 000 XAF</p>
+                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
+                  </p>
                 </div>
                 <div class="product">
                   <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
                   <p class="nomproduit">Nom du produit <br>
-                    20 000 XAF <br>23 000 XAF</p>
+                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
+                  </p>
                 </div>
                 <div class="product">
                   <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
                   <p class="nomproduit">Nom du produit <br>
-                    20 000 XAF <br>23 000 XAF</p>
+                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
+                  </p>
                 </div>
                 <div class="product">
                   <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
                   <p class="nomproduit">Nom du produit <br>
-                    20 000 XAF <br>23 000 XAF</p>
+                    <span class="prix">en cash :20 000 XAF</span><br><span class="prix">en tontine :23 000 XAF</span>
+                  </p>
                 </div>
                 <div class="product">
                   <img src="{{ asset('dashboard/assets/css/img/VF-features.png') }}" class="product_img" alt="image du produit">
