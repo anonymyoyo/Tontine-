@@ -15,16 +15,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('Apropos',[HomeController::class, 'about'])->name('about');
-Route::get('Contact',[HomeController::class, 'contact'])->name('contact');
-Route::get('Services',[HomeController::class, 'service'])->name('service');
-Route::get('Blog',[HomeController::class, 'blog'])->name('blog');
-Route::get('Associations',[HomeController::class, 'association'])->name('user.association');
+Route::get('Apropos', [HomeController::class, 'about'])->name('about');
+Route::get('Contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('Services', [HomeController::class, 'service'])->name('service');
+Route::get('Blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('Associations', [HomeController::class, 'association'])->name('user.association');
 Route::get('Tontines', [HomeController::class, 'tontines'])->name('user.tontines');
+Route::get('Catalogue', [HomeController::class, 'catalogue'])->name('catalogue');
 
 
 
-Route::middleware(['auth', 'admin'])->group(function(){
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('SuperAdmin/Agences', [AdminController::class, 'dashboard_agence'])->name('agences');
     Route::get('SuperAdmin/Associations/Liste', [AdminController::class, 'dashboard_association'])->name('association.associations');
@@ -64,7 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('Agence/Tontine', [AdminController::class, 'agences_tontine'])->name('admin.tontine');
 });
 
-Route::middleware(['auth', 'association'])->group(function(){
+Route::middleware(['auth', 'association'])->group(function () {
     Route::get('association/Admin', [AssociationController::class, 'association'])->name('association');
     Route::get('Association/Agences', [AssociationController::class, 'association_agence'])->name('association.agences');
     Route::get('Association/Agences/{id}', [AssociationController::class, 'association_agence_detail'])->name('association.detail');
@@ -94,7 +95,7 @@ Route::middleware(['auth', 'association'])->group(function(){
     Route::get('Association/Agence/Tontine/{id}', [AssociationController::class, 'association_agences_tontine'])->name('association.tontine');
 });
 
-Route::middleware(['auth', 'agence'])->group(function(){
+Route::middleware(['auth', 'agence'])->group(function () {
     Route::get('Pannel/User', [AgenceController::class, 'agence'])->name('agence');
     Route::get('User/Agences', [AgenceController::class, 'dashboard_agence'])->name('agence.agences');
     Route::get('User/Agences/{id}', [AgenceController::class, 'dashboard_agence_detail'])->name('agence.detail');
@@ -114,7 +115,7 @@ Route::middleware(['auth', 'agence'])->group(function(){
     Route::get('User/Tontine/{id}', [AgenceController::class, 'dashboard_agences_tontine'])->name('agence.tontine');
 });
 
-Route::middleware(['auth', 'commercial'])->group(function(){
+Route::middleware(['auth', 'commercial'])->group(function () {
     Route::get('Page/Commercial', [CommercialController::class, 'commercial'])->name('commercial');
     Route::get('Commercial/Agences', [CommercialController::class, 'commercial_agence'])->name('commercial.agences');
     Route::get('Commercial/Agences/{id}', [CommercialController::class, 'commercial_agence_detail'])->name('commercial_agence.detail');
@@ -134,7 +135,7 @@ Route::middleware(['auth', 'commercial'])->group(function(){
     Route::get('Commercial/Tontine/{id}', [CommercialController::class, 'commercial_agences_tontine'])->name('commercial.tontine');
 });
 
-Route::middleware(['auth', 'user'])->group(function(){
+Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user', [UserController::class, 'user'])->name('user');
     // Route::get('User/Contacts', [UserController::class, 'contacts'])->name('contact');
     Route::get('Explorer', [UserController::class, 'association'])->name('user.association');
@@ -164,4 +165,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

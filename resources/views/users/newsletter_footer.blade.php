@@ -6,7 +6,8 @@
         <nav class="footer-nav">
           <ul>
             <li class="footer-li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-            <li class="footer-li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+            <li class="footer-li"><a href="{{ route('catalogue') }}">CATALOGUE</a></li>
+            {{-- <li class="footer-li"><a href="{{ route('contact') }}">CONTACTS</a></li> --}}
             <li class="footer-li"><a href="{{ route('login') }}">CONNEXION</a></li>
           </ul>
         </nav>

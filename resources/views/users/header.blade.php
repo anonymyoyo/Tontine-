@@ -38,7 +38,7 @@
         <nav class="nav">
             <ul>
                 <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-                <li class="li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+                <li class="li"><a href="{{ route('catalogue') }}">CATALOGUE</a></li>
                 <li class="li"><a href="{{ route('register') }}">INSCRIPTION</a></li>
                 <li class="li"><a href="{{ route('login') }}">CONNEXION</a></li>
             </ul>

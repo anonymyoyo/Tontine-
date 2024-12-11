@@ -687,7 +687,7 @@ li a:hover {
 
     .description p {
         width: 100%;
-        text-align: center;
+        text-align: left;
         font-size: 10px;
         padding: 20px;
         font-weight: 700;
@@ -872,7 +872,7 @@ li a:hover {
         text-align: center;
         font-size: 15px;
         font-weight: 300;
-        width: 40%;
+        width: 35%;
         border: 1px solid #567c21;
         border-radius: 25px;
         margin: 10px;
@@ -963,7 +963,7 @@ li a:hover {
         text-align: center;
         font-size: 9px;
         font-weight: 300;
-        width: 100%;
+        width: 95%;
         height: 100px;
         background-color: #000;
         color: aliceblue;
@@ -1874,11 +1874,16 @@ li a:hover {
     margin-bottom: 50px;
 }
 
-@media(max-width:900px) {
+@media(max-width:1024px) {
 
     .super_grid {
         display: flex;
         height: 450px;
+    }
+
+    .super_grid1 {
+        display: flex;
+        height: 200px;
     }
 
     .grid1 {
@@ -1922,6 +1927,259 @@ li a:hover {
         font-size: 17px;
         width: 40%;
         height: 90px;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid {
+        font-size: 17px;
+        width: 75%;
+        height: 100px;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user_grid {
+        display: block;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        align-items: left;
+        font-size: 17px;
+        padding: 20px;
+        /* margin: 40px auto; */
+        border-radius: 25px;
+        width: 100%;
+        background-color: #f9f9f9;
+        /* margin-left: 200px; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    }
+
+    .usergrid {
+        display: block;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 40px auto;
+        margin-top: 0;
+        font-size: 17px;
+        width: 95%;
+        height: 350px;
+        margin-right: 400px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    }
+
+    .usergrid .transaction {
+        width: 80%;
+        height: 90%;
+        text-align: center;
+        margin-left: 130px;
+        margin-bottom: 90px;
+        /* margin-top: 20px; */
+        border-radius: 15px;
+        overflow: scroll;
+        padding: 20px;
+        background-color: aliceblue;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .usergrid .transaction .table {
+        /* border: 1px solid #0c1303; */
+        height: 100%;
+        /* border-radius: 25px; */
+        margin-left: 25px;
+        background-color: #8fcf3557;
+    }
+
+    .usergrid .formulaire {
+        width: 80%;
+        height: 100%;
+        text-align: center;
+        margin-left: 130px;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: aliceblue;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .separator {
+        width: 85%;
+        margin-left: 6%;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        border: 1px solid #90cf35;
+    }
+
+    .cp {
+        margin-left: 75px;
+        padding: 20px;
+        border-radius: 50px;
+        width: 80%;
+        font-size: 17px;
+        height: 15px;
+        color: white;
+        background-color: #070707;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user_profil {
+        display: block;
+        flex-wrap: wrap;
+        border-radius: 25px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 40px auto;
+        width: 80%;
+        height: 70px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user_profil .profil_grid {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        font-size: 17px;
+
+    }
+
+    .user_profil .profil_grid .image_profile {
+        width: 60px;
+        height: 65px;
+        border-radius: 50%;
+    }
+
+    .user_profil .profil_grid span {
+        font-size: 17px;
+    }
+
+    .user_profil .user_nav {
+        width: 100%;
+        margin-left: 0px;
+        top: 10px;
+
+    }
+
+    .user_profil .user_nav ul {
+        width: 100%;
+        display: flex;
+        /* margin-left: 250px; */
+    }
+
+    .user_profil .user_nav ul li {
+        margin-left: 40px;
+        list-style: none;
+        font-size: 17px;
+        cursor: pointer;
+        /* margin-left: 250px; */
+    }
+
+    .user_grid .transaction_client ul {
+        display: flex;
+        margin-right: 50px;
+    }
+
+    .user_grid .transaction_client ul li {
+        width: 80%;
+        list-style: none;
+        /* text-decoration: none; */
+        cursor: pointer;
+
+    }
+
+    .user_grid .transaction_client ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+    }
+
+    .user_grid .transaction_client ul li a:hover {
+        color: rgb(40, 104, 10);
+    }
+
+    .detail_compte {
+        display: flex;
+        margin-left: 40px;
+    }
+
+    .detail_compte a {
+        margin-left: 4px;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width:768px) {
+
+    .super_grid {
+        display: flex;
+        height: 450px;
+    }
+
+    .super_grid1 {
+        display: flex;
+        height: 200px;
+    }
+
+    .grid1 {
+        width: 50%;
+        height: 90%;
+    }
+
+    .grid2 {
+        width: 50%;
+        display: block;
+    }
+
+    .grid1 .grid {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 40px auto;
+        font-size: 17px;
+        width: 75%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid2 .grid3 {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .grid2 .grid3 .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 40px auto;
+        font-size: 17px;
+        width: 40%;
+        height: 90px;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid {
+        font-size: 17px;
+        width: 75%;
+        height: 100px;
         border-radius: 25px;
         background-color: #f9f9f9;
         overflow: hidden;
@@ -2104,15 +2362,68 @@ li a:hover {
 
 @media(max-width:480px) {
 
-    .grid {
+    .super_grid {
+        display: flex;
+        height: 240px;
+    }
+
+    .super_grid1 {
+        display: flex;
+        height: 100px;
+    }
+
+    .grid1 {
+        width: 50%;
+        height: 90%;
+    }
+
+    .grid2 {
+        width: 50%;
+        display: block;
+    }
+
+    .grid1 .grid {
         display: block;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: center;
         padding: 20px;
         margin: 40px auto;
-        width: 80%;
-        height: 750px;
+        font-size: 9px;
+        text-align: center;
+        width: 75%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid2 .grid3 {
+        display: flex;
+        margin-top: 4px;
+    }
+
+    .grid2 .grid3 .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        margin: 40px auto;
+        font-size: 9px;
+        text-align: center;
+        width: 40%;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid {
+        font-size: 9px;
+        text-align: center;
+        width: 75%;
+        height: 50px;
         border-radius: 25px;
         background-color: #f9f9f9;
         overflow: hidden;
@@ -2123,13 +2434,12 @@ li a:hover {
         display: block;
         /* flex-wrap: wrap; */
         justify-content: space-between;
-        align-items: left;
-        /* font-size: 12px; */
+        font-size: 9px;
+        text-align: center;
         padding: 20px;
         /* margin: 40px auto; */
         border-radius: 25px;
         width: 100%;
-        height: 50px;
         background-color: #f9f9f9;
         /* margin-left: 200px; */
         /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -2139,26 +2449,25 @@ li a:hover {
         display: block;
         /* flex-wrap: wrap; */
         justify-content: space-between;
-        /* align-items: right; */
         padding: 20px;
-        margin: -170px;
-        margin-top: 50px;
+        margin: 40px auto;
+        margin-top: 0;
         font-size: 9px;
-        width: 480px;
-        height: 450px;
-        /* margin-right: 0; */
+        text-align: center;
+        width: 95%;
+        height: 350px;
+        margin-right: 400px;
         background-color: #f9f9f9;
-        /* overflow: hidden; */
+        overflow: hidden;
         /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     }
 
     .usergrid .transaction {
         width: 80%;
-        height: 100%;
+        height: 90%;
         text-align: center;
         margin-left: 130px;
         margin-bottom: 90px;
-        height: 100%;
         /* margin-top: 20px; */
         border-radius: 15px;
         overflow: scroll;
@@ -2176,36 +2485,16 @@ li a:hover {
     }
 
     .usergrid .formulaire {
-        width: 60%;
+        width: 80%;
         height: 100%;
         text-align: center;
         margin-left: 130px;
-        margin-bottom: 90px;
-        /* height: 100%; */
-        /* margin-top: 20px; */
+        margin-bottom: 50px;
+        margin-top: 20px;
         border-radius: 15px;
-        /* overflow: scroll; */
         padding: 20px;
-        background-color: rgb(0, 136, 255);
+        background-color: aliceblue;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-        /* width: 80%; */
-        /* height: 80%; */
-        /* text-align: center;
-        margin-left: 130px; */
-        /* margin-bottom: 10px; */
-        /* font-size: 10px; */
-        /* height: 550px;
-        margin-top: 70px;
-        border-radius: 15px; */
-        /* padding: 20px; */
-        /* background-color: aliceblue;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    }
-
-    .usergrid .formulaire .h2 {
-        font-size: 40px;
-        margin-right: 300px;
     }
 
     .separator {
@@ -2219,12 +2508,19 @@ li a:hover {
     .cp {
         margin-left: 15px;
         padding: 20px;
-        border-radius: 25px;
-        width: 80%;
+        border-radius: 50px;
+        width: 65%;
         font-size: 9px;
         height: 15px;
         color: white;
         background-color: #070707;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cp:hover {
+        cursor: pointer;
+        color: #0c1303;
+        background-color: #90cf35;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -2247,25 +2543,21 @@ li a:hover {
         height: 40px;
         display: flex;
         font-size: 9px;
-
     }
 
     .user_profil .profil_grid .image_profile {
-        width: 35px;
-        height: 40px;
-        /* background-color: rgba(255, 0, 0, 0.295); */
+        width: 30px;
+        height: 35px;
         border-radius: 50%;
     }
 
     .user_profil .profil_grid span {
         font-size: 9px;
-        /* background-color: rgba(255, 0, 0, 0.295); */
     }
 
     .user_profil .user_nav {
         width: 100%;
-        margin-left: -30px;
-        /* background-color: rgba(255, 0, 0, 0.295); */
+        margin-left: 0px;
         top: 10px;
 
     }
@@ -2277,28 +2569,23 @@ li a:hover {
     }
 
     .user_profil .user_nav ul li {
-        margin-left: 12px;
+        margin-left: 10px;
         list-style: none;
         font-size: 9px;
         cursor: pointer;
         /* margin-left: 250px; */
     }
 
-    .user_grid .transaction_client {
-        display: flex;
-        /* margin-left: 0; */
-    }
-
     .user_grid .transaction_client ul {
         display: flex;
-        /* margin-right: 0; */
+        margin-left: 10px;
     }
 
     .user_grid .transaction_client ul li {
         width: 80%;
         list-style: none;
+        /* text-decoration: none; */
         cursor: pointer;
-        margin-left: 35px;
 
     }
 
@@ -2306,7 +2593,6 @@ li a:hover {
         text-decoration: none;
         color: black;
         font-size: 9px;
-
     }
 
     .user_grid .transaction_client ul li a:hover {
@@ -2320,7 +2606,7 @@ li a:hover {
 
     .detail_compte a {
         margin-left: 4px;
-        margin-bottom: 5px;
+        margin-bottom: 50px;
     }
 }
 

@@ -31,27 +31,10 @@ class UserController extends Controller
         $client = User::where('role_id', 4)->where('association_id', $user->association_id)->get();
         // $membres=Membre::count('tontine_id');
 
-        $solde = Solde::where('user_id', $user->id)->get();
-        $transaction = Transaction::where('solde_id', $solde[0]->id)->get();
-        //         $user=Auth::user();
-        //         if(!$user){
-        //             redirect()->back()->with('error', 'Vous devez etre connecter pour rejoindre la tontine');
-        //         }
-        // $tontine=Tontine::where('user_id', auth()->user()->id)->get();
-        //         // verifier si il est deja membre de la tontine
-        //         // $token=$request->id;
-        //         $membre=Membre::where('tontine_id',$tontine=$request->input('id'))
-        //                                 ->where('user_id',$user->id)
-        //                                 ->first();
+        $solde = Solde::where('user_id', $user->id)->first();
+        $transaction = Transaction::where('solde_id', $solde[0]->id)->first();
 
-        // $tontines=Tontine::all();
-        // $lien=route('invite',[$id, Str::random(40)]);, 'CountMembre'
-        // $token=$lien;'id', 'token',, 'membres'
-        // $tontines=Tontine::find($id);
-        // return $tontin;
-        // return $transaction;
-        // return $client;
-        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction', 'solde', 'client', 'transaction'));
+        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction', 'solde', 'client'));
 
         // return $membre.$tontine;
     }

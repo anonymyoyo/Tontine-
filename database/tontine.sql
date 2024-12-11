@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 27, 2024 at 09:34 AM
+-- Generation Time: Dec 10, 2024 at 10:08 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.3.7
 
@@ -291,7 +291,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('h8FeWYJ63lnmzqNXVx7Dizxvl6h8x1AE2yL7OO23', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZFpwazd5YW1BWFE3SXF1bUdINkZ3N3kwa0dxUXZMeWNPNjc3TnVTYiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9Bc3NvY2lhdGlvbi9BZ2VuY2UvUmVnbGFnZXMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0O30=', 1732541745);
+('fNemo5StIE1MRzlr15npBmChIErCVFe7QiJWo5vx', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic0FrM1YxdWhobWJCQ05UOFRvTGVHMFpGNjByYUdMNXBxRENrSDZpZCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9DYXRhbG9ndWUiO319', 1733825074),
+('Hu96WyXdoi8Yw9nTNdtIs7SoiJZVFuGvfHR9BENC', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZHJiU0p2MU4xQXBzaDVaemhjYjkyQkZXd082SkxoV0t5ZkRnVmZkSiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yZWdpc3RlciI7fX0=', 1733763239),
+('ojopgBeJz4fcLZJ444dVlgsL08dwiNRmoTkmdEGn', 9, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/130.0.0.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYnlLWmtMdWcyZk1GTTdhT3U4akhoQ3JlU0hBenFjNXo0RUFUc2c5dSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC91c2VyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6OTt9', 1733783672);
 
 -- --------------------------------------------------------
 
@@ -312,7 +314,8 @@ CREATE TABLE `soldes` (
 --
 
 INSERT INTO `soldes` (`id`, `user_id`, `solde`, `created_at`, `updated_at`) VALUES
-(1, 9, 6500, '2024-11-22 13:25:59', '2024-11-25 18:42:33');
+(1, 9, 7500, '2024-11-22 13:25:59', '2024-12-09 21:57:48'),
+(2, 10, 50500, '2024-12-09 21:16:12', '2024-12-09 22:09:00');
 
 -- --------------------------------------------------------
 
@@ -381,7 +384,15 @@ INSERT INTO `transactions` (`id`, `type`, `solde_id`, `tontine_id`, `commercial_
 (2, 'depot', '1', 2, '7', 1500, '2024-11-22 13:30:38', '2024-11-22 13:30:38'),
 (3, 'retrait', '1', 2, '7', 500, '2024-11-22 13:31:05', '2024-11-22 13:31:05'),
 (4, 'depot', '1', 2, '7', 2000, '2024-11-22 17:23:16', '2024-11-22 17:23:16'),
-(5, 'depot', '1', 2, '1', 3000, '2024-11-25 18:42:33', '2024-11-25 18:42:33');
+(5, 'depot', '1', 2, '1', 3000, '2024-11-25 18:42:33', '2024-11-25 18:42:33'),
+(6, 'depot', '1', 2, '7', 2000, '2024-12-04 17:58:27', '2024-12-04 17:58:27'),
+(7, 'depot', '1', 2, '7', 2500, '2024-12-04 17:58:39', '2024-12-04 17:58:39'),
+(8, 'retrait', '1', 2, '7', 3000, '2024-12-04 17:59:01', '2024-12-04 17:59:01'),
+(9, 'depot', '1', 2, '7', 3000, '2024-12-09 21:18:48', '2024-12-09 21:18:48'),
+(10, 'depot', '1', 2, '7', 500, '2024-12-09 21:36:21', '2024-12-09 21:36:21'),
+(11, 'depot', '2', 2, '1', 500, '2024-12-09 21:44:59', '2024-12-09 21:44:59'),
+(12, 'retrait', '1', 2, '7', 4000, '2024-12-09 21:57:47', '2024-12-09 21:57:47'),
+(13, 'depot', '2', 2, '7', 50000, '2024-12-09 22:09:00', '2024-12-09 22:09:00');
 
 -- --------------------------------------------------------
 
@@ -424,7 +435,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `ville`, `pays`, `image`, `
 (6, 'Emauel', 'superadmi1@gmail.com', '694865872', 'Douala', 'Cameroon', 'C:\\Users\\Administrator\\AppData\\Local\\Temp\\php1A3B.tmp', NULL, '3', NULL, NULL, NULL, NULL, 3, NULL, '$2y$12$pcejRdqpxkzidaZYDNu48uspEAxcgYVyg3rcBV0LfQSiX3qGgrRne', NULL, '2024-11-22 13:16:47', '2024-11-22 13:16:47'),
 (7, 'Serges', 'serges@commercial.com', '694865872', 'Douala', NULL, 'images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png', NULL, '3', '1', NULL, NULL, NULL, 3, NULL, '$2y$12$UV8zZxFFHe4CqJbXZgsZE.IIgwN8peVRkxJMWR4hQ1B8yA.vh/1ui', NULL, '2024-11-22 13:16:48', '2024-11-22 13:16:48'),
 (8, 'Tantanpion', 'tantanpion@gmail.com', '694865872', 'Douala', 'Cameroon', 'images/9SO00rUXl8yhr10OV7UgjzY9QVyFiCyoUK4kNHtY.png', '1', NULL, NULL, NULL, NULL, '1', 4, NULL, '$2y$12$.pIwK47ATQU.QnDorw/75Oyy.EVu9rEvTZPcK1ZQnchCJPOLAKQlC', NULL, '2024-11-22 13:16:48', '2024-11-22 13:16:48'),
-(9, 'Martin', 'martin@membre.com', '694865872', 'Douala', 'Cameroun', 'images/dOwckMuDFCxxUw56I7NNEI6nzOqSJhLtgEQdDA8G.png', '3', NULL, NULL, '1', '7', '2', 4, NULL, '$2y$12$jZbMq7gc4mm/gvS3bQ3D7OQYVlMgsLncyKGubS.K0dp.pGDzcw7Y.', NULL, '2024-11-22 13:25:59', '2024-11-22 13:25:59');
+(9, 'Martin', 'martin@membre.com', '694865872', 'Douala', 'Cameroun', 'images/dOwckMuDFCxxUw56I7NNEI6nzOqSJhLtgEQdDA8G.png', '3', NULL, NULL, '1', '7', '2', 4, NULL, '$2y$12$jZbMq7gc4mm/gvS3bQ3D7OQYVlMgsLncyKGubS.K0dp.pGDzcw7Y.', NULL, '2024-11-22 13:25:59', '2024-11-22 13:25:59'),
+(10, 'Idriss', 'idriss@tca.com', '5645645', 'Douala', 'Cameroun', 'images/igAe92qkDiHLsuR0kXiHxzRi6MhyDYlbeDfP0tLo.jpg', '3', NULL, NULL, '1', NULL, '2', 4, NULL, '$2y$12$NlYJAVjqluoZJNVD6QADyuLMr5eBJbqa3mQwvKejFcqQP2xMRDs8.', NULL, '2024-12-09 21:16:12', '2024-12-09 21:16:12');
 
 -- --------------------------------------------------------
 
@@ -658,7 +670,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `soldes`
 --
 ALTER TABLE `soldes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tontines`
@@ -676,13 +688,13 @@ ALTER TABLE `tontine_choisies`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `zones`

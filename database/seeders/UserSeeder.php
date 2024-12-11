@@ -107,16 +107,32 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "name"=> "Tantanpion",
-            "email"=> "tantanpion@gmail.com",
+            "name"=> "Martin",
+            "email"=> "martin@membre.com",
             "phone"=> "694865872",
             "ville"=> "Douala",
             "pays"=> "Cameroon",
-            "image"=> "images/9SO00rUXl8yhr10OV7UgjzY9QVyFiCyoUK4kNHtY.png",
-            "association_id"=> "1",
-            "mem_tontine_id"=> "1",
+            "image"=> "images/dOwckMuDFCxxUw56I7NNEI6nzOqSJhLtgEQdDA8G.png",
+            "association_id"=> "3",#
+            "mem_agence_id"=> "1",
+            "mem_com_id"=> "7",
+            "mem_tontine_id"=> "2",
             "role_id"=> 4,
-            'password'=>'tantanpion'
+            'password'=>'martin'
+        ]);
+
+        User::create([
+            "name"=> "idriss",
+            "email"=> "idriss@tca.com",
+            "phone"=> "694865872",
+            "ville"=> "Douala",
+            "pays"=> "Cameroon",
+            "image"=> "images/dOwckMuDFCxxUw56I7NNEI6nzOqSJhLtgEQdDA8G.png",
+            "association_id"=> "3",#
+            "mem_agence_id"=> "1",
+            "mem_tontine_id"=> "2",
+            "role_id"=> 4,
+            'password'=>'idriss'
         ]);
     }
 }
