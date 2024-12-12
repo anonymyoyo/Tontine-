@@ -105,5 +105,21 @@ class UserSeeder extends Seeder
             "role_id" => 3,
             'password' => 'serges'
         ]);
+
+        User::create([
+            "name" => "bafang",
+            "email" => "badang@gmail.com",
+            "phone" => "694865872",
+            "ville" => "Douala",
+            "pays" => null,
+            "image" => "images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png",
+            "association_id" => 3,
+            "com_association_id" => "3",
+            "mem_agence_id" => "1",
+            "mem_com_id" => "7",
+            "mem_tontine_id" => "1",
+            "role_id" => 4,
+            'password' => 'badang',
+        ]);
     }
 }

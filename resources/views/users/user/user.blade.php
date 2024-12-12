@@ -47,10 +47,13 @@
           </nav>
         </div>
     </div>
-      <span class="cp">Transfert</span>
-      <span class="cp">Retrait</span>
-      <span class="cp">Depot</span>
-      <span class="cp">Pret</span>
+    <div class="super_cp">
+      <span class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>Transfert</p> </span>
+      <span class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>Retrait</p></span>
+      <span class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>Depot</p></span>
+      <span class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>Pret</p></span>
+    </div><br>
+
       <div class="separator"></div><br>
       {{-- <div class="transaction_client">
                     <a href="#transaction">Derniere Transaction</a>
@@ -65,28 +68,10 @@
         </div>
         <div class="grid2">
             <div class="grid3">
-                <div class="grid">
-                    <div class="user_grid">
-                    TCA BONUS
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="user_grid">
-                    MY WAY
-                    </div>
-                </div>
+                    <span class="cp"> <img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p> </span>
             </div>
             <div class="grid3">
-                <div class="grid">
-                    <div class="user_grid">
-                    PAWA
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="user_grid">
-                    BEST DEAL
-                    </div>
-                </div>
+                    <span class="cp"> <img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p> </span>
             </div>
         </div>
       </div>
@@ -95,47 +80,19 @@
         <a href="#transaction">Nos Services</a>
 
         <div class="super_grid1">
-                    <div class="grid">
-                        <div class="user_grid">
-                        SOS credit
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="user_grid">
-                        Importation en Chine
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="user_grid">
-                        Formation
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="user_grid">
-                        Marketing Digital
-                        </div>
-                    </div>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>SOS credit</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Importation en Chine</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>Formation</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Marketing Digital</p> </span>
             </div>
         </div>
 
         <div class="separator"></div><br>
         <a href="#transaction">Besoin d'aide?</a>
         <div class="super_grid1">
-                    <div class="grid">
-                        <div class="user_grid">
-                        Contacter un agent
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="user_grid">
-                        Localiser une agence
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="user_grid">
-                        Devenir partenaire
-                        </div>
-                    </div>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>Contacter un agent</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>Localiser une agence</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>Devenir partenaire</p> </span>
             </div>
         </div>
 <br><br><br><br><br>

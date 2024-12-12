@@ -16,248 +16,262 @@ use Illuminate\Support\Facades\Hash;
 class AgenceController extends Controller
 {
     //
-    public function agence(){
-        $user=User::all();
-        $roles=Role::all();
-        $a=User::all();
-        $tontine=Tontine::all();
+    public function agence()
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $a = User::all();
+        $tontine = Tontine::all();
         return view('agence.agence', compact('tontine', 'user', 'a', 'roles'));
     }
 
-    public function dashboard_agence(){
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $roles=Role::all();
-        $gerant=User::where('role_id', 2);
-        $agencies=Agence::where('association_id', auth()->user()->association_id)->get();
-        $tontine=Tontine::all();
+    public function dashboard_agence()
+    {
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $roles = Role::all();
+        $gerant = User::where('role_id', 2);
+        $agencies = Agence::where('association_id', auth()->user()->association_id)->get();
+        $tontine = Tontine::all();
 
         // return $agences;
         return view('agence.agence.agences', compact('tontine', 'agencies', 'gerant', 'roles'));
     }
 
-    public function dashboard_agence_detail($id){
-        $user=User::all();
-        $roles=Role::all();
-        $agence=Agence::find($id);
-        $tontine=Tontine::all();
+    public function dashboard_agence_detail($id)
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $agence = Agence::find($id);
+        $tontine = Tontine::all();
         return view('agence.agence.details', compact('tontine', 'agence', 'user', 'roles'));
     }
 
-    public function dashboard_agence_zone(){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
-        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
-        $tontine=Tontine::all();
+    public function dashboard_agence_zone()
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux = User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
+        $tontine = Tontine::all();
 
         // return $commerciaux;
         return view('agence.zone.zonne', compact('tontine', 'commerciaux', 'agence', 'zones', 'roles'));
     }
 
-    public function dashboard_agence_creer_zone(){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
-        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
-        $tontine=Tontine::all();
+    public function dashboard_agence_creer_zone()
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux = User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
+        $tontine = Tontine::all();
         return view('agence.zone.creer', compact('tontine', 'commerciaux', 'agence', 'zones', 'roles'));
     }
 
-    public function dashboard_agence_ajouter_zone(Request $request){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
-        $commerciaux=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
-        $tontine=Tontine::all();
-        $image=$request->file('image');
-        $path=$image->store('images','public');
+    public function dashboard_agence_ajouter_zone(Request $request)
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
+        $commerciaux = User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
+        $tontine = Tontine::all();
+        $image = $request->file('image');
+        $path = $image->store('images', 'public');
         Zone::create([
-            'name'=>$request->name,
-            'agence_id'=>$request->agence_id,
-            'user_id'=>$request->user_id,
-            'commercial_id'=>$request->commercial_id,
-            'image'=>$path,
+            'name' => $request->name,
+            'agence_id' => $request->agence_id,
+            'user_id' => $request->user_id,
+            'commercial_id' => $request->commercial_id,
+            'image' => $path,
         ]);
         return view('agence.zone.creer', compact('tontine', 'user', 'a', 'roles'));
     }
 
-    public function dashboard_chef_agence(){
-        $user=User::all();
-        $a=User::all();
-        $responsables=User::all();
-        $roles=Role::all();
-        $agences=Agence::all();
-        $tontine=Tontine::all();
-        return view('agence.chef_agence.chef_dagence', compact('responsables','agences','roles', 'tontine', 'user', 'a'));
+    public function dashboard_chef_agence()
+    {
+        $user = User::all();
+        $a = User::all();
+        $responsables = User::all();
+        $roles = Role::all();
+        $agences = Agence::all();
+        $tontine = Tontine::all();
+        return view('agence.chef_agence.chef_dagence', compact('responsables', 'agences', 'roles', 'tontine', 'user', 'a'));
     }
 
-    public function dashboard_commercial(){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $commercial=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
-        $tontine=Tontine::all();
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+    public function dashboard_commercial()
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $commercial = User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
+        $tontine = Tontine::all();
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
 
         // return $commercial;
         return view('agence.commercial.commercial', compact('roles', 'tontine', 'commercial', 'zones', 'agence'));
     }
 
-    public function dashboard_creer_commercial(){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $commercial=User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
-        $tontine=Tontine::all();
-        $a=Association::where('id', $user->association_id)->get();
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+    public function dashboard_creer_commercial()
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $commercial = User::where('role_id', 3)->where('com_association_id', $agence[0]->association_id)->get();
+        $tontine = Tontine::all();
+        $a = Association::where('id', $user->association_id)->get();
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
 
         // return $a;
         return view('agence.commercial.creer', compact('commercial', 'zones', 'roles', 'agence', 'tontine', 'a'));
     }
 
-    public function dashboard_ajouter_commercial(Request $request){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $associations=Association::where('id', $user->association_id)->get();
-        $agence=$user->agences;
-        $tontine=Tontine::all();
-        $image=$request->file('image');
-        $path=$image->store('images','public');
-        $zones=Zone::where('agence_id', $agence[0]->id)->get();
+    public function dashboard_ajouter_commercial(Request $request)
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $associations = Association::where('id', $user->association_id)->get();
+        $agence = $user->agences;
+        $tontine = Tontine::all();
+        $image = $request->file('image');
+        $path = $image->store('images', 'public');
+        $zones = Zone::where('agence_id', $agence[0]->id)->get();
 
         User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'com_agence_id'=>$agence[0]->id,
-            'com_association_id'=>$associations[0]->id,
-            'role_id'=>'3',
-            'image'=>$path,
-            'password'=>Hash::make($request->password)
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'ville' => $request->ville,
+            'com_agence_id' => $agence[0]->id,
+            'com_association_id' => $associations[0]->id,
+            'role_id' => '3',
+            'image' => $path,
+            'password' => Hash::make($request->password)
         ]);
         return view('agence.commercial.creer', compact('tontine', 'agence', 'zones', 'user', 'roles'));
     }
 
-    public function dashboard_agences_transaction(){
-        $user=User::all();
-        $roles=Role::all();
-        $a=User::all();
-        $tontine=Tontine::all();
+    public function dashboard_agences_transaction()
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $a = User::all();
+        $tontine = Tontine::all();
         return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles'));
     }
 
-    public function dashboard_agences_versement(){
-        $user=User::all();
-        $roles=Role::all();
-        $a=User::all();
-        $tontine=Tontine::all();
+    public function dashboard_agences_versement()
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $a = User::all();
+        $tontine = Tontine::all();
         return view('agence.versement.versement', compact('tontine', 'user', 'a', 'roles'));
     }
 
-    public function dashboard_agences_reglage(){
-        $user=User::all();
-        $roles=Role::all();
-        $a=User::all();
-        $tontine=Tontine::all();
+    public function dashboard_agences_reglage()
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $a = User::all();
+        $tontine = Tontine::all();
         return view('agence.agence.agences', compact('tontine', 'user', 'a', 'roles'));
     }
 
-    public function dashboard_agences_membre(){
-        $roles=Role::all();
-        $user=User::find(auth()->user()->id);
-        $association=$user->associations;
-        $agence=$user->agences;
-        $tontine=Tontine::all();
-        $roles=Role::all();
-        $membre=User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $agence[0]->id)->get();
-        if(!empty($membre[0]))
-        {
+    public function dashboard_agences_membre()
+    {
+        $roles = Role::all();
+        $user = User::find(auth()->user()->id);
+        $association = $user->associations;
+        $agence = $user->agences;
+        $tontine = Tontine::all();
+        $roles = Role::all();
+        $membre = User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $agence[0]->id)->get();
+        if (!empty($membre[0])) {
             // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
-            $t=Tontine::all();
-            $roles=Role::all();
-            $sold=Solde::where('user_id', $membre[0]->id)->get();
+            $t = Tontine::all();
+            $roles = Role::all();
+            $sold = Solde::where('user_id', $membre[0]->id)->get();
 
-        // return $membre;
-        return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't', 'sold'));
-        }
-        else{
-            $roles=Role::all();
+            // return $membre;
+            return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't', 'sold'));
+        } else {
+            $roles = Role::all();
 
             // return $membre;
             return view('agence.membre.membre', compact('tontine', 'membre', 'roles'));
         }
     }
 
-    public function dashboard_agences_creer_membre(){
-        $tontine=Tontine::all();
-        $t=Tontine::all();
-        $user=User::find(auth()->user()->id);
+    public function dashboard_agences_creer_membre()
+    {
+        $tontine = Tontine::all();
+        $t = Tontine::all();
+        $user = User::find(auth()->user()->id);
         // $association=$user->associations;
-        $agence=$user->agences;
-        $associations=Association::where('id', $user->association_id)->get();
-        $roles=Role::all();
+        $agence = $user->agences;
+        $associations = Association::where('id', $user->association_id)->get();
+        $roles = Role::all();
         // return $associations;
         return view('agence.membre.creer', compact('tontine', 'associations', 'roles', 't', 'agence'));
     }
 
-    public function dashboard_agences_ajouter_membre(Request $request){
-        $tontine=Tontine::all();
-        $t=Tontine::all();
-        $user=User::find(auth()->user()->id);
+    public function dashboard_agences_ajouter_membre(Request $request)
+    {
+        $tontine = Tontine::all();
+        $t = Tontine::all();
+        $user = User::find(auth()->user()->id);
         // $association=$user->associations;
-        $agence=$user->agences;
-        $associations=Association::where('id', $user->association_id)->get();
-        $roles=Role::all();
-        $image=$request->file('image');
-        $path=$image->store('images','public');
+        $agence = $user->agences;
+        $associations = Association::where('id', $user->association_id)->get();
+        $roles = Role::all();
+        $image = $request->file('image');
+        $path = $image->store('images', 'public');
         // $membre=User::where('role_id', 4);
 
-        $membres=User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ville'=>$request->ville,
-            'pays'=>$request->pays,
-            'image'=>$path,
-            'association_id'=>$associations[0]->id,
-            'mem_tontine_id'=>$request->mem_tontine_id,
-            'mem_agence_id'=>$request->mem_agence_id,
-            'role_id'=>4,
-            'password'=>Hash::make($request->password),
+        $membres = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'ville' => $request->ville,
+            'pays' => $request->pays,
+            'image' => $path,
+            'association_id' => $associations[0]->id,
+            'mem_tontine_id' => $request->mem_tontine_id,
+            'mem_agence_id' => $request->mem_agence_id,
+            'role_id' => 4,
+            'password' => Hash::make($request->password),
         ]);
 
         if ($membres) {
             # code...
             Solde::create([
-            'user_id'=>$membres->id,
-            'solde'=>0,
-        ]);
-    }
+                'user_id' => $membres->id,
+                'solde' => 1000,
+            ]);
+        }
 
         // return $t[1];
 
         return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't'));
     }
 
-    public function dashboard_agences_tontine($id){
-        $user=User::all();
-        $roles=Role::all();
-        $a=User::all();
-        $tontine=Tontine::find($id);
+    public function dashboard_agences_tontine($id)
+    {
+        $user = User::all();
+        $roles = Role::all();
+        $a = User::all();
+        $tontine = Tontine::find($id);
         return view('agence.tontine.tontine', compact('tontine', 'user', 'a', 'roles'));
     }
-
 }

@@ -570,7 +570,7 @@ class AdminController extends Controller
         $image = $request->file('image');
         $path = $image->store('images', 'public');
         $roles = Role::all();
-        // $membres=User::where('role_id', 4);
+        // $membres = User::where('role_id', 4);
 
         $membres = User::create([
             'name' => $request->name,
@@ -592,8 +592,8 @@ class AdminController extends Controller
                 'solde' => 1000,
             ]);
         }
-
-        return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
+        return back();
+        // return view('admin.admin.membres.membre', compact('tontine', 'membres', 'roles'));
     }
 
     public function agences_tontine()

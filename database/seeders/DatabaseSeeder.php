@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Solde;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
             AgenceSeeder::class,
             ZoneSeeder::class,
             TontineSeeder::class,
-    ]);
+            SoldeSeeder::class,
+        ]);
     }
 }

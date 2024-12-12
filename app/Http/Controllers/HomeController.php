@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,6 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $tontine = Tontine::all();
+        // $membre = Solde::all();
+
+        // return $membre;
         return view('users.home', compact('tontine'));
     }
 

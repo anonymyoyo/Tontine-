@@ -19,9 +19,6 @@
         <div class="img_newsletter">
             <img src="{{ asset('assets/css/img/newsletter.png') }}" class="newsletter_img" alt="">
         </div>
-
-      <!-- </div> -->
-      <!-- <div class="li"> -->
       <input class="newsletter" type="mail" name="mail" id="mail" placeholder="Veuiller entrer votre addresse Mail">
 
       <input class="newsletter_send" type="submit" value="S'inscrire"><br><br>
