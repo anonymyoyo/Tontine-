@@ -4,9 +4,91 @@
 
 <body>
 
+    <nav class="nav-bottom">
+        <!-- <div class="logo">
+          <img src="" alt="logo">
+        </div> -->
+        <div>
+          <ul>
+            <li><a href="#">Mon compte</a></li>
+            <li><a href="#">Acceuil</a></li>
+            <li><a href="#">TCA Money</a></li>
+            <li><a href="#">MarketPlace</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="user_profil">
+        <div class="user_nav">
+            <nav>
+                <ul> <img src="{{ Storage::url(auth()->user()->image) }}" class="image_profile" alt="image de profil">
+                <li>Notifications</li>
+                <li>Panier</li>
+                <li>Recherche</li>
+                <li>Service client</li>
+                <li><form action="{{ route('logout') }}" method="liOST" id="logout">
+                    @csrf
+                    </form>
+                    <a class="li-3" onclick="event.preventDefault();
+                    document.getElementById('logout').submit();">
+                    Deconnexion
+                    </a></p>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container login-form">
+        <div class="formulaire">
+          <h2 class="h2">Deposer</h2>
+          <form method="POST" action="£">
+          @csrf
+
+            <div class="li">
+                <label class="li-1" for="tontine">Selctioner la tontine:</label>
+            </div>
+            <div class="li">
+                <select class="li-2" name="mem_tontine_id" id="">
+                    <option value="">Selectionner</option>
+                    @foreach ($tontine as $tontines)
+                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                    @endforeach
+
+                </select>
+                <br><br>
+            </div>
+            <div class="li">
+              <label class="li-1" for="montant">Entrer le Montant:</label>
+            </div>
+            <div class="li">
+              <input class="li-2" required type="number" name="montant" min="500" id="montant"
+                placeholder="Montant Minimum 500 XAF"><br><br>
+            </div>
+
+            <div class="li">
+              <label class="li-1" for="mdp">Mot de Passe:</label>
+              (Confirmer la transaction)
+            </div>
+            <div class="li">
+              <input class="li-2" required type="password" name="password" id="password"><br><br>
+            </div>
+            <div class="li">
+              <input class="li-3" type="submit" value="Deposer">
+            </div>
+
+          </form>
+        </div>
+        <div class="image2">
+            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
+          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
+        </div>
+    </div>
+
+
+
 
     <!-- error section start -->
-    <section class="error-container bg-img">
+    {{-- <section class="error-container bg-img">
         <div class="container">
             <div class="error-wrapper">
                 <div class="row d-flex align-items-center">
@@ -29,7 +111,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- error section end -->
 
 @include('users.script')

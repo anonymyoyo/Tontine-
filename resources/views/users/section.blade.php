@@ -83,19 +83,27 @@
 </div>
 
 <div class="section">
-    <h1>NOS SERVICES</h1>
-    <div class="sup_section">
-        <div class="sup-one">
-            <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
+
+    {{-- <h1>NOS SERVICES</h1> --}}
+    {{-- <div class="sup_section"> --}}
+        <div class="sup_section">
+            <h4>Pourquoi payer pour vos transactions financières</h4>
+            <p>Avec TCA Money, vos dépôts, retraits, transferts et paiements sont gratuits.
+
+                M2U Money est la nouvelle génération de wallet. Conviviable, sécurisé et facile à utiliser pour tout vos besoins et paiement et transfert d’argent.</p>
             <div class="sup_one">
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" alt="">
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" alt="">
             </div>
+
+            <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
         </div>
-        <div class="sup-two">
+        {{-- <div class="sup-two">
+            <h4>Fontionnalités</h4>
+            <p>TCA va au dela du transfert d’argent et du paiement. C’est la plateforme qu répond à tous vos besoins financiers.</p>
             <img src="{{ asset('assets/css/img/VF-features.png') }}" alt="">
-        </div>
-    </div>
+        </div> --}}
+    {{-- </div> --}}
     <div class="sub_section">
         <div class="sub_one">
             <img src="{{ asset('assets/css/img/1-150x150.png') }}" alt="">
@@ -117,11 +125,11 @@
 
 
 
-  <script>
+<script>
     const slides = document.querySelectorAll('.slide');
 
     let currentSlide = 0;
-    const interval = 3500;
+    const interval = 3000;
 
     function updateSlides() {
       slides.forEach((slide, index) => {

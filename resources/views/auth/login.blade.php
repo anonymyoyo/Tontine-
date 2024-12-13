@@ -72,7 +72,7 @@
             <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
           <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
         </div>
-      </div>
+    </div>
   </body>
 
 

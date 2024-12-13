@@ -55,7 +55,25 @@ class UserController extends Controller
 
     public function depot()
     {
-        return view('users.user.depot');
+        $tontine = Tontine::where('id', auth()->user()->mem_tontine_id)->get();
+
+
+        return view('users.user.depot',  compact('tontine'));
+    }
+
+    public function retrait()
+    {
+        return view('users.user.retrait');
+    }
+
+    public function transfert()
+    {
+        return view('users.user.transfert');
+    }
+
+    public function pret()
+    {
+        return view('users.user.pret');
     }
 
     public function tontines()

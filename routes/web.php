@@ -140,22 +140,15 @@ Route::middleware(['auth', 'commercial'])->group(function () {
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user', [UserController::class, 'user'])->name('user');
-    // Route::get('User/Contacts', [UserController::class, 'contacts'])->name('contact');
-    Route::get('Explorer', [UserController::class, 'association'])->name('user.association');
-    Route::post('User/Depot/Succes', [UserController::class, 'depot'])->name('user.depot');
+    Route::get('User/Depot', [UserController::class, 'depot'])->name('user.depot');
+    Route::get('User/Depot/Succes', [UserController::class, 'depot_user'])->name('depot.user');
+    Route::get('User/Retrait', [UserController::class, 'retrait'])->name('user.retrait');
+    Route::get('User/Retrait/Succes', [UserController::class, 'retrait_user'])->name('retrait.user');
+    Route::get('User/Tranfert', [UserController::class, 'transfert'])->name('user.transfert');
+    Route::get('User/Transfert/Succes', [UserController::class, 'transfert_user'])->name('transfert.user');
     Route::get('Tontines', [UserController::class, 'tontines'])->name('user.tontines');
-    Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
-    // Route::get('Creer une Association', [UserController::class, 'create_association'])->name('registation');
-    // Route::post('Creer une Association', [UserController::class, 'store_association'])->name('register.association');
-    // Route::get('Verification gerant', [UserController::class, 'verification_gerant'])->name('registration_gerant');
-    // Route::post('Verification du gerant/{id}', [UserController::class, 'verification'])->name('verification');
-    // Route::get('user/association/{id}', [UserController::class, 'association_index'])->name('tontine');
-    // Route::get('user/invite/{id}', [UserController::class, 'invitation'])->name('invite');
-    // Route::get('user/rejoindre', [UserController::class, 'lienInvitation'])->name('tontine.join');
+    // Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
 
-    // Route::get('Associations/details/{id}', [UserController::class, 'association_details'])->name('detail');
-    // Route::get('Confirmer inscription/{id}', [UserController::class, 'confirmation_inscription'])->name('confirmation');
-    // Route::post('Inscription du membre/{id}', [UserController::class, 'confirmation'])->name('user.confirmation');
 });
 
 // Route::get('/dashboard', function () {
