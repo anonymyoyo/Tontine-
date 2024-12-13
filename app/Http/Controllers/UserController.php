@@ -63,12 +63,16 @@ class UserController extends Controller
 
     public function retrait()
     {
-        return view('users.user.retrait');
+        $tontine = Tontine::where('id', auth()->user()->mem_tontine_id)->get();
+
+        return view('users.user.retrait', compact('tontine'));
     }
 
     public function transfert()
     {
-        return view('users.user.transfert');
+        $membre = User::where('role_id', 4)->where('association_id', auth()->user()->association_id)->get();
+
+        return view('users.user.transfert', compact('membre'));
     }
 
     public function pret()

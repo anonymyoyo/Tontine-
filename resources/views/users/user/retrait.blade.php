@@ -40,7 +40,7 @@
 
     <div class="container login-form">
         <div class="formulaire">
-          <h2 class="h2">Deposer</h2>
+          <h2 class="h2">Retirer</h2>
           <form method="POST" action="#">
           @csrf
 
@@ -73,7 +73,7 @@
               <input class="li-2" required type="password" name="password" id="password"><br><br>
             </div>
             <div class="li">
-              <input class="li-3" type="submit" value="Deposer">
+              <input class="li-3" type="submit" value="Retirer">
             </div>
 
           </form>

@@ -40,23 +40,17 @@
 
     <div class="container login-form">
         <div class="formulaire">
-          <h2 class="h2">Deposer</h2>
+          <h2 class="h2">Pret</h2>
           <form method="POST" action="#">
           @csrf
 
             <div class="li">
-                <label class="li-1" for="tontine">Selctioner la tontine:</label>
-            </div>
-            <div class="li">
-                <select class="li-2" name="mem_tontine_id" id="">
-                    <option value="">Selectionner</option>
-                    @foreach ($tontine as $tontines)
-                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                    @endforeach
-
-                </select>
-                <br><br>
-            </div>
+                <label class="li-1" for="Objet">Objet de la demande:</label>
+              </div>
+              <div class="li">
+                <input class="li-2" required type="texte" name="objet" id="Objet"
+                  placeholder="Entrer l'objet de votre demande"><br><br>
+              </div>
             <div class="li">
               <label class="li-1" for="montant">Entrer le Montant:</label>
             </div>
@@ -73,7 +67,7 @@
               <input class="li-2" required type="password" name="password" id="password"><br><br>
             </div>
             <div class="li">
-              <input class="li-3" type="submit" value="Deposer">
+              <input class="li-3" type="submit" value="Soumettre">
             </div>
 
           </form>

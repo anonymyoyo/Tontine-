@@ -93,17 +93,17 @@
 
         <div class="super_grid1">
             <span class="cp"> <img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>SOS credit</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Importer en Chine</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>Formation</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Marketing Digital</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Import Chine</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>transfert international</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Produits/ Services</p> </span>
             </div>
         </div>
 
         <div class="separator"></div><br>
         <a href="#transaction">Besoin d'aide?</a>
         <div class="super_grid1">
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>Contacter un agent</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>Localiser une agence</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>Contacter agent</p> </span>
+            <span class="cp"> <img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>Localiser agence</p> </span>
             <span class="cp"> <img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>Devenir partenaire</p> </span>
             </div>
         </div>
