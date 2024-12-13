@@ -30,7 +30,7 @@
                         <a class="li-3" onclick="event.preventDefault();
                         document.getElementById('logout').submit();">
                         Deconnexion
-                        </a></p>
+                        </a></p></li>
                     </ul>
                 </nav>
             </div>

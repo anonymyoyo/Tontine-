@@ -5,10 +5,9 @@
       <div class="footer-navbar">
         <nav class="footer-nav">
           <ul>
-            <li class="footer-li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-            <li class="footer-li"><a href="{{ route('catalogue') }}">CATALOGUE</a></li>
-            {{-- <li class="footer-li"><a href="{{ route('contact') }}">CONTACTS</a></li> --}}
-            <li class="footer-li"><a href="{{ route('login') }}">CONNEXION</a></li>
+            <li class="footer-li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+            <li class="footer-li"><a href="#">PRODUITS/SERVICES</a></li>
+            <li class="footer-li"><a href="#">TROUVER AGENT</a></li>
           </ul>
         </nav>
         <!-- <h6>Soyez aux nouvelles sur nos mise a jour</h6> -->

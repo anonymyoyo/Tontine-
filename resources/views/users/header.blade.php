@@ -12,17 +12,10 @@
         <nav class="nav">
             <ul>
                 <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-                <li class="li"><a href="{{ route('contact') }}">CONTACTS</a></li>
+                <li class="li"><a href="#">PRODUITS/SERVICES</a></li>
+                <li class="li"><a href="#">TROUVER UN AGENT</a></li>
                 <li class="li"><a href="{{ route('user') }}">COMPTE {{ auth()->user()->name }}</a></li>
-                <li class="li">
-                    <form action="{{ route('logout') }}" method="POST" id="logout">
-                    @csrf
-                    </form>
-                    <a class="li-3" onclick="event.preventDefault();
-                    document.getElementById('logout').submit();" >
-                    Deconnexion
-                    </a>
-                </li>
+
             </ul>
         </nav>
     </div>
@@ -39,7 +32,7 @@
             <ul>
                 <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
                 <li class="li"><a href="#">PRODUITS/SERVICES</a></li>
-                <li class="li"><a href="#">TROUVER UN AGENT</a></li>
+                <li class="li"><a href="#">TROUVER AGENT</a></li>
                 <li class="li"><a href="{{ route('register') }}">INSCRIPTION</a></li>
                 <li class="li"><a href="{{ route('login') }}">CONNEXION</a></li>
             </ul>

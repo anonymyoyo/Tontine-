@@ -53,6 +53,15 @@
 </style> --}}
 
 <div class="slider">
+    <marquee behavior="" direction="left">
+        <b><i>Tontine Simple</i></b>
+        <b><i>Tontine Islamique</i></b>
+        <b><i>Tontine Electromenagers</i></b>
+        <b><i>Tontine D'assurance</i></b>
+        <b><i>Tontine Scolaire</i></b>
+        <b><i>Tontine D'investissement</i></b>
+        <b><i>Tontine Alimentaire</i></b>
+    </marquee>
     <div class="slide">
         <img src="{{ asset('assets/images/picture1.png') }}" alt="Image 3" class="image">
         <div class="description">
@@ -64,8 +73,7 @@
     <div class="slide">
       <img src="{{ asset('assets/images/picture2.png') }}" alt="Image 1" class="image">
       <div class="description">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Distinctio soluta quaerat, aspernatur consequuntur, maxime eius numquam
+        <p>TCA Mobile Money la nouvelle generation de tontine conviviable, securisee et facile a utiliser.
         </p>
         <a href="{{ route('login') }}">Commencer</a>
       </div>
@@ -73,10 +81,9 @@
     <div class="slide">
       <img src="{{ asset('assets/images/picture3.png') }}" alt="Image 2" class="image">
       <div class="description">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Distinctio soluta quaerat, aspernatur consequuntur, maxime eius numquam
+        <p>Notre catalogue
         </p>
-        <a href="{{ route('login') }}">Commencer</a>
+        <a href="{{ route('catalogue') }}">Voir</a>
       </div>
     </div>
 
@@ -87,22 +94,33 @@
     {{-- <h1>NOS SERVICES</h1> --}}
     {{-- <div class="sup_section"> --}}
         <div class="sup_section">
-            <h4>Pourquoi payer pour vos transactions financières</h4>
-            <p>Avec TCA Money, vos dépôts, retraits, transferts et paiements sont gratuits.
-
-                M2U Money est la nouvelle génération de wallet. Conviviable, sécurisé et facile à utiliser pour tout vos besoins et paiement et transfert d’argent.</p>
             <div class="sup_one">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" alt="">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" alt="">
+                <h4>Pourquoi payer pour vos transactions financières</h4>
+            <p>Avec TCA Money, vos dépôts, retraits, transferts et paiements sont gratuits.
+            M2U Money est la nouvelle génération de wallet. Conviviable, sécurisé et facile à utiliser
+            pour tout vos besoins et paiement et transfert d’argent.</p>
+            <div class="download">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
+            </div>
+            </div>
+            <div class="sup_two">
+                <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
             </div>
 
-            <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
+        </div><br><br>
+
+        <div class="sup_section">
+
+            <div class="sup_two">
+                <img src="{{ asset('assets/css/img/VF-features.png') }}" class="img" alt="">
+            </div>
+            <div class="sup_one">
+                <h4>Fontionnalités</h4>
+                <p>TCA va au dela du transfert d’argent et du paiement. C’est la plateforme qu répond à tous vos besoins financiers.</p>
+            </div>
         </div>
-        {{-- <div class="sup-two">
-            <h4>Fontionnalités</h4>
-            <p>TCA va au dela du transfert d’argent et du paiement. C’est la plateforme qu répond à tous vos besoins financiers.</p>
-            <img src="{{ asset('assets/css/img/VF-features.png') }}" alt="">
-        </div> --}}
+        <br><br>
     {{-- </div> --}}
     <div class="sub_section">
         <div class="sub_one">
