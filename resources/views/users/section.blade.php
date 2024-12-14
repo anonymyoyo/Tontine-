@@ -77,8 +77,8 @@
                     <p>Tontine Epargne</p>
                 </div>
                 <div class="slidetontine2">
-                    <p>Tontine Electromenager</p>
                     <p>Tontine Assurance</p>
+                    <p>Tontine Electromenager</p>
                     <p>Tontine Investissement</p>
                 </div>
             </div>
@@ -100,8 +100,8 @@
                 <p>Tontine Epargne</p>
             </div>
             <div class="slidetontine2">
-                <p>Tontine Electromenager</p>
                 <p>Tontine Assurance</p>
+                <p>Tontine Electromenager</p>
                 <p>Tontine Investissement</p>
             </div>
         </div>
