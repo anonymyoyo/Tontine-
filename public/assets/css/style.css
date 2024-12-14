@@ -686,9 +686,9 @@ li a:hover {
 .slider {
     position: relative;
     width: 90%;
-    height: 700px;
+    height: 450px;
     margin: 40px auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .slider marquee {
@@ -716,15 +716,16 @@ li a:hover {
 }
 
 .image {
-    width: 50%;
-    height: 60%;
+    width: 35%;
+    height: 90%;
     border-radius: 25px;
+    margin-top: 90px;
     /* margin-right: 300px; */
     object-fit: cover;
 }
 
 .description {
-    width: 50%;
+    width: 70%;
     padding: 20px;
     /* font-size: 16px; */
 }
@@ -732,10 +733,56 @@ li a:hover {
 .description p {
     width: 100%;
     text-align: center;
-    font-size: 30px;
+    font-size: 16px;
     padding: 20px;
     font-weight: 700;
-    font-weight: 400px;
+    /* font-weight: 400px; */
+}
+
+.description p span {
+    font-weight: 100;
+}
+
+.description .slidetontine {
+    display: flex;
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+.description .slidetontine .slidetontine1 {
+    width: 70%;
+    font-size: 15px;
+    display: block;
+}
+
+.description .slidetontine .slidetontine1 p {
+    background-color: #90cf35;
+    width: 50%;
+    margin-top: 30px;
+    padding: 0;
+    color: #142003;
+    border-radius: 10px;
+    /* margin-right: 2px; */
+    /* font-weight: 500; */
+}
+
+.description .slidetontine .slidetontine2 {
+    width: 70%;
+    display: block;
+    font-size: 15px;
+}
+
+.description .slidetontine .slidetontine2 p {
+    background-color: #90cf35;
+    width: 50%;
+    padding: 0;
+    margin-top: 30px;
+    color: #142003;
+    border-radius: 10px;
+    /* margin-right: 2px; */
+    /* font-weight: 200; */
 }
 
 .slide a {
@@ -743,7 +790,8 @@ li a:hover {
     width: 40%;
     font-size: 20px;
     border-radius: 15px;
-    margin-left: 20%;
+    margin-left: 10%;
+    margin-top: 100px;
     padding: 8px;
     color: #263a0b;
     background-color: #90cf35;
@@ -903,54 +951,57 @@ li a:hover {
     width: 90%;
     margin: 40px auto;
     display: block;
+    /* margin-top: -30px; */
 }
 
 .section .sup_section {
-    display: flex;
+    display: block;
     width: 100%;
     height: auto;
 }
 
 .section .sup_section .sup_one {
-    width: 60%;
+    width: 80%;
     margin-bottom: 0;
 }
 
 .section .sup_section .sup_one h4 {
-    font-size: 40px;
+    font-size: 45px;
     color: #90cf35;
+    line-height: 5px;
 }
 
 .section .sup_section .sup_one p {
-    font-size: 20px;
+    font-size: 17px;
     text-align: left;
+    /* margin-top: -20px; */
 }
 
-.section .sup_section .sup_one .download {
-    display: flex;
+.download {
+    display: block;
     width: 50%;
     align-items: center;
 }
 
-.section .sup_section .sup_one .download .appstore,
-.sup_one .download .playstore {
-    width: 50%;
+.download .appstore,
+.download .playstore {
+    width: 20%;
     height: 50px;
 }
 
 .section .sup_section .sup_two {
     width: 60%;
-    height: 600px;
+    height: 300px;
 }
 
 .section .sup_section .sup_two .img {
-    width: 90%;
-    height: auto;
+    width: 50%;
+    height: 350px;
     border-radius: 30px;
 }
 
 .section .sub_section {
-    display: flex;
+    display: block;
 }
 
 .section .sub_section .sub_one,
@@ -960,8 +1011,10 @@ li a:hover {
     font-size: 20px;
     font-weight: 300;
     width: 40%;
-    border: 1px solid #567c21;
+    background-color: #fff;
+    border: none;
     border-radius: 25px;
+    padding: 20px;
     margin: 10px;
 }
 
@@ -2945,6 +2998,19 @@ li a:hover {
         display: flex;
         height: 240px;
     }
+
+    .super_grid .affiche {
+        width: 75%;
+        height: 100%;
+        border-radius: 25px;
+        /* margin-top: -20px;
+        margin-left: -20px; */
+    }
+
+    #transaction {
+        margin-left: 20px;
+    }
+
 
     .super_grid1 {
         display: flex;

@@ -45,6 +45,10 @@
       </div>
 
     <div class="container login-form">
+        <div class="image2">
+            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
+          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
+        </div>
         <div class="formulaire">
           <h2 class="h2">Connexion</h2>
           <form method="POST" action="{{ route('login') }}">
@@ -67,10 +71,6 @@
             </div>
 
           </form>
-        </div>
-        <div class="image2">
-            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
-          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
         </div>
     </div>
   </body>
