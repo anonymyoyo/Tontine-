@@ -10,15 +10,15 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Acceuil</a></li>
+            <li><a href="{{ route('user') }}">Mon compte</a></li>
+            <li><a href="{{ route('home') }}">Acceuil</a></li>
             <li><a href="#">TCA Money</a></li>
             <li><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
 
-    <div class="user_profil">
+    {{-- <div class="user_profil">
         <div class="user_nav">
             <nav>
                 <ul> <img src="{{ Storage::url(auth()->user()->image) }}" class="image_profile" alt="image de profil">
@@ -36,12 +36,12 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container login-form">
         <div class="formulaire">
           <h2 class="h2">Deposer</h2>
-          <form method="POST" action="#">
+          <form method="POST" action="{{ route('depot.user') }}">
           @csrf
 
             <div class="li">
@@ -66,11 +66,19 @@
             </div>
 
             <div class="li">
-              <label class="li-1" for="mdp">Mot de Passe:</label>
-              (Confirmer la transaction)
+              <label class="li-1" for="mdp">Type de depot:</label>
             </div>
             <div class="li">
-              <input class="li-2" required type="password" name="password" id="password"><br><br>
+                <select class="li-2" name="" id="">
+                    <option value="">Selectionner une option</option>
+                    <option value="">Cash</option>
+                    <option value="">Mobile Money</option>
+                    {{-- @foreach ($tontine as $tontines)
+                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                    @endforeach --}}
+
+                </select>
+                <br><br>
             </div>
             <div class="li">
               <input class="li-3" type="submit" value="Deposer">
@@ -78,10 +86,10 @@
 
           </form>
         </div>
-        <div class="image2">
+        {{-- <div class="image2">
             <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
           <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
-        </div>
+        </div> --}}
     </div>
 
 

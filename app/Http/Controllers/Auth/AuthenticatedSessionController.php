@@ -28,24 +28,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(auth()->user()->role_id === '1')
-        {
+        if (auth()->user()->role_id == '1') {
             return to_route('dashboard');
-        }
-        elseif(auth()->user()->role_id === 2)
-        {
+        } elseif (auth()->user()->role_id == '2') {
             return to_route('agence');
-        }
-        elseif(auth()->user()->role_id === 3)
-        {
+        } elseif (auth()->user()->role_id == '3') {
             return to_route('commercial');
-        }
-        elseif(auth()->user()->role_id === 4)
-        {
+        } elseif (auth()->user()->role_id == '4') {
             return to_route('user');
-        }
-        elseif(auth()->user()->role_id === 5)
-        {
+        } elseif (auth()->user()->role_id == '5') {
             return to_route('association');
         }
 

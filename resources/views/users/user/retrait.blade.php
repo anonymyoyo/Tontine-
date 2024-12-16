@@ -10,15 +10,15 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Acceuil</a></li>
+            <li><a href="{{ route('user') }}">Mon compte</a></li>
+            <li><a href="{{ route('home') }}">Acceuil</a></li>
             <li><a href="#">TCA Money</a></li>
             <li><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
 
-    <div class="user_profil">
+    {{-- <div class="user_profil">
         <div class="user_nav">
             <nav>
                 <ul> <img src="{{ Storage::url(auth()->user()->image) }}" class="image_profile" alt="image de profil">
@@ -36,12 +36,12 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container login-form">
         <div class="formulaire">
           <h2 class="h2">Retirer</h2>
-          <form method="POST" action="#">
+          <form method="POST" action="{{ route('retrait.user') }}">
           @csrf
 
             <div class="li">
@@ -64,23 +64,33 @@
               <input class="li-2" required type="number" name="montant" min="500" id="montant"
                 placeholder="Montant Minimum 500 XAF"><br><br>
             </div>
-
             <div class="li">
+                <label class="li-1" for="montant">Type de retrait:</label>
+              </div>
+            {{-- <div class="li">
+                <select class="li-2" name="" id="">
+                    <option value="">Selectionner une option</option>
+                    <option value="">Cash</option>
+                    <option value="">Mobile Money</option>
+                    @foreach ($tontine as $tontines)
+                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
+                    @endforeach
+
+                </select>
+                <br><br>
+            </div> --}}
+            {{-- <div class="li">
               <label class="li-1" for="mdp">Mot de Passe:</label>
               (Confirmer la transaction)
             </div>
             <div class="li">
               <input class="li-2" required type="password" name="password" id="password"><br><br>
-            </div>
+            </div> --}}
             <div class="li">
               <input class="li-3" type="submit" value="Retirer">
             </div>
 
           </form>
-        </div>
-        <div class="image2">
-            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
-          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
         </div>
     </div>
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 
@@ -141,11 +142,11 @@ Route::middleware(['auth', 'commercial'])->group(function () {
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user', [UserController::class, 'user'])->name('user');
     Route::get('User/Depot', [UserController::class, 'depot'])->name('user.depot');
-    Route::get('User/Depot/Succes', [UserController::class, 'depot_user'])->name('depot.user');
+    Route::post('User/Depot/Succes', [UserController::class, 'depot_user'])->name('depot.user');
     Route::get('User/Retrait', [UserController::class, 'retrait'])->name('user.retrait');
-    Route::get('User/Retrait/Succes', [UserController::class, 'retrait_user'])->name('retrait.user');
+    Route::post('User/Retrait/Succes', [UserController::class, 'retrait_user'])->name('retrait.user');
     Route::get('User/Tranfert', [UserController::class, 'transfert'])->name('user.transfert');
-    Route::get('User/Transfert/Succes', [UserController::class, 'transfert_user'])->name('transfert.user');
+    Route::post('User/Transfert/Succes', [UserController::class, 'transfert_user'])->name('transfert.user');
     Route::get('Tontines', [UserController::class, 'tontines'])->name('user.tontines');
     // Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
 
@@ -154,6 +155,9 @@ Route::middleware(['auth', 'user'])->group(function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
+#
+// Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
+// Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -78,8 +78,8 @@
                 </div>
                 <div class="slidetontine2">
                     <p>Tontine Assurance</p>
-                    <p>Tontine Electromenager</p>
-                    <p>Tontine Investissement</p>
+                    <p>Tontine Elec</p>
+                    <p>Tontine Invest</p>
                 </div>
             </div>
             <a href="{{ route('login') }}">Telecharger l'application</a>
@@ -101,8 +101,8 @@
             </div>
             <div class="slidetontine2">
                 <p>Tontine Assurance</p>
-                <p>Tontine Electromenager</p>
-                <p>Tontine Investissement</p>
+                <p>Tontine Elec</p>
+                <p>Tontine Invest</p>
             </div>
         </div>
         <a href="{{ route('login') }}">Telecharger l'application</a>
@@ -123,6 +123,10 @@
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
             </div> --}}
+            <div class="download">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
+                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
+            </div>
             </div>
             <div class="sup_two">
                 <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
@@ -154,11 +158,6 @@
             <h4>Micro-crédit</h4>
             <p>Utilisez TCA et faites la demande d'un microcrédit.</p>
         </div>
-    </div>
-
-    <div class="download">
-        <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
-        <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
     </div>
 </div>
 

@@ -29,9 +29,9 @@
 </head>
 
   <body class="login-bg">
-
+    @include('users.header')
     <div class="login-header">
-        <div class="logo">
+        {{-- <div class="logo">
           <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-1"></a>
         </div>
         <div class="login-r"></div>
@@ -41,15 +41,13 @@
               <li>Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </li>
             </ul>
           </nav>
-        </div>
-      </div>
+        </div> --}}
+    </div><br><br>
 
     <div class="container login-form">
-        <div class="image2">
-            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
-          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
-        </div>
+        
         <div class="formulaire">
+            <h1 class="h3">Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </h1>
           <h2 class="h2">Connexion</h2>
           <form method="POST" action="{{ route('login') }}">
           @csrf
@@ -69,9 +67,14 @@
             <div class="li">
               <input class="li-3" type="submit" value="Connexion">
             </div>
-
+            
           </form>
+          
         </div>
+        <div class="image2">
+                <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
+              <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
+            </div>
     </div>
   </body>
 

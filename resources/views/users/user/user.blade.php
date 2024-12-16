@@ -8,8 +8,8 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Acceuil</a></li>
+            <li><a href="{{ route('user') }}">Mon compte</a></li>
+            <li><a href="{{ route('home') }}">Acceuil</a></li>
             <li><a href="#">TCA Money</a></li>
             <li><a href="#">MarketPlace</a></li>
           </ul>
@@ -49,20 +49,18 @@
 
         </div>
         <div class="profil_grid2">
-            <p>Solde credi</p>
+            <p>Solde credit</p>
             <span class="span">
-              @foreach ($solde as $sold)
-              {{ $sold->solde }}
-              @endforeach
+              0
            </span>XAF
         </div>
     </div>
 
 
     <div class="super_cp">
-      <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>Transfert</p> </a>
-      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>Retrait</p></a>
       <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>Depot</p></a>
+      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>Retrait</p></a>
+      <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>Transfert</p> </a>
       <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>Pret</p></a>
     </div><br>
 
@@ -72,13 +70,13 @@
                 </div> --}}<a href="#transaction" id='transaction'>Mes bons plans</a>
       <div class="super_grid">
         <div class="grid1">
-
                 <img src="{{ asset('assets/css/img/affiche.png') }}" alt="" class="affiche">
-
+            <p>c'est le feu</p>
         </div>
         <div class="grid2">
             <div class="grid3">
                     <span class="cp"> <img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p> </span>
+                    <a href='#' class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p> </a>
             </div>
             <div class="grid3">
                     <span class="cp"> <img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p> </span>

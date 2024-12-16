@@ -10,15 +10,15 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="#">Mon compte</a></li>
-            <li><a href="#">Acceuil</a></li>
+            <li><a href="{{ route('user') }}">Mon compte</a></li>
+            <li><a href="{{ route('home') }}">Acceuil</a></li>
             <li><a href="#">TCA Money</a></li>
             <li><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
 
-    <div class="user_profil">
+    {{-- <div class="user_profil">
         <div class="user_nav">
             <nav>
                 <ul> <img src="{{ Storage::url(auth()->user()->image) }}" class="image_profile" alt="image de profil">
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container login-form">
         <div class="formulaire">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 // use App\Http\Controllers\Controller;
 
 
+use App\Models\Membre;
+use App\Models\Role;
 use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\TontineChoisie;
@@ -12,7 +14,9 @@ use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\Input;
 
 class UserController extends Controller
 {
@@ -53,12 +57,110 @@ class UserController extends Controller
         return view('users.association.tontine', compact('id', 'tontine', 'lien_invitation'));
     }
 
+    // public function admin_depot_client($id)
+    // {
+    //     $roles = Role::all();
+    //     $tontine = Tontine::all();
+    //     $membres = User::find($id);
+    //     $t = Tontine::where('id', $membres->mem_tontine_id)->get();
+
+    //     return view('admin.admin.transactions.depot', compact('tontine', 'roles', 'membres', 't'));
+    // }
+
+    // public function depot_admin_client(Request $request, $id)
+    // {
+    //     $roles = Role::all();
+    //     $tontine = Tontine::all();
+    //     $membres = User::find($id);
+    //     $user = User::find(auth()->user()->id);
+    //     $sold = Solde::where('user_id', $membres->id)->first();
+    //     $t = Tontine::where('id', $membres->mem_tontine_id)->first();
+    //     $solde = Solde::where('user_id', $membres->id)->first();
+
+    //     $transaction = Transaction::create([
+    //         'type' => 'depot',
+    //         'solde_id' => $sold->id,
+    //         'tontine_id' => $t->id,
+    //         'commercial_id' => $user->id,
+    //         'montant' => $request->montant,
+    //     ]);
+
+    //     $sold->update([
+    //         'user_id' => $membres->id,
+    //         'solde' => $solde->solde + $transaction->montant,
+    //     ]);
+    //     return back();
+    // }
+
+    // public function admin_retrait_client($id)
+    // {
+    //     $roles = Role::all();
+    //     $tontine = Tontine::all();
+    //     $membres = User::find($id);
+    //     $t = Tontine::where('id', $membres->mem_tontine_id)->get();
+    //     // return $t;
+    //     return view('admin.admin.transactions.retrait', compact('tontine', 'roles', 'membres', 't'));
+    // }
+
+    // public function retrait_admin_client(Request $request, $id)
+    // {
+
+    //     $roles = Role::all();
+    //     $tontine = Tontine::all();
+    //     $membres = User::find($id);
+    //     $user = User::find(auth()->user()->id);
+    //     $sold = Solde::where('user_id', $membres->id)->first();
+    //     $t = Tontine::where('id', $membres->mem_tontine_id)->first();
+    //     $solde = Solde::where('user_id', $membres->id)->first();
+
+    //     $transaction = Transaction::create([
+    //         'type' => 'retrait',
+    //         'solde_id' => $sold->id,
+    //         'tontine_id' => $t->id,
+    //         'commercial_id' => $user->id,
+    //         'montant' => $request->montant,
+    //     ]);
+
+    //     $sold->update([
+    //         'user_id' => $membres->id,
+    //         'solde' => $solde->solde - $transaction->montant,
+    //     ]);
+    //     // $soldes=$sold->solde;
+    //     // return $sold->solde;
+    //     return back();
+    //     // return view('commercial.transaction.retrait', compact('tontine', 'roles', 'membres', 't', 'sold'));
+    // }
+
     public function depot()
     {
         $tontine = Tontine::where('id', auth()->user()->mem_tontine_id)->get();
-
+        // $membre = User::find(auth()->user()->id);
+        // $t = Tontine::where('id', $membre->mem_tontine_id)->get();
+        // return $tontine
 
         return view('users.user.depot',  compact('tontine'));
+    }
+
+    public function depot_user(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $sold = Solde::where('user_id', $user->id)->first();
+        $t = Tontine::where('id', $user->mem_tontine_id)->first();
+        $solde = Solde::where('user_id', $user->id)->first();
+
+        $transaction = Transaction::create([
+            'type' => 'depot',
+            'solde_id' => $sold->id,
+            'tontine_id' => $t->id,
+            'commercial_id' => $user->id,
+            'montant' => $request->montant,
+        ]);
+
+        $sold->update([
+            'user_id' => $user->id,
+            'solde' => $solde->solde + $transaction->montant,
+        ]);
+        return back();
     }
 
     public function retrait()
@@ -66,6 +168,40 @@ class UserController extends Controller
         $tontine = Tontine::where('id', auth()->user()->mem_tontine_id)->get();
 
         return view('users.user.retrait', compact('tontine'));
+    }
+
+    public function retrait_user(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $sold = Solde::where('user_id', $user->id)->first();
+        $t = Tontine::where('id', $user->mem_tontine_id)->first();
+        $solde = Solde::where('user_id', $user->id)->first();
+        $error = 'Mot de passe incorrect ... <a href="{{route(\'user.retrait\')}}">Essayer a nouveau</a>';
+        $password = Hash::make($request->input('password'));
+        // if ($user->password === $password) {
+        # code...
+        $transaction = Transaction::create([
+            'type' => 'depot',
+            'solde_id' => $sold->id,
+            'tontine_id' => $t->id,
+            'commercial_id' => $user->id,
+            'montant' => $request->montant,
+        ]);
+
+        $sold->update([
+            'user_id' => $user->id,
+            'solde' => $solde->solde - $transaction->montant,
+        ]);
+
+        // return $user->password;
+        // return back();
+        // } else {
+        //     // return $user->password;
+        //     return view('users.user.error');
+        // }
+
+
+        return back();
     }
 
     public function transfert()
