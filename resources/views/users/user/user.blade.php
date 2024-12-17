@@ -56,45 +56,54 @@
         </div>
     </div>
 
+<div class="super-cp">
+    <div class="super_cp1">
+      <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>DEPOT</p></a>
+      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>RETRAIT</p></a>
+    </div>
+    <div class="super_cp1">
+        <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>TRANSFERT</p> </a>
+        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>PRET</p></a>
+      </div><br>
+</div>
 
-    <div class="super_cp">
-      <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>Depot</p></a>
-      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>Retrait</p></a>
-      <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>Transfert</p> </a>
-      <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>Pret</p></a>
-    </div><br>
 
       <div class="separator"></div><br>
-      {{-- <div class="transaction_client">
-                    <a href="#transaction">Derniere Transaction</a>
-                </div> --}}<a href="#transaction" id='transaction'>Mes bons plans</a>
+        <a href="#transaction" id='transaction'>MES BONS PLANS</a>
       <div class="super_grid">
         <div class="grid1">
                 <img src="{{ asset('assets/css/img/affiche.png') }}" alt="" class="affiche">
             <p>c'est le feu</p>
-        </div>
+        </div><br><br>
         <div class="grid2">
-            <div class="grid3">
-                    <span class="cp"> <img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p> </span>
-                    <a href='#' class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p> </a>
-            </div>
-            <div class="grid3">
-                    <span class="cp"> <img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p> </span>
+
+            <div class="super-cp">
+                <div class="super_cp1">
+                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
+                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p></a>
+                </div>
+
+                <div class="super_cp2">
+                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p></a>
+                </div>
             </div>
         </div>
       </div>
             <br><br>
         <div class="separator"></div><br>
-        <a href="#transaction" id='transaction'>Nos Services</a>
-
-        <div class="super_grid1">
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>SOS credit</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Import Chine</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>transfert international</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Produits/ Services</p> </span>
+        <a href="#transaction" id='transaction'>NOS SERVICES</a>
+<br><br>
+        <div class="super-cp">
+            <div class="super_cp1">
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>SOS credit</p></a>
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Import Chine</p></a>
             </div>
+            <div class="super_cp1">
+                <a href="#" class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>transfert international</p> </a>
+                <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Produits/ Services</p></a>
+              </div>
         </div>
-
+<br><br>
         {{-- <style>
 
             .mavbar{
@@ -191,15 +200,16 @@
                     </ul>
                 </div>
         </nav> --}}
-
         <div class="separator"></div><br>
-        <a href="#transaction" id='transaction'>Besoin d'aide?</a>
-        <div class="super_grid1">
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>Contacter agent</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>Localiser agence</p> </span>
-            <span class="cp"> <img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>Devenir partenaire</p> </span>
+        <a href="#transaction" id='transaction'>BESOIN D'AIDE?</a><br><br>
+        <div class="super-cp">
+            <div class="super_cp1">
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>CONTACTER AGENT</p></a>
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>LOCALISER AGENCE</p></a>
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>DEVENIR PARTENAIRE</p></a>
             </div>
         </div>
+
 
 <br><br><br><br><br>
     {{-- @include('users/script') --}}

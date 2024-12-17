@@ -2816,37 +2816,60 @@ li a:hover {
         border: .5px solid #90cf35;
     }
 
-    .super_cp {
+    .super-cp {
         display: flex;
-        width: 40px;
-        height: 40px;
+        width: 90%;
+        height: 50px;
+        margin-top: -20px;
+        margin-left: 15px;
     }
 
-    .cp {
+    .super-cp .super_cp1 {
+        display: flex;
+        width: 50%;
+        /*height: 50px; */
+        margin-left: 2px;
+    }
+
+    .super-cp .super_cp1 .cp {
         /* padding: 20px; */
-        margin-left: 85px;
+        margin-left: 10px;
         margin-top: 5%;
-        width: 20px;
-        height: 20px;
+        width: 60%;
+        height: 55%;
         display: block;
         background-color: #57575725;
         border-radius: 18px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .cp img {
-        width: 35px;
-        margin-left: -9px;
-        height: 50px;
-        margin-top: -20px;
+    .super-cp .super_cp1 .cp img {
+        width: 98%;
+        margin-left: -1px;
+        height: 70px;
+        margin-top: -28px;
     }
 
-    .cp p {
-        color: #000;
-        font-size: 9px;
-        margin-top: 6px;
-        margin-left: -10px;
-        text-align: left;
+    .super-cp .super_cp2 {
+        margin-top: 150px;
+        margin-left: -140px;
+        width: 50%;
+    }
+
+    .super-cp .super_cp2 .cp {
+        width: 40%;
+        height: 30px;
+        display: block;
+        background-color: #57575725;
+        border-radius: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .super-cp .super_cp2 .cp img {
+        width: 98%;
+        margin-left: -1px;
+        height: 60px;
+        margin-top: -25px;
     }
 
     .user_profil {
@@ -3233,7 +3256,7 @@ li a:hover {
     }
 
     .super_grid .affiche {
-        width: 100%;
+        width: 95%;
         height: 100%;
         border-radius: 25px;
         /* margin-top: -20px;
@@ -3482,6 +3505,7 @@ li a:hover {
     .profil_grid {
         display: flex;
         height: 100px;
+        margin-left: 5%;
         margin-bottom: 20px;
     }
 
@@ -3504,10 +3528,10 @@ li a:hover {
     }
 
     .profil_grid .profil_grid1 {
-        width: 40%;
+        width: 45%;
         height: 90%;
         display: block;
-        margin-left: 23px;
+        margin-left: 3px;
         font-size: 9px;
         background-color: #131313fd;
         color: #2e2e2e;
@@ -3516,10 +3540,10 @@ li a:hover {
     }
 
     .profil_grid .profil_grid2 {
-        width: 40%;
+        width: 45%;
         height: 90%;
         display: block;
-        margin-left: 30px;
+        margin-left: 10px;
         font-size: 9px;
         background-color: #131313fd;
         color: #2e2e2e;

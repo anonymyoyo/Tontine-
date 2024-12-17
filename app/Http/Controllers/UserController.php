@@ -11,6 +11,7 @@ use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\TontineChoisie;
 use App\Models\Transaction;
+use App\Models\Transfert;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -206,9 +207,59 @@ class UserController extends Controller
 
     public function transfert()
     {
+        $user = User::find(auth()->user()->id);
         $membre = User::where('role_id', 4)->where('association_id', auth()->user()->association_id)->get();
+        // $solde = Solde::where('user_id', $user->id)->first(); #represente le solde initial de l'emetteur avant la transaction
+        // $sold = Solde::where('user_id', $user->id)->first(); #solde de l'emetteur apres la transaction
+        // $solde_membre = Solde::where('user_id', $membre[0]->id)->get(); #solde du recepteur apres la transaction
 
-        return view('users.user.transfert', compact('membre'));
+
+        // return $user;
+        // return $membre;
+        // return $solde;
+        // return $sold;
+        // return $solde_membre;
+
+        return view('users.user.transfert', compact('membre', 'user'));
+    }
+
+    public function transfert_user(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $membre = User::where('role_id', 4)->where('association_id', auth()->user()->association_id)->get();
+        // $solde = Solde::where('user_id', $user->id)->first(); #represente le solde initial de l'emetteur avant la transaction
+        $sold = Solde::where('user_id', $user->id)->first(); #solde de l'emetteur apres la transaction
+        // $solde_membre = Solde::where('user_id', $membre[0]->id)->get(); #solde du recepteur apres la transaction
+
+        // $transaction = Transaction::create([
+        //     'type' => 'transfert',
+        //     'solde_id' => $sold->id,
+        //     'tontine_id' => $t->id,
+        //     'commercial_id' => $user->id,
+        //     'montant' => $request->montant,
+        // ]);
+
+        $transfert = Transfert::create([
+            'id_emeteur' => $user->id,
+            'id_recepteur' => $request->membre,
+            'montant' => $request->montant,
+        ]);
+
+        $sold->update([
+            'user_id' => $user->id,
+            'solde' => $sold->solde - $transfert->montant,
+        ]);
+
+        $recepteur = $request->Input('membre');
+        $a = User::where('id', $recepteur)->first();
+        $solde_membre = Solde::where('user_id', $a->id)->first();
+
+        $solde_membre->update([
+            'user_id' => $a->id,
+            'solde' => $solde_membre->solde + $transfert->montant,
+        ]);
+        // return $solde_membre;
+        return back();
     }
 
     public function pret()
