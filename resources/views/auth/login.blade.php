@@ -29,19 +29,19 @@
 </head>
 
   <body class="login-bg">
-    @include('users.header')
+    {{-- @include('users.header') --}}
     <div class="login-header">
-        {{-- <div class="logo">
+        <div class="logo">
           <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-1"></a>
         </div>
         <div class="login-r"></div>
         <div class="login-navbar burger">
-          <nav>
+          <nav> 
             <ul>
               <li>Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </li>
             </ul>
           </nav>
-        </div> --}}
+        </div>
     </div><br><br>
 
     <div class="container login-form">

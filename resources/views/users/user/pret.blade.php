@@ -10,10 +10,10 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="{{ route('user') }}">Mon compte</a></li>
-            <li><a href="{{ route('home') }}">Acceuil</a></li>
-            <li><a href="#">TCA Money</a></li>
-            <li><a href="#">MarketPlace</a></li>
+            <li><img src="{{ asset('assets/css/img/forme14.png') }}" alt=""><a href="{{ route('home') }}">Acceuil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user') }}">Profil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">TCA Money</a></li>
+            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
@@ -37,11 +37,11 @@
             </nav>
         </div>
     </div> --}}
-
+    <br><br><br>
     <div class="container login-form">
         <div class="formulaire">
           <h2 class="h2">Pret</h2>
-          <form method="POST" action="#">
+          <form method="POST" action="{{ route('pret.user') }}">
           @csrf
 
             <div class="li">
@@ -49,8 +49,12 @@
               </div>
               <div class="li">
                 <input class="li-2" required type="texte" name="objet" id="Objet"
-                  placeholder="Entrer l'objet de votre demande"><br><br>
+                  placeholder="Entrer l'objet de votre demande"><br>
               </div>
+              <input class="li-2" required type="hidden" name="agence_mere" value="{{ auth()->user()->mem_agence_id }}" id="Objet"
+                  placeholder="Entrer l'objet de votre demande">
+              <input class="li-2" required type="hidden" name="demandeur" value="{{ auth()->user()->id }}" id="Objet"
+                  placeholder="Entrer l'objet de votre demande">
             <div class="li">
               <label class="li-1" for="montant">Entrer le Montant:</label>
             </div>
@@ -58,23 +62,11 @@
               <input class="li-2" required type="number" name="montant" min="500" id="montant"
                 placeholder="Montant Minimum 500 XAF"><br><br>
             </div>
-
-            <div class="li">
-              <label class="li-1" for="mdp">Mot de Passe:</label>
-              (Confirmer la transaction)
-            </div>
-            <div class="li">
-              <input class="li-2" required type="password" name="password" id="password"><br><br>
-            </div>
             <div class="li">
               <input class="li-3" type="submit" value="Soumettre">
             </div>
 
           </form>
-        </div>
-        <div class="image2">
-            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
-          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
         </div>
     </div>
 

@@ -8,10 +8,10 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="{{ route('user') }}">Mon compte</a></li>
-            <li><a href="{{ route('home') }}">Acceuil</a></li>
-            <li><a href="#">TCA Money</a></li>
-            <li><a href="#">MarketPlace</a></li>
+            <li><img src="{{ asset('assets/css/img/forme14.png') }}" alt=""><a href="{{ route('home') }}">Acceuil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user') }}">Profil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">TCA Money</a></li>
+            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
@@ -63,46 +63,61 @@
     </div>
     <div class="super_cp1">
         <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme1.png') }}" alt=""><p>TRANSFERT</p> </a>
-        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>PRET</p></a>
+        <a href="{{ route('user.pret') }}" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>PRET</p></a>
       </div><br>
 </div>
-
+<br>
 
       <div class="separator"></div><br>
         <a href="#transaction" id='transaction'>MES BONS PLANS</a>
       <div class="super_grid">
-        <div class="grid1">
-                <img src="{{ asset('assets/css/img/affiche.png') }}" alt="" class="affiche">
-            <p>c'est le feu</p>
-        </div><br><br>
-        <div class="grid2">
+            <div class="grid1">
+                    <img src="{{ asset('assets/css/img/affiche.png') }}" alt="" class="affiche">
+                <p>c'est le feu</p>
+            </div><br><br>
+            <div class="grid2">
 
-            <div class="super-cp">
-                <div class="super_cp1">
-                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
-                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p></a>
-                </div>
-
-                <div class="super_cp2">
-                  <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p></a>
+                <div class="super-cp">
+                    <div class="super_cp1">
+                        <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>DEPOT</p></a>
+                        <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>RETRAIT</p></a>
+                    </div>
+                    {{-- <div class="super_cp1">
+                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p></a>
+                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
+                    </div> --}}
+                </div><br><br><br><br>
+                <div class="super-cp">
+                    <div class="super_cp1">
+                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p></a>
+                    </div>
                 </div>
             </div>
-        </div>
       </div>
-            <br><br>
         <div class="separator"></div><br>
         <a href="#transaction" id='transaction'>NOS SERVICES</a>
 <br><br>
-        <div class="super-cp">
+
+<div class="super-cp">
+    <div class="super_cp1">
+      <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>DEPOT</p></a>
+      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>RETRAIT</p></a>
+    </div>
+    <div class="super_cp1">
+        <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>TRANSFERT</p> </a>
+        <a href="{{ route('user.pret') }}" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>PRET</p></a>
+      </div><br>
+</div>
+        {{-- <div class="super-cp">
             <div class="super_cp1">
-              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>SOS credit</p></a>
-              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>Import Chine</p></a>
+              <a href="#" class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>TRANSFERT D'ARGENT</p></a>
+              <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>IMPORT/EXPORT</p></a>
             </div>
             <div class="super_cp1">
-                <a href="#" class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>transfert international</p> </a>
-                <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>Produits/ Services</p></a>
+                <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>ACCOMPAGNEMENT</p></a>
+                <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>RECRUTEMENT</p></a>
               </div>
-        </div>
+        </div> --}}
 <br><br>
         {{-- <style>
 
@@ -206,12 +221,14 @@
             <div class="super_cp1">
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>CONTACTER AGENT</p></a>
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>LOCALISER AGENCE</p></a>
+            </div>
+            <div class="super_cp1">
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>DEVENIR PARTENAIRE</p></a>
             </div>
         </div>
 
 
-<br><br><br><br><br>
+<br><br><br><br><br><br>
     {{-- @include('users/script') --}}
 
 

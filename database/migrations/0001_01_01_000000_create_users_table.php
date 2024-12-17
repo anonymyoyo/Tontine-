@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('pays')->nullable();
             $table->string('image');
             $table->string('association_id')->nullable();
+            $table->string('agence_id')->nullable();
             $table->string('com_association_id')->nullable();
             $table->string('com_agence_id')->nullable();
             $table->string('mem_agence_id')->nullable();

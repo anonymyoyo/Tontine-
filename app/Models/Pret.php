@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pret extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'objet',
+        'montant',
+        'demandeur',
+        'agence_mere'
+    ];
 }

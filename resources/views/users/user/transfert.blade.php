@@ -10,10 +10,10 @@
         </div> -->
         <div>
           <ul>
-            <li><a href="{{ route('user') }}">Mon compte</a></li>
-            <li><a href="{{ route('home') }}">Acceuil</a></li>
-            <li><a href="#">TCA Money</a></li>
-            <li><a href="#">MarketPlace</a></li>
+            <li><img src="{{ asset('assets/css/img/forme14.png') }}" alt=""><a href="{{ route('home') }}">Acceuil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user') }}">Profil</a></li>
+            <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">TCA Money</a></li>
+            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">MarketPlace</a></li>
           </ul>
         </div>
     </nav>
@@ -37,7 +37,7 @@
             </nav>
         </div>
     </div> --}}
-
+    <br><br><br>
     <div class="container login-form">
         <div class="formulaire">
           <h2 class="h2">Transferer</h2>

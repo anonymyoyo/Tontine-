@@ -80,9 +80,9 @@
           </a>
         </li>
         <li>
-            <a href="{{ route('agence.versement') }}">
+            <a href="{{ route('dashboard_agence.pret') }}">
               <i class="bi bi-wallet2"></i>
-              <span class="menu-text">Versement</span>
+              <span class="menu-text">Prets</span>
             </a>
           </li>
         <li>

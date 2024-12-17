@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('prets', function (Blueprint $table) {
             $table->id();
+            $table->string('objet');
+            $table->integer('montant');
+            $table->string('demandeur');
+            $table->string('agence_mere')->nullable();
             $table->timestamps();
         });
     }

@@ -16,8 +16,12 @@ class SoldeSeeder extends Seeder
         //
 
         Solde::create([
-            "id" => 1,
             "user_id" => 8,
+            "solde" => 1000,
+        ]);
+
+        Solde::create([
+            "user_id" => 9,
             "solde" => 1000,
         ]);
     }

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Agence;
 use App\Models\Association;
+use App\Models\Pret;
 use App\Models\Role;
 use App\Models\Solde;
 use App\Models\Tontine;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Zone;
 use Illuminate\Http\Request;
@@ -168,6 +170,67 @@ class AgenceController extends Controller
         $a = User::all();
         $tontine = Tontine::all();
         return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles'));
+    }
+
+    public function dashboard_pret_agence()
+    {
+        $roles = Role::all();
+        $tontine = Tontine::all();
+        $user = User::find(auth()->user()->id);
+        $pret = Pret::where('agence_mere', $user->agence_id)->get();
+        $membre = User::where('mem_agence_id', $user->agence_id)->where('id', $pret[0]->demandeur)->get();
+        if (!empty($pret)) {
+            # code...
+
+            return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'membre', 'pret'));
+        } else {
+            // return $pret;
+            return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'pret'));
+        }
+
+
+
+
+
+        // return $membre;
+
+    }
+
+    public function dashboard_agences_depot(Request $request, $id)
+    {
+        $roles = Role::all();
+        $tontine = Tontine::all();
+        $membres = User::find($id);
+
+
+
+        return view('agence.versement.depot', compact('tontine', 'roles', 'membres'));
+    }
+
+    public function dashboard_depot_agences(Request $request, $id)
+    {
+        $roles = Role::all();
+        $tontine = Tontine::all();
+        $membres = User::find($id);
+
+        $user = User::find(auth()->user()->id);
+        $sold = Solde::where('user_id', $membres->id)->first();
+        $solde = Solde::where('user_id', $membres->id)->first();
+
+        $transaction = Transaction::create([
+            'type' => 'depot',
+            'solde_id' => $sold->id,
+            'agence_id' => $user->agence_id,
+            'montant' => $request->montant,
+        ]);
+
+        $sold->update([
+            'user_id' => $membres->id,
+            'solde' => $solde->solde + $transaction->montant,
+        ]);
+        return back();
+
+        return view('agence.versement.depot', compact('tontine', 'roles', 'membres'));
     }
 
     public function dashboard_agences_versement()

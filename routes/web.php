@@ -101,22 +101,26 @@ Route::middleware(['auth', 'association'])->group(function () {
 
 Route::middleware(['auth', 'agence'])->group(function () {
     Route::get('Pannel/User', [AgenceController::class, 'agence'])->name('agence');
-    Route::get('User/Agences', [AgenceController::class, 'dashboard_agence'])->name('agence.agences');
-    Route::get('User/Agences/{id}', [AgenceController::class, 'dashboard_agence_detail'])->name('agence.detail');
-    Route::get('User/Zones/Liste', [AgenceController::class, 'dashboard_agence_zone'])->name('chefzones');
-    Route::get('User/Creer/Zone', [AgenceController::class, 'dashboard_agence_creer_zone'])->name('agence.zone');
-    Route::post('User/Ajouter_zone', [AgenceController::class, 'dashboard_ajouter_zone'])->name('agence.ajouter.zone');
-    Route::get('User/User/Liste', [AgenceController::class, 'dashboard_chef_agence'])->name('agence.chef_agence');
-    Route::get('User/Commerciaux/Liste', [AgenceController::class, 'dashboard_commercial'])->name('agence.commercial');
-    Route::get('User/Creer/Commerciaux', [AgenceController::class, 'dashboard_creer_commercial'])->name('agence.creer.commercial');
-    Route::post('User/Commercial', [AgenceController::class, 'dashboard_ajouter_commercial'])->name('agence.ajouter.commercial'); #fgfdgfdgdf
-    Route::get('User/Transactions', [AgenceController::class, 'dashboard_agences_transaction'])->name('agence.transaction');
-    Route::get('User/Versements', [AgenceController::class, 'dashboard_agences_versement'])->name('agence.versement');
-    Route::get('User/Reglages', [AgenceController::class, 'dashboard_agences_reglage'])->name('agence.reglage');
-    Route::get('User/Membres', [AgenceController::class, 'dashboard_agences_membre'])->name('agence.membres');
-    Route::get('User/Creer/Membres', [AgenceController::class, 'dashboard_agences_creer_membre'])->name('agence.creer_membres');
-    Route::post('User/Ajouter/Membres', [AgenceController::class, 'dashboard_agences_ajouter_membre'])->name('agence.ajouter_membres');
-    Route::get('User/Tontine/{id}', [AgenceController::class, 'dashboard_agences_tontine'])->name('agence.tontine');
+    Route::get('Agence/Agences', [AgenceController::class, 'dashboard_agence'])->name('agence.agences');
+    Route::get('Agence/Agences/{id}', [AgenceController::class, 'dashboard_agence_detail'])->name('agence.detail');
+    Route::get('Agence/Zones/Liste', [AgenceController::class, 'dashboard_agence_zone'])->name('chefzones');
+    Route::get('Agence/Creer/Zone', [AgenceController::class, 'dashboard_agence_creer_zone'])->name('agence.zone');
+    Route::post('Agence/Ajouter_zone', [AgenceController::class, 'dashboard_ajouter_zone'])->name('agence.ajouter.zone');
+    Route::get('Agence/User/Liste', [AgenceController::class, 'dashboard_chef_agence'])->name('agence.chef_agence');
+    Route::get('Agence/Commerciaux/Liste', [AgenceController::class, 'dashboard_commercial'])->name('agence.commercial');
+    Route::get('Agence/Creer/Commerciaux', [AgenceController::class, 'dashboard_creer_commercial'])->name('agence.creer.commercial');
+    Route::post('Agence/Commercial', [AgenceController::class, 'dashboard_ajouter_commercial'])->name('agence.ajouter.commercial'); #fgfdgfdgdf
+    Route::get('Agence/Transactions', [AgenceController::class, 'dashboard_agences_transaction'])->name('agence.transaction');
+    Route::get('Agence/Pret/Liste', [AgenceController::class, 'dashboard_pret_agence'])->name('dashboard_agence.pret');
+    Route::post('Agence/Pret/Succes', [AgenceController::class, 'dashboard_agence_user_pret'])->name('pret.agence');
+    Route::get('Agence/Depot/{id}', [AgenceController::class, 'dashboard_agences_depot'])->name('agence.depot');
+    Route::post('Agence/Depot/{id}', [AgenceController::class, 'dashboard_depot_agences'])->name('depot.agence');
+    Route::get('Agence/Versements', [AgenceController::class, 'dashboard_agences_versement'])->name('agence.versement');
+    Route::get('Agence/Reglages', [AgenceController::class, 'dashboard_agences_reglage'])->name('agence.reglage');
+    Route::get('Agence/Membres', [AgenceController::class, 'dashboard_agences_membre'])->name('agence.membres');
+    Route::get('Agence/Creer/Membres', [AgenceController::class, 'dashboard_agences_creer_membre'])->name('agence.creer_membres');
+    Route::post('Agence/Ajouter/Membres', [AgenceController::class, 'dashboard_agences_ajouter_membre'])->name('agence.ajouter_membres');
+    Route::get('Agence/Tontine/{id}', [AgenceController::class, 'dashboard_agences_tontine'])->name('agence.tontine');
 });
 
 Route::middleware(['auth', 'commercial'])->group(function () {
@@ -147,6 +151,8 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::post('User/Retrait/Succes', [UserController::class, 'retrait_user'])->name('retrait.user');
     Route::get('User/Tranfert', [UserController::class, 'transfert'])->name('user.transfert');
     Route::post('User/Transfert/Succes', [UserController::class, 'transfert_user'])->name('transfert.user');
+    Route::get('User/Pret', [UserController::class, 'pret'])->name('user.pret');
+    Route::post('User/Pret/Succes', [UserController::class, 'pret_user'])->name('pret.user');
     Route::get('Tontines', [UserController::class, 'tontines'])->name('user.tontines');
     // Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
 

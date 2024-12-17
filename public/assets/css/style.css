@@ -2552,24 +2552,60 @@ li a:hover {
     border: 1px solid rgba(0, 0, 0, 0.336);
 }
 
-.cp {
-    padding: 20px;
-    height: 60px;
-    width: 20px;
+super-cp {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+
+.super-cp .super_cp1 {
+    display: flex;
+    width: 50%;
+    /*height: 50px; */
+    margin-left: 2px;
+}
+
+.super-cp .super_cp1 .cp {
+    /* padding: 20px; */
+    margin-left: 10px;
+    margin-top: 5%;
+    width: 60%;
+    height: 55%;
     display: block;
-    border-radius: 50%;
-    background-color: #f9f9f9;
+    background-color: #57575725;
+    border-radius: 18px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.cp img {
-    width: 70px;
-    height: 50px;
+.super-cp .super_cp1 .cp img {
+    width: 98%;
+    margin-left: -1px;
+    height: 70px;
+    margin-top: -28px;
 }
 
-.cp p {
-    color: #000;
-    text-align: center;
+.super-cp .super_cp2 {
+    margin-top: 150px;
+    margin-left: -140px;
+    width: 50%;
+}
+
+.super-cp .super_cp2 .cp {
+    width: 40%;
+    height: 30px;
+    display: block;
+    background-color: #57575725;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.super-cp .super_cp2 .cp img {
+    width: 98%;
+    margin-left: -1px;
+    height: 60px;
+    margin-top: -25px;
 }
 
 /* .cp img {
@@ -2586,17 +2622,19 @@ li a:hover {
     padding: 20px;
     margin: 40px auto;
     width: 80%;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 85px;
+    background-color: #d1d1d157;
+    border-radius: 18px;
 }
 
-.user_profil .profil_grid {
+.user_profil .user_nav {
     width: 30%;
 }
 
-.user_profil .profil_grid .image_profile {
-    width: 25%;
+.user_profil .user_nav nav ul .image_profile {
+    width: 85px;
     height: 85px;
+    margin-top: -20px;
     border-radius: 50%;
 }
 
@@ -2607,43 +2645,69 @@ li a:hover {
 .user_profil .user_nav ul {
     width: 100%;
     display: flex;
+
 }
 
 .user_profil .user_nav ul li {
+    list-style: none;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.profil_grid {
+    display: flex;
+    height: 100px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.profil_grid .profil_grid1 p,
+.profil_grid2 p {
+    color: #fff;
+    font-size: 15px;
+    /* font-weight: 100; */
+    text-align: center;
+    margin-top: 7px;
+}
+
+.profil_grid .profil_grid1 .span,
+.profil_grid2 .span {
+    margin-top: -20px;
     margin-left: 50px;
-    list-style: none;
-    cursor: pointer;
+    font-size: 50px;
+    font-weight: 400;
+    color: #fefffc;
 }
 
-.user_grid .transaction_client ul {
-    display: flex;
+.profil_grid .profil_grid1 {
+    width: 45%;
+    height: 90%;
+    display: block;
+    margin-left: 3px;
+    font-size: 9px;
+    background-color: #131313fd;
+    color: #2e2e2e;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.user_grid .transaction_client ul li {
-    width: 80%;
-    list-style: none;
-    /* text-decoration: none; */
-    cursor: pointer;
+.profil_grid .profil_grid2 {
+    width: 45%;
+    height: 90%;
+    display: block;
+    margin-left: 10px;
+    font-size: 9px;
+    background-color: #131313fd;
+    color: #2e2e2e;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.user_grid .transaction_client ul li a {
-    text-decoration: none;
-    color: black;
+.profil_grid .profil_grid1 .span,
+.profil_grid2 .span {
+    font-size: 15px;
 }
 
-.user_grid .transaction_client ul li a:hover {
-    color: rgb(40, 104, 10);
-}
-
-.detail_compte {
-    display: flex;
-    margin-left: 40px;
-}
-
-.detail_compte a {
-    margin-left: 4px;
-    margin-bottom: 50px;
-}
 
 @media(max-width:1080px) {
 
@@ -2916,6 +2980,11 @@ li a:hover {
         /* margin-left: 250px; */
     }
 
+    .user_profil .user_nav nav ul .image_profile {
+        width: 100px;
+        height: 100px;
+    }
+
     .user_profil .user_nav ul li {
         margin-left: 10px;
         list-style: none;
@@ -3129,37 +3198,60 @@ li a:hover {
         border: .5px solid #90cf35;
     }
 
-    .super_cp {
+    .super-cp {
         display: flex;
-        width: 40px;
-        height: 40px;
+        width: 90%;
+        height: 50px;
+        margin-top: -20px;
+        margin-left: 15px;
     }
 
-    .cp {
-        padding: 20px;
-        margin-left: 55px;
+    .super-cp .super_cp1 {
+        display: flex;
+        width: 50%;
+        /*height: 50px; */
+        margin-left: 2px;
+    }
+
+    .super-cp .super_cp1 .cp {
+        /* padding: 20px; */
+        margin-left: 10px;
         margin-top: 5%;
-        width: 20px;
-        height: 20px;
+        width: 60%;
+        height: 55%;
         display: block;
         background-color: #57575725;
         border-radius: 18px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .cp img {
-        width: 35px;
-        margin-left: -9px;
-        height: 50px;
-        margin-top: -20px;
+    .super-cp .super_cp1 .cp img {
+        width: 98%;
+        margin-left: -1px;
+        height: 70px;
+        margin-top: -28px;
     }
 
-    .cp p {
-        color: #000;
-        font-size: 9px;
-        margin-top: 6px;
-        margin-left: -10px;
-        text-align: left;
+    .super-cp .super_cp2 {
+        margin-top: 150px;
+        margin-left: -140px;
+        width: 50%;
+    }
+
+    .super-cp .super_cp2 .cp {
+        width: 40%;
+        height: 30px;
+        display: block;
+        background-color: #57575725;
+        border-radius: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .super-cp .super_cp2 .cp img {
+        width: 98%;
+        margin-left: -1px;
+        height: 60px;
+        margin-top: -25px;
     }
 
     .user_profil {
@@ -3204,6 +3296,11 @@ li a:hover {
         width: 100%;
         display: flex;
         /* margin-left: 250px; */
+    }
+
+    .user_profil .user_nav ul img {
+        width: 60px;
+        height: 90px;
     }
 
     .user_profil .user_nav ul li {
@@ -3432,37 +3529,60 @@ li a:hover {
         border: .5px solid #90cf35;
     }
 
-    .super_cp {
+    .super-cp .super_cp1 {
         display: flex;
-        width: 40px;
-        height: 40px;
+        width: 50%;
+        /*height: 50px; */
+        margin-left: 2px;
     }
 
-    .cp {
+    .super-cp .super_cp1 .cp {
         /* padding: 20px; */
-        margin-left: 38px;
+        margin-left: 10px;
         margin-top: 5%;
-        width: 20px;
-        height: 20px;
+        width: 60%;
+        height: 60px;
         display: block;
         background-color: #57575725;
         border-radius: 18px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .cp img {
-        width: 35px;
-        margin-left: -9px;
+    .super-cp .super_cp1 .cp img {
+        width: 60%;
+        margin-left: 15px;
         height: 50px;
-        margin-top: -20px;
+        margin-top: -2px;
     }
 
-    .cp p {
+    .super-cp .super_cp1 .cp a p {
         color: #000;
         font-size: 9px;
         margin-top: 6px;
         margin-left: -10px;
         text-align: left;
+    }
+
+    .super-cp .super_cp2 {
+        margin-top: 150px;
+        margin-left: -140px;
+        width: 50%;
+    }
+
+    .super-cp .super_cp2 .cp {
+        width: 40%;
+        height: 30px;
+        display: block;
+        background-color: #57575725;
+        border-radius: 18px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .super-cp .super_cp2 .cp img {
+        width: 98%;
+        margin-left: -1px;
+        height: 60px;
+        margin-top: -25px;
     }
 
     .user_profil {
@@ -3511,7 +3631,7 @@ li a:hover {
 
     .profil_grid .profil_grid1 p,
     .profil_grid2 p {
-        color: rgba(85, 84, 84, 0.397);
+        color: #fff;
         font-size: 15px;
         /* font-weight: 100; */
         text-align: center;
@@ -3823,10 +3943,11 @@ li a:hover {
         /* margin-left: 250px; */
     }
 
-    .image_profile {
+    .user_profil .user_nav nav ul .image_profile {
         width: 30px;
         height: 35px;
         margin-left: -10px;
+        margin-top: -10px;
         border-radius: 50%;
     }
 
@@ -3846,7 +3967,7 @@ li a:hover {
 
     .profil_grid .profil_grid1 p,
     .profil_grid2 p {
-        color: rgba(85, 84, 84, 0.397);
+        color: #fff;
         font-size: 15px;
         /* font-weight: 100; */
         text-align: center;
@@ -4139,7 +4260,7 @@ li a:hover {
 
     .user_profil {
         display: flex;
-        position: fixed;
+        position: relative;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
@@ -4160,10 +4281,11 @@ li a:hover {
         /* margin-left: 250px; */
     }
 
-    .image_profile {
+    .user_profil .user_nav nav ul .image_profile {
         width: 30px;
         height: 35px;
         margin-left: -10px;
+        margin-top: -10px;
         border-radius: 50%;
     }
 
@@ -4183,8 +4305,8 @@ li a:hover {
 
     .profil_grid .profil_grid1 p,
     .profil_grid2 p {
-        color: rgba(85, 84, 84, 0.397);
-        font-size: 25px;
+        color: #fff;
+        font-size: 8px;
         /* font-weight: 100; */
         text-align: center;
         margin-top: 7px;
@@ -4194,7 +4316,7 @@ li a:hover {
     .profil_grid2 .span {
         margin-top: -20px;
         margin-left: 50px;
-        font-size: 50px;
+        font-size: 19px;
         font-weight: 400;
         color: #ffffff;
     }
@@ -4235,9 +4357,9 @@ li a:hover {
 
     }
 
-    .user_grid .transaction_client ul {
-        display: flex;
-        margin-left: 10px;
+    .user_profil .user_nav nav ul .image_profile {
+        width: 25px;
+        height: 25px;
     }
 
     .user_grid .transaction_client ul li {
@@ -4288,21 +4410,28 @@ li a:hover {
 
 .nav-bottom ul {
     list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
 
-.nav-bottom li {
-    display: inline-block;
-    margin-right: 20px;
+.nav-bottom ul li {
+    margin-right: 50px;
 }
 
-.nav-bottom a {
+.nav-bottom ul li img {
+    width: 20px;
+    display: block;
+    height: 20px;
+}
+
+.nav-bottom ul li a {
     color: #121d03;
+    margin-left: -10px;
     text-decoration: none;
 }
 
-@media (max-width:900px) {
+@media (max-width:765px) {
     .contenu {
         padding-bottom: 50px;
     }
@@ -4321,15 +4450,24 @@ li a:hover {
         list-style: none;
         margin: 0;
         padding: 0;
+        width: 100%;
     }
 
-    .nav-bottom li {
-        display: inline-block;
-        margin-right: 20px;
+    .nav-bottom ul li {
+        display: box;
+        margin-right: 240px;
+
     }
 
-    .nav-bottom a {
+    .nav-bottom ul li img {
+        width: 80px;
+        display: block;
+        height: 100px;
+    }
+
+    .nav-bottom ul li a {
         color: #0e1602;
+        font-size: 40px;
         text-decoration: none;
     }
 }
@@ -4355,15 +4493,22 @@ li a:hover {
         padding: 0;
     }
 
-    .nav-bottom li {
+    .nav-bottom ul li {
         display: inline-block;
-        margin-right: 12px;
+        margin-right: 32px;
         text-align: center;
     }
 
-    .nav-bottom a {
+    .nav-bottom ul li img {
+        width: 25px;
+        display: block;
+        height: 30px;
+    }
+
+    .nav-bottom ul li a {
         color: #142003;
-        font-size: 9px;
+        font-size: 8px;
+        margin-left: 1px;
         text-decoration: none;
     }
 }

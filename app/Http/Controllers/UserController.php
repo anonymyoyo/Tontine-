@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Membre;
+use App\Models\Pret;
 use App\Models\Role;
 use App\Models\Solde;
 use App\Models\Tontine;
@@ -37,9 +38,9 @@ class UserController extends Controller
         // $membres=Membre::count('tontine_id');
 
         $solde = Solde::where('user_id', $user->id)->get();
-        $transaction = Transaction::where('solde_id', $solde[0]->id)->get();
+        // $transaction = Transaction::where('solde_id', $solde[0]->id)->get();
         // return $solde;
-        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'transaction', 'solde', 'client'));
+        return view('users.user.user', compact('tontine',  'membre', 'tontin', 'solde', 'client'));
 
         // return $membre.$tontine;
     }
@@ -265,6 +266,20 @@ class UserController extends Controller
     public function pret()
     {
         return view('users.user.pret');
+    }
+
+    public function pret_user(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+
+        Pret::create([
+            'objet' => $request->objet,
+            'montant' => $request->montant,
+            'demandeur' => $user->id,
+            'agence_mere' => $user->mem_agence_id,
+        ]);
+
+        return view('users.user.succes');
     }
 
     public function tontines()
