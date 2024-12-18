@@ -25,6 +25,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}" />
     <meta name="apple-mobile-web-app-title" content="TCA Miracle') }}" />
     <link rel="manifest" href="{{ asset('assets/images/site.webmanifest') }}" />
+
+
     {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.min.css')}}"> --}}
     <!-- font awesome v(5) minified css source -->
     {{-- <link rel="stylesheet" href="{{asset('assets/icons/font-awesome-five/css/all.min.css')}}"> --}}

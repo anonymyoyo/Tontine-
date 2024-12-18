@@ -12,9 +12,9 @@
         <nav class="nav">
             <ul>
                 <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-                <li class="li"><a href="#">PRODUITS/SERVICES</a></li>
-                <li class="li"><a href="#">TROUVER AGENT</a></li>
-                <li class="li"><a href="{{ route('user') }}">COMPTE {{ auth()->user()->name }}</a></li>
+                <li class="li"><a href="#">SERVICES</a></li>
+                <li class="li"><a href="#">AGENT</a></li>
+                <li class="li"><a href="{{ route('user') }}">{{ auth()->user()->name }}</a></li>
                 <li class="li">
                     <form action="{{ route('logout') }}" method="POST" id="logout">
                     @csrf
@@ -39,8 +39,8 @@
         <nav class="nav">
             <ul>
                 <li class="li"><a href="{{ route('home') }}">ACCEUIL</a></li>
-                <li class="li"><a href="#">PRODUITS/SERVICES</a></li>
-                <li class="li"><a href="#">TROUVER AGENT</a></li>
+                <li class="li"><a href="#">SERVICES</a></li>
+                <li class="li"><a href="#">AGENT</a></li>
                 <li class="li"><a href="{{ route('register') }}">INSCRIPTION</a></li>
                 <li class="li"><a href="{{ route('login') }}">CONNEXION</a></li>
             </ul>
