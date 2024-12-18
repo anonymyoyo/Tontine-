@@ -37,6 +37,10 @@
             </nav>
         </div>
     </div> --}}
+
+    <div class="retour_arriere">
+        <a href="{{ route('user') }}"><img src="{{ asset('assets/css/img/forme18.png') }}" class="retourarriere" alt=""></a>
+    </div>
     <br><br><br>
     <div class="container login-form">
         <div class="formulaire">

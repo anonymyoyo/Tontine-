@@ -128,7 +128,7 @@
                 <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
             </div>
             </div>
-            <div class="sup_two">
+            <div class="sup_two1">
                 <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
             </div>
         </div><br>

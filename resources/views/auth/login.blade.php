@@ -29,21 +29,27 @@
 </head>
 
   <body class="login-bg">
-    {{-- @include('users.header') --}}
+    {{-- @include('users.header') --}}<div class="retour_arriere">
+                <a href="{{ route('user') }}"><img src="{{ asset('assets/css/img/forme18.png') }}" class="retourarriere" alt=""></a>
+            </div>
     <div class="login-header">
+        <div class="login-navbar burger">
+            
         <div class="logo">
           <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-1"></a>
         </div>
+        
         <div class="login-r"></div>
-        <div class="login-navbar burger">
+        
           <nav> 
             <ul>
               <li>Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </li>
             </ul>
           </nav>
         </div>
-    </div><br><br>
-
+        
+    </div>
+    <br><br><br><br>
     <div class="container login-form">
         
         <div class="formulaire">

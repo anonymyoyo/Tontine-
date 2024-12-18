@@ -79,8 +79,8 @@
 
                 <div class="super-cp">
                     <div class="super_cp1">
-                        <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme3.png') }}" alt=""><p>DEPOT</p></a>
-                        <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme2.png') }}" alt=""><p>RETRAIT</p></a>
+                        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
+                        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>TONTINES</p></a>
                     </div>
                     {{-- <div class="super_cp1">
                     <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p></a>
@@ -98,17 +98,21 @@
         <a href="#transaction" id='transaction'>NOS SERVICES</a>
 <br><br>
 
-<div class="super-cp">
+<div>
+    <div class="super-cp">
     <div class="super_cp1">
-      <a href="{{ route('user.depot') }}" class="cp"><img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>DEPOT</p></a>
-      <a href="{{ route('user.retrait') }}" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>RETRAIT</p></a>
+      <a href="#" class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>TRANSFERT D'ARGENT</p></a>
+      <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>IMPORT/ EXPORT</p></a>
     </div>
     <div class="super_cp1">
-        <a href="{{ route('user.transfert') }}" class="cp"> <img src="{{ asset('assets/css/img/forme7.png') }}" alt=""><p>TRANSFERT</p> </a>
-        <a href="{{ route('user.pret') }}" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>PRET</p></a>
+        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>ACCOMP</p> </a>
+        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>RECRUT</p></a>
       </div><br>
+
 </div>
-        {{-- <div class="super-cp">
+</div>
+
+ {{--        <div class="super-cp">
             <div class="super_cp1">
               <a href="#" class="cp"> <img src="{{ asset('assets/css/img/forme9.png') }}" alt=""><p>TRANSFERT D'ARGENT</p></a>
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>IMPORT/EXPORT</p></a>
@@ -221,8 +225,6 @@
             <div class="super_cp1">
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme11.png') }}" alt=""><p>CONTACTER AGENT</p></a>
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>LOCALISER AGENCE</p></a>
-            </div>
-            <div class="super_cp1">
               <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme13.png') }}" alt=""><p>DEVENIR PARTENAIRE</p></a>
             </div>
         </div>

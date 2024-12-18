@@ -11,7 +11,7 @@
     <!-- title for this document -->
     <title>TCA &dash; Tontine Communautaire d'Afrique</title>
     <!-- place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.ico') }}" type="image/x-icon">
     <!-- keywords for this document -->
     <meta name="keywords" content="predict, trade, invest, cryptocurrency">
     <!-- description for this document -->
@@ -19,6 +19,12 @@
     <!-- author of this document -->
     <meta name="author" content="Softivus">
     <!-- bootstrap v(5) minified css source -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}" />
+    <meta name="apple-mobile-web-app-title" content="TCA Miracle') }}" />
+    <link rel="manifest" href="{{ asset('assets/images/site.webmanifest') }}" />
     {{-- <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.min.css')}}"> --}}
     <!-- font awesome v(5) minified css source -->
     {{-- <link rel="stylesheet" href="{{asset('assets/icons/font-awesome-five/css/all.min.css')}}"> --}}

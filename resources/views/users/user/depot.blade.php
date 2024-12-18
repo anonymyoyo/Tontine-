@@ -37,6 +37,10 @@
             </nav>
         </div>
     </div> --}}
+
+    <div class="retour_arriere">
+        <a href="{{ route('user') }}"><img src="{{ asset('assets/css/img/forme18.png') }}" class="retourarriere" alt=""></a>
+    </div>
 <br><br><br>
     <div class="container login-form">
         <div class="formulaire">
@@ -55,14 +59,14 @@
                     @endforeach
 
                 </select>
-                <br><br>
+                <br>
             </div>
             <div class="li">
               <label class="li-1" for="montant">Entrer le Montant:</label>
             </div>
             <div class="li">
               <input class="li-2" required type="number" name="montant" min="500" id="montant"
-                placeholder="Montant Minimum 500 XAF"><br><br>
+                placeholder="Montant Minimum 500 XAF"><br>
             </div>
 
             <div class="li">
@@ -73,12 +77,9 @@
                     <option value="">Selectionner une option</option>
                     <option value="">Cash</option>
                     <option value="">Mobile Money</option>
-                    {{-- @foreach ($tontine as $tontines)
-                        <option value="{{ $tontines->id }}">{{ $tontines->name }}</option>
-                    @endforeach --}}
 
                 </select>
-                <br><br>
+                <br>
             </div>
             <div class="li">
               <input class="li-3" type="submit" value="Deposer">
@@ -86,10 +87,6 @@
 
           </form>
         </div>
-        {{-- <div class="image2">
-            <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>
-          <img src="{{ asset('assets/css/img/wallet.png') }}" alt="image">
-        </div> --}}
     </div>
 
 
