@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Produit;
 use App\Models\Solde;
 use App\Models\Tontine;
 use App\Models\User;
@@ -55,7 +56,8 @@ class HomeController extends Controller
     {
         // $membre = User::where('role_id', 4)->get();
         $tontine = Tontine::all();
+        $produit = Produit::all();
         // return $membre;
-        return view('users.catalogue');
+        return view('users.catalogue', compact('produit'));
     }
 }

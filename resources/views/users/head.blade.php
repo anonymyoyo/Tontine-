@@ -11,7 +11,7 @@
     <!-- title for this document -->
     <title>TCA &dash; Tontine Communautaire d'Afrique</title>
     <!-- place favicon.png in the root directory -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.php') }}" type="image/x-icon">
     <!-- keywords for this document -->
     <meta name="keywords" content="predict, trade, invest, cryptocurrency">
     <!-- description for this document -->

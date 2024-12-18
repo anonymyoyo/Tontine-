@@ -634,6 +634,7 @@ class AdminController extends Controller
             'prix_tontine' => $request->prix_tontine,
         ]);
 
-        return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
+        return back();
+        // return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
     }
 }
