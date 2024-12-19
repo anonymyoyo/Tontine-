@@ -154,6 +154,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('User/Pret', [UserController::class, 'pret'])->name('user.pret');
     Route::post('User/Pret/Succes', [UserController::class, 'pret_user'])->name('pret.user');
     Route::get('Tontines', [UserController::class, 'tontines'])->name('user.tontines');
+    Route::get('User/Profile', [UserController::class, 'profile'])->name('user.profile');
     // Route::get('Integrer/Tontine/{id}', [UserController::class, 'integrer_tontine'])->name('integrer.tontine');
 
 });

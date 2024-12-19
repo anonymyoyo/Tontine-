@@ -306,4 +306,10 @@ class UserController extends Controller
 
         return view('users.user.user', compact('membres', 'tontine'));
     }
+
+    public function profile()
+    {
+
+        return view('users.user.profile');
+    }
 }

@@ -9,9 +9,11 @@
         <div>
           <ul>
             <li><img src="{{ asset('assets/css/img/forme14.png') }}" alt=""><a href="{{ route('home') }}">Acceuil</a></li>
-            <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user') }}">Profil</a></li>
-            <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">TCA Money</a></li>
-            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">MarketPlace</a></li>
+            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">Boutique</a></li>
+            <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">Historique</a></li>
+            <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user.profile') }}">Profil</a></li>
+
+
           </ul>
         </div>
     </nav>
@@ -68,12 +70,12 @@
 </div>
 <br>
 
-      <div class="separator"></div><br>
-        <a href="#transaction" id='transaction'>MES BONS PLANS</a>
+      <div class="separator"></div><a href="#transaction" id='transaction'>MES BONS PLANS</a><br>
+
       <div class="super_grid">
             <div class="grid1">
                     <img src="{{ asset('assets/css/img/affiche.png') }}" alt="" class="affiche">
-                <p>c'est le feu</p>
+
             </div><br><br>
             <div class="grid2">
 
@@ -82,14 +84,11 @@
                         <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
                         <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>TONTINES</p></a>
                     </div>
-                    {{-- <div class="super_cp1">
-                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>TONTINES</p></a>
-                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
-                    </div> --}}
                 </div><br><br><br><br>
                 <div class="super-cp">
                     <div class="super_cp1">
-                    <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>BEST DEAL</p></a>
+                        <a href="{{ route('catalogue') }}" class="cp"><img src="{{ asset('assets/css/img/forme12.png') }}" alt=""><p>PRODUITS</p></a>
+                        <a href="{{ route('user.pret') }}" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>TONTINES</p></a>
                     </div>
                 </div>
             </div>
@@ -105,8 +104,8 @@
       <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme8.png') }}" alt=""><p>IMPORT/ EXPORT</p></a>
     </div>
     <div class="super_cp1">
-        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>ACCOMP</p> </a>
-        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>RECRUT</p></a>
+        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme4.png') }}" alt=""><p>CONSULTING</p> </a>
+        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme10.png') }}" alt=""><p>RECRUTEMENT</p></a>
       </div><br>
 
 </div>

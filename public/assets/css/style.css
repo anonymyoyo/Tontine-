@@ -3212,6 +3212,7 @@ li a:hover {
     .super-cp .super_cp1 .cp a p {
         /* padding: 20px; */
         font-size: 9px;
+        margin-left: 30px;
     }
 
     .super-cp .super_cp2 {
@@ -3238,6 +3239,7 @@ li a:hover {
 
     .super-cp .super_cp2 .cp a p {
         /* padding: 20px; */
+        text-align: center;
         font-size: 9px;
     }
 
@@ -3548,7 +3550,7 @@ li a:hover {
         font-size: 9px;
         margin-top: 6px;
         margin-left: -10px;
-        text-align: left;
+        text-align: center;
     }
 
     .user_profil {
@@ -4879,3 +4881,103 @@ li a:hover {
     margin-bottom: 0;
     color: var(--tp-common-black);
 }
+
+
+
+/* header {
+    height: 100vh;
+    width: 100vw;
+    background: url('img/1.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    position: absolute;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: aliceblue;
+}
+
+.navbar .logo {
+    font-size: 2em;
+    color: brown;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li.active a {
+    color: brown;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger {
+    width: 30px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: none;
+}
+
+
+
+@media(max-width:900px) {
+    .navbar .menu-hamburger {
+        display: block;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-links {
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0.11);
+        width: 100%;
+backdrop-filter: blur(7px);
+height: 100vh;
+top: 0;
+left: 0;
+margin-left: -100%;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 1s linear;
+}
+
+.nav-links.mobile-menu {
+    margin-left: 0;
+
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar .nav-links ul li {
+    margin: 25px 0;
+    font-size: 1.5em;
+}
+
+.navbar .logo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+}
+
+*/

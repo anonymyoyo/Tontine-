@@ -6,7 +6,6 @@
     <!-- header start -->
     @include('users.header')
     <!-- header end -->
-
     <!-- join modal start -->
     {{-- @include('users.registation') --}}
     <!-- join modal end -->
