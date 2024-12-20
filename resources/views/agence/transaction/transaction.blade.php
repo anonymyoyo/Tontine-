@@ -30,7 +30,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <i class="bi bi-house lh-1"></i>
-              <a href="index.html" class="text-decoration-none">Home</a>
+              <a href="#" class="text-decoration-none">Home</a>
             </li>
             <li class="breadcrumb-item" aria-current="page">Dashboard</li>
           </ol>
@@ -129,6 +129,48 @@
         <!-- Row end -->
       </div>
           <!-- Main container end -->
+
+          <div class="row gx-3">
+            <div class="col-xxl-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table align-middle table-hover m-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">Numero Transaction</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Proprietaire Compte</th>
+                          <th scope="col">Tontine</th>
+                          <th scope="col">Montant</th>
+                          <th scope="col">Jour</th>
+                        </tr>
+                      </thead>
+                      @foreach ($transactions as $transaction)
+                          <tbody>
+                            <tr class="grd-primary-light">
+                                <td>#{{ $transaction->id }}</td>
+                                <td>{{ $transaction->type }}</td>
+                                <td>-</td>
+
+                                @foreach ($t as $tontine)
+                                @if ($tontine->id == $transaction->tontine_id)
+                                    <td>{{ $tontine->name }}</td>
+                                @endif
+                                @endforeach
+
+                                <td>{{ $transaction->montant }} XAF</td>
+                                <td>{{ $transaction->created_at }}</td>
+                            </tr>
+                          </tbody>
+                      @endforeach
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
         <!-- Page wrapper end -->

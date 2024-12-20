@@ -165,11 +165,15 @@ class AgenceController extends Controller
 
     public function dashboard_agences_transaction()
     {
-        $user = User::all();
+        $user = User::find(auth()->user()->id);
         $roles = Role::all();
-        $a = User::all();
+        $a = User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $user->agence_id)->get();
+        $transactions = Transaction::all();
+        // $transactions = Transaction::where('agence_id', $user->agence_id)->->get();
         $tontine = Tontine::all();
-        return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles'));
+
+        return $transactions;
+        return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles', 'transactions'));
     }
 
     public function dashboard_pret_agence()
@@ -187,11 +191,6 @@ class AgenceController extends Controller
             // return $pret;
             return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'pret'));
         }
-
-
-
-
-
         // return $membre;
 
     }
@@ -212,8 +211,9 @@ class AgenceController extends Controller
         $roles = Role::all();
         $tontine = Tontine::all();
         $membres = User::find($id);
-
         $user = User::find(auth()->user()->id);
+        $agence = Agence::where('user_id', $user->agence_id)->first();
+        $association = Association::where('user_id', $user->association_id)->first();
         $sold = Solde::where('user_id', $membres->id)->first();
         $solde = Solde::where('user_id', $membres->id)->first();
 
@@ -221,6 +221,7 @@ class AgenceController extends Controller
             'type' => 'depot',
             'solde_id' => $sold->id,
             'agence_id' => $user->agence_id,
+            'association_id' => $association,
             'montant' => $request->montant,
         ]);
 
@@ -264,7 +265,7 @@ class AgenceController extends Controller
             // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
             $t = Tontine::all();
             $roles = Role::all();
-            $sold = Solde::where('user_id', $membre[0]->id)->get();
+            $sold = Solde::all();
 
             // return $membre;
             return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't', 'sold'));
@@ -326,7 +327,7 @@ class AgenceController extends Controller
 
         // return $t[1];
 
-        return view('agence.membre.membre', compact('tontine', 'membre', 'roles', 't'));
+        return back();
     }
 
     public function dashboard_agences_tontine($id)

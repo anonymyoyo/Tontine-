@@ -23,7 +23,7 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/favicon.svg') }}" />
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}" />
-    <meta name="apple-mobile-web-app-title" content="TCA Miracle') }}" />
+    <meta name="apple-mobile-web-app-title" content="TCA Miracle" />
     <link rel="manifest" href="{{ asset('assets/images/site.webmanifest') }}" />
 
 

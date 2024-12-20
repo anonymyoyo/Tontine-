@@ -15,15 +15,19 @@ class Transaction extends Model
     protected $fillable = [
         'type',
         'solde_id',
+        'agence_id',
+        'association',
         'tontine_id',
         'commercial_id',
         'montant',
     ];
 
-    public function user():HasMany{
+    public function user(): HasMany
+    {
         return $this->hasMany(User::class);
     }
-    public function solde(): BelongsTo{
+    public function solde(): BelongsTo
+    {
         return $this->belongsTo(Solde::class);
     }
 }

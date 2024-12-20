@@ -161,6 +161,8 @@ class CommercialController extends Controller
         $tontine = Tontine::all();
         $membres = User::find($id);
         $user = User::find(auth()->user()->id);
+        $agence = Agence::where('user_id', $user->com_agence_id)->first();
+        $association = Association::where('user_id', $user->com_association_id)->first();
         $sold = Solde::where('user_id', $membres->id)->first();
         $t = Tontine::where('id', $membres->mem_tontine_id)->first();
         $solde = Solde::where('user_id', $membres->id)->first();
@@ -168,6 +170,8 @@ class CommercialController extends Controller
         $transaction = Transaction::create([
             'type' => 'depot',
             'solde_id' => $sold->id,
+            'agence_id' => $agence->id,
+            'association_id' => $association->id,
             'tontine_id' => $t->id,
             'commercial_id' => $user->id,
             'montant' => $request->montant,
@@ -197,6 +201,8 @@ class CommercialController extends Controller
         $tontine = Tontine::all();
         $membres = User::find($id);
         $user = User::find(auth()->user()->id);
+        $agence = Agence::where('user_id', $user->com_agence_id)->first();
+        $association = Association::where('user_id', $user->com_association_id)->first();
         $sold = Solde::where('user_id', $membres->id)->first();
         $t = Tontine::where('id', $membres->mem_tontine_id)->first();
         $solde = Solde::where('user_id', $membres->id)->first();
@@ -204,6 +210,8 @@ class CommercialController extends Controller
         $transaction = Transaction::create([
             'type' => 'retrait',
             'solde_id' => $sold->id,
+            'agence_id' => $agence->id,
+            'association_id' => $association->id,
             'tontine_id' => $t->id,
             'commercial_id' => $user->id,
             'montant' => $request->montant,

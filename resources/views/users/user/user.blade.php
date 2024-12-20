@@ -9,7 +9,7 @@
         <div>
           <ul>
             <li><img src="{{ asset('assets/css/img/forme14.png') }}" alt=""><a href="{{ route('home') }}">Acceuil</a></li>
-            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="#">Boutique</a></li>
+            <li><img src="{{ asset('assets/css/img/forme16.png') }}" alt=""><a href="{{ route('catalogue') }}">Boutique</a></li>
             <li><img src="{{ asset('assets/css/img/forme15.png') }}" alt=""><a href="#">Historique</a></li>
             <li><img src="{{ asset('assets/css/img/forme17.png') }}" alt=""><a href="{{ route('user.profile') }}">Profil</a></li>
 
@@ -82,7 +82,7 @@
                 <div class="super-cp">
                     <div class="super_cp1">
                         <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme5.png') }}" alt=""><p>TCA BONUS</p></a>
-                        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>TONTINES</p></a>
+                        <a href="#" class="cp"><img src="{{ asset('assets/css/img/forme6.png') }}" alt=""><p>CHOIX TONTINES</p></a>
                     </div>
                 </div><br><br><br><br>
                 <div class="super-cp">

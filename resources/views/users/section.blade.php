@@ -115,31 +115,32 @@
 
         <div class="sup_section">
             <div class="sup_one">
-                <h4>Pourquoi payer pour vos transactions financières ?</h4>
-            <p>Avec TCA Money, vos dépôts, retraits, transferts et paiements sont gratuits.</p>
-            <p>TCA Money est la nouvelle génération de wallet. Conviviable, sécurisé et facile à utiliser
-            pour tout vos besoins et paiement et transfert d’argent.</p>
-            {{-- <div class="download">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
-            </div> --}}
-            <div class="download">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
-                <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
-            </div>
+                    <h4>Pourquoi payer pour vos transactions financières ?</h4>
+                <p>Avec TCA Money, vos dépôts, retraits, transferts et paiements sont gratuits.</p>
+                <p>TCA Money est la nouvelle génération de wallet. Conviviable, sécurisé et facile à utiliser
+                pour tout vos besoins et paiement et transfert d’argent.</p>
+                {{-- <div class="download">
+                    <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
+                    <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
+                </div> --}}
+                <div class="download">
+                    <img src="{{ asset('assets/css/img/6and-7_sending-copy-300x92.png') }}" class="appstore" alt="">
+                    <img src="{{ asset('assets/css/img/6and-7_sending-copy-2-300x92.png') }}" class="playstore" alt="">
+                </div>
             </div>
             <div class="sup_two1">
                 <img src="{{ asset('assets/css/img/fone.png') }}" class="img" alt="">
             </div>
         </div><br>
         <div class="sup_section">
+            <div class="sup_two">
+                <img src="{{ asset('assets/css/img/VF-features.png') }}" class="img" alt="">
+            </div>
             <div class="sup_one">
                 <h4>Fontionnalités</h4>
                 <p>TCA va au dela du transfert d’argent et de la gestion du porte feuille. C’est la plateforme qu répond à tous vos besoins financiers.</p>
             </div>
-            <div class="sup_two">
-                <img src="{{ asset('assets/css/img/VF-features.png') }}" class="img" alt="">
-            </div>
+
         </div>
         <br><br>
     <div class="sub_section">
@@ -193,89 +194,5 @@
 
 
 
-{{-- <style>
-    .section {
-    position: relative;
-    width: 90%;
-    margin: 40px auto;
-    display: block;
-    }
-
-    .section .sup_section {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .section .sup_section .sup_one {
-        width: 60%;
-        margin-bottom: 0;
-    }
-
-    .section .sup_section .sup_one h4 {
-        font-size: 40px;
-        color: #90cf35;
-    }
-
-    .section .sup_section .sup_one p {
-        font-size: 20px;
-        text-align: left;
-    }
-
-    .section .sup_section .sup_one .download {
-        display: block;
-        width: 50%;
-        align-items: center;
-    }
-
-    .section .sup_section .sup_one .download .appstore,
-    .sup_one .download .playstore {
-        width: 50%;
-        height: 50px;
-    }
-
-    .section .sup_section .sup_two {
-        width: 60%;
-        height: 600px;
-    }
-
-    .section .sup_section .sup_two .img {
-        width: 90%;
-        height: auto;
-        border-radius: 30px;
-    }
-
-    .section .sub_section {
-        display: block;
-    }
-
-    .section .sub_section .sub_one,
-    .sub_two,
-    .sub_tree {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 300;
-        width: 40%;
-        border: 1px solid #567c21;
-        border-radius: 25px;
-        margin: 10px;
-    }
-
-    .section .sub_section .sub_one:hover,
-    .sub_two:hover,
-    .sub_tree:hover {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 300;
-        width: 40%;
-        background-color: #567c21;
-        border: none1;
-        border-radius: 25px;
-        margin: 10px;
-        cursor: pointer;
-        transition: .5s;
-    }
-
-</style> --}}
 
 
