@@ -170,8 +170,8 @@ class CommercialController extends Controller
         $transaction = Transaction::create([
             'type' => 'depot',
             'solde_id' => $sold->id,
-            'agence_id' => $agence->id,
-            'association_id' => $association->id,
+            'agence_id' => $user->com_agence_id,
+            'association_id' => $user->com_association_id,
             'tontine_id' => $t->id,
             'commercial_id' => $user->id,
             'montant' => $request->montant,

@@ -11,7 +11,9 @@ class Pret extends Model
     protected $fillable = [
         'objet',
         'montant',
-        'demandeur',
-        'agence_mere'
+        'user_id',
+        'agence_mere',
+        'association_mere',
+        'etat',
     ];
 }

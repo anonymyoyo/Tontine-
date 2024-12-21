@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "BITINZA",
             "email" => "bitinza@tca.com",
-            "phone" => "694865872",
+            "phone" => "694865812",
             "ville" => "Douala",
             "pays" => "Cameroon",
             "image" => "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php8AFE.tmp",
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "Moussi Teng Pierre Dilan",
             "email" => "moussidilan@gmail.com",
-            "phone" => "694865872",
+            "phone" => "694865822",
             "ville" => "Kribi",
             "pays" => "Cameroon",
             "image" => "C:\\Users\\Administrator\\AppData\\Local\\Temp\\phpC61C.tmp",
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "BITINZA",
             "email" => "superadmin@gmail.com",
-            "phone" => "694865872",
+            "phone" => "694865832",
             "ville" => "Douala",
             "pays" => "Cameroon",
             "image" => "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php33BF.tmp",
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "Marole",
             "email" => "marole@tca.com",
-            "phone" => "694865872",
+            "phone" => "694865842",
             "ville" => "Douala",
             "pays" => "Cameroon",
             "image" => "images/IgOMR0TPOFHaTkaPUOw4lXJ3LrYaCGUQkwoal2hU.png",
@@ -82,7 +82,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "Emauel",
             "email" => "superadmi1@gmail.com",
-            "phone" => "694865872",
+            "phone" => "694865852",
             "ville" => "Douala",
             "pays" => "Cameroon",
             "image" => "C:\\Users\\Administrator\\AppData\\Local\\Temp\\php1A3B.tmp",
@@ -96,7 +96,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "Serges",
             "email" => "serges@commercial.com",
-            "phone" => "694865872",
+            "phone" => "694865862",
             "ville" => "Douala",
             "pays" => null,
             "image" => "images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png",
@@ -110,7 +110,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "bafang",
             "email" => "badang@gmail.com",
-            "phone" => "694865872",
+            "phone" => "694865882",
             "ville" => "Douala",
             "pays" => null,
             "image" => "images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png",
@@ -126,7 +126,7 @@ class UserSeeder extends Seeder
         User::create([
             "name" => "Martin",
             "email" => "martin@membre.com",
-            "phone" => "694865872",
+            "phone" => "694865892",
             "ville" => "Douala",
             "pays" => null,
             "image" => "images/iMfyVtIzrmD498AHvDIFJgf7FQieNWJE2QFdRiar.png",

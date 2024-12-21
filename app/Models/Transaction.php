@@ -16,7 +16,7 @@ class Transaction extends Model
         'type',
         'solde_id',
         'agence_id',
-        'association',
+        'association_id',
         'tontine_id',
         'commercial_id',
         'montant',

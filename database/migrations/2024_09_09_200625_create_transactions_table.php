@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('solde_id')->nullable();
-            $table->string('associaton_id')->nullable();
+            $table->string('association_id')->nullable();
             $table->string('agence_id')->nullable();
             $table->string('tontine_id')->nullable();
             $table->string('commercial_id')->nullable();

@@ -34,24 +34,24 @@
             </div>
     <div class="login-header">
         <div class="login-navbar burger">
-            
+
         <div class="logo">
           <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" class="logo-1"></a>
         </div>
-        
+
         <div class="login-r"></div>
-        
-          <nav> 
+
+          <nav>
             <ul>
               <li>Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </li>
             </ul>
           </nav>
         </div>
-        
+
     </div>
     <br><br><br><br>
     <div class="container login-form">
-        
+
         <div class="formulaire">
             <h1 class="h3">Vous n'etes pas encore membre ? <a href="{{ route('contact') }}">Contactez-nous</a> </h1>
           <h2 class="h2">Connexion</h2>
@@ -61,7 +61,7 @@
               <label class="li-1" for="numero">Addresse Mail:</label>
             </div>
             <div class="li">
-              <input class="li-2" required type="mail" name="email" id="phone"
+              <input class="li-2" required type="text" name="phone" id="phone"
                 placeholder="Veuiller entrer votre numero de telephone"><br><br>
             </div>
             <div class="li">
@@ -73,9 +73,9 @@
             <div class="li">
               <input class="li-3" type="submit" value="Connexion">
             </div>
-            
+
           </form>
-          
+
         </div>
         <div class="image2">
                 <h1 class="h3">Debloquez le potentiel de gerer vos tontine de n'importe ou.</h1>

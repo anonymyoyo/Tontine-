@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('prets', function (Blueprint $table) {
             $table->id();
             $table->string('objet');
             $table->integer('montant');
-            $table->string('demandeur');
-            $table->string('agence_mere')->nullable();
+            $table->foreignIdFor(User::class)->constrained()->restrictOnUpdate()->restrictOnDelete();
+            $table->string('agence_mere');
+            $table->string('association_mere');
+            $table->string('etat');
             $table->timestamps();
         });
     }

@@ -105,7 +105,9 @@
                                     @endif
                                     @endforeach
                                     @foreach ($sold as $solde)
-                                    <td>{{ $solde->solde }} XAF</td>
+                                    @if ($solde->user_id === $membres->id)
+                                        <td>{{ $solde->solde }} XAF</td>
+                                    @endif
                                     @endforeach
                                 </tr>
                             </tbody>

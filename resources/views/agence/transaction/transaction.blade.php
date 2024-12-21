@@ -147,22 +147,23 @@
                         </tr>
                       </thead>
                       @foreach ($transactions as $transaction)
-                          <tbody>
-                            <tr class="grd-primary-light">
-                                <td>#{{ $transaction->id }}</td>
-                                <td>{{ $transaction->type }}</td>
-                                <td>-</td>
+                        @if ($transaction->agence_id === auth()->user()->agence_id)
+                            <tbody>
+                                <tr class="grd-primary-light">
+                                    <td>#{{ $transaction->id }}</td>
+                                    <td>{{ $transaction->type }}</td>
+                                    <td>-</td>
+                                    @foreach ($t as $tontine)
+                                    @if ($tontine->id == $transaction->tontine_id)
+                                        <td>{{ $tontine->name }}</td>
+                                    @endif
+                                    @endforeach
 
-                                @foreach ($t as $tontine)
-                                @if ($tontine->id == $transaction->tontine_id)
-                                    <td>{{ $tontine->name }}</td>
-                                @endif
-                                @endforeach
-
-                                <td>{{ $transaction->montant }} XAF</td>
-                                <td>{{ $transaction->created_at }}</td>
-                            </tr>
-                          </tbody>
+                                    <td>{{ $transaction->montant }} XAF</td>
+                                    <td>{{ $transaction->created_at }}</td>
+                                </tr>
+                            </tbody>
+                        @endif
                       @endforeach
 
                     </table>

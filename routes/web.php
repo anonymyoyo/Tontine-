@@ -112,6 +112,7 @@ Route::middleware(['auth', 'agence'])->group(function () {
     Route::post('Agence/Commercial', [AgenceController::class, 'dashboard_ajouter_commercial'])->name('agence.ajouter.commercial'); #fgfdgfdgdf
     Route::get('Agence/Transactions', [AgenceController::class, 'dashboard_agences_transaction'])->name('agence.transaction');
     Route::get('Agence/Pret/Liste', [AgenceController::class, 'dashboard_pret_agence'])->name('dashboard_agence.pret');
+    Route::post('Agence/Pret/Validation', [AgenceController::class, 'dasboard_pret_validation'])->name('validation_pret');
     Route::post('Agence/Pret/Succes', [AgenceController::class, 'dashboard_agence_user_pret'])->name('pret.agence');
     Route::get('Agence/Depot/{id}', [AgenceController::class, 'dashboard_agences_depot'])->name('agence.depot');
     Route::post('Agence/Depot/{id}', [AgenceController::class, 'dashboard_depot_agences'])->name('depot.agence');

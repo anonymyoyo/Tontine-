@@ -382,21 +382,14 @@ class AssociationController extends Controller
         $association = $user->associations;
         // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
         $membre = User::where('role_id', 4)->where('association_id', $user->association_id)->get();
-        if (!empty($membre[0])) {
-            // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
-            $t = Tontine::all();
-            $roles = Role::all();
-            $sold = Solde::where('user_id', $membre[0]->id)->get();
+        // $t=Tontine::where('id', $membre[0]->mem_tontine_id)->get();
+        $t = Tontine::all();
+        $roles = Role::all();
+        $sold = Solde::all();
 
-            // return $t;
-            // return $membre;
-            return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association', 'sold'));
-        } else {
-            $roles = Role::all();
-
-            // return $membre;
-            return view('association.membre.membre', compact('tontine', 'roles', 'membre', 'association'));
-        }
+        // return $t;
+        // return $membre;
+        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't', 'association', 'sold'));
     }
 
     public function association_agences_creer_membre()
@@ -446,7 +439,7 @@ class AssociationController extends Controller
 
         // return $t[1];
 
-        return view('association.membre.membre', compact('tontine', 'membre', 'roles', 't'));
+        return back();
     }
 
     public function association_agences_tontine($id)

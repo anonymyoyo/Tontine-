@@ -169,30 +169,40 @@ class AgenceController extends Controller
         $roles = Role::all();
         $a = User::where('role_id', 4)->where('association_id', $user->association_id)->where('mem_agence_id', $user->agence_id)->get();
         $transactions = Transaction::all();
-        // $transactions = Transaction::where('agence_id', $user->agence_id)->->get();
+        // $transactions = Transaction::where('agence_id', $user->agence_id)->where('associaton_id', $user->association_id)->first();
         $tontine = Tontine::all();
+        $t = Tontine::all();
 
-        return $transactions;
-        return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles', 'transactions'));
+        // return $transactions;
+        return view('agence.transaction.transaction', compact('tontine', 'user', 'a', 'roles', 'transactions', 't'));
     }
 
     public function dashboard_pret_agence()
     {
         $roles = Role::all();
         $tontine = Tontine::all();
+        $etat1 = 'En Attente...';
+        $etat2 = 'Admis...';
+        $etat3 = 'Refuse...';
         $user = User::find(auth()->user()->id);
         $pret = Pret::where('agence_mere', $user->agence_id)->get();
-        $membre = User::where('mem_agence_id', $user->agence_id)->where('id', $pret[0]->demandeur)->get();
-        if (!empty($pret)) {
-            # code...
+        // $pret = Pret::all();
+        $membre = User::where('id', $pret[0]->user_id)->get();
+        # code...
+        // return $membre;
+        return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'membre', 'pret', 'etat1', 'etat2', 'etat3'));
+        // return $pret;
 
-            return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'membre', 'pret'));
-        } else {
-            // return $pret;
-            return view('agence.transaction.pret.liste', compact('roles', 'tontine', 'user', 'pret'));
-        }
         // return $membre;
 
+    }
+
+    public function dasboard_pret_validation(Request $request)
+    {
+        if ($request->has('ValiderBtn')) {
+            # code...
+            return to_route('agence.depot');
+        }
     }
 
     public function dashboard_agences_depot(Request $request, $id)
@@ -211,18 +221,24 @@ class AgenceController extends Controller
         $roles = Role::all();
         $tontine = Tontine::all();
         $membres = User::find($id);
+        $pret = Pret::where('user_id', $membres->id)->first();
         $user = User::find(auth()->user()->id);
         $agence = Agence::where('user_id', $user->agence_id)->first();
         $association = Association::where('user_id', $user->association_id)->first();
         $sold = Solde::where('user_id', $membres->id)->first();
         $solde = Solde::where('user_id', $membres->id)->first();
+        $etat2 = 'Admis...';
 
         $transaction = Transaction::create([
-            'type' => 'depot',
+            'type' => 'pret',
             'solde_id' => $sold->id,
             'agence_id' => $user->agence_id,
-            'association_id' => $association,
+            'association_id' => $user->association_id,
             'montant' => $request->montant,
+        ]);
+
+        $pret->update([
+            'etat' => $etat2,
         ]);
 
         $sold->update([

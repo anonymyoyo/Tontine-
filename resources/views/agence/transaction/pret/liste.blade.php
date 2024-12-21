@@ -80,20 +80,36 @@
                       </tr>
                     </thead>
                     @foreach ($pret as $prets)
+                    {{-- $etat1='En Attente...'; --}}
                         <tbody>
                             <tr>
                                 <td>#{{ $prets->id }}</td>
-                                <td>{{ $prets->objet }}</td>
-                                <td>{{ $prets->montant }}</td>
                                 @foreach ($membre as $user)
                                     <td>{{ $user->name }}</td>
-                                    <td class="btn btn-success"><a href="{{ route('agence.depot', $user->id) }}">Depot</a></td>
                                 @endforeach
+                                <td>{{ $prets->objet }}</td>
+                                <td>{{ $prets->montant }}</td>
+
+                                <td><form action="{{ route('validation_pret') }}" method="POST">
+                                    @csrf
+                                @if ($prets->etat === 'En Attente...'){
+                                    <td class="btn btn-success"><a href="{{ route('agence.depot', $user->id) }}" name="ValiderBtn">Valider</a></td>
+                                    <td class="btn btn-success"><a href="{{ route('dashboard_agence.pret', $user->id) }}" name="RejeterBtn">Rejeter</a></td>
+                                }@endif
+                                @if ($prets->etat === 'Admis...'){
+                                    {{-- <button type="submit" name="RejeterBtn">Rejeter</button>
+                                    <button type="submit" name="ValiderBtn">Valider</button> --}}
+                                }@endif
+                                @if ($prets->etat ==='Refuse...')
+                                    {<button type="submit">REFUSE</button>}
+                                @endif
+
+
+                                </form></td>
 
                             </tr>
                         </tbody>
                     @endforeach
-
                   </table>
                 </div>
               </div>
@@ -108,5 +124,9 @@
 
     </div>
     <!-- Page wrapper end -->
+    <script>
+
+
+    </script>
 @include('../agence.script')
 

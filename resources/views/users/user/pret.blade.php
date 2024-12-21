@@ -57,7 +57,9 @@
               </div>
               <input class="li-2" required type="hidden" name="agence_mere" value="{{ auth()->user()->mem_agence_id }}" id="Objet"
                   placeholder="Entrer l'objet de votre demande">
-              <input class="li-2" required type="hidden" name="demandeur" value="{{ auth()->user()->id }}" id="Objet"
+                <input class="li-2" required type="hidden" name="association_mere" value="{{ auth()->user()->association_id }}" id="Objet"
+                placeholder="Entrer l'objet de votre demande">
+              <input class="li-2" required type="hidden" name="user_id" value="{{ auth()->user()->id }}" id="Objet"
                   placeholder="Entrer l'objet de votre demande">
             <div class="li">
               <label class="li-1" for="montant">Entrer le Montant:</label>

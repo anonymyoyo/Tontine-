@@ -271,12 +271,15 @@ class UserController extends Controller
     public function pret_user(Request $request)
     {
         $user = User::find(auth()->user()->id);
+        $etat1 = 'En Attente...';
 
         Pret::create([
             'objet' => $request->objet,
             'montant' => $request->montant,
-            'demandeur' => $user->id,
+            'user_id' => $user->id,
+            'association_mere' => $user->association_id,
             'agence_mere' => $user->mem_agence_id,
+            'etat' => $etat1,
         ]);
 
         return view('users.user.succes');
