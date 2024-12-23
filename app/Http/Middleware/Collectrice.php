@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Comptable
+class Collectrice
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class Comptable
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->role_id != 7) {
+        if (auth()->user()->role_id != 6) {
             return to_route('control');
         }
         return $next($request);

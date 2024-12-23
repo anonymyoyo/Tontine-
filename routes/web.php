@@ -3,12 +3,14 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgenceController;
 use App\Http\Controllers\AssociationController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\CollectriceController;
 use App\Http\Controllers\CommercialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 
 
@@ -142,6 +144,26 @@ Route::middleware(['auth', 'commercial'])->group(function () {
     Route::get('Commercial/Membre/Creer', [CommercialController::class, 'commercial_creer_membre'])->name('commercial.creer_membre');
     Route::post('Commercial/Membre/Ajouter', [CommercialController::class, 'commercial_ajouter_membre'])->name('commercial.ajouter_membre');
     Route::get('Commercial/Tontine/{id}', [CommercialController::class, 'commercial_agences_tontine'])->name('commercial.tontine');
+});
+
+Route::middleware(['auth', 'collectrice'])->group(function () {
+    Route::get('Page/Collectrice', [CollectriceController::class, 'collectrice'])->name('collectrice');
+    Route::get('Collectrice/Agences', [CollectriceController::class, 'collectrice_agence'])->name('collectrice.agences');
+    Route::get('Collectrice/Agences/{id}', [CollectriceController::class, 'collectrice_agence_detail'])->name('collectrice_agence.detail');
+    Route::get('Collectrice/Zones/Liste', [CollectriceController::class, 'collectrice_agence_zone'])->name('collectrice.zones');
+    Route::get('Collectrice/User/Liste', [CollectriceController::class, 'collectrice_chef_agence'])->name('collectrice.chef_agence');
+    Route::get('Collectrice/Commerciaux/Liste', [CollectriceController::class, 'collectrice_commercial'])->name('collectrice.commercial'); #fgfdgfdgdf
+    Route::get('Collectrice/Transactions', [CollectriceController::class, 'collectrice_agences_transaction'])->name('collectrice.transaction');
+    Route::get('Collectrice/Versements', [CollectriceController::class, 'collectrice_agences_versement'])->name('collectrice.versement');
+    Route::get('Collectrice/Depot/{id}', [CollectriceController::class, 'collectrice_depot_client'])->name('collectrice.depot');
+    Route::post('Collectrice/Depot/{id}', [CollectriceController::class, 'depot_collectrice_client'])->name('depot.collectrice');
+    Route::get('Collectrice/Retrait/{id}', [CollectriceController::class, 'collectrice_retrait_client'])->name('collectrice.retrait');
+    Route::post('Collectrice/Retrait/{id}', [CollectriceController::class, 'retrait_collectrice_client'])->name('retrait.collectrice');
+    Route::get('Collectrice/Reglages', [CollectriceController::class, 'collectrice_agences_reglage'])->name('collectrice.reglage');
+    Route::get('Collectrice/Membres', [CollectriceController::class, 'collectrice_agences_membre'])->name('collectrice.membres');
+    Route::get('Collectrice/Membre/Creer', [CollectriceController::class, 'collectrice_creer_membre'])->name('collectrice.creer_membre');
+    Route::post('Collectrice/Membre/Ajouter', [CollectriceController::class, 'collectrice_ajouter_membre'])->name('collectrice.ajouter_membre');
+    Route::get('Collectrice/Tontine/{id}', [CollectriceController::class, 'collectrice_agences_tontine'])->name('collectrice.tontine');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

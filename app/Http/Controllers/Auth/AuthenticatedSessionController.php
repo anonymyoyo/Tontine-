@@ -38,6 +38,10 @@ class AuthenticatedSessionController extends Controller
             return to_route('user');
         } elseif (auth()->user()->role_id == '5') {
             return to_route('association');
+        } elseif (auth()->user()->role_id == '6') {
+            return to_route('collectrice');
+        } elseif (auth()->user()->role_id == '7') {
+            return to_route('comptable');
         }
 
         return redirect()->intended(route('dashboard', absolute: false));
