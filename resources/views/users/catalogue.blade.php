@@ -205,8 +205,8 @@
                                             <div class="tp-shop-top-left d-flex align-items-center ">
                                                 <div class="tp-shop-top-tab tp-tab">
                                                     <ul class="nav nav-tabs" id="productTab" role="tablist">
-                                                        <li class="nav-item" role="presentation">
-                                                            {{-- <button class="nav-link active" id="grid-tab"
+                                                        {{-- <li class="nav-item" role="presentation">
+                                                            <button class="nav-link active" id="grid-tab"
                                                                 data-bs-toggle="tab" data-bs-target="#grid-tab-pane"
                                                                 type="button" role="tab" aria-controls="grid-tab-pane"
                                                                 aria-selected="true">
@@ -233,7 +233,7 @@
                                                                         stroke-linecap="round"
                                                                         stroke-linejoin="round" />
                                                                 </svg>
-                                                            </button> --}}
+                                                            </button>
                                                         </li>
                                                         <li class="nav-item" role="presentation">
                                                             <button class="nav-link" id="list-tab" data-bs-toggle="tab"
@@ -252,11 +252,11 @@
                                                                         stroke-linejoin="round" />
                                                                 </svg>
                                                             </button>
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                 </div>
                                                 <div class="tp-shop-top-result">
-                                                    <p>Showing 1–14 of 26 results</p>
+                                                    {{-- <p>Showing 1–14 of 26 results</p> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -265,11 +265,9 @@
                                                 class="tp-shop-top-right d-sm-flex align-items-center justify-content-xl-end">
                                                 <div class="tp-shop-top-select">
                                                     <select>
-                                                        <option>Default Sorting</option>
-                                                        <option>Low to Hight</option>
-                                                        <option>High to Low</option>
-                                                        <option>New Added</option>
-                                                        <option>On Sale</option>
+                                                        <option>Par defaut</option>
+                                                        <option>Du Moins Cher Au Plus Chers</option>
+                                                        <option>Du Plus Chers Au Moins Cher</option>
                                                     </select>
                                                 </div>
                                                 <div class="tp-shop-top-filter">
@@ -301,7 +299,7 @@
                                                                     stroke-linejoin="round" />
                                                             </svg>
                                                         </span>
-                                                        Filter
+                                                        Filtre
                                                     </button>
                                                 </div>
                                             </div>

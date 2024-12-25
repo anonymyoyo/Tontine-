@@ -835,11 +835,12 @@ input[type=color] {
     1.2 Common Classes
 ---------------------------------*/
 .w-img img {
-    width: 100%;
+    /* width: 50px; */
+    height: 150px;
 }
 
 .m-img img {
-    max-width: 100%;
+    max-width: 50%;
 }
 
 .fix {
@@ -19415,7 +19416,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 }
 
 .tp-product-thumb-2 img {
-    width: 100%;
+    width: 60%;
 }
 
 /*----------------------------------------*/

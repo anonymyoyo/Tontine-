@@ -68,49 +68,20 @@
 
     <div class="card mb-3">
         <div class="card-header">
-        <h5 class="card-title">Ajouter un produit</h5>
+        <h5 class="card-title">Ajouter une categorie</h5>
         </div>
         <div class="card-body">
         <!-- Row start -->
-        <form action="{{ route('creer.produit') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('creer.categorie') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row gx-3">
                 <div class="col-lg-3 col-sm-4 col-12">
                 <div class="mb-3">
-                    <label class="form-label">Nom du produit</label>
-                    <input type="text" name="name" required class="form-control" placeholder="Entrer le nom du produit" />
+                    <label class="form-label">Nom de la categorie</label>
+                    <input type="text" name="name" required class="form-control" placeholder="Entrer le nom de la categorie" />
                 </div>
                 </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                <div class="mb-3">
-                    <label class="form-label">Image du produit</label>
-                    <input type="file" name="image" required class="form-control"/>
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                    <label class="form-label">Categorie</label>
-                    <select name="category_id" class="form-select">
-                        <option value="0">Selectionner</option>
-                        @foreach ($categorie as $category)
-                            <option value="{{ $category->id }}" required class="form-option">{{ $category->name }}</option>
-                        @endforeach
-                        {{-- <option value="1">{{ $gerant->name }}</option> --}}
-                    </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                <div class="mb-3">
-                    <label class="form-label">Prix en cash</label>
-                    <input type="text" name="prix_cash" required class="form-control" placeholder="Entrer le prix en cash" />
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-4 col-12">
-                <div class="mb-3">
-                    <label class="form-label">Prix en tontine</label>
-                    <input type="text" name="prix_tontine" required class="form-control" placeholder="Entrer le prix en tontine" />
-                </div>
-                </div>
+
                 <br><br>
             </div>
             <div class="col-sm-6 col-12">

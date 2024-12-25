@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\store;
 use App\Models\Agence;
 use App\Models\Association;
+use App\Models\Category;
 use App\Models\ChefAgence;
 use App\Models\Produit;
 use App\Models\Role;
@@ -608,16 +609,20 @@ class AdminController extends Controller
         $tontine = Tontine::all();
         $roles = Role::all();
         $produit = Produit::all();
-
-        return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
+        $categorie = Category::all();
+        return $categorie;
+        return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit', 'categorie'));
     }
 
     public function admin_ajouter_produit()
     {
         $tontine = Tontine::all();
         $roles = Role::all();
+        $categorie = Category::all();
 
-        return view('admin.admin.produit.creer', compact('roles', 'tontine'));
+
+
+        return view('admin.admin.produit.creer', compact('roles', 'tontine', 'categorie'));
     }
 
     public function admin_creer_produit(Request $request)
@@ -632,6 +637,28 @@ class AdminController extends Controller
             'name' => $request->name,
             'prix_cash' => $request->prix_cash,
             'prix_tontine' => $request->prix_tontine,
+            'category_id' => $request->category_id,
+        ]);
+
+        return back();
+        // return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit'));
+    }
+
+    public function admin_ajouter_categorie()
+    {
+        $tontine = Tontine::all();
+        $roles = Role::all();
+
+        return view('admin.admin.categorie.creer', compact('roles', 'tontine'));
+    }
+
+    public function admin_creer_categorie(Request $request)
+    {
+        $tontine = Tontine::all();
+        $roles = Role::all();
+
+        Category::create([
+            'name' => $request->name,
         ]);
 
         return back();

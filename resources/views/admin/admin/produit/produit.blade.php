@@ -69,6 +69,9 @@
             <div class="d-flex flex-row gap-1">
               <a href="{{ route('ajouter.produit') }}" class="btn btn-primary">Ajouter Produit</a>
             </div>
+            <div class="d-flex flex-row gap-1">
+                <a href="{{ route('ajouter.categorie') }}" class="btn btn-primary">Ajouter Categorie</a>
+              </div>
          </div>
 
           <div class="body">
@@ -94,14 +97,9 @@
               <div class="category_grid">
                 <nav>
                   <ul>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
-                    <li>Category 1</li>
+                    @foreach ($categorie as $category)
+                        <li>{{ $category->name }} 1</li>
+                    @endforeach
                   </ul>
                 </nav>
               </div>

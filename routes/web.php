@@ -69,6 +69,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('Admin/Produit', [AdminController::class, 'admin_produit'])->name('admin.produit');
     Route::get('Admin/Ajouter/Produit', [AdminController::class, 'admin_ajouter_produit'])->name('ajouter.produit');
     Route::post('Admin/Creer/Produit', [AdminController::class, 'admin_creer_produit'])->name('creer.produit');
+    Route::get('Admin/Ajouter/Categorie', [AdminController::class, 'admin_ajouter_categorie'])->name('ajouter.categorie');
+    Route::post('Admin/Creer/Categorie', [AdminController::class, 'admin_creer_categorie'])->name('creer.categorie');
 });
 
 Route::middleware(['auth', 'association'])->group(function () {
