@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             ZoneSeeder::class,
             TontineSeeder::class,
             SoldeSeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }

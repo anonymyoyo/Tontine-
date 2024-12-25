@@ -180,16 +180,9 @@
                                     <div class="tp-shop-widget-content">
                                         <div class="tp-shop-widget-categories">
                                             <ul>
-                                                <li><a href="#">Leather <span>10</span></a></li>
-                                                <li><a href="#">Classic Watch <span>18</span></a></li>
-                                                <li><a href="#">Leather Man Wacth <span>22</span></a></li>
-                                                <li><a href="#">Trending Watch <span>17</span></a></li>
-                                                <li><a href="#">Google <span>22</span></a></li>
-                                                <li><a href="#">Woman Wacth <span>14</span></a></li>
-                                                <li><a href="#">Tables <span>19</span></a></li>
-                                                <li><a href="#">Electronics <span>29</span></a></li>
-                                                <li><a href="#">Phones <span>05</span></a></li>
-                                                <li><a href="#">Grocery <span>14</span></a></li>
+                                                @foreach ($categorie as $category)
+                                                    <li><a href="#{{ $category->name }}">{{ $category->name }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
@@ -256,7 +249,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="tp-shop-top-result">
-                                                    {{-- <p>Showing 1–14 of 26 results</p> --}}
+                                                    <p>Affichage par 3 de {{ $totalProduits }} produits</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -315,7 +308,7 @@
                                                 <div class="col-xl-4 col-md-6 col-sm-6 infinite-item">
                                                     <div class="tp-product-item-2 mb-40">
                                                         <div class="tp-product-thumb-2 p-relative z-index-1 fix w-img">
-                                                            <a href="#">
+                                                            <a href="#" id="#">
                                                                 <img src="{{ Storage::url($product->image) }}" alt="">
                                                             </a>
                                                             <!-- product action -->
@@ -429,9 +422,16 @@
                                                         <div class="tp-product-content-2 pt-15">
                                                             <div class="tp-product-tag-2">
                                                                 <a href="#">TCA Shop</a>
+                                                                @foreach ($categorie as $category)
+                                                                @if ($product->category_id === $category->id)
+                                                                    <a href="#{{ $category->name }}">{{ $category->name }}</a>
+                                                                @endif
+
+                                                                @endforeach
+
                                                             </div>
                                                             <h3 class="tp-product-title-2">
-                                                                <a href="product-details.html">{{ $product->name }}</a>
+                                                                <a href="#">{{ $product->name }}</a>
                                                             </h3>
                                                             <div
                                                                 class="tp-product-rating-icon tp-product-rating-icon-2">

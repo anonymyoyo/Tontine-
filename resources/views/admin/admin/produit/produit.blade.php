@@ -98,7 +98,7 @@
                 <nav>
                   <ul>
                     @foreach ($categorie as $category)
-                        <li>{{ $category->name }} 1</li>
+                        <li>{{ $category->name }}</li>
                     @endforeach
                   </ul>
                 </nav>

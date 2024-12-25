@@ -610,7 +610,6 @@ class AdminController extends Controller
         $roles = Role::all();
         $produit = Produit::all();
         $categorie = Category::all();
-        return $categorie;
         return view('admin.admin.produit.produit', compact('roles', 'tontine', 'produit', 'categorie'));
     }
 
