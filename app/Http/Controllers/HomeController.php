@@ -60,7 +60,7 @@ class HomeController extends Controller
         $produit = Produit::all();
         $categorie = Category::all();
         $totalProduits = Produit::Count();
-        // return $membre;
+        // return $produit;
         return view('users.catalogue', compact('produit', 'categorie', 'totalProduits'));
     }
 }

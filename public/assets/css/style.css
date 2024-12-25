@@ -2549,6 +2549,21 @@ li a:hover {
 }
 
 @media(max-width:480px) {
+    .sup_footer {
+        display: block;
+        background-color: #90cf37;
+        margin-top: 20px;
+    }
+
+    .sup_footer .copyright {
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .sup_footer .separator {
+        color: #121d03;
+    }
+
     .footer {
         display: block;
         /* background-color: #90cf37; */
@@ -2595,7 +2610,7 @@ li a:hover {
         border: none;
     }
 
-    .footer .footer-newsletter .img_newsletter .newsletter_img {
+    .sup_fo.footer .footer-newsletter .img_newsletter .newsletter_img {
         width: 90%;
         height: 90px;
     }
