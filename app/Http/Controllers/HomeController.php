@@ -63,4 +63,15 @@ class HomeController extends Controller
         // return $produit;
         return view('users.catalogue', compact('produit', 'categorie', 'totalProduits'));
     }
+
+    public function category($id)
+    {
+        $categorie = Category::find($id);
+        $category = Category::all();
+        $produit = Produit::where('category_id', $categorie->id)->get();
+        $totalProduits = $produit->Count();
+
+        // return $totalProduits;
+        return view('users.category', compact('produit', 'categorie', 'totalProduits', 'category'));
+    }
 }

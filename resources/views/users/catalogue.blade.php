@@ -181,7 +181,7 @@
                                         <div class="tp-shop-widget-categories">
                                             <ul>
                                                 @foreach ($categorie as $category)
-                                                    <li><a href="#{{ $category->name }}">{{ $category->name }}</a></li>
+                                                    <li><a href="{{ route('category', $category->id) }}}}">{{ $category->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>

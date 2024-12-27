@@ -30,7 +30,7 @@
 
   <body class="login-bg">
     {{-- @include('users.header') --}}<div class="retour_arriere">
-                <a href="{{ route('user') }}"><img src="{{ asset('assets/css/img/forme18.png') }}" class="retourarriere" alt=""></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('assets/css/img/forme18.png') }}" class="retourarriere" alt=""></a>
             </div>
     <div class="login-header">
         <div class="login-navbar burger">

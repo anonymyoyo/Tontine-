@@ -25,6 +25,7 @@ Route::get('Blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('Associations', [HomeController::class, 'association'])->name('user.association');
 Route::get('Tontines', [HomeController::class, 'tontines'])->name('user.tontines');
 Route::get('Catalogue', [HomeController::class, 'catalogue'])->name('catalogue');
+Route::get('Categorie/{id}', [HomeController::class, 'category'])->name('category');
 
 
 
