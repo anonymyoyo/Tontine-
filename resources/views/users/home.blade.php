@@ -22,9 +22,16 @@
     <!-- footer end -->
 
     <!-- jquery v(3.6.0) minified source -->
-   @include('users.script')
+   {{-- @include('users.script') --}}
 </body>
 
+<script>
+    const menuHamburger = document.querySelector('.menu-hamburger')
+    const navLinks = document.querySelector('.nav-links')
 
+    menuHamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-menu')
+    })
+</script>
 <!-- Mirrored from pixner.net/crikto/crikto/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 16:15:53 GMT -->
 </html>

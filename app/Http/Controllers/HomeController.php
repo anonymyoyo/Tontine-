@@ -16,10 +16,11 @@ class HomeController extends Controller
     public function index()
     {
         $tontine = Tontine::all();
+        $category = Category::all();
         // $membre = Solde::all();
 
         // return $membre;
-        return view('users.home', compact('tontine'));
+        return view('users.home', compact('tontine', 'category'));
     }
 
     public function about()
