@@ -24,5 +24,16 @@ class AgenceSeeder extends Seeder
             "association_id" => 3,
             "image" => "images/0I66RqrbpB0GA0MWuRY8nSe1S3biOY3lRdsErjHq.png",
         ]);
+
+        Agence::create([
+            "name" => "TCA bertouat",
+            "email" => "tcabertouat@tca.com",
+            "phone" => "694865872",
+            "ville" => "bertouat",
+            "pays" => "Cameroon",
+            "user_id" => 6,
+            "association_id" => 3,
+            "image" => "images/0I66RqrbpB0GA0MWuRY8nSe1S3biOY3lRdsErjHq.png",
+        ]);
     }
 }

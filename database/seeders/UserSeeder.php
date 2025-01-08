@@ -65,8 +65,8 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "name" => "Marole",
-            "email" => "marole@tca.com",
+            "name" => "Emmanuel",
+            "email" => "emmanuel@tca.com",
             "phone" => "694865842",
             "ville" => "Douala",
             "pays" => "Cameroon",
@@ -77,6 +77,21 @@ class UserSeeder extends Seeder
             "com_agence_id" => null,
             "role_id" => 2,
             'password' => 'marole'
+        ]);
+
+        User::create([
+            "name" => "joseph",
+            "email" => "joseph@tca.com",
+            "phone" => "1111",
+            "ville" => "Bertoua",
+            "pays" => "Cameroon",
+            "image" => "images/IgOMR0TPOFHaTkaPUOw4lXJ3LrYaCGUQkwoal2hU.png",
+            "association_id" => "3",
+            "agence_id" => "2",
+            "com_association_id" => null,
+            "com_agence_id" => null,
+            "role_id" => 2,
+            'password' => 'joseph'
         ]);
 
         User::create([

@@ -435,20 +435,21 @@
                     <a href="#">lien3</a>
                 </div>
             </div> --}}
-            <li class="dropdown">
+            {{-- <li class="dropdown">
                 <button class="dropdown-button">CATEGORIES</button>
                 <div class="dropdown-content" name="" id="">
                     @foreach ($category as $categories)
                         <a href="{{ route('category', $categories) }}">{{ $categories->name }}</a>
                     @endforeach
                 </div>
-            </li>
+            </li> --}}
             <li class="dropdown">
                 <button class="dropdown-button">SERVICES</button>
                 <div class="dropdown-content" name="" id="">
                     <a href="#">SERVICES</a>
                     <a href="#">AGENT</a>
                 </div>
+
             </li>
             <li class="dropdown">
                 <button class="dropdown-button">PROFIL</button>

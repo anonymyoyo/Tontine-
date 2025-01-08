@@ -38,16 +38,673 @@
     <link rel="stylesheet" href="{{ asset('asets/css/spacing.css') }}" />
     <link rel="stylesheet" href="{{ asset('asets/css/main.css') }}" />
 
+
+    <style>
+        .slider {
+            position: relative;
+            width: 90%;
+            height: 450px;
+            margin: 40px auto;
+            /* overflow: hidden; */
+        }
+
+        .slider marquee {
+            margin-top: 80px;
+            font-size: 30px;
+            color: #90cf35;
+
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .image {
+            width: 35%;
+            height: 90%;
+            border-radius: 25px;
+            margin-top: 90px;
+            /* margin-right: 300px; */
+            object-fit: cover;
+        }
+
+        .description {
+            width: 70%;
+            padding: 20px;
+            /* font-size: 16px; */
+        }
+
+        .description p {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+            font-weight: 700;
+            /* font-weight: 400px; */
+        }
+
+        .description p span {
+            font-weight: 100;
+        }
+
+        .description .slidetontine {
+            display: flex;
+            width: 100%;
+            margin-top: -20px;
+            margin-bottom: 20px;
+            margin-left: 10%;
+        }
+
+        .description .slidetontine .slidetontine1 {
+            width: 70%;
+            font-size: 15px;
+            display: block;
+        }
+
+        .description .slidetontine .slidetontine1 p {
+            background-color: #90cf35;
+            width: 50%;
+            margin-top: 30px;
+            padding: 0;
+            color: #142003;
+            border-radius: 10px;
+            /* margin-right: 2px; */
+            /* font-weight: 500; */
+        }
+
+        .description .slidetontine .slidetontine2 {
+            width: 70%;
+            display: block;
+            font-size: 15px;
+        }
+
+        .description .slidetontine .slidetontine2 p {
+            background-color: #90cf35;
+            width: 50%;
+            padding: 0;
+            margin-top: 30px;
+            color: #142003;
+            border-radius: 10px;
+            /* margin-right: 2px; */
+            /* font-weight: 200; */
+        }
+
+        .slide .description a {
+            border: none;
+            width: 40%;
+            font-size: 20px;
+            border-radius: 15px;
+            margin-left: 34%;
+            margin-top: 100px;
+            cursor: pointer;
+            padding: 8px;
+            color: #ffffff;
+            background-color: #000000;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media(max-width:780px) {
+            .slider {
+                position: relative;
+                width: 90%;
+                height: 590px;
+                margin: 40px auto;
+                overflow: hidden;
+            }
+
+            .slider marquee {
+                margin-top: 550px;
+                font-size: 17px;
+                color: #90cf35;
+
+            }
+
+            .slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .slide.active {
+                opacity: 1;
+            }
+
+            .image {
+                width: 40%;
+                height: 70%;
+                border-radius: 25px;
+                /* margin-right: 300px; */
+                object-fit: cover;
+            }
+
+            .description {
+                width: 60%;
+                padding: 20px;
+                /* font-size: 16px; */
+            }
+
+            .description p {
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+                padding: 20px;
+                font-weight: 700;
+                /* font-weight: 400px; */
+            }
+
+            .description p span {
+                font-weight: 100;
+            }
+
+            .description .slidetontine {
+                display: flex;
+                width: 100%;
+                margin-top: -20px;
+                margin-bottom: 20px;
+                margin-left: 10%;
+            }
+
+            .description .slidetontine .slidetontine1 {
+                width: 70%;
+                font-size: 10px;
+                display: block;
+            }
+
+            .description .slidetontine .slidetontine1 p {
+                background-color: #90cf35;
+                width: 100%;
+                margin-top: 30px;
+                padding: 0;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 500; */
+            }
+
+            .description .slidetontine .slidetontine2 {
+                width: 100%;
+                display: block;
+                font-size: 8px;
+            }
+
+            .description .slidetontine .slidetontine2 p {
+                background-color: #90cf35;
+                width: 100%;
+                padding: 0;
+                margin-top: 30px;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 200; */
+            }
+
+            .slide .description a {
+                border: none;
+                width: 40%;
+                font-size: 20px;
+                border-radius: 15px;
+                margin-left: 10%;
+                margin-top: 100px;
+                padding: 8px;
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+
+        @media(max-width:480px) {
+            .slider {
+                position: relative;
+                width: 90%;
+                height: 450px;
+                margin: 40px auto;
+                margin-top: 90px;
+                /* overflow: hidden; */
+            }
+
+            /* .slider marquee {
+                margin-top: 190px;
+                font-size: 17px;
+                color: #90cf35;
+
+            } */
+
+            .slide {
+                position: absolute;
+                width: 90%;
+                height: 100%;
+                display: block;
+                align-items: center;
+                /* justify-content: space-between; */
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .slide.active {
+                opacity: 1;
+            }
+
+            .image {
+                width: 100%;
+                height: 50%;
+                /* margin-top: -50px; */
+                border-radius: 25px;
+                /* margin-right: 300px; */
+                /* object-fit: cover; */
+            }
+
+            .description {
+                width: 100%;
+                margin-top: 10px;
+                margin-left: -30px;
+                /* padding: 20px; */
+                /* font-size: 16px; */
+            }
+
+            .description p {
+                width: 100%;
+                text-align: left;
+                font-size: 10px;
+                /* padding: 20px;    */
+                font-weight: 700;
+                /* font-weight: 400px; */
+            }
+
+            .description p span {
+                font-weight: 100;
+                /* top: 50%; */
+            }
+
+            .description .slidetontine {
+                display: block;
+                position: absolute;
+                width: 100%;
+                margin-top: -370px;
+                margin-left: 65%;
+            }
+
+            .description .slidetontine .slidetontine1 {
+                width: 70%;
+                font-size: 15px;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .description .slidetontine .slidetontine1 p {
+                background-color: #90cf35;
+                width: 50%;
+                text-align: right;
+                margin-top: 20px;
+                padding: 0;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 500; */
+            }
+
+            .description .slidetontine .slidetontine2 {
+                width: 70%;
+                display: block;
+                font-size: 15px;
+            }
+
+            .description .slidetontine .slidetontine2 p {
+                background-color: #90cf35;
+                width: 50%;
+                padding: 0;
+                text-align: right;
+                margin-top: 20px;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 200; */
+            }
+
+            /* .slide a {
+                border: none;
+                width: 40%;
+                font-size: 20px;
+                border-radius: 15px;
+                margin-left: 10%;
+                margin-top: 100px;
+                padding: 8px;
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            } */
+
+            .slide .description a {
+                border: none;
+                width: 40%;
+                position: absolute;
+                font-size: 11px;
+                margin-top: -125px;
+                margin-left: 15px;
+                border-radius: 15px;
+                /* margin-left: 20%; */
+                /* padding: 8px; */
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @media(max-width:380px) {
+            .slider {
+                position: relative;
+                width: 90%;
+                height: 450px;
+                margin: 40px auto;
+                margin-top: 90px;
+                /* overflow: hidden; */
+            }
+
+            /* .slider marquee {
+                margin-top: 190px;
+                font-size: 17px;
+                color: #90cf35;
+
+            } */
+
+            .slide {
+                position: absolute;
+                width: 90%;
+                height: 100%;
+                display: block;
+                align-items: center;
+                /* justify-content: space-between; */
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .slide.active {
+                opacity: 1;
+            }
+
+            .image {
+                width: 100%;
+                height: 50%;
+                /* margin-top: -50px; */
+                border-radius: 25px;
+                /* margin-right: 300px; */
+                /* object-fit: cover; */
+            }
+
+            .description {
+                width: 100%;
+                margin-top: 10px;
+                margin-left: -30px;
+                /* padding: 20px; */
+                /* font-size: 16px; */
+            }
+
+            .description p {
+                width: 100%;
+                text-align: left;
+                font-size: 10px;
+                /* padding: 20px;    */
+                font-weight: 700;
+                /* font-weight: 400px; */
+            }
+
+            .description p span {
+                font-weight: 100;
+                /* top: 50%; */
+            }
+
+            .description .slidetontine {
+                display: block;
+                position: absolute;
+                width: 100%;
+                margin-top: -370px;
+                margin-left: 65%;
+            }
+
+            .description .slidetontine .slidetontine1 {
+                width: 70%;
+                font-size: 9px;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .description .slidetontine .slidetontine1 p {
+                background-color: #90cf35;
+                width: 70%;
+                margin-left: -28px;
+                /* text-align: left; */
+                margin-top: 20px;
+                padding: 0;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-left: 2px; */
+                /* font-weight: 500; */
+            }
+
+            .description .slidetontine .slidetontine2 {
+                width: 70%;
+                display: block;
+                font-size: 9px;
+            }
+
+            .description .slidetontine .slidetontine2 p {
+                background-color: #90cf35;
+                width: 70%;
+                margin-left: -28px;
+                padding: 0;
+                /* text-align: right; */
+                margin-top: 20px;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 200; */
+            }
+
+            /* .slide a {
+                border: none;
+                width: 40%;
+                font-size: 20px;
+                border-radius: 15px;
+                margin-left: 10%;
+                margin-top: 100px;
+                padding: 8px;
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            } */
+
+            .slide .description a {
+                border: none;
+                width: 40%;
+                position: absolute;
+                font-size: 9px;
+                margin-top: -125px;
+                margin-left: 15px;
+                border-radius: 15px;
+                /* margin-left: 20%; */
+                /* padding: 8px; */
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @media(max-width:280px) {
+            .slider {
+                position: relative;
+                width: 90%;
+                height: 450px;
+                margin: 40px auto;
+                margin-top: 90px;
+                /* overflow: hidden; */
+            }
+
+            /* .slider marquee {
+                margin-top: 190px;
+                font-size: 17px;
+                color: #90cf35;
+
+            } */
+
+            .slide {
+                position: absolute;
+                width: 90%;
+                height: 100%;
+                display: block;
+                align-items: center;
+                /* justify-content: space-between; */
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .slide.active {
+                opacity: 1;
+            }
+
+            .image {
+                width: 100%;
+                height: 50%;
+                /* margin-top: -50px; */
+                border-radius: 25px;
+                /* margin-right: 300px; */
+                /* object-fit: cover; */
+            }
+
+            .description {
+                width: 100%;
+                margin-top: 10px;
+                margin-left: -30px;
+                /* padding: 20px; */
+                /* font-size: 16px; */
+            }
+
+            .description p {
+                width: 100%;
+                text-align: left;
+                font-size: 10px;
+                /* padding: 20px;    */
+                font-weight: 700;
+                /* font-weight: 400px; */
+            }
+
+            .description p span {
+                font-weight: 100;
+                /* top: 50%; */
+            }
+
+            .description .slidetontine {
+                display: block;
+                position: absolute;
+                width: 100%;
+                margin-top: -400px;
+                margin-left: 65%;
+            }
+
+            .description .slidetontine .slidetontine1 {
+                width: 70%;
+                font-size: 7px;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .description .slidetontine .slidetontine1 p {
+                background-color: #90cf35;
+                width: 80%;
+                text-align: right;
+                margin-top: 20px;
+                padding: 0;
+                color: #142003;
+                border-radius: 10px;
+                /* margin-right: 2px; */
+                /* font-weight: 500; */
+            }
+
+            .description .slidetontine .slidetontine2 {
+                width: 80%;
+                display: block;
+                font-size: 4px;
+            }
+
+            .description .slidetontine .slidetontine2 p {
+                background-color: #90cf35;
+                width: 85%;
+                padding: 0;
+                text-align: right;
+                margin-top: 20px;
+                color: #142003;
+                border-radius: 10px;
+                margin-left: -48px;
+                /* font-weight: 200; */
+            }
+
+            /* .slide a {
+                border: none;
+                width: 40%;
+                font-size: 20px;
+                border-radius: 15px;
+                margin-left: 10%;
+                margin-top: 100px;
+                padding: 8px;
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            } */
+
+            .slide .description a {
+                border: none;
+                width: 50%;
+                position: absolute;
+                font-size: 7px;
+                margin-top: -125px;
+                margin-left: 15px;
+                border-radius: 15px;
+                /* margin-left: 20%; */
+                /* padding: 8px; */
+                color: #263a0b;
+                background-color: #90cf35;
+                text-decoration: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+    </style>
 </head>
 
 <body>
     <!--[if lte IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
-
-
+<br><br>
+      @include('users.header')
     <!-- pre loader area start -->
-    <div id="loading">
+    {{-- <div id="loading">
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <!-- loading content here -->
@@ -143,9 +800,66 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- pre loader area end -->
+    <div class="slider">
+        {{-- <marquee behavior="" direction="left">
+            <b><i>Tontine Simple</i></b>
+            <b><i>Tontine Islamique</i></b>
+            <b><i>Tontine Electromenagers</i></b>
+            <b><i>Tontine D'assurance</i></b>
+            <b><i>Tontine Scolaire</i></b>
+            <b><i>Tontine D'investissement</i></b>
+            <b><i>Tontine Alimentaire</i></b>
+        </marquee> --}}
+        <div class="slide">
+            <img src="{{ asset('assets/images/picture1.png') }}" alt="Image 3" class="image">
+            <div class="description">
+                <p>TCA Mobile Money la nouvelle generation de tontine conviviable, securisee et facile a utiliser. <br>
+                    <span>Notre Application est totalement gratuite !!!
+                    </span>
+                </p>
 
+                <div class="slidetontine">
+                    <div class="slidetontine1">
+                        <p>Tontine Scolaire</p>
+                        <p>Tontine Simple</p>
+                        <p>Tontine Epargne</p>
+                    </div>
+                    <div class="slidetontine2">
+                        <p>Tontine Assurance</p>
+                        <p>Tontine Elec</p>
+                        <p>Tontine Invest</p>
+                    </div>
+                </div>
+                <a href="{{ route('login') }}">Telecharger l'application</a>
+            </div>
+          </div>
+        <div class="slide">
+          <img src="{{ asset('assets/images/picture2.png') }}" alt="Image 1" class="image">
+          <div class="description">
+            <p>TCA Mobile Money la nouvelle generation de tontine conviviable, securisee et facile a utiliser. <br>
+                <span>Notre Application est totalement gratuite !!!
+                </span>
+            </p>
+
+            <div class="slidetontine">
+                <div class="slidetontine1">
+                    <p>Tontine Scolaire</p>
+                    <p>Tontine Simple</p>
+                    <p>Tontine Epargne</p>
+                </div>
+                <div class="slidetontine2">
+                    <p>Tontine Assurance</p>
+                    <p>Tontine Elec</p>
+                    <p>Tontine Invest</p>
+                </div>
+            </div>
+            <a href="{{ route('login') }}">Telecharger l'application</a>
+          </div>
+        </div>
+
+    </div>
         <main>
 
             <!-- breadcrumb area start -->
@@ -465,6 +1179,15 @@
 
         </main>
 
+
+        <script>
+            const menuHamburger = document.querySelector('.menu-hamburger')
+            const navLinks = document.querySelector('.nav-links')
+
+            menuHamburger.addEventListener('click', () => {
+              navLinks.classList.toggle('mobile-menu')
+            })
+        </script>
         <!-- JS here -->
         <script src="asets/js/vendor/jquery.js"></script>
         <script src="asets/js/vendor/waypoints.js"></script>
